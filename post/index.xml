@@ -1,16 +1,270 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | Enoch Yi-Tung Chen</title>
-    <link>https://enochytchen.github.io/post/</link>
-      <atom:link href="https://enochytchen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <title>Recent posts | Enoch Yi-Tung Chen</title>
+    <link>enochytchen.com/post/</link>
+      <atom:link href="enochytchen.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Posts</title>
-      <link>https://enochytchen.github.io/post/</link>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Recent posts</title>
+      <link>enochytchen.com/post/</link>
     </image>
+    
+    <item>
+      <title>Seven tips of good data management</title>
+      <link>enochytchen.com/post/7tips_gooddatamanagement/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/post/7tips_gooddatamanagement/</guid>
+      <description>&lt;p&gt;I was pretty inspired by 
+&lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;lsquo;s 
+&lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
+&lt;a href=&#34;http://enochytchen.com/post/why_datamanaegment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data management? Does it matter?&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;tip-1-use-a-shared-drive&#34;&gt;Tip 1: Use a shared drive&lt;/h4&gt;
+&lt;p&gt;Spilling coffee on the laptop! The laptop was stolen! These kinds of poor stories we propbably have ever heard from someone else, or they even happened to us. &lt;br&gt; Tragedies could happen, but using a shared drive could lower the impact it brings. Github, Tortoise, or other shared drives with a version control function can save you from the accident. It is recommended to commit your files to the shared drive once you finish the work everyday. Thus, you can always own a previous version of your files at the cloud drive or your colleagues&amp;rsquo;s drive (if they happen to use the same shared drive).&lt;br&gt;
+You &lt;strong&gt;commit&lt;/strong&gt; to your job. Why don&amp;rsquo;t you &lt;strong&gt;commit&lt;/strong&gt; your files as well? Establish a good habit of version control.&lt;/p&gt;
+&lt;h4 id=&#34;tip-2-give-appropriate-names-to-your-files-and-variables&#34;&gt;Tip 2: Give appropriate names to your files and variables&lt;/h4&gt;
+&lt;p&gt;Have you ever given your file an inappropriate name, and then you no longer found it?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t use stupid names, such as new1, new2, new3&amp;hellip;final1, final2, final3&amp;hellip;latest1&amp;hellip;&amp;hellip;A simple version mark plus date is quite enough (I usually use yyyymmdd)! E.g., manuscript_v1_20200501.&lt;/li&gt;
+&lt;li&gt;No space in-between &amp;amp; No special character, such as Swedish vowels (ä, ö, å) or Mandarin words (請避免使用中文字). This is just to avoid that your file name is not readable to the software.&lt;/li&gt;
+&lt;li&gt;For binomial variables, &lt;strong&gt;=1&lt;/strong&gt; implies yes, and &lt;strong&gt;=0&lt;/strong&gt; implies no. E.g., if a variable is entitled as &lt;code&gt;female&lt;/code&gt;, then &lt;strong&gt;=1&lt;/strong&gt; indicates female, &lt;strong&gt;=0&lt;/strong&gt; indicates male.&lt;/li&gt;
+&lt;li&gt;Convert a string variable to a numeric variable. Numeric varaibles are usually preferable for doing analysis. For example, in Stata, the conversion is done by &lt;code&gt;destring (variable), replace&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tip-3-give-the-same-names-for-linking-files&#34;&gt;Tip 3: Give the same names for linking files&lt;/h4&gt;
+&lt;p&gt;If you happen to organize the data, generate the log of the syntax, then output the result in word, it is recommended to use an identical name throughout these different files (.do .r .sas  → .log → .doc). The priciple here is simply mark these files were basicaly processed in a series.&lt;/p&gt;
+&lt;h4 id=&#34;tip-4-dont-replace-the-original-files-vaiables-if-a-new-one-is-created&#34;&gt;Tip 4: Don&amp;rsquo;t replace the original files/ vaiables if a new one is created&lt;/h4&gt;
+&lt;p&gt;It is quite common that new varivables are created during the data analysis. You should only create a new variable rather than overwrite the original variable. For example, &lt;code&gt;age → nage &lt;/code&gt;. The same concept applies if you want to modify a file. However, if you accidentally overwrite the orginal file and you do have version control (&lt;strong&gt;Tip 1&lt;/strong&gt;), there is still chance to trace it back.&lt;/p&gt;
+&lt;h4 id=&#34;tip-5-use-file-headers-to-document-your-work&#34;&gt;Tip 5: Use file headers to document your work&lt;/h4&gt;
+&lt;p&gt;A file header plays a role as a reminder of what has been done in this single file. It allows us to understand that file by just reading the header. You yourself and your team members definitely say thank-you for keeping this record in the future.
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/fileheader.png&#34; &gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/fileheader.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;tip-6-write-notes-while-writing-the-codes&#34;&gt;Tip 6: Write notes while writing the codes&lt;/h4&gt;
+&lt;p&gt;My biostat teacher used to talk to himself while writing codes on his program file. He even wrote, &lt;code&gt;What are we doing now? We are gonna......&lt;/code&gt; I actually thought it was quite funny when he did that. But basically, telling yourself what you are doing is quite fundamental, since you &lt;strong&gt;will absolutely forget&lt;/strong&gt; what you did. In addition, when I use new commands, I would also write down what it means, even though at that moment I caught the meaning of it.
+The same concept applies to keeping workbook or a working records. Believe me or not, your memories are not trustworthy! It is extra work definitely. Please do write something down and properly keep it.&lt;/p&gt;
+&lt;h4 id=&#34;tip-7-write-a-readmetxt&#34;&gt;Tip 7: Write a Readme.txt&lt;/h4&gt;
+&lt;p&gt;A Readme.txt functions as a table of contents. Basically, Readme should explain the contents in each folder, the author(s) of the work, and the modification that has been updated.&lt;/p&gt;
+&lt;p&gt;Imagine that you go to a restaurant, and you would like to order some dishes. Reasonably, you would ask for a &lt;strong&gt;menu&lt;/strong&gt;. A Readme.txt is the &lt;strong&gt;menu&lt;/strong&gt; of your folders or files. To be a good restaurant owner, would you run your business without a proper &lt;strong&gt;menu&lt;/strong&gt;?&lt;/p&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The Department of Medical Epidemiology and Biostatistics, Karolinska Institutet. MEB Guidelines for Documentation and Archiving Version 6. 2018.&lt;/li&gt;
+&lt;li&gt;Johansson A. 
+&lt;a href=&#34;https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data Management and research documentation for researchers&lt;/a&gt;. KIB Workshop 2018.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data management? Does it matter?</title>
+      <link>enochytchen.com/post/why_datamanagement/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/post/why_datamanagement/</guid>
+      <description>&lt;h3 id=&#34;why-should-you-do-data-management&#34;&gt;Why should you do data management?&lt;/h3&gt;
+&lt;p&gt;We all have experienced unexpected shutdown of our laptops or even files we were still processing and haven&amp;rsquo;t saved yet. Maybe these nightmares are quite unavoidable sometimes; otherwise, I wouldn&amp;rsquo;t call it &lt;strong&gt;unexpected&lt;/strong&gt;, and we would not have &lt;strong&gt;cursed&lt;/strong&gt; as it happened.&lt;/p&gt;
+&lt;p&gt;The most attractive points of data management are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;To reproduce your work on analysis.&lt;/strong&gt;
+&lt;br&gt;Science is something that could be reproducible, so is &lt;strong&gt;DATA SCIENCE&lt;/strong&gt;. Even though you might not work in a data-driven field, you definitely want to trace back your file records at a point.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;To work coherently and efficiently with yourself&lt;/strong&gt; &lt;br&gt;We all tend to forget where and how we put the files someday. Data management saves you a great amount of time of suffering from getting lost in the mess.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;To help your colleagues to understand the analysis&lt;/strong&gt; &lt;br&gt;It is quite common that if you work in a team, and someone joins after the project has already started, he or she needs to take over a part of the tasks. Then a good data managment gives that new colleague a big picture of what has been completed and what needs to be fixed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;To enhance accuracy of work&lt;/strong&gt;
+&lt;br&gt; A good data management leads to a well-structured folders/file/codes/documents. Once any problem happens, it is easier to break down the error and find the bug.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;my-experience-in-poor-data-management&#34;&gt;My experience in poor data management&lt;/h3&gt;
+&lt;p&gt;Looking back my experience in managing data, I made a bunch of mistakes, which definitely annoyed my colleagues and stumbled myself. I don&amp;rsquo;t mind writing these bad examples down to highlight the importance of good data managment.&lt;/p&gt;
+&lt;h4 id=&#34;project-died-on-the-way&#34;&gt;Project died on the way&lt;/h4&gt;
+&lt;p&gt;I was once working in a project entitled &amp;ldquo;Enterovirus epidemic and class suspension in Taiwan&amp;rdquo;. That was the very first time that I had the access into governmental data. Without any analysis plan, I only used the cloud drive to keep the records of data analyses, which were also incomplete, with my supervisor. However, at the end, I was not able to continue the project and publish the results, so my supervisor took over the work. But when he asked me what we did together in the analyses and what extra work I managed to conduct on my own, I couldn&amp;rsquo;t properly answer the questions he proposed, because I did not have an analysis plan! All the data was carried out in an aggregation form, which indicated that we were unable to trace back to the working records in the data&amp;hellip;&amp;hellip;&lt;strong&gt;If I had learned data managment earlier, the project wouldn&amp;rsquo;t have to be halted.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;my-colleagues-got-mad&#34;&gt;My colleagues got mad&lt;/h4&gt;
+&lt;p&gt;The other experience also happened durign my undergrad. I was an NGO intern involved in dengue surveillance project in Northern Malawi. The project took much longer than we expected, so the next year&amp;rsquo;s interns also needed to participate in the unfinished project. However, we were the investigators at the first place. We understood all the project from the very beginning, but they did not. It took effort to explain what we had finished. At the end, even though we had quited the work, those next-years still did not catch the full results and working process of the project. And as I understood, they were not quite happy about the transition of the project. &lt;strong&gt;If I had learned data managment earlier, I would have had better transition of our work.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;solution-good-data-management&#34;&gt;Solution: good data management&lt;/h3&gt;
+&lt;p&gt;I picked up good data managment while working as a master thesis student at the Department of Medical Biostatistics and Epidemiology. I benefitted from the 
+&lt;a href=&#34;https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;good data management workshop&lt;/a&gt; and courses offered by 
+&lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt; and the data management group. I am quite sure given good data management, those two stories would not have occurred! Isn&amp;rsquo;t that a good news!?&lt;/p&gt;
+&lt;p&gt;Do you have the same issure in your data management? Then you should learn 
+&lt;a href=&#34;http://enochytchen.com/post/7tips_gooddatamanaegment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Seven tips of good data management&lt;/a&gt; together.&lt;/p&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Johansson A. 
+&lt;a href=&#34;https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data Management and research documentation for researchers&lt;/a&gt;. KIB Workshop 2018.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Not easy to be a fortune teller: prediction is hard</title>
+      <link>enochytchen.com/post/predictionishard/</link>
+      <pubDate>Tue, 12 May 2020 14:52:16 +0200</pubDate>
+      <guid>enochytchen.com/post/predictionishard/</guid>
+      <description>&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
+
+&lt;a href=&#34;https://quoteinvestigator.com/2013/10/20/no-predict/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;It’s Difficult to Make Predictions, Especially About the Future&lt;/a&gt;. Basically, these quotes do not differ from one another. They generally want to express that predection on future is risky and chanllenging. Moreover, it could lead to quantitative problems, such as underestimation or overestimation.&lt;/p&gt;
+&lt;p&gt;Recently, while I was working on life expectancy estimation, a colleague proposed a quesiton, &amp;ldquo;If you are validating expected survival of patients in 1990s, shall you use the survival projection made in 1990s rather than the empircal survival?&amp;rdquo; As a person living in 2020, it was quite intuitive to me to use empirical data to validate the survival prediction. Nevertheless, practically, statisticians back to 1990s only had projection data. Based on this fact, I was quite convinced that I should have used the projection data made at that time.&lt;/p&gt;
+&lt;p&gt;However, how precise was the data? Here come two small examples of validating life expectancy projection in the UK and Sweden.&lt;/p&gt;
+&lt;h3 id=&#34;the-uks-life-expectancy-projection&#34;&gt;The UK&amp;rsquo;s life expectancy projection&lt;/h3&gt;
+&lt;p&gt;The UK&amp;rsquo;s Office for National Statistics has ever published a report of validating the accurancy of life expectancy. The following figure was downloaded from 
+&lt;a href=&#34;https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/methodologies/nationalpopulationprojectionsaccuracyreport&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;National Population Projections Accuracy Report&lt;/a&gt; (1).&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-uk-1966-2030&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/uk_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, UK, 1966-2030&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/uk_LEprojection.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Actual and projected life expectancy at birth, UK, 1966-2030
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;It seems that the projection made before 2002 did not perform quite well. For example, projection made in 1975 saying males&amp;rsquo; life expectancy at birth was estimated to be 71 in 2001, whereas in 2001 it was actuall 79. A 8 years of difference! Then let&amp;rsquo;s take a look on the Swedish population.&lt;/p&gt;
+&lt;h3 id=&#34;the-swedens-life-expectancy-projection&#34;&gt;The Sweden&amp;rsquo;s life expectancy projection&lt;/h3&gt;
+&lt;p&gt;Statistiska centralbyrån (Statistics Sweden) also published a similar report as the UK did to evaluate their previous projection on life expectancy. The following figure was downloaded from 
+&lt;a href=&#34;http://share.scb.se/ov9993/data/publikationer/statistik/_publikationer/be0401_2012i60_br_be51br1202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sveriges framtida befolkning 2012–2060&lt;/a&gt;(2).&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-sweden-1950-2012&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/se_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 1950-2012&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/se_LEprojection.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Actual and projected life expectancy at birth, Sweden, 1950-2012
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+The similar issue happened here as well. Earlier projection (before 2000) was not quite right in comparison with the empirical one.&lt;/p&gt;
+&lt;p&gt;This report was done in 2012 (the empirical trend until 2012). I then followed what Statistics Sweden conducted to generate a similar graph with the earliest open-access projection data till 2009 and empirical data till 2018 using data from Statistics Sweden (3) as well.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-sweden-2000-2030&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/LEprojection_validation_SE_2030.jpg&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 2000-2030.&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/LEprojection_validation_SE_2030.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Actual and projected life expectancy at birth, Sweden, 2000-2030.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The difference was not as large as projection before 2000, but still, there could be 1-2 years of difference if projecting to 2030.&lt;/p&gt;
+&lt;h3 id=&#34;reflection&#34;&gt;Reflection&lt;/h3&gt;
+&lt;p&gt;The validation between the empirical and the projection makes me aware that the longer we predict, the more potential bias may happen as well. This is just an example of why projection into the future could be adventurous. Imagine that if it is already uncertain in life expectancy prediction of the general population, would it be more difficult to predict a group of people&amp;rsquo;s (such as a patient cohort&amp;rsquo;s) survival? For sure, I would pretty much say yes because multiple factors can all contribute to the change of that specific group of people, like advancement of treatment, geographical difference, healthcare delievery, etc.&lt;/p&gt;
+&lt;p&gt;Then shall we give up projection? I would however say no. I believe making prediction on something is better than knowing nothing and going ahead, even though people can always argue that we are forecasting &lt;strong&gt;the future&lt;/strong&gt; and say, &amp;ldquo;You never know.&amp;rdquo; Well, at least having a reference point is better than none, isn&amp;rsquo;t it? Still, I agree that there is no perfect prediction. Who knows what is happening tomorrow? However, prediction made diligently is more believable than casually forecasting the future.&lt;/p&gt;
+&lt;p&gt;Doesn&amp;rsquo;t my job sound like a fortune teller?&lt;/p&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Office for National Statistics, UK. National Population Projections Accuracy Report, 2015. Available from:
+&lt;a href=&#34;https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/methodologies/nationalpopulationprojectionsaccuracyreport&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.ons.gov.uk/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Statistiska centralbyrån (Statistics Sweden). Sveriges framtida befolkning 2012–2060 (Sweden&amp;rsquo;s future population), 2012. Available from 
+&lt;a href=&#34;http://share.scb.se/ov9993/data/publikationer/statistik/_publikationer/be0401_2012i60_br_be51br1202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://share.scb.se/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Statistiska centralbyrån (Statistics Sweden). Statistical database: Earlier projections on life expectancy by sex and age. Available from: &lt;a href=&#34;http://www.statistikdatabasen.scb.se/pxweb/en/ssd/&#34;&gt;http://www.statistikdatabasen.scb.se/pxweb/en/ssd/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
   </channel>
 </rss>

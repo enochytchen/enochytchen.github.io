@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>All-cause survival | Enoch Yi-Tung Chen</title>
+    <link>enochytchen.com/tutorials/extrapolation/allcause/</link>
+      <atom:link href="enochytchen.com/tutorials/extrapolation/allcause/index.xml" rel="self" type="application/rss+xml" />
+    <description>All-cause survival</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>All-cause survival</title>
+      <link>enochytchen.com/tutorials/extrapolation/allcause/</link>
+    </image>
+    
+    <item>
+      <title>Extrapolating survival (all-cause survival framework)</title>
+      <link>enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/</guid>
+      <description>&lt;p&gt;The codes used in this post are available 
+&lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_allcause_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This blogpost introduces how to extrapolate patients&amp;rsquo; survival using flexible parametric model with age groups (categorical variable) as covariates. The tutorial is following the post 
+&lt;a href=&#34;http://pauldickman.com/software/stata/prediction_new_data/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Predicting in a new data set with stpm2&lt;/a&gt; from 
+&lt;a href=&#34;http://pauldickman.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paul Dickman&lt;/a&gt;&amp;lsquo;s website, where he introduced how to extrapolate all-cause survival using flexible parametric model with age (continuous variable) and sex.&lt;/p&gt;
+&lt;p&gt;The following extrapolation results can then answer questions such as&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is the estimated survival of patients aged 50-59 diagnosed with colon cancer during 1975-1985?&lt;/li&gt;
+&lt;li&gt;What is the estimated survival of patients aged &amp;lt;50 diagnosed with breast cancer during 2000-2010?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h4&gt;
+&lt;p&gt;First you need to prepare the data before start modeling with stpm2. The exmaple colon cancer data used here can be found from my 
+&lt;a href=&#34;https://enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;previous post: Data preparation&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;use colon1975_1985,clear
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;stset stime, failure(dead==1,2) id(id) exit(time 10) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We stset the data for survival analysis. In this dataset, death from cancer was coded as dead=1 and from other causes as dead=2. We are interested in patients who died from any cause. We then assumed the maximum follow-up was 10 years, so exit(time 10) was set for making everyone censored after 10 years.&lt;/p&gt;
+&lt;h4 id=&#34;modeling-with-stpm2&#34;&gt;Modeling with &lt;code&gt;stpm2&lt;/code&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;stpm2 agegroup2-agegroup5, /// agegroup0 is reference group
+scale(hazard) df(5) eform /// hazard: propotional hazard
+tvc(agegroup2-agegroup5) dftvc(2) // tvc allows non-proportional hazard
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We then modeled the survival data in the flexible parametric model using stpm2. Basically, the setting showed that it is a proportional hazard model using scale(hazard), but we allowed time-dependent effects on the age group by using tvc(agegroup2-agegroup5).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;clear
+range agegroup 0 4 5 
+range _t 0 20 241 // (12*20)+1=241
+fillin agegroup _t
+drop if missing(agegroup,_t)
+
+quietly tab agegroup, gen(agegroup)
+ 
+predict s, survival timevar(_t) 
+sort agegroup _t
+
+save colon1975_1985_10yr_extrap, replace
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As the model was stored in the background, we first cleared the data but created a new dataset (12 months*20years + the last point) for prediction by using &lt;code&gt;fillin&lt;/code&gt;
+function. We then predict the survival by age group using predict to gain extrapolated values beyond 10 year of follow-up.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-extrapolation-by-restricting-follow-up-data-to-10-years&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_allcause_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_allcause_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Extrapolation by restricting follow-up data to 10 years
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+The survival was by age groups, where the first 10 years were observed survival and later came the predicted survival.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-comparing-extrapolation-with-empirical-k-m-curve&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_allcause_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_allcause_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Comparing extrapolation with empirical K-M curve
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;To evaluate the extrapolated survival, we then compared it with the empirical survival estimated by the Kaplan-Meier&amp;rsquo;s (K-M) method.&lt;/p&gt;
+&lt;p&gt;It seemed that for certain age groups in this dataset, the extrapolation would deviate from the empirical K-M curve. To obtain robust prediction, we prefer borrowing external information, such as vital statistics, to extrapolate the survival in relative survival framework rather than all-cause survival. Please refer to the next post: 
+&lt;a href=&#34;http://enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt; Extrapolating survival (relative survival framework) &lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

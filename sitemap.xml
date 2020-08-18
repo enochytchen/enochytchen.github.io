@@ -3,39 +3,150 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://enochytchen.github.io/authors/</loc>
+    <loc>enochytchen.com/tutorials/basicepi/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.github.io/categories/</loc>
+    <loc>enochytchen.com/tutorials/extrapolation/</loc>
+    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.github.io/</loc>
+    <loc>enochytchen.com/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.github.io/author/nelson-bighetti/</loc>
+    <loc>enochytchen.com/tutorials/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.github.io/post/</loc>
+    <loc>enochytchen.com/tag/data/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.github.io/publication_types/</loc>
+    <loc>enochytchen.com/post/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.github.io/publication/</loc>
+    <loc>enochytchen.com/post/7tips_gooddatamanagement/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.github.io/talk/</loc>
+    <loc>enochytchen.com/tag/shle-series/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.github.io/tags/</loc>
+    <loc>enochytchen.com/tags/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/post/why_datamanagement/</loc>
+    <lastmod>2020-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tag/expected-survival/</loc>
+    <lastmod>2020-05-12T14:52:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tag/life-expectancy/</loc>
+    <lastmod>2020-05-12T14:52:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/post/predictionishard/</loc>
+    <lastmod>2020-05-12T14:52:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tag/sweden/</loc>
+    <lastmod>2020-05-12T14:52:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tag/uk/</loc>
+    <lastmod>2020-05-12T14:52:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/extrapolation/allcause/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/extrapolation/data_prep/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/extrapolation/relative/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/author/</loc>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/directory/</loc>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/basicepi/fundamental/</loc>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/publication_types/</loc>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/publication/</loc>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/talk/</loc>
   </url>
   
 </urlset>

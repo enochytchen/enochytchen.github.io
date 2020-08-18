@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SHLE series | Enoch Yi-Tung Chen</title>
+    <link>enochytchen.com/tag/shle-series/</link>
+      <atom:link href="enochytchen.com/tag/shle-series/index.xml" rel="self" type="application/rss+xml" />
+    <description>SHLE series</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>SHLE series</title>
+      <link>enochytchen.com/tag/shle-series/</link>
+    </image>
+    
+    <item>
+      <title>Seven tips of good data management</title>
+      <link>enochytchen.com/post/7tips_gooddatamanagement/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/post/7tips_gooddatamanagement/</guid>
+      <description>&lt;p&gt;I was pretty inspired by 
+&lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;lsquo;s 
+&lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
+&lt;a href=&#34;http://enochytchen.com/post/why_datamanaegment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data management? Does it matter?&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;tip-1-use-a-shared-drive&#34;&gt;Tip 1: Use a shared drive&lt;/h4&gt;
+&lt;p&gt;Spilling coffee on the laptop! The laptop was stolen! These kinds of poor stories we propbably have ever heard from someone else, or they even happened to us. &lt;br&gt; Tragedies could happen, but using a shared drive could lower the impact it brings. Github, Tortoise, or other shared drives with a version control function can save you from the accident. It is recommended to commit your files to the shared drive once you finish the work everyday. Thus, you can always own a previous version of your files at the cloud drive or your colleagues&amp;rsquo;s drive (if they happen to use the same shared drive).&lt;br&gt;
+You &lt;strong&gt;commit&lt;/strong&gt; to your job. Why don&amp;rsquo;t you &lt;strong&gt;commit&lt;/strong&gt; your files as well? Establish a good habit of version control.&lt;/p&gt;
+&lt;h4 id=&#34;tip-2-give-appropriate-names-to-your-files-and-variables&#34;&gt;Tip 2: Give appropriate names to your files and variables&lt;/h4&gt;
+&lt;p&gt;Have you ever given your file an inappropriate name, and then you no longer found it?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t use stupid names, such as new1, new2, new3&amp;hellip;final1, final2, final3&amp;hellip;latest1&amp;hellip;&amp;hellip;A simple version mark plus date is quite enough (I usually use yyyymmdd)! E.g., manuscript_v1_20200501.&lt;/li&gt;
+&lt;li&gt;No space in-between &amp;amp; No special character, such as Swedish vowels (ä, ö, å) or Mandarin words (請避免使用中文字). This is just to avoid that your file name is not readable to the software.&lt;/li&gt;
+&lt;li&gt;For binomial variables, &lt;strong&gt;=1&lt;/strong&gt; implies yes, and &lt;strong&gt;=0&lt;/strong&gt; implies no. E.g., if a variable is entitled as &lt;code&gt;female&lt;/code&gt;, then &lt;strong&gt;=1&lt;/strong&gt; indicates female, &lt;strong&gt;=0&lt;/strong&gt; indicates male.&lt;/li&gt;
+&lt;li&gt;Convert a string variable to a numeric variable. Numeric varaibles are usually preferable for doing analysis. For example, in Stata, the conversion is done by &lt;code&gt;destring (variable), replace&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tip-3-give-the-same-names-for-linking-files&#34;&gt;Tip 3: Give the same names for linking files&lt;/h4&gt;
+&lt;p&gt;If you happen to organize the data, generate the log of the syntax, then output the result in word, it is recommended to use an identical name throughout these different files (.do .r .sas  → .log → .doc). The priciple here is simply mark these files were basicaly processed in a series.&lt;/p&gt;
+&lt;h4 id=&#34;tip-4-dont-replace-the-original-files-vaiables-if-a-new-one-is-created&#34;&gt;Tip 4: Don&amp;rsquo;t replace the original files/ vaiables if a new one is created&lt;/h4&gt;
+&lt;p&gt;It is quite common that new varivables are created during the data analysis. You should only create a new variable rather than overwrite the original variable. For example, &lt;code&gt;age → nage &lt;/code&gt;. The same concept applies if you want to modify a file. However, if you accidentally overwrite the orginal file and you do have version control (&lt;strong&gt;Tip 1&lt;/strong&gt;), there is still chance to trace it back.&lt;/p&gt;
+&lt;h4 id=&#34;tip-5-use-file-headers-to-document-your-work&#34;&gt;Tip 5: Use file headers to document your work&lt;/h4&gt;
+&lt;p&gt;A file header plays a role as a reminder of what has been done in this single file. It allows us to understand that file by just reading the header. You yourself and your team members definitely say thank-you for keeping this record in the future.
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/fileheader.png&#34; &gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/fileheader.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;tip-6-write-notes-while-writing-the-codes&#34;&gt;Tip 6: Write notes while writing the codes&lt;/h4&gt;
+&lt;p&gt;My biostat teacher used to talk to himself while writing codes on his program file. He even wrote, &lt;code&gt;What are we doing now? We are gonna......&lt;/code&gt; I actually thought it was quite funny when he did that. But basically, telling yourself what you are doing is quite fundamental, since you &lt;strong&gt;will absolutely forget&lt;/strong&gt; what you did. In addition, when I use new commands, I would also write down what it means, even though at that moment I caught the meaning of it.
+The same concept applies to keeping workbook or a working records. Believe me or not, your memories are not trustworthy! It is extra work definitely. Please do write something down and properly keep it.&lt;/p&gt;
+&lt;h4 id=&#34;tip-7-write-a-readmetxt&#34;&gt;Tip 7: Write a Readme.txt&lt;/h4&gt;
+&lt;p&gt;A Readme.txt functions as a table of contents. Basically, Readme should explain the contents in each folder, the author(s) of the work, and the modification that has been updated.&lt;/p&gt;
+&lt;p&gt;Imagine that you go to a restaurant, and you would like to order some dishes. Reasonably, you would ask for a &lt;strong&gt;menu&lt;/strong&gt;. A Readme.txt is the &lt;strong&gt;menu&lt;/strong&gt; of your folders or files. To be a good restaurant owner, would you run your business without a proper &lt;strong&gt;menu&lt;/strong&gt;?&lt;/p&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The Department of Medical Epidemiology and Biostatistics, Karolinska Institutet. MEB Guidelines for Documentation and Archiving Version 6. 2018.&lt;/li&gt;
+&lt;li&gt;Johansson A. 
+&lt;a href=&#34;https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data Management and research documentation for researchers&lt;/a&gt;. KIB Workshop 2018.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enoch Yi-Tung Chen</title>
+    <link>enochytchen.com/tutorials/extrapolation/data_prep/</link>
+      <atom:link href="enochytchen.com/tutorials/extrapolation/data_prep/index.xml" rel="self" type="application/rss+xml" />
+    <description>Enoch Yi-Tung Chen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Enoch Yi-Tung Chen</title>
+      <link>enochytchen.com/tutorials/extrapolation/data_prep/</link>
+    </image>
+    
+    <item>
+      <title>Data clearance</title>
+      <link>enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</guid>
+      <description>&lt;p&gt;The codes used in this post are available 
+&lt;a href=&#34;http://enochytchen.com/directory/stata/data_prep_extrapolation.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;// This data was downlaoded from Paul Dickman&#39;s website
+
+// Diagnosis 1975-1985
+use http://enochytchen.com/directory/data/colon.dta if yydx&amp;gt;=1975 &amp;amp; yydx&amp;lt;=1985, clear
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The data is originally from &lt;a href=&#34;https://pauldickman.com/survival/colon.dta,&#34;&gt;https://pauldickman.com/survival/colon.dta,&lt;/a&gt; permited use by 
+&lt;a href=&#34;http://pauldickman.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paul Dickman&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;// Rename variables
+rename yydx yeardiag
+rename age agediag
+gen stime=surv_mm/12
+rename status dead
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The varaibles are renamed for further use in the upcoming analysis.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Smart way to creating age groups
+egen agegroup=cut(agediag), at(0 50 60 70 80 200) icodes
+label variable agegroup &amp;quot;Age group&amp;quot;
+label define agegroup 0 &amp;quot;0-49&amp;quot; 1 &amp;quot;50-59&amp;quot; 2 &amp;quot;60-69&amp;quot; 3 &amp;quot;70-79&amp;quot; 4 &amp;quot;80+&amp;quot; 
+label values agegroup agegroup
+// Create dummy varaiables for age categories
+quietly tab agegroup, gen(agegroup)
+
+save colon1975_1985,replace
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Patients were categorized by age group &amp;lt;50, 50-59, 60-69, 70-79, &amp;gt;=80. Dummy variables on age group were created for modeling in stpm2. Then save the file for further modeling.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Population mortality projection</title>
+      <link>enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</guid>
+      <description>&lt;p&gt;The codes used in this post are available 
+&lt;a href=&#34;http://enochytchen.com/directory/stata/popmort_projection.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

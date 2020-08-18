@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>expected survival | Enoch Yi-Tung Chen</title>
+    <link>enochytchen.com/tag/expected-survival/</link>
+      <atom:link href="enochytchen.com/tag/expected-survival/index.xml" rel="self" type="application/rss+xml" />
+    <description>expected survival</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 12 May 2020 14:52:16 +0200</lastBuildDate>
+    <image>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>expected survival</title>
+      <link>enochytchen.com/tag/expected-survival/</link>
+    </image>
+    
+    <item>
+      <title>Not easy to be a fortune teller: prediction is hard</title>
+      <link>enochytchen.com/post/predictionishard/</link>
+      <pubDate>Tue, 12 May 2020 14:52:16 +0200</pubDate>
+      <guid>enochytchen.com/post/predictionishard/</guid>
+      <description>&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
+
+&lt;a href=&#34;https://quoteinvestigator.com/2013/10/20/no-predict/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;It’s Difficult to Make Predictions, Especially About the Future&lt;/a&gt;. Basically, these quotes do not differ from one another. They generally want to express that predection on future is risky and chanllenging. Moreover, it could lead to quantitative problems, such as underestimation or overestimation.&lt;/p&gt;
+&lt;p&gt;Recently, while I was working on life expectancy estimation, a colleague proposed a quesiton, &amp;ldquo;If you are validating expected survival of patients in 1990s, shall you use the survival projection made in 1990s rather than the empircal survival?&amp;rdquo; As a person living in 2020, it was quite intuitive to me to use empirical data to validate the survival prediction. Nevertheless, practically, statisticians back to 1990s only had projection data. Based on this fact, I was quite convinced that I should have used the projection data made at that time.&lt;/p&gt;
+&lt;p&gt;However, how precise was the data? Here come two small examples of validating life expectancy projection in the UK and Sweden.&lt;/p&gt;
+&lt;h3 id=&#34;the-uks-life-expectancy-projection&#34;&gt;The UK&amp;rsquo;s life expectancy projection&lt;/h3&gt;
+&lt;p&gt;The UK&amp;rsquo;s Office for National Statistics has ever published a report of validating the accurancy of life expectancy. The following figure was downloaded from 
+&lt;a href=&#34;https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/methodologies/nationalpopulationprojectionsaccuracyreport&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;National Population Projections Accuracy Report&lt;/a&gt; (1).&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-uk-1966-2030&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/uk_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, UK, 1966-2030&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/uk_LEprojection.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Actual and projected life expectancy at birth, UK, 1966-2030
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;It seems that the projection made before 2002 did not perform quite well. For example, projection made in 1975 saying males&amp;rsquo; life expectancy at birth was estimated to be 71 in 2001, whereas in 2001 it was actuall 79. A 8 years of difference! Then let&amp;rsquo;s take a look on the Swedish population.&lt;/p&gt;
+&lt;h3 id=&#34;the-swedens-life-expectancy-projection&#34;&gt;The Sweden&amp;rsquo;s life expectancy projection&lt;/h3&gt;
+&lt;p&gt;Statistiska centralbyrån (Statistics Sweden) also published a similar report as the UK did to evaluate their previous projection on life expectancy. The following figure was downloaded from 
+&lt;a href=&#34;http://share.scb.se/ov9993/data/publikationer/statistik/_publikationer/be0401_2012i60_br_be51br1202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sveriges framtida befolkning 2012–2060&lt;/a&gt;(2).&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-sweden-1950-2012&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/se_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 1950-2012&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/se_LEprojection.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Actual and projected life expectancy at birth, Sweden, 1950-2012
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+The similar issue happened here as well. Earlier projection (before 2000) was not quite right in comparison with the empirical one.&lt;/p&gt;
+&lt;p&gt;This report was done in 2012 (the empirical trend until 2012). I then followed what Statistics Sweden conducted to generate a similar graph with the earliest open-access projection data till 2009 and empirical data till 2018 using data from Statistics Sweden (3) as well.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-sweden-2000-2030&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/LEprojection_validation_SE_2030.jpg&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 2000-2030.&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/LEprojection_validation_SE_2030.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Actual and projected life expectancy at birth, Sweden, 2000-2030.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The difference was not as large as projection before 2000, but still, there could be 1-2 years of difference if projecting to 2030.&lt;/p&gt;
+&lt;h3 id=&#34;reflection&#34;&gt;Reflection&lt;/h3&gt;
+&lt;p&gt;The validation between the empirical and the projection makes me aware that the longer we predict, the more potential bias may happen as well. This is just an example of why projection into the future could be adventurous. Imagine that if it is already uncertain in life expectancy prediction of the general population, would it be more difficult to predict a group of people&amp;rsquo;s (such as a patient cohort&amp;rsquo;s) survival? For sure, I would pretty much say yes because multiple factors can all contribute to the change of that specific group of people, like advancement of treatment, geographical difference, healthcare delievery, etc.&lt;/p&gt;
+&lt;p&gt;Then shall we give up projection? I would however say no. I believe making prediction on something is better than knowing nothing and going ahead, even though people can always argue that we are forecasting &lt;strong&gt;the future&lt;/strong&gt; and say, &amp;ldquo;You never know.&amp;rdquo; Well, at least having a reference point is better than none, isn&amp;rsquo;t it? Still, I agree that there is no perfect prediction. Who knows what is happening tomorrow? However, prediction made diligently is more believable than casually forecasting the future.&lt;/p&gt;
+&lt;p&gt;Doesn&amp;rsquo;t my job sound like a fortune teller?&lt;/p&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Office for National Statistics, UK. National Population Projections Accuracy Report, 2015. Available from:
+&lt;a href=&#34;https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/methodologies/nationalpopulationprojectionsaccuracyreport&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.ons.gov.uk/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Statistiska centralbyrån (Statistics Sweden). Sveriges framtida befolkning 2012–2060 (Sweden&amp;rsquo;s future population), 2012. Available from 
+&lt;a href=&#34;http://share.scb.se/ov9993/data/publikationer/statistik/_publikationer/be0401_2012i60_br_be51br1202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://share.scb.se/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Statistiska centralbyrån (Statistics Sweden). Statistical database: Earlier projections on life expectancy by sex and age. Available from: &lt;a href=&#34;http://www.statistikdatabasen.scb.se/pxweb/en/ssd/&#34;&gt;http://www.statistikdatabasen.scb.se/pxweb/en/ssd/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

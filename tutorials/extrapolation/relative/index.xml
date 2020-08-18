@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Relative survival | Enoch Yi-Tung Chen</title>
+    <link>enochytchen.com/tutorials/extrapolation/relative/</link>
+      <atom:link href="enochytchen.com/tutorials/extrapolation/relative/index.xml" rel="self" type="application/rss+xml" />
+    <description>Relative survival</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Relative survival</title>
+      <link>enochytchen.com/tutorials/extrapolation/relative/</link>
+    </image>
+    
+    <item>
+      <title>Make expected survival</title>
+      <link>enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</guid>
+      <description>&lt;p&gt;The codes used in this post are available 
+&lt;a href=&#34;http://enochytchen.com/directory/stata/make_expected_survival.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Extrapolating survival (relative survival framework)</title>
+      <link>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</link>
+      <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</guid>
+      <description>&lt;p&gt;The codes used in this post are available 
+&lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_relative_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h4&gt;
+&lt;p&gt;First you need to prepare the data before start modeling with stpm2. The exmaple data used here can be found from my 
+&lt;a href=&#34;https://http://enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;previous post: Data preparation&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;expected-survival&#34;&gt;Expected survival&lt;/h4&gt;
+&lt;p&gt;Other than modeling on patient survival, $S(t)$, it is more plausible to borrow external information, such as vital statistics, to obtain expected survival, $S^{*}(t)$, to extrapolate survival within relative survival framework.&lt;/p&gt;
+&lt;p&gt;$R(t)=\frac{S(t)}{S^{*}(t)}$&lt;/p&gt;
+&lt;p&gt;The analogue of relative survival, $R(t)$,  on a hazard scale is&lt;/p&gt;
+&lt;p&gt;$h(t)=h^{*}(t)+\lambda(t)$&lt;/p&gt;
+&lt;p&gt;By integration, the result is&lt;/p&gt;
+&lt;p&gt;$H(t)=H^{*}(t)+\Lambda(t),$&lt;/p&gt;
+&lt;p&gt;where the cumulative hazard, $H(t)$, consists of the cumulative expected hazard, $H^{*}(t)$, and the cumulative excess hazard, $\Lambda(t)$.&lt;/p&gt;
+&lt;p&gt;The cumulative expected hazard can be obtained from population mortality. For how to prepare life table data for expected survival, the hand-in-hand teaching materials can be found at my previous posts: 
+&lt;a href=&#34;https://http://enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Population mortality rate projection&lt;/a&gt; and 
+&lt;a href=&#34;https://http://enochytchen.com/tutorials/extrapolation/extrapolating_rel/make_expected_survival/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Prepare expected survival&lt;/a&gt;. colon_expected_survival.dta and popmort_projection.dta, both of which will be used in the following modeling process, will be generated after running the do files.&lt;/p&gt;
+&lt;p&gt;After running the above programs, we then acquire the expected survival corresponding to the patient cohort&amp;rsquo;s survival by age, sex, and calendar year. Here we start model the relative survival.&lt;/p&gt;
+&lt;h4 id=&#34;creating-relative-survival&#34;&gt;Creating relative survival&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;use colon1975_1985,clear
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;stset stime, failure(dead==1,2) id(id) exit(time 10) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We stset the data for survival analysis. In this dataset, death from cancer was coded as dead=1 and from other causes as dead=2. We are interested in patients who died from any cause. We then assumed the maximum follow-up was 10 years, so exit(time 10) was set for making everyone censored after 10 years.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gen _year= floor(min(yeardiag + _t, 1995)) 
+gen _age=floor(min(agediag + _t, 105)) 
+
+merge m:1 _year sex _age /// 
+	using popmort_projection.dta, ///
+	nolabel keep(match master) keepusing(rate) 
+	
+drop _age _year _merge
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;_year and _age were created corresponding to the life table. The maximum of _year was set as 1995, and _age as 105. Then the patients&amp;rsquo; survival data was merged with life table to obtain the expected mortality rate.&lt;/p&gt;
+&lt;h4 id=&#34;modeling-relative-survival-with-stpm2&#34;&gt;Modeling relative survival with &lt;code&gt;stpm2&lt;/code&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;stpm2 agegroup2-agegroup5, ///
+scale(hazard) df(5) eform ///
+tvc(agegroup2-agegroup5) dftvc(2) bhazard(rate) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Rather than 
+&lt;a href=&#34;http://enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;modeling all-cause survival&lt;/a&gt;, we specified using bhazard(rate) for modeling relative survival on log cumulative excess hazard using stpm2.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;clear
+range agegroup 0 4 5 
+range _t 0 20 241 // (12*20)+1=241
+fillin agegroup _t
+drop if missing(agegroup,_t)
+
+quietly tab agegroup, gen(agegroup)
+
+predict rs, survival timevar(_t) 
+sort agegroup _t
+
+save colon_10yr_rs_extrap, replace
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Still a empty dataset was created for extrapolation. We then predict the &lt;strong&gt;relative survival&lt;/strong&gt; by age group using predict to gain extrapolated values beyond 10 year of follow-up and save the extrapolated relative survival.&lt;/p&gt;
+&lt;p&gt;So far we have already successfully predicted relative survival. Looking back to the equation of relative survival, R(t), it can be easily transformed back to the all-cause survival, $S(t)$, by multiplying with expected survival, $S^*(t)$.&lt;/p&gt;
+&lt;p&gt;$S(t)=R(t) \times S^{*}(t)$&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;use colon_expected_survival, clear
+sort agegroup _t
+
+merge m:1 agegroup _t  ///
+using  colon_10yr_rs_extrap, ///
+nolabel keep(match master) keepusing(rs) 
+
+//S(t)=S^*(t) * R(t)
+//cp=cp_e2*cr_e2
+drop _merge
+gen obs=cp_e2*rs
+replace obs=1 if _t==0
+sort agegroup _t
+
+save colon_10yr_rs_to_allcause, replace
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-extrapolation-by-restricting-follow-up-data-to-10-years&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Extrapolation by restricting follow-up data to 10 years
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+The survival was by age groups, where the first 10 years were observed survival and later came the predicted survival. To compare with the empirical Kaplan-Meier curves, the figure below demonstrates the extrapolation.&lt;/p&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-comparing-extrapolation-with-empirical-k-m-curve&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
+
+
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Comparing extrapolation with empirical K-M curve
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Extrapolation within relative survival framework is more robust than all-cause survival. In comparison with the figure in 
+&lt;a href=&#34;https://http://enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Extrapolating survival with stpm2 (Part 1)&lt;/a&gt;, we could observe that the extrapolated survival curves deviate less from the empirical K-M curves.&lt;/p&gt;
+&lt;p&gt;You may wonder it does not seem to be much different from each other. However, due to the maximum 20 years of follow-up in this dataset, we were not able to generate the empirical curve beyond 20 years. If another dataset containing a longer follow-up period is used, we project that extrapolation in all-cause survival would deviate more, resulting uncertainty in prediction.&lt;/p&gt;
+&lt;p&gt;So far we have briefly compare the difference between extrapolating survival in all-cause survival and in relative survival. But what makes relative survival more plausible for extrapolation? Please check the 
+&lt;a href=&#34;https://enochytchen.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;next post: Why makes extrapolating relative survival more precise?&lt;/a&gt; for explanation!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

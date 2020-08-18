@@ -1,0 +1,1013 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Extrapolating relative survival and transforming it back to all-cause survival by mutiplying the expected survival.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/enochytchen.com/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/stata.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/stata.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/enochytchen.com/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/enochytchen.com/index.webmanifest">
+  <link rel="icon" type="image/png" href="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Enoch Yi-Tung Chen">
+  <meta property="og:url" content="enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/">
+  <meta property="og:title" content="Extrapolating survival (relative survival framework) | Enoch Yi-Tung Chen">
+  <meta property="og:description" content="Extrapolating relative survival and transforming it back to all-cause survival by mutiplying the expected survival."><meta property="og:image" content="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-04-20T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-04-20T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Extrapolating survival (relative survival framework) | Enoch Yi-Tung Chen</title>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/enochytchen.com/">Enoch Yi-Tung Chen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/enochytchen.com/">Enoch Yi-Tung Chen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/enochytchen.com/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/enochytchen.com/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/enochytchen.com/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/enochytchen.com/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/enochytchen.com/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="enochytchen.com/tutorials/extrapolation/data_prep/">Data preparation</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/">Data clearance</a>
+      </li>
+      
+      <li >
+        <a href="enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/">Population mortality projection</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="enochytchen.com/tutorials/extrapolation/allcause/">All-cause survival</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/">Extrapolating survival (all-cause)</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="enochytchen.com/tutorials/extrapolation/relative/">Relative survival</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/">Expected survival</a>
+      </li>
+      
+      <li class="active">
+        <a href="enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/">Extrapolating survival (relative)</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Extrapolating survival (relative survival framework)</h1>
+
+          <div class="article-style">
+            <p>The codes used in this post are available 
+<a href="http://enochytchen.com/directory/stata/extrapolating_relative_stpm2.do" target="_blank" rel="noopener">here</a></p>
+<h4 id="data-preparation">Data preparation</h4>
+<p>First you need to prepare the data before start modeling with stpm2. The exmaple data used here can be found from my 
+<a href="https://http://enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/" target="_blank" rel="noopener">previous post: Data preparation</a>.</p>
+<h4 id="expected-survival">Expected survival</h4>
+<p>Other than modeling on patient survival, $S(t)$, it is more plausible to borrow external information, such as vital statistics, to obtain expected survival, $S^{*}(t)$, to extrapolate survival within relative survival framework.</p>
+<p>$R(t)=\frac{S(t)}{S^{*}(t)}$</p>
+<p>The analogue of relative survival, $R(t)$,  on a hazard scale is</p>
+<p>$h(t)=h^{*}(t)+\lambda(t)$</p>
+<p>By integration, the result is</p>
+<p>$H(t)=H^{*}(t)+\Lambda(t),$</p>
+<p>where the cumulative hazard, $H(t)$, consists of the cumulative expected hazard, $H^{*}(t)$, and the cumulative excess hazard, $\Lambda(t)$.</p>
+<p>The cumulative expected hazard can be obtained from population mortality. For how to prepare life table data for expected survival, the hand-in-hand teaching materials can be found at my previous posts: 
+<a href="https://http://enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/" target="_blank" rel="noopener">Population mortality rate projection</a> and 
+<a href="https://http://enochytchen.com/tutorials/extrapolation/extrapolating_rel/make_expected_survival/" target="_blank" rel="noopener">Prepare expected survival</a>. colon_expected_survival.dta and popmort_projection.dta, both of which will be used in the following modeling process, will be generated after running the do files.</p>
+<p>After running the above programs, we then acquire the expected survival corresponding to the patient cohort&rsquo;s survival by age, sex, and calendar year. Here we start model the relative survival.</p>
+<h4 id="creating-relative-survival">Creating relative survival</h4>
+<pre><code>use colon1975_1985,clear
+</code></pre>
+<pre><code>stset stime, failure(dead==1,2) id(id) exit(time 10) 
+</code></pre>
+<p>We stset the data for survival analysis. In this dataset, death from cancer was coded as dead=1 and from other causes as dead=2. We are interested in patients who died from any cause. We then assumed the maximum follow-up was 10 years, so exit(time 10) was set for making everyone censored after 10 years.</p>
+<pre><code>gen _year= floor(min(yeardiag + _t, 1995)) 
+gen _age=floor(min(agediag + _t, 105)) 
+
+merge m:1 _year sex _age /// 
+	using popmort_projection.dta, ///
+	nolabel keep(match master) keepusing(rate) 
+	
+drop _age _year _merge
+</code></pre>
+<p>_year and _age were created corresponding to the life table. The maximum of _year was set as 1995, and _age as 105. Then the patients&rsquo; survival data was merged with life table to obtain the expected mortality rate.</p>
+<h4 id="modeling-relative-survival-with-stpm2">Modeling relative survival with <code>stpm2</code></h4>
+<pre><code>stpm2 agegroup2-agegroup5, ///
+scale(hazard) df(5) eform ///
+tvc(agegroup2-agegroup5) dftvc(2) bhazard(rate) 
+</code></pre>
+<p>Rather than 
+<a href="http://enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/" target="_blank" rel="noopener">modeling all-cause survival</a>, we specified using bhazard(rate) for modeling relative survival on log cumulative excess hazard using stpm2.</p>
+<pre><code>clear
+range agegroup 0 4 5 
+range _t 0 20 241 // (12*20)+1=241
+fillin agegroup _t
+drop if missing(agegroup,_t)
+
+quietly tab agegroup, gen(agegroup)
+
+predict rs, survival timevar(_t) 
+sort agegroup _t
+
+save colon_10yr_rs_extrap, replace
+</code></pre>
+<p>Still a empty dataset was created for extrapolation. We then predict the <strong>relative survival</strong> by age group using predict to gain extrapolated values beyond 10 year of follow-up and save the extrapolated relative survival.</p>
+<p>So far we have already successfully predicted relative survival. Looking back to the equation of relative survival, R(t), it can be easily transformed back to the all-cause survival, $S(t)$, by multiplying with expected survival, $S^*(t)$.</p>
+<p>$S(t)=R(t) \times S^{*}(t)$</p>
+<pre><code>use colon_expected_survival, clear
+sort agegroup _t
+
+merge m:1 agegroup _t  ///
+using  colon_10yr_rs_extrap, ///
+nolabel keep(match master) keepusing(rs) 
+
+//S(t)=S^*(t) * R(t)
+//cp=cp_e2*cr_e2
+drop _merge
+gen obs=cp_e2*rs
+replace obs=1 if _t==0
+sort agegroup _t
+
+save colon_10yr_rs_to_allcause, replace
+</code></pre>
+<p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-extrapolation-by-restricting-follow-up-data-to-10-years">
+
+
+  <a data-fancybox="" href="/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png" data-caption="Extrapolation by restricting follow-up data to 10 years">
+
+
+  <img src="/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption>
+    Extrapolation by restricting follow-up data to 10 years
+  </figcaption>
+
+
+</figure>
+
+The survival was by age groups, where the first 10 years were observed survival and later came the predicted survival. To compare with the empirical Kaplan-Meier curves, the figure below demonstrates the extrapolation.</p>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-comparing-extrapolation-with-empirical-k-m-curve">
+
+
+  <a data-fancybox="" href="/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png" data-caption="Comparing extrapolation with empirical K-M curve">
+
+
+  <img src="/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption>
+    Comparing extrapolation with empirical K-M curve
+  </figcaption>
+
+
+</figure>
+
+<p>Extrapolation within relative survival framework is more robust than all-cause survival. In comparison with the figure in 
+<a href="https://http://enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/" target="_blank" rel="noopener">Extrapolating survival with stpm2 (Part 1)</a>, we could observe that the extrapolated survival curves deviate less from the empirical K-M curves.</p>
+<p>You may wonder it does not seem to be much different from each other. However, due to the maximum 20 years of follow-up in this dataset, we were not able to generate the empirical curve beyond 20 years. If another dataset containing a longer follow-up period is used, we project that extrapolation in all-cause survival would deviate more, resulting uncertainty in prediction.</p>
+<p>So far we have briefly compare the difference between extrapolating survival in all-cause survival and in relative survival. But what makes relative survival more plausible for extrapolation? Please check the 
+<a href="https://enochytchen.com/" target="_blank" rel="noopener">next post: Why makes extrapolating relative survival more precise?</a> for explanation!</p>
+
+          </div>
+
+          
+
+
+
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Apr 20, 2020</p>
+
+          
+
+
+
+
+
+          
+
+
+          
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/true.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/enochytchen.com/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/enochytchen.com/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
