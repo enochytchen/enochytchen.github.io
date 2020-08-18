@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fundamental measures | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.com/tutorials/basicepi/fundamental/</link>
-      <atom:link href="enochytchen.com/tutorials/basicepi/fundamental/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.github.io/tutorials/basicepi/fundamental/</link>
+      <atom:link href="enochytchen.github.io/tutorials/basicepi/fundamental/index.xml" rel="self" type="application/rss+xml" />
     <description>Fundamental measures</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
-      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Fundamental measures</title>
-      <link>enochytchen.com/tutorials/basicepi/fundamental/</link>
+      <link>enochytchen.github.io/tutorials/basicepi/fundamental/</link>
     </image>
     
   </channel>
