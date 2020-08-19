@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/tutorials/extrapolation/data_prep/</link>
-      <atom:link href="enochytchen.github.io/tutorials/extrapolation/data_prep/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://enochytchen.com/tutorials/extrapolation/data_prep/</link>
+      <atom:link href="https://enochytchen.com/tutorials/extrapolation/data_prep/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/data_prep/</link>
+      <link>https://enochytchen.com/tutorials/extrapolation/data_prep/</link>
     </image>
     
     <item>
       <title>Data clearance</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/data_prep/data_preparation/</link>
+      <link>https://enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/data_prep/data_preparation/</guid>
+      <guid>https://enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/data_prep_extrapolation.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;// This data was downlaoded from Paul Dickman&#39;s website
@@ -49,9 +49,9 @@ save colon1975_1985,replace
     
     <item>
       <title>Population mortality projection</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/data_prep/popmort_projection/</link>
+      <link>https://enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/data_prep/popmort_projection/</guid>
+      <guid>https://enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/popmort_projection.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/</link>
-      <atom:link href="enochytchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://enochytchen.com/</link>
+      <atom:link href="https://enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
-      <link>enochytchen.github.io/</link>
+      <link>https://enochytchen.com/</link>
     </image>
     
     <item>
       <title>Make ratetable using R</title>
-      <link>enochytchen.github.io/tutorials/ratetable/content/</link>
+      <link>https://enochytchen.com/tutorials/ratetable/content/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/ratetable/content/</guid>
+      <guid>https://enochytchen.com/tutorials/ratetable/content/</guid>
       <description>&lt;p&gt;The syntax used in this tutorial can be found 
 &lt;a href=&#34;create_ratetable&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h3&gt;
@@ -135,10 +135,10 @@ legend(&amp;quot;topleft&amp;quot;, legend=c(&amp;quot;Female&amp;quot;, &amp;qu
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://enochytchen.com/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
 
 
-  &lt;img data-src=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
+  &lt;img data-src=&#34;https://enochytchen.com/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
 &lt;/a&gt;
 
 
@@ -287,10 +287,10 @@ summary(rssurv.plotdata)
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://enochytchen.com/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
 
 
-  &lt;img data-src=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
+  &lt;img data-src=&#34;https://enochytchen.com/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
 &lt;/a&gt;
 
 
@@ -322,9 +322,9 @@ summary(rssurv.plotdata)
     
     <item>
       <title>Seven tips of good data management</title>
-      <link>enochytchen.github.io/post/gooddatamanagement/</link>
+      <link>https://enochytchen.com/post/gooddatamanagement/</link>
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/post/gooddatamanagement/</guid>
+      <guid>https://enochytchen.com/post/gooddatamanagement/</guid>
       <description>&lt;p&gt;I was pretty inspired by 
 &lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;lsquo;s 
 &lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
@@ -392,9 +392,9 @@ The same concept applies to keeping workbook or a working records. Believe me or
     
     <item>
       <title>Data management? Does it matter?</title>
-      <link>enochytchen.github.io/post/why_datamanagement/</link>
+      <link>https://enochytchen.com/post/why_datamanagement/</link>
       <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/post/why_datamanagement/</guid>
+      <guid>https://enochytchen.com/post/why_datamanagement/</guid>
       <description>&lt;h3 id=&#34;why-should-you-do-data-management&#34;&gt;Why should you do data management?&lt;/h3&gt;
 &lt;p&gt;We all have experienced unexpected shutdown of our laptops or even files we were still processing and haven&amp;rsquo;t saved yet. Maybe these nightmares are quite unavoidable sometimes; otherwise, I wouldn&amp;rsquo;t call it &lt;strong&gt;unexpected&lt;/strong&gt;, and we would not have &lt;strong&gt;cursed&lt;/strong&gt; as it happened.&lt;/p&gt;
 &lt;p&gt;The most attractive points of data management are&lt;/p&gt;
@@ -428,9 +428,9 @@ The same concept applies to keeping workbook or a working records. Believe me or
     
     <item>
       <title>Not easy to be a fortune teller: prediction is hard</title>
-      <link>enochytchen.github.io/post/prediction/</link>
+      <link>https://enochytchen.com/post/prediction/</link>
       <pubDate>Tue, 12 May 2020 14:52:16 +0200</pubDate>
-      <guid>enochytchen.github.io/post/prediction/</guid>
+      <guid>https://enochytchen.com/post/prediction/</guid>
       <description>&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
 
 &lt;a href=&#34;https://quoteinvestigator.com/2013/10/20/no-predict/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;It’s Difficult to Make Predictions, Especially About the Future&lt;/a&gt;. Basically, these quotes do not differ from one another. They generally want to express that predection on future is risky and chanllenging. Moreover, it could lead to quantitative problems, such as underestimation or overestimation.&lt;/p&gt;
@@ -568,9 +568,9 @@ The same concept applies to keeping workbook or a working records. Believe me or
     
     <item>
       <title>Extrapolating survival (all-cause survival framework)</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/allcause/article/</link>
+      <link>https://enochytchen.com/tutorials/extrapolation/allcause/article/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/allcause/article/</guid>
+      <guid>https://enochytchen.com/tutorials/extrapolation/allcause/article/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_allcause_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This blogpost introduces how to extrapolate patients&amp;rsquo; survival using flexible parametric model with age groups (categorical variable) as covariates. The tutorial is following the post 
@@ -688,9 +688,9 @@ function. We then predict the survival by age group using predict to gain extrap
     
     <item>
       <title>Data clearance</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/data_prep/data_preparation/</link>
+      <link>https://enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/data_prep/data_preparation/</guid>
+      <guid>https://enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/data_prep_extrapolation.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;// This data was downlaoded from Paul Dickman&#39;s website
@@ -723,9 +723,9 @@ save colon1975_1985,replace
     
     <item>
       <title>Make expected survival</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/relative/make_expected_survival/</link>
+      <link>https://enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/relative/make_expected_survival/</guid>
+      <guid>https://enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/make_expected_survival.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -733,9 +733,9 @@ save colon1975_1985,replace
     
     <item>
       <title>Extrapolating survival (relative survival framework)</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/relative/article/</link>
+      <link>https://enochytchen.com/tutorials/extrapolation/relative/article/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/relative/article/</guid>
+      <guid>https://enochytchen.com/tutorials/extrapolation/relative/article/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_relative_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h4&gt;
@@ -830,10 +830,10 @@ save colon_10yr_rs_to_allcause, replace
 &lt;figure id=&#34;figure-extrapolation-by-restricting-follow-up-data-to-10-years&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/extrapolation/relative/article/extrap_rel_fig1_hu563a6fc5b07ca74af1cf00cd17cdbc8c_108321_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://enochytchen.com/tutorials/extrapolation/relative/article/extrap_rel_fig1_hu563a6fc5b07ca74af1cf00cd17cdbc8c_108321_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
 
 
-  &lt;img data-src=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/extrapolation/relative/article/extrap_rel_fig1_hu563a6fc5b07ca74af1cf00cd17cdbc8c_108321_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;913&#34; height=&#34;664&#34;&gt;
+  &lt;img data-src=&#34;https://enochytchen.com/tutorials/extrapolation/relative/article/extrap_rel_fig1_hu563a6fc5b07ca74af1cf00cd17cdbc8c_108321_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;913&#34; height=&#34;664&#34;&gt;
 &lt;/a&gt;
 
 
@@ -869,10 +869,10 @@ The survival was by age groups, where the first 10 years were observed survival 
 &lt;figure id=&#34;figure-comparing-extrapolation-with-empirical-k-m-curve&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/extrapolation/relative/article/extrap_rel_fig2_hu8007263a7dbdafca00725d525ecfdc60_102910_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://enochytchen.com/tutorials/extrapolation/relative/article/extrap_rel_fig2_hu8007263a7dbdafca00725d525ecfdc60_102910_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
 
 
-  &lt;img data-src=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/extrapolation/relative/article/extrap_rel_fig2_hu8007263a7dbdafca00725d525ecfdc60_102910_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;913&#34; height=&#34;664&#34;&gt;
+  &lt;img data-src=&#34;https://enochytchen.com/tutorials/extrapolation/relative/article/extrap_rel_fig2_hu8007263a7dbdafca00725d525ecfdc60_102910_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;913&#34; height=&#34;664&#34;&gt;
 &lt;/a&gt;
 
 
@@ -895,9 +895,9 @@ The survival was by age groups, where the first 10 years were observed survival 
     
     <item>
       <title>Population mortality projection</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/data_prep/popmort_projection/</link>
+      <link>https://enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/data_prep/popmort_projection/</guid>
+      <guid>https://enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/popmort_projection.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -905,9 +905,9 @@ The survival was by age groups, where the first 10 years were observed survival 
     
     <item>
       <title>Recent posts</title>
-      <link>enochytchen.github.io/tutorials/_index-/</link>
+      <link>https://enochytchen.com/tutorials/_index-/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/_index-/</guid>
+      <guid>https://enochytchen.com/tutorials/_index-/</guid>
       <description></description>
     </item>
     

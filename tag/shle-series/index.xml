@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SHLE series | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/tag/shle-series/</link>
-      <atom:link href="enochytchen.github.io/tag/shle-series/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://enochytchen.com/tag/shle-series/</link>
+      <atom:link href="https://enochytchen.com/tag/shle-series/index.xml" rel="self" type="application/rss+xml" />
     <description>SHLE series</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>SHLE series</title>
-      <link>enochytchen.github.io/tag/shle-series/</link>
+      <link>https://enochytchen.com/tag/shle-series/</link>
     </image>
     
     <item>
       <title>Seven tips of good data management</title>
-      <link>enochytchen.github.io/post/gooddatamanagement/</link>
+      <link>https://enochytchen.com/post/gooddatamanagement/</link>
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/post/gooddatamanagement/</guid>
+      <guid>https://enochytchen.com/post/gooddatamanagement/</guid>
       <description>&lt;p&gt;I was pretty inspired by 
 &lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;lsquo;s 
 &lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
