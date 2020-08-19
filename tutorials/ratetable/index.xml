@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Make ratetable using R | Enoch Yi-Tung Chen</title>
+    <link>enochytchen.com/tutorials/ratetable/</link>
+      <atom:link href="enochytchen.com/tutorials/ratetable/index.xml" rel="self" type="application/rss+xml" />
+    <description>Make ratetable using R</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Make ratetable using R</title>
+      <link>enochytchen.com/tutorials/ratetable/</link>
+    </image>
+    
+    <item>
+      <title>Make ratetable using R</title>
+      <link>enochytchen.com/tutorials/ratetable/content/</link>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>enochytchen.com/tutorials/ratetable/content/</guid>
+      <description>&lt;p&gt;The syntax used in this tutorial can be found 
+&lt;a href=&#34;create_ratetable&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h3&gt;
+&lt;p&gt;First, please install and use the packages needed in the following syntax, and read the colon data.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; 1 Preparation
+
+#&#39; Clear all
+#&#39; Use it if you need to clear all
+#&#39; rm(list = ls()) 
+
+#&#39; Load required packages
+x&amp;lt;-c(  &amp;quot;haven&amp;quot;,       # read.dta()
+       &amp;quot;tidyverse&amp;quot;,   # dplyr::mutate
+       &amp;quot;lubridate&amp;quot;,   # decimal_date
+       &amp;quot;survival&amp;quot;,    # Surv(), survSplit()
+       &amp;quot;rstpm2&amp;quot;,      # stpm2()
+       &amp;quot;splines&amp;quot;,     # nsx()
+       &amp;quot;relsurv&amp;quot;,     # transrate(), joinrate(), rs.surv()
+       &amp;quot;popEpi&amp;quot;,      # as.data.frame(ratetable)
+       &amp;quot;ggplot2&amp;quot;)     # ggplot()
+
+lapply(x, require, character.only = TRUE)
+
+#&#39; Read the data from web 
+colon &amp;lt;- read_dta( &amp;quot;http://enochytchen.com/directory/data/colon.dta&amp;quot;)
+str(colon)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We then exacted the birth date of each observation by using dx (date of diagnosis) - age at diagnosis * 365.241. The unit here is days in order to be consistent with the unit in &lt;code&gt;relsurv::rs.surv()&lt;/code&gt;. Variables sex, subsite, stage, and strata were converted into factor class, which will be automatically converted into dummy varaibles in a regression model in R. In this example, we used two dimensions: subsite + stage, and combined them into one stratum, a combination of all the dimensions except sex, age, and year. Splitting the data frame into lists will be done on this stratum afterwards.  However, if there is only one extra dimension, it is not required to create a stratum. Instead, it is straightforward to split on that single variable.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; Extract the date of birth,
+#&#39; Will take care of derived variables (entry/exit years) later
+colon2 &amp;lt;- colon %&amp;gt;%
+  mutate(sex     = as_factor(sex),       ## as_factor preserves labels
+         status  = as.numeric(status),
+         subsite = as_factor(subsite),   ## as_factor preserves labels
+         stage   = as_factor(stage),     ## as_factor preserves labels
+         strata  = as_factor(paste(subsite, stage, sep = &amp;quot;, &amp;quot;)), # strata consists all the dimensions
+         dob     = as.Date(dx) - age*365.241,
+  ) %&amp;gt;%
+  select(id, sex, status, subsite, stage, strata, dob, dx, exit, age)
+str(colon2)
+summary(colon2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;splitting-the-time&#34;&gt;Splitting the time&lt;/h3&gt;
+&lt;p&gt;Since the secondary time scale in this example is calendar year, we splitted the survival data time at specified times (2 years). One-year interval would lead to convergence problem on &lt;code&gt;stpm2&lt;/code&gt; due to insufficient sample size within each time interval, so we splitted into 2-year intervals instead.&lt;/p&gt;
+&lt;p&gt;It is worth taking a look at the definition of &lt;code&gt;episode&lt;/code&gt; in &lt;code&gt;survival::survSplit&lt;/code&gt;, where it explains, &amp;ldquo;&lt;code&gt;episode&lt;/code&gt; 1= less than the first cutpoint, 2= between the first and the second.&amp;rdquo; Based on this default setting, we then moved each episode (period) by 2.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#&#39; Split calendar time into 2-year intervals;
+#&#39; splitting in 1-year intervals leads to convergence problems later if
+#&#39; stpm2 does not have enough events within each time interval
+colon_split &amp;lt;- survSplit(Surv(decimal_date(dx), decimal_date(exit), status, type = &amp;quot;mstate&amp;quot;) ~ .,
+                         data = colon2, cut = seq(1975, 1995, by = 2),
+                         event = &amp;quot;status&amp;quot;, episode = &amp;quot;period&amp;quot;
+) %&amp;gt;%
+  # changed word &amp;quot;censor&amp;quot; to 0, so to keep it consistent with original definition
+  mutate(status = as.numeric(ifelse(as.character(status) == &amp;quot;censor&amp;quot;,
+                                    &amp;quot;0&amp;quot;, as.character(status))) )
+
+#&#39; Inspect: select the first 20 to take a look
+head(colon_split, 20)
+
+#&#39; For downstream analysis, we want age as primary time scale;
+#&#39; Calculate age at entry and age at exit
+#&#39; Also, it would be nice to have the period expressed as actual starting year
+#&#39; of the time interval; see ?survSplit for its definition
+#&#39; (i.e. 1 = before first interval)
+colon_split = mutate(colon_split,
+                     age_start = tstart - decimal_date(dob),
+                     age_stop  = tstop  - decimal_date(dob),
+                     period    = 1975 + (period - 2)*2) # *2 for 2-year intervals
+
+#&#39; Save the data for running AIC/BIC test
+#&#39; saveRDS(colon_split, &amp;quot;./Data/split_colon.rds&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;flexible-parametric-model&#34;&gt;Flexible parametric model&lt;/h3&gt;
+&lt;p&gt;The colon cancer patients&amp;rsquo; data was modelled in multiple time scales, where the primary time scale is attained age calculated from two time points (&lt;code&gt;age_start&lt;/code&gt; and &lt;code&gt;age_stop&lt;/code&gt;), and the secondary is time-split calendar year fitted a natural spline using &lt;code&gt;nsx()&lt;/code&gt; . Time-dependent effect of explanatory varibles was taken into consideration specifying &lt;code&gt;tvc=list()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fpm &amp;lt;- stpm2(Surv(time = age_start, time2 = age_stop, event = status==2) ~
+                  sex + nsx(period, df=2) + subsite+ stage, data = colon_split,
+             tvc = list(sex=3, period=2), df = 3)
+summary(fpm)
+
+#&#39; A nice hazard plot
+#&#39; Age-specific hazard by sex, subsite=2, stage =1, 1980
+newdata = data.frame(sex = levels(colon2$sex), 
+                     subsite = &amp;quot;Descending and sigmoid&amp;quot;, 
+                     stage = &amp;quot;Localised&amp;quot;,
+                     period = 1980)
+newdata
+plot(fpm, newdata = newdata[2,,drop=FALSE],
+     type = &amp;quot;hazard&amp;quot;, ci = FALSE,
+     xlim = c(40,110), xlab = &amp;quot;Attained age (years)&amp;quot;,
+     ylim = c(1E-6,100), ylab  = &amp;quot;Hazard (log-scale)&amp;quot;,
+     log = &amp;quot;y&amp;quot;, main = &amp;quot;Age-specific log-hazard for subsite=2, stage =1, period 1980, by sex&amp;quot;)
+lines(fpm, newdata = newdata[1,,drop=FALSE],
+      type = &amp;quot;hazard&amp;quot;, lty = 2, col = &amp;quot;red&amp;quot;)
+legend(&amp;quot;topleft&amp;quot;, legend=c(&amp;quot;Female&amp;quot;, &amp;quot;Male&amp;quot;),
+       col=c(&amp;quot;black&amp;quot;, &amp;quot;red&amp;quot;), lty=1:2)                   
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
+
+
+  &lt;img data-src=&#34;enochytchen.com/enochytchen.com/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;predicted-rates-in-a-data-frame&#34;&gt;Predicted rates in a data frame&lt;/h3&gt;
+&lt;p&gt;An empty data frame was generated using &lt;code&gt;expand.grid()&lt;/code&gt; stratified by all the dimensions: sex, age_stop (age), period (year), subsite, and stage. The names of the variables must be consistent with which in the flexible parametric model. Then, &lt;code&gt;predict()&lt;/code&gt; was applied to obtain predicted rates (i.e.,survival) in a data frame, similar to the concept in the extrapolation example using &lt;code&gt;predict&lt;/code&gt; in &lt;code&gt;Stata&lt;/code&gt;: 
+&lt;a href=&#34;enochytchen.com/tutorials/extrapolation/allcause/article/&#34;&gt;Extrapolating survival (all-cause survival framework)&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;colon_new &amp;lt;- expand.grid(sex = levels(colon2$sex), 
+                         subsite = levels(colon2$subsite),
+                         stage = levels(colon2$stage),
+                         age_stop = 1:110, 
+                         period = 1975:1995)
+
+#&#39;Populate the empty data frame with predicted hazards (based on the fitted model)
+colon_new$hazard &amp;lt;- predict(fpm, newdata = colon_new, type = &amp;quot;hazard&amp;quot;)
+
+colon_new &amp;lt;- colon_new %&amp;gt;%
+  mutate(prob  = exp(-hazard),
+         age   = age_stop,   
+  ) %&amp;gt;%
+  select(sex, subsite, stage, age, period, prob, hazard)
+str(colon_new)
+
+#&#39; Take look at the first 20 rows
+head(colon_new, 20)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;create-ratetable&#34;&gt;Create ratetable&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Here comes the highlight of this tutorial!&lt;/strong&gt;&lt;br&gt;
+The target focuses on how to transform the mortality rate dataframe into to a &lt;code&gt;ratetable&lt;/code&gt; class data, which is required in &lt;code&gt;rs.surv()&lt;/code&gt;.
+The subset of the mortality rate data frame, popmort_new, consists of age, sex, period, strata, and prob (survival probability).&lt;/p&gt;
+&lt;p&gt;First, we splitted the data frame into lists by the varaible strata (subsite + stage in this example. i.e., all the combinations of the extra dimensions). Second, we splitted the lists by sex, so we are supposed to obtain the lists stratified by both strata and sex.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;spread()&lt;/code&gt; was then applied to transpose the matricies. Afterwards, &lt;code&gt;transrate()&lt;/code&gt;  combined the lists stratified by sex and &lt;code&gt;joinrate()&lt;/code&gt; made the lists stratified by strata into a &lt;code&gt;ratetable&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;popmort_new &amp;lt;- colon_new %&amp;gt;%
+  mutate(strata = paste(subsite, stage, sep = &amp;quot;, &amp;quot;),
+  )%&amp;gt;%
+  select(age, sex, period, strata, prob)
+
+#&#39; transrate() wants two matrices, both age x year, one for men, one for
+#&#39; women;  using split() repeatedly to make it work
+#&#39; split() converted a data.fram into lists based on the specified variable
+
+#&#39; First, split our popmort file by strata
+pm_split = split(popmort_new[, -4], popmort_new$strata)
+str(pm_split)
+
+#&#39; Then we split the list again by sex
+pm_split = lapply(pm_split, function(x) split(x[, -2], x$sex))
+str(pm_split)
+
+#&#39; Using spread + as.matrix to generate the input matrices that transrate()
+#&#39; needs
+spread_df = function(x)
+{
+  ret =  spread(x, period, prob)
+  rownames(ret) = ret$age - 1 # Drop the age variable
+  ret = ret[, -1]
+  as.matrix( ret )
+}
+pm_split = lapply(pm_split, function(x) lapply(x, spread_df ))
+str(pm_split)
+
+#&#39; Now do the transrate() for each strar=ta; we get a list of
+#&#39; ratetable-objects
+pm_split = lapply(pm_split, function(x) transrate(x$Male, x$Female, yearlim = c(1975, 1995)))
+str(pm_split)
+
+#&#39; We can directly use the jointable-command on this list
+myratetable &amp;lt;- joinrate(pm_split, dim.name=&amp;quot;strata&amp;quot;)
+str(myratetable)
+
+#&#39; Check whether is a readable ratetable for rs.surv()
+is.ratetable(myratetable) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;use-rssurv-to-estimate-net-survival&#34;&gt;Use rs.surv() to estimate net survival&lt;/h3&gt;
+&lt;p&gt;It is important to keep in mind that in &lt;code&gt;relsuv::rs.surv()&lt;/code&gt; the unit of follow-up time is specified in days (1). Thus, given that the time in the original colon dataset is in years, we need to multiply the time by 365.241. The same rule applies to age, where in &lt;code&gt;relsuv::rs.surv()::rmap&lt;/code&gt; age should be multiplied by 365.241 as well.
+The rate table was generated from this patient data. Therefore, if we estimate net survival using the same data, we should get relative survival close to 1, shown in the following syntax and graph.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rssurv&amp;lt;-rs.surv(Surv(time  =  (decimal_date(exit)-  decimal_date(dx)) * 365.241,
+                     event = status == 2) ~
+                  sex  + subsite+ stage,                     
+                rmap = list(age = age*365.241, year = dx, strata = strata),
+                ratetable = myratetable,
+                data = colon2,
+                method = &amp;quot;ederer2&amp;quot;)
+
+rssurv.sum &amp;lt;- summary(rssurv, time = c(0:10) * 365.241, scale = 365.241)
+rs.table   &amp;lt;- as.data.frame(rssurv.sum[c(&amp;quot;strata&amp;quot;, &amp;quot;time&amp;quot;, &amp;quot;n.risk&amp;quot;, &amp;quot;n.event&amp;quot;, &amp;quot;surv&amp;quot;, &amp;quot;std.err&amp;quot;, &amp;quot;lower&amp;quot;, &amp;quot;upper&amp;quot;)])
+
+#&#39; Cut the value from the strata
+#&#39; We split the strata to get variables
+rs.table_temp &amp;lt;- data.frame(do.call(rbind, 
+                                    strsplit(as.character(strsplit(as.character(rs.table$strata), &amp;quot;,&amp;quot;)),&amp;quot;=&amp;quot;, fixed=TRUE)
+))
+
+rs.table_temp &amp;lt;- rs.table_temp %&amp;gt;%
+  mutate(sex        = substr(X2,1,1),
+         subsite2   = substr(X3,1,1),
+         subsite3   = substr(X4,1,1), 
+         subsite4   = substr(X5,1,1),
+         Localised  = substr(X6,1,1),
+         Regional   = substr(X7,1,1),
+         Distant    = substr(X8,1,1),
+  )%&amp;gt;% 
+  select(sex, subsite2, subsite3, subsite4, Localised, Regional, Distant)
+
+rs.table &amp;lt;- cbind(rs.table[ ,-c(1, 9)], rs.table_temp)
+
+#&#39; Take a look
+#&#39; surv here is cumulative relative survival 
+head(rs.table, 20)
+
+# Make plotdata for subsite=2 and Localised=1
+rssurv.plotdata &amp;lt;- subset( rs.table, (subsite2 == 1 &amp;amp; Localised ==1) )
+summary(rssurv.plotdata)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;plot-net-survival&#34;&gt;Plot net survival&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt; ggplot(rssurv.plotdata, aes(x = time, y = surv, color = sex, fill = sex )) +
+  geom_smooth(alpha = 0.25) +   
+  scale_x_continuous(breaks = seq(0, 10, by = 2), limits = c(0,10))+
+  scale_y_continuous(breaks = seq(0, 1.2, by = 0.2), limits = c(0,1.2))+
+  labs(title=&amp;quot;Cumulative relative survival for subsite=2 &amp;amp; stage =localised&amp;quot;,
+       x=&amp;quot;Time since diagnosis (years)&amp;quot;, 
+       y=&amp;quot;Cumulative relative survival&amp;quot;) +
+  theme(plot.title = element_text(size = 10))
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure &gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
+
+
+  &lt;img data-src=&#34;enochytchen.com/enochytchen.com/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Perme, MP, Pavlic, K. Nonparametric relative survival analysis with the R package relsurv. Journal of Statistical Software. 2018; 87(1), 1-27..&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;appendix-codebook&#34;&gt;Appendix: codebook&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;sex: 1 (Male)
+2 (Female)&lt;/li&gt;
+&lt;li&gt;stage: 0 (Unknown);
+1 (Localised);
+2 (Regional);
+3(Distant)&lt;/li&gt;
+&lt;li&gt;subsite: 1(Coecum and ascending);
+2 (Transverse);
+3 (Descending and sigmoid);
+4 (Other and NOS)&lt;/li&gt;
+&lt;li&gt;staus: 0 (Alive);
+1 (dead from colon cancer);
+2 (dead from other causes)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

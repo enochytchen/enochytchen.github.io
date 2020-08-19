@@ -1,0 +1,1100 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="The syntax used in this tutorial can be found here.
+Data preparation First, please install and use the packages needed in the following syntax, and read the colon data.
+#&#39; 1 Preparation #&#39; Clear all #&#39; Use it if you need to clear all #&#39; rm(list = ls()) #&#39; Load required packages x&lt;-c( &quot;haven&quot;, # read.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="enochytchen.com/tutorials/ratetable/content/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/enochytchen.com/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/stata.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/stata.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/enochytchen.com/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/enochytchen.com/index.webmanifest">
+  <link rel="icon" type="image/png" href="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="enochytchen.com/tutorials/ratetable/content/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Enoch Yi-Tung Chen">
+  <meta property="og:url" content="enochytchen.com/tutorials/ratetable/content/">
+  <meta property="og:title" content="Make ratetable using R | Enoch Yi-Tung Chen">
+  <meta property="og:description" content="The syntax used in this tutorial can be found here.
+Data preparation First, please install and use the packages needed in the following syntax, and read the colon data.
+#&#39; 1 Preparation #&#39; Clear all #&#39; Use it if you need to clear all #&#39; rm(list = ls()) #&#39; Load required packages x&lt;-c( &quot;haven&quot;, # read."><meta property="og:image" content="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-08-19T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-08-19T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Make ratetable using R | Enoch Yi-Tung Chen</title>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/enochytchen.com/">Enoch Yi-Tung Chen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/enochytchen.com/">Enoch Yi-Tung Chen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/enochytchen.com/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/enochytchen.com/#post"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/enochytchen.com/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/enochytchen.com/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="enochytchen.com/tutorials/ratetable/">Make ratetable</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="enochytchen.com/tutorials/ratetable/content/">Content</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#data-preparation">Data preparation</a></li>
+        <li><a href="#splitting-the-time">Splitting the time</a></li>
+        <li><a href="#flexible-parametric-model">Flexible parametric model</a></li>
+        <li><a href="#predicted-rates-in-a-data-frame">Predicted rates in a data frame</a></li>
+        <li><a href="#create-ratetable">Create ratetable</a></li>
+        <li><a href="#use-rssurv-to-estimate-net-survival">Use rs.surv() to estimate net survival</a></li>
+        <li><a href="#plot-net-survival">Plot net survival</a></li>
+        <li><a href="#reference">Reference</a></li>
+        <li><a href="#appendix-codebook">Appendix: codebook</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Make ratetable using R</h1>
+
+          <div class="article-style">
+            <p>The syntax used in this tutorial can be found 
+<a href="create_ratetable">here</a>.</p>
+<h3 id="data-preparation">Data preparation</h3>
+<p>First, please install and use the packages needed in the following syntax, and read the colon data.</p>
+<pre><code class="language-r">#' 1 Preparation
+
+#' Clear all
+#' Use it if you need to clear all
+#' rm(list = ls()) 
+
+#' Load required packages
+x&lt;-c(  &quot;haven&quot;,       # read.dta()
+       &quot;tidyverse&quot;,   # dplyr::mutate
+       &quot;lubridate&quot;,   # decimal_date
+       &quot;survival&quot;,    # Surv(), survSplit()
+       &quot;rstpm2&quot;,      # stpm2()
+       &quot;splines&quot;,     # nsx()
+       &quot;relsurv&quot;,     # transrate(), joinrate(), rs.surv()
+       &quot;popEpi&quot;,      # as.data.frame(ratetable)
+       &quot;ggplot2&quot;)     # ggplot()
+
+lapply(x, require, character.only = TRUE)
+
+#' Read the data from web 
+colon &lt;- read_dta( &quot;http://enochytchen.com/directory/data/colon.dta&quot;)
+str(colon)
+</code></pre>
+<p>We then exacted the birth date of each observation by using dx (date of diagnosis) - age at diagnosis * 365.241. The unit here is days in order to be consistent with the unit in <code>relsurv::rs.surv()</code>. Variables sex, subsite, stage, and strata were converted into factor class, which will be automatically converted into dummy varaibles in a regression model in R. In this example, we used two dimensions: subsite + stage, and combined them into one stratum, a combination of all the dimensions except sex, age, and year. Splitting the data frame into lists will be done on this stratum afterwards.  However, if there is only one extra dimension, it is not required to create a stratum. Instead, it is straightforward to split on that single variable.</p>
+<pre><code class="language-r">#' Extract the date of birth,
+#' Will take care of derived variables (entry/exit years) later
+colon2 &lt;- colon %&gt;%
+  mutate(sex     = as_factor(sex),       ## as_factor preserves labels
+         status  = as.numeric(status),
+         subsite = as_factor(subsite),   ## as_factor preserves labels
+         stage   = as_factor(stage),     ## as_factor preserves labels
+         strata  = as_factor(paste(subsite, stage, sep = &quot;, &quot;)), # strata consists all the dimensions
+         dob     = as.Date(dx) - age*365.241,
+  ) %&gt;%
+  select(id, sex, status, subsite, stage, strata, dob, dx, exit, age)
+str(colon2)
+summary(colon2)
+</code></pre>
+<h3 id="splitting-the-time">Splitting the time</h3>
+<p>Since the secondary time scale in this example is calendar year, we splitted the survival data time at specified times (2 years). One-year interval would lead to convergence problem on <code>stpm2</code> due to insufficient sample size within each time interval, so we splitted into 2-year intervals instead.</p>
+<p>It is worth taking a look at the definition of <code>episode</code> in <code>survival::survSplit</code>, where it explains, &ldquo;<code>episode</code> 1= less than the first cutpoint, 2= between the first and the second.&rdquo; Based on this default setting, we then moved each episode (period) by 2.</p>
+<pre><code>#' Split calendar time into 2-year intervals;
+#' splitting in 1-year intervals leads to convergence problems later if
+#' stpm2 does not have enough events within each time interval
+colon_split &lt;- survSplit(Surv(decimal_date(dx), decimal_date(exit), status, type = &quot;mstate&quot;) ~ .,
+                         data = colon2, cut = seq(1975, 1995, by = 2),
+                         event = &quot;status&quot;, episode = &quot;period&quot;
+) %&gt;%
+  # changed word &quot;censor&quot; to 0, so to keep it consistent with original definition
+  mutate(status = as.numeric(ifelse(as.character(status) == &quot;censor&quot;,
+                                    &quot;0&quot;, as.character(status))) )
+
+#' Inspect: select the first 20 to take a look
+head(colon_split, 20)
+
+#' For downstream analysis, we want age as primary time scale;
+#' Calculate age at entry and age at exit
+#' Also, it would be nice to have the period expressed as actual starting year
+#' of the time interval; see ?survSplit for its definition
+#' (i.e. 1 = before first interval)
+colon_split = mutate(colon_split,
+                     age_start = tstart - decimal_date(dob),
+                     age_stop  = tstop  - decimal_date(dob),
+                     period    = 1975 + (period - 2)*2) # *2 for 2-year intervals
+
+#' Save the data for running AIC/BIC test
+#' saveRDS(colon_split, &quot;./Data/split_colon.rds&quot;)
+</code></pre>
+<h3 id="flexible-parametric-model">Flexible parametric model</h3>
+<p>The colon cancer patients&rsquo; data was modelled in multiple time scales, where the primary time scale is attained age calculated from two time points (<code>age_start</code> and <code>age_stop</code>), and the secondary is time-split calendar year fitted a natural spline using <code>nsx()</code> . Time-dependent effect of explanatory varibles was taken into consideration specifying <code>tvc=list()</code>.</p>
+<pre><code>fpm &lt;- stpm2(Surv(time = age_start, time2 = age_stop, event = status==2) ~
+                  sex + nsx(period, df=2) + subsite+ stage, data = colon_split,
+             tvc = list(sex=3, period=2), df = 3)
+summary(fpm)
+
+#' A nice hazard plot
+#' Age-specific hazard by sex, subsite=2, stage =1, 1980
+newdata = data.frame(sex = levels(colon2$sex), 
+                     subsite = &quot;Descending and sigmoid&quot;, 
+                     stage = &quot;Localised&quot;,
+                     period = 1980)
+newdata
+plot(fpm, newdata = newdata[2,,drop=FALSE],
+     type = &quot;hazard&quot;, ci = FALSE,
+     xlim = c(40,110), xlab = &quot;Attained age (years)&quot;,
+     ylim = c(1E-6,100), ylab  = &quot;Hazard (log-scale)&quot;,
+     log = &quot;y&quot;, main = &quot;Age-specific log-hazard for subsite=2, stage =1, period 1980, by sex&quot;)
+lines(fpm, newdata = newdata[1,,drop=FALSE],
+      type = &quot;hazard&quot;, lty = 2, col = &quot;red&quot;)
+legend(&quot;topleft&quot;, legend=c(&quot;Female&quot;, &quot;Male&quot;),
+       col=c(&quot;black&quot;, &quot;red&quot;), lty=1:2)                   
+</code></pre>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/enochytchen.com/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg" >
+
+
+  <img data-src="/enochytchen.com/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg" class="lazyload" alt="" width="683" height="401">
+</a>
+
+
+
+</figure>
+
+<h3 id="predicted-rates-in-a-data-frame">Predicted rates in a data frame</h3>
+<p>An empty data frame was generated using <code>expand.grid()</code> stratified by all the dimensions: sex, age_stop (age), period (year), subsite, and stage. The names of the variables must be consistent with which in the flexible parametric model. Then, <code>predict()</code> was applied to obtain predicted rates (i.e.,survival) in a data frame, similar to the concept in the extrapolation example using <code>predict</code> in <code>Stata</code>: 
+<a href="enochytchen.com/tutorials/extrapolation/allcause/article/">Extrapolating survival (all-cause survival framework)</a>.</p>
+<pre><code>colon_new &lt;- expand.grid(sex = levels(colon2$sex), 
+                         subsite = levels(colon2$subsite),
+                         stage = levels(colon2$stage),
+                         age_stop = 1:110, 
+                         period = 1975:1995)
+
+#'Populate the empty data frame with predicted hazards (based on the fitted model)
+colon_new$hazard &lt;- predict(fpm, newdata = colon_new, type = &quot;hazard&quot;)
+
+colon_new &lt;- colon_new %&gt;%
+  mutate(prob  = exp(-hazard),
+         age   = age_stop,   
+  ) %&gt;%
+  select(sex, subsite, stage, age, period, prob, hazard)
+str(colon_new)
+
+#' Take look at the first 20 rows
+head(colon_new, 20)
+</code></pre>
+<h3 id="create-ratetable">Create ratetable</h3>
+<p><strong>Here comes the highlight of this tutorial!</strong><br>
+The target focuses on how to transform the mortality rate dataframe into to a <code>ratetable</code> class data, which is required in <code>rs.surv()</code>.
+The subset of the mortality rate data frame, popmort_new, consists of age, sex, period, strata, and prob (survival probability).</p>
+<p>First, we splitted the data frame into lists by the varaible strata (subsite + stage in this example. i.e., all the combinations of the extra dimensions). Second, we splitted the lists by sex, so we are supposed to obtain the lists stratified by both strata and sex.</p>
+<p><code>spread()</code> was then applied to transpose the matricies. Afterwards, <code>transrate()</code>  combined the lists stratified by sex and <code>joinrate()</code> made the lists stratified by strata into a <code>ratetable</code>.</p>
+<pre><code>popmort_new &lt;- colon_new %&gt;%
+  mutate(strata = paste(subsite, stage, sep = &quot;, &quot;),
+  )%&gt;%
+  select(age, sex, period, strata, prob)
+
+#' transrate() wants two matrices, both age x year, one for men, one for
+#' women;  using split() repeatedly to make it work
+#' split() converted a data.fram into lists based on the specified variable
+
+#' First, split our popmort file by strata
+pm_split = split(popmort_new[, -4], popmort_new$strata)
+str(pm_split)
+
+#' Then we split the list again by sex
+pm_split = lapply(pm_split, function(x) split(x[, -2], x$sex))
+str(pm_split)
+
+#' Using spread + as.matrix to generate the input matrices that transrate()
+#' needs
+spread_df = function(x)
+{
+  ret =  spread(x, period, prob)
+  rownames(ret) = ret$age - 1 # Drop the age variable
+  ret = ret[, -1]
+  as.matrix( ret )
+}
+pm_split = lapply(pm_split, function(x) lapply(x, spread_df ))
+str(pm_split)
+
+#' Now do the transrate() for each strar=ta; we get a list of
+#' ratetable-objects
+pm_split = lapply(pm_split, function(x) transrate(x$Male, x$Female, yearlim = c(1975, 1995)))
+str(pm_split)
+
+#' We can directly use the jointable-command on this list
+myratetable &lt;- joinrate(pm_split, dim.name=&quot;strata&quot;)
+str(myratetable)
+
+#' Check whether is a readable ratetable for rs.surv()
+is.ratetable(myratetable) 
+</code></pre>
+<h3 id="use-rssurv-to-estimate-net-survival">Use rs.surv() to estimate net survival</h3>
+<p>It is important to keep in mind that in <code>relsuv::rs.surv()</code> the unit of follow-up time is specified in days (1). Thus, given that the time in the original colon dataset is in years, we need to multiply the time by 365.241. The same rule applies to age, where in <code>relsuv::rs.surv()::rmap</code> age should be multiplied by 365.241 as well.
+The rate table was generated from this patient data. Therefore, if we estimate net survival using the same data, we should get relative survival close to 1, shown in the following syntax and graph.</p>
+<pre><code>rssurv&lt;-rs.surv(Surv(time  =  (decimal_date(exit)-  decimal_date(dx)) * 365.241,
+                     event = status == 2) ~
+                  sex  + subsite+ stage,                     
+                rmap = list(age = age*365.241, year = dx, strata = strata),
+                ratetable = myratetable,
+                data = colon2,
+                method = &quot;ederer2&quot;)
+
+rssurv.sum &lt;- summary(rssurv, time = c(0:10) * 365.241, scale = 365.241)
+rs.table   &lt;- as.data.frame(rssurv.sum[c(&quot;strata&quot;, &quot;time&quot;, &quot;n.risk&quot;, &quot;n.event&quot;, &quot;surv&quot;, &quot;std.err&quot;, &quot;lower&quot;, &quot;upper&quot;)])
+
+#' Cut the value from the strata
+#' We split the strata to get variables
+rs.table_temp &lt;- data.frame(do.call(rbind, 
+                                    strsplit(as.character(strsplit(as.character(rs.table$strata), &quot;,&quot;)),&quot;=&quot;, fixed=TRUE)
+))
+
+rs.table_temp &lt;- rs.table_temp %&gt;%
+  mutate(sex        = substr(X2,1,1),
+         subsite2   = substr(X3,1,1),
+         subsite3   = substr(X4,1,1), 
+         subsite4   = substr(X5,1,1),
+         Localised  = substr(X6,1,1),
+         Regional   = substr(X7,1,1),
+         Distant    = substr(X8,1,1),
+  )%&gt;% 
+  select(sex, subsite2, subsite3, subsite4, Localised, Regional, Distant)
+
+rs.table &lt;- cbind(rs.table[ ,-c(1, 9)], rs.table_temp)
+
+#' Take a look
+#' surv here is cumulative relative survival 
+head(rs.table, 20)
+
+# Make plotdata for subsite=2 and Localised=1
+rssurv.plotdata &lt;- subset( rs.table, (subsite2 == 1 &amp; Localised ==1) )
+summary(rssurv.plotdata)
+</code></pre>
+<h3 id="plot-net-survival">Plot net survival</h3>
+<pre><code> ggplot(rssurv.plotdata, aes(x = time, y = surv, color = sex, fill = sex )) +
+  geom_smooth(alpha = 0.25) +   
+  scale_x_continuous(breaks = seq(0, 10, by = 2), limits = c(0,10))+
+  scale_y_continuous(breaks = seq(0, 1.2, by = 0.2), limits = c(0,1.2))+
+  labs(title=&quot;Cumulative relative survival for subsite=2 &amp; stage =localised&quot;,
+       x=&quot;Time since diagnosis (years)&quot;, 
+       y=&quot;Cumulative relative survival&quot;) +
+  theme(plot.title = element_text(size = 10))
+</code></pre>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure >
+
+
+  <a data-fancybox="" href="/enochytchen.com/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg" >
+
+
+  <img data-src="/enochytchen.com/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg" class="lazyload" alt="" width="683" height="401">
+</a>
+
+
+
+</figure>
+
+<h3 id="reference">Reference</h3>
+<ol>
+<li>Perme, MP, Pavlic, K. Nonparametric relative survival analysis with the R package relsurv. Journal of Statistical Software. 2018; 87(1), 1-27..</li>
+</ol>
+<h3 id="appendix-codebook">Appendix: codebook</h3>
+<ul>
+<li>sex: 1 (Male)
+2 (Female)</li>
+<li>stage: 0 (Unknown);
+1 (Localised);
+2 (Regional);
+3(Distant)</li>
+<li>subsite: 1(Coecum and ascending);
+2 (Transverse);
+3 (Descending and sigmoid);
+4 (Other and NOS)</li>
+<li>staus: 0 (Alive);
+1 (dead from colon cancer);
+2 (dead from other causes)</li>
+</ul>
+
+          </div>
+
+          
+
+
+
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Aug 19, 2020</p>
+
+          
+
+
+
+
+
+          
+
+
+          
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/true.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/enochytchen.com/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/enochytchen.com/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

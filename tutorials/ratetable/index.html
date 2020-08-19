@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="Prepare expected survival corresponding to the index patient cohort by age, sex, and calendar year using strs.">
+  <meta name="description" content="Learn how to make ratetable based on multiple time-scale flexible parametric models in R">
 
   
-  <link rel="alternate" hreflang="en-us" href="enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/">
+  <link rel="alternate" hreflang="en-us" href="enochytchen.com/tutorials/ratetable/">
 
   
 
@@ -225,12 +225,14 @@
   
 
   
+  <link rel="alternate" href="enochytchen.com/tutorials/ratetable/index.xml" type="application/rss+xml" title="Enoch Yi-Tung Chen">
+  
 
   <link rel="manifest" href="/enochytchen.com/index.webmanifest">
   <link rel="icon" type="image/png" href="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/">
+  <link rel="canonical" href="enochytchen.com/tutorials/ratetable/">
 
   
   
@@ -246,22 +248,17 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Enoch Yi-Tung Chen">
-  <meta property="og:url" content="enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/">
-  <meta property="og:title" content="Make expected survival | Enoch Yi-Tung Chen">
-  <meta property="og:description" content="Prepare expected survival corresponding to the index patient cohort by age, sex, and calendar year using strs."><meta property="og:image" content="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="enochytchen.com/tutorials/ratetable/">
+  <meta property="og:title" content="Make ratetable using R | Enoch Yi-Tung Chen">
+  <meta property="og:description" content="Learn how to make ratetable based on multiple time-scale flexible parametric models in R"><meta property="og:image" content="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
-    
-      <meta property="article:published_time" content="2020-04-20T00:00:00&#43;00:00">
-    
-    <meta property="article:modified_time" content="2020-04-20T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-08-19T00:00:00&#43;00:00">
   
 
   
 
 
-
-  
 
 
   
@@ -273,7 +270,7 @@
 
 
 
-  <title>Make expected survival | Enoch Yi-Tung Chen</title>
+  <title>Make ratetable using R | Enoch Yi-Tung Chen</title>
 
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -534,50 +531,13 @@
   
   
   
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="enochytchen.com/tutorials/extrapolation/data_prep/">Data preparation</a>
-    <ul class="nav docs-sidenav">
-      
-      <li >
-        <a href="enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/">Data clearance</a>
-      </li>
-      
-      <li >
-        <a href="enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/">Population mortality projection</a>
-      </li>
-      
-    </ul>
-    
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="enochytchen.com/tutorials/ratetable/">Make ratetable</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="enochytchen.com/tutorials/extrapolation/allcause/">All-cause survival</a>
-    <ul class="nav docs-sidenav">
-      
-      <li >
-        <a href="enochytchen.com/tutorials/extrapolation/allcause/article/">Extrapolating survival (all-cause)</a>
-      </li>
-      
-    </ul>
-    
-
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="enochytchen.com/tutorials/extrapolation/relative/">Relative survival</a>
-    <ul class="nav docs-sidenav">
-      
-      <li class="active">
-        <a href="enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/">Expected survival</a>
-      </li>
-      
-      <li >
-        <a href="enochytchen.com/tutorials/extrapolation/relative/article/">Extrapolating survival (relative)</a>
-      </li>
-      
-    </ul>
-    
+    <a class="docs-toc-link" href="enochytchen.com/tutorials/ratetable/content/">Content</a>
 
   </div>
   
@@ -592,7 +552,17 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#steps-in-a-nutshell">Steps in a nutshell</a></li>
+        <li><a href="#acknowledgements">Acknowledgements</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
       
     </div>
@@ -603,11 +573,28 @@
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>Make expected survival</h1>
+          <h1>Make ratetable using R</h1>
 
           <div class="article-style">
-            <p>The codes used in this post are available 
-<a href="http://enochytchen.com/directory/stata/make_expected_survival.do" target="_blank" rel="noopener">here</a></p>
+            <p>Author: Enoch Chen, Paul Dickman</p>
+<h3 id="introduction">Introduction</h3>
+<p>Population mortality rate tables (life tables) are typically stratified by age, sex, and year, and tabulated by government statistics offices (e.g., Human Mortality Database available at <a href="https://www.mortality.org/)">https://www.mortality.org/)</a>. Occasionally, we would also aim to stratify the rate table by other factors (e.g., race, social class, comorbidity, etc). This tutorial illustrates how to create a rate table from individual data for a cohort representative of the target population (i.e., a random sample of individuals without a diagnosis of cancer).</p>
+<p>Data on a cohort of patients with colon cancer diagnosis is used as an example dataset in this tutorial.
+The original data is available (in Stata format) at <a href="https://pauldickman.com/data/colon.dta,">https://pauldickman.com/data/colon.dta,</a> whereas it is stored in the directory of this website as well.</p>
+<h3 id="steps-in-a-nutshell">Steps in a nutshell</h3>
+<ol>
+<li>Model survival in multiple time scale flexible parametric model, where age is modeled continuously, and calendar year is a time-split variable.</li>
+<li>Save the predicted rates for each combination of variables in a data frame. In this example, besides sex, age, and calendar year, we use other two dimensions (subsite + stage) as well.</li>
+<li>Split the data frame of this mortality rate table into lists in order to apply <code>transrate()</code> and <code>joinrate()</code> to make a <code>ratetable</code> format in R.</li>
+<li>Use  <code>rs.surv() </code> along with  the rate table  to estimate net survival.</li>
+</ol>
+<h3 id="acknowledgements">Acknowledgements</h3>
+<p>We especially want to thank 
+<a href="https://staff.ki.se/people/aleplo" target="_blank" rel="noopener">Alexander Ploner</a> for providing statistical consulting and R code optimisation tips, 
+<a href="https://staff.ki.se/people/nurbat" target="_blank" rel="noopener">Nurgul Batyrbekova</a> for her insight in modeling survival data on multiple time scale, 
+<a href="https://joshua-entrop.com" target="_blank" rel="noopener">Joshua Entrop</a> for his teaching in plotting regression model results, and 
+<a href="https://staff.ki.se/people/quatra" target="_blank" rel="noopener">
+Quang Thinh Trac</a> for his assistance in optimising the syntax.</p>
 
           </div>
 
@@ -619,7 +606,7 @@
         </div>
 
         <div class="body-footer">
-          <p>Last updated on Apr 20, 2020</p>
+          <p>Last updated on Aug 19, 2020</p>
 
           
 

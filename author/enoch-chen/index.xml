@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>data | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.com/tag/data/</link>
-      <atom:link href="enochytchen.com/tag/data/index.xml" rel="self" type="application/rss+xml" />
-    <description>data</description>
+    <title>Enoch Chen | Enoch Yi-Tung Chen</title>
+    <link>enochytchen.com/author/enoch-chen/</link>
+      <atom:link href="enochytchen.com/author/enoch-chen/index.xml" rel="self" type="application/rss+xml" />
+    <description>Enoch Chen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>data</title>
-      <link>enochytchen.com/tag/data/</link>
+      <title>Enoch Chen</title>
+      <link>enochytchen.com/author/enoch-chen/</link>
     </image>
     
     <item>
@@ -76,42 +76,6 @@ The same concept applies to keeping workbook or a working records. Believe me or
 &lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The Department of Medical Epidemiology and Biostatistics, Karolinska Institutet. MEB Guidelines for Documentation and Archiving Version 6. 2018.&lt;/li&gt;
-&lt;li&gt;Johansson A. 
-&lt;a href=&#34;https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data Management and research documentation for researchers&lt;/a&gt;. KIB Workshop 2018.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Data management? Does it matter?</title>
-      <link>enochytchen.com/post/why_datamanagement/</link>
-      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.com/post/why_datamanagement/</guid>
-      <description>&lt;h3 id=&#34;why-should-you-do-data-management&#34;&gt;Why should you do data management?&lt;/h3&gt;
-&lt;p&gt;We all have experienced unexpected shutdown of our laptops or even files we were still processing and haven&amp;rsquo;t saved yet. Maybe these nightmares are quite unavoidable sometimes; otherwise, I wouldn&amp;rsquo;t call it &lt;strong&gt;unexpected&lt;/strong&gt;, and we would not have &lt;strong&gt;cursed&lt;/strong&gt; as it happened.&lt;/p&gt;
-&lt;p&gt;The most attractive points of data management are&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;To reproduce your work on analysis.&lt;/strong&gt;
-&lt;br&gt;Science is something that could be reproducible, so is &lt;strong&gt;DATA SCIENCE&lt;/strong&gt;. Even though you might not work in a data-driven field, you definitely want to trace back your file records at a point.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;To work coherently and efficiently with yourself&lt;/strong&gt; &lt;br&gt;We all tend to forget where and how we put the files someday. Data management saves you a great amount of time of suffering from getting lost in the mess.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;To help your colleagues to understand the analysis&lt;/strong&gt; &lt;br&gt;It is quite common that if you work in a team, and someone joins after the project has already started, he or she needs to take over a part of the tasks. Then a good data managment gives that new colleague a big picture of what has been completed and what needs to be fixed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;To enhance accuracy of work&lt;/strong&gt;
-&lt;br&gt; A good data management leads to a well-structured folders/file/codes/documents. Once any problem happens, it is easier to break down the error and find the bug.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;my-experience-in-poor-data-management&#34;&gt;My experience in poor data management&lt;/h3&gt;
-&lt;p&gt;Looking back my experience in managing data, I made a bunch of mistakes, which definitely annoyed my colleagues and stumbled myself. I don&amp;rsquo;t mind writing these bad examples down to highlight the importance of good data managment.&lt;/p&gt;
-&lt;h4 id=&#34;project-died-on-the-way&#34;&gt;Project died on the way&lt;/h4&gt;
-&lt;p&gt;I was once working in a project entitled &amp;ldquo;Enterovirus epidemic and class suspension in Taiwan&amp;rdquo;. That was the very first time that I had the access into governmental data. Without any analysis plan, I only used the cloud drive to keep the records of data analyses, which were also incomplete, with my supervisor. However, at the end, I was not able to continue the project and publish the results, so my supervisor took over the work. But when he asked me what we did together in the analyses and what extra work I managed to conduct on my own, I couldn&amp;rsquo;t properly answer the questions he proposed, because I did not have an analysis plan! All the data was carried out in an aggregation form, which indicated that we were unable to trace back to the working records in the data&amp;hellip;&amp;hellip;&lt;strong&gt;If I had learned data managment earlier, the project wouldn&amp;rsquo;t have to be halted.&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;my-colleagues-got-mad&#34;&gt;My colleagues got mad&lt;/h4&gt;
-&lt;p&gt;The other experience also happened durign my undergrad. I was an NGO intern involved in dengue surveillance project in Northern Malawi. The project took much longer than we expected, so the next year&amp;rsquo;s interns also needed to participate in the unfinished project. However, we were the investigators at the first place. We understood all the project from the very beginning, but they did not. It took effort to explain what we had finished. At the end, even though we had quited the work, those next-years still did not catch the full results and working process of the project. And as I understood, they were not quite happy about the transition of the project. &lt;strong&gt;If I had learned data managment earlier, I would have had better transition of our work.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;solution-good-data-management&#34;&gt;Solution: good data management&lt;/h3&gt;
-&lt;p&gt;I picked up good data managment while working as a master thesis student at the Department of Medical Biostatistics and Epidemiology. I benefitted from the 
-&lt;a href=&#34;https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;good data management workshop&lt;/a&gt; and courses offered by 
-&lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt; and the data management group. I am quite sure given good data management, those two stories would not have occurred! Isn&amp;rsquo;t that a good news!?&lt;/p&gt;
-&lt;p&gt;Do you have the same issure in your data management? Then you should learn 
-&lt;a href=&#34;http://enochytchen.com/post/7tips_gooddatamanaegment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Seven tips of good data management&lt;/a&gt; together.&lt;/p&gt;
-&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
-&lt;ul&gt;
 &lt;li&gt;Johansson A. 
 &lt;a href=&#34;https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data Management and research documentation for researchers&lt;/a&gt;. KIB Workshop 2018.&lt;/li&gt;
 &lt;/ul&gt;

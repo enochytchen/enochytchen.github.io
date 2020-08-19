@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>enochytchen.com/tutorials/basicepi/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>enochytchen.com/tutorials/extrapolation/</loc>
     <lastmod>2020-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>enochytchen.com/tutorials/ratetable/content/</loc>
+    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>enochytchen.com/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/ratetable/</loc>
+    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>enochytchen.com/tutorials/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/authors/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>enochytchen.com/tag/data/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/author/enoch-chen/</loc>
     <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -83,7 +98,7 @@
   </url>
   
   <url>
-    <loc>enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/</loc>
+    <loc>enochytchen.com/tutorials/extrapolation/allcause/article/</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -103,7 +118,7 @@
   </url>
   
   <url>
-    <loc>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</loc>
+    <loc>enochytchen.com/tutorials/extrapolation/relative/article/</loc>
     <lastmod>2020-04-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -122,19 +137,11 @@
   </url>
   
   <url>
-    <loc>enochytchen.com/authors/</loc>
-  </url>
-  
-  <url>
     <loc>enochytchen.com/categories/</loc>
   </url>
   
   <url>
     <loc>enochytchen.com/directory/</loc>
-  </url>
-  
-  <url>
-    <loc>enochytchen.com/tutorials/basicepi/fundamental/</loc>
   </url>
   
   <url>
@@ -147,6 +154,10 @@
   
   <url>
     <loc>enochytchen.com/talk/</loc>
+  </url>
+  
+  <url>
+    <loc>enochytchen.com/tutorials/_index-/</loc>
   </url>
   
 </urlset>

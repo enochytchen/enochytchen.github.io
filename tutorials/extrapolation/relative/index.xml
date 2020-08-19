@@ -24,9 +24,9 @@
     
     <item>
       <title>Extrapolating survival (relative survival framework)</title>
-      <link>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</link>
+      <link>enochytchen.com/tutorials/extrapolation/relative/article/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</guid>
+      <guid>enochytchen.com/tutorials/extrapolation/relative/article/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_relative_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h4&gt;
@@ -106,6 +106,7 @@ save colon_10yr_rs_to_allcause, replace
 
 
   
+  
 
 
 
@@ -120,10 +121,10 @@ save colon_10yr_rs_to_allcause, replace
 &lt;figure id=&#34;figure-extrapolation-by-restricting-follow-up-data-to-10-years&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/tutorials/extrapolation/relative/article/extrap_rel_fig1_hu563a6fc5b07ca74af1cf00cd17cdbc8c_108321_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img data-src=&#34;enochytchen.com/enochytchen.com/tutorials/extrapolation/relative/article/extrap_rel_fig1_hu563a6fc5b07ca74af1cf00cd17cdbc8c_108321_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;913&#34; height=&#34;664&#34;&gt;
 &lt;/a&gt;
 
 
@@ -144,6 +145,7 @@ The survival was by age groups, where the first 10 years were observed survival 
 
 
   
+  
 
 
 
@@ -158,10 +160,10 @@ The survival was by age groups, where the first 10 years were observed survival 
 &lt;figure id=&#34;figure-comparing-extrapolation-with-empirical-k-m-curve&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/tutorials/extrapolation/relative/article/extrap_rel_fig2_hu8007263a7dbdafca00725d525ecfdc60_102910_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img data-src=&#34;enochytchen.com/enochytchen.com/tutorials/extrapolation/relative/article/extrap_rel_fig2_hu8007263a7dbdafca00725d525ecfdc60_102910_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;913&#34; height=&#34;664&#34;&gt;
 &lt;/a&gt;
 
 
