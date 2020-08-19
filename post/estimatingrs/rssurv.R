@@ -2,13 +2,7 @@
 
 #' Latest Update: 20200818 Enoch Chen
 #' Purpose: Reproduce strs results in R, using colon.dta and popmort.dta
-
-#' In Stata, the syntax is shown below:
-#' use colon if stage==1, clear
-#' stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
-#' strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex) 
-#' strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex) pohar
-
+#' 
 #'===============================================================================
 #' 1 Preparation
 
