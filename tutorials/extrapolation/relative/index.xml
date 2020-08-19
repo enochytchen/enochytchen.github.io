@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Relative survival | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/tutorials/extrapolation/relative/</link>
-      <atom:link href="enochytchen.github.io/tutorials/extrapolation/relative/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.com/tutorials/extrapolation/relative/</link>
+      <atom:link href="enochytchen.com/tutorials/extrapolation/relative/index.xml" rel="self" type="application/rss+xml" />
     <description>Relative survival</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 20 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Relative survival</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/relative/</link>
+      <link>enochytchen.com/tutorials/extrapolation/relative/</link>
     </image>
     
     <item>
       <title>Make expected survival</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/relative/make_expected_survival/</link>
+      <link>enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/relative/make_expected_survival/</guid>
+      <guid>enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/make_expected_survival.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -24,9 +24,9 @@
     
     <item>
       <title>Extrapolating survival (relative survival framework)</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/relative/extrapolating_rel/</link>
+      <link>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/relative/extrapolating_rel/</guid>
+      <guid>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_relative_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h4&gt;
@@ -120,10 +120,10 @@ save colon_10yr_rs_to_allcause, replace
 &lt;figure id=&#34;figure-extrapolation-by-restricting-follow-up-data-to-10-years&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_relative_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_relative_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -158,10 +158,10 @@ The survival was by age groups, where the first 10 years were observed survival 
 &lt;figure id=&#34;figure-comparing-extrapolation-with-empirical-k-m-curve&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_relative_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_relative_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 

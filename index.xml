@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent posts | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/</link>
-      <atom:link href="enochytchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.com/</link>
+      <atom:link href="enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Recent posts</title>
-      <link>enochytchen.github.io/</link>
+      <link>enochytchen.com/</link>
     </image>
     
     <item>
       <title>Seven tips of good data management</title>
-      <link>enochytchen.github.io/post/7tips_gooddatamanagement/</link>
+      <link>enochytchen.com/post/gooddatamanagement/</link>
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/post/7tips_gooddatamanagement/</guid>
+      <guid>enochytchen.com/post/gooddatamanagement/</guid>
       <description>&lt;p&gt;I was pretty inspired by 
 &lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;lsquo;s 
 &lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
@@ -59,10 +59,10 @@ You &lt;strong&gt;commit&lt;/strong&gt; to your job. Why don&amp;rsquo;t you &lt
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/fileheader.png&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/fileheader.png&#34; &gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/fileheader.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/fileheader.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -86,9 +86,9 @@ The same concept applies to keeping workbook or a working records. Believe me or
     
     <item>
       <title>Data management? Does it matter?</title>
-      <link>enochytchen.github.io/post/why_datamanagement/</link>
+      <link>enochytchen.com/post/why_datamanagement/</link>
       <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/post/why_datamanagement/</guid>
+      <guid>enochytchen.com/post/why_datamanagement/</guid>
       <description>&lt;h3 id=&#34;why-should-you-do-data-management&#34;&gt;Why should you do data management?&lt;/h3&gt;
 &lt;p&gt;We all have experienced unexpected shutdown of our laptops or even files we were still processing and haven&amp;rsquo;t saved yet. Maybe these nightmares are quite unavoidable sometimes; otherwise, I wouldn&amp;rsquo;t call it &lt;strong&gt;unexpected&lt;/strong&gt;, and we would not have &lt;strong&gt;cursed&lt;/strong&gt; as it happened.&lt;/p&gt;
 &lt;p&gt;The most attractive points of data management are&lt;/p&gt;
@@ -122,9 +122,9 @@ The same concept applies to keeping workbook or a working records. Believe me or
     
     <item>
       <title>Not easy to be a fortune teller: prediction is hard</title>
-      <link>enochytchen.github.io/post/predictionishard/</link>
+      <link>enochytchen.com/post/prediction/</link>
       <pubDate>Tue, 12 May 2020 14:52:16 +0200</pubDate>
-      <guid>enochytchen.github.io/post/predictionishard/</guid>
+      <guid>enochytchen.com/post/prediction/</guid>
       <description>&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
 
 &lt;a href=&#34;https://quoteinvestigator.com/2013/10/20/no-predict/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;It’s Difficult to Make Predictions, Especially About the Future&lt;/a&gt;. Basically, these quotes do not differ from one another. They generally want to express that predection on future is risky and chanllenging. Moreover, it could lead to quantitative problems, such as underestimation or overestimation.&lt;/p&gt;
@@ -139,8 +139,6 @@ The same concept applies to keeping workbook or a working records. Believe me or
 
 
 
-  
-
 
 
 
@@ -154,10 +152,10 @@ The same concept applies to keeping workbook or a working records. Believe me or
 &lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-uk-1966-2030&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/uk_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, UK, 1966-2030&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./uk_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, UK, 1966-2030&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/uk_LEprojection.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;./uk_LEprojection.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -174,13 +172,11 @@ The same concept applies to keeping workbook or a working records. Believe me or
 &lt;h3 id=&#34;the-swedens-life-expectancy-projection&#34;&gt;The Sweden&amp;rsquo;s life expectancy projection&lt;/h3&gt;
 &lt;p&gt;Statistiska centralbyrån (Statistics Sweden) also published a similar report as the UK did to evaluate their previous projection on life expectancy. The following figure was downloaded from 
 &lt;a href=&#34;http://share.scb.se/ov9993/data/publikationer/statistik/_publikationer/be0401_2012i60_br_be51br1202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sveriges framtida befolkning 2012–2060&lt;/a&gt;(2).&lt;/p&gt;
-&lt;p&gt;
 
 
 
 
 
-  
 
 
 
@@ -195,10 +191,10 @@ The same concept applies to keeping workbook or a working records. Believe me or
 &lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-sweden-1950-2012&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/se_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 1950-2012&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./se_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 1950-2012&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/se_LEprojection.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;./se_LEprojection.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -211,15 +207,13 @@ The same concept applies to keeping workbook or a working records. Believe me or
 
 &lt;/figure&gt;
 
-The similar issue happened here as well. Earlier projection (before 2000) was not quite right in comparison with the empirical one.&lt;/p&gt;
+&lt;p&gt;The similar issue happened here as well. Earlier projection (before 2000) was not quite right in comparison with the empirical one.&lt;/p&gt;
 &lt;p&gt;This report was done in 2012 (the empirical trend until 2012). I then followed what Statistics Sweden conducted to generate a similar graph with the earliest open-access projection data till 2009 and empirical data till 2018 using data from Statistics Sweden (3) as well.&lt;/p&gt;
 
 
 
 
 
-
-  
 
 
 
@@ -234,10 +228,10 @@ The similar issue happened here as well. Earlier projection (before 2000) was no
 &lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-sweden-2000-2030&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/LEprojection_validation_SE_2030.jpg&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 2000-2030.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./LEprojection_validation_SE_2030.jpg&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 2000-2030.&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/LEprojection_validation_SE_2030.jpg&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;./LEprojection_validation_SE_2030.jpg&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -268,9 +262,9 @@ The similar issue happened here as well. Earlier projection (before 2000) was no
     
     <item>
       <title>Extrapolating survival (all-cause survival framework)</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/allcause/extrapolating_all/</link>
+      <link>enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/allcause/extrapolating_all/</guid>
+      <guid>enochytchen.com/tutorials/extrapolation/allcause/extrapolating_all/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_allcause_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This blogpost introduces how to extrapolate patients&amp;rsquo; survival using flexible parametric model with age groups (categorical variable) as covariates. The tutorial is following the post 
@@ -331,10 +325,10 @@ function. We then predict the survival by age group using predict to gain extrap
 &lt;figure id=&#34;figure-extrapolation-by-restricting-follow-up-data-to-10-years&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_allcause_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_allcause_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_allcause_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_allcause_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -369,10 +363,10 @@ The survival was by age groups, where the first 10 years were observed survival 
 &lt;figure id=&#34;figure-comparing-extrapolation-with-empirical-k-m-curve&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_allcause_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_allcause_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_allcause_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_allcause_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -392,9 +386,9 @@ The survival was by age groups, where the first 10 years were observed survival 
     
     <item>
       <title>Data clearance</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/data_prep/data_preparation/</link>
+      <link>enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/data_prep/data_preparation/</guid>
+      <guid>enochytchen.com/tutorials/extrapolation/data_prep/data_preparation/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/data_prep_extrapolation.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-stata&#34;&gt;// This data was downlaoded from Paul Dickman&#39;s website
@@ -427,9 +421,9 @@ save colon1975_1985,replace
     
     <item>
       <title>Make expected survival</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/relative/make_expected_survival/</link>
+      <link>enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/relative/make_expected_survival/</guid>
+      <guid>enochytchen.com/tutorials/extrapolation/relative/make_expected_survival/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/make_expected_survival.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -437,9 +431,9 @@ save colon1975_1985,replace
     
     <item>
       <title>Extrapolating survival (relative survival framework)</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/relative/extrapolating_rel/</link>
+      <link>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/relative/extrapolating_rel/</guid>
+      <guid>enochytchen.com/tutorials/extrapolation/relative/extrapolating_rel/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_relative_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h4&gt;
@@ -533,10 +527,10 @@ save colon_10yr_rs_to_allcause, replace
 &lt;figure id=&#34;figure-extrapolation-by-restricting-follow-up-data-to-10-years&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_relative_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png&#34; data-caption=&#34;Extrapolation by restricting follow-up data to 10 years&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_relative_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig1.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -571,10 +565,10 @@ The survival was by age groups, where the first 10 years were observed survival 
 &lt;figure id=&#34;figure-comparing-extrapolation-with-empirical-k-m-curve&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_relative_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png&#34; data-caption=&#34;Comparing extrapolation with empirical K-M curve&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/extrapolating_relative_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;enochytchen.com/enochytchen.com/media/extrapolating_relative_stpm2_fig2.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -597,9 +591,9 @@ The survival was by age groups, where the first 10 years were observed survival 
     
     <item>
       <title>Population mortality projection</title>
-      <link>enochytchen.github.io/tutorials/extrapolation/data_prep/popmort_projection/</link>
+      <link>enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</link>
       <pubDate>Mon, 20 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.github.io/tutorials/extrapolation/data_prep/popmort_projection/</guid>
+      <guid>enochytchen.com/tutorials/extrapolation/data_prep/popmort_projection/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/popmort_projection.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>

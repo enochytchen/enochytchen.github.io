@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>UK | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/tag/uk/</link>
-      <atom:link href="enochytchen.github.io/tag/uk/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.com/tag/uk/</link>
+      <atom:link href="enochytchen.com/tag/uk/index.xml" rel="self" type="application/rss+xml" />
     <description>UK</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 12 May 2020 14:52:16 +0200</lastBuildDate>
     <image>
-      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>UK</title>
-      <link>enochytchen.github.io/tag/uk/</link>
+      <link>enochytchen.com/tag/uk/</link>
     </image>
     
     <item>
       <title>Not easy to be a fortune teller: prediction is hard</title>
-      <link>enochytchen.github.io/post/predictionishard/</link>
+      <link>enochytchen.com/post/prediction/</link>
       <pubDate>Tue, 12 May 2020 14:52:16 +0200</pubDate>
-      <guid>enochytchen.github.io/post/predictionishard/</guid>
+      <guid>enochytchen.com/post/prediction/</guid>
       <description>&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
 
 &lt;a href=&#34;https://quoteinvestigator.com/2013/10/20/no-predict/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;It’s Difficult to Make Predictions, Especially About the Future&lt;/a&gt;. Basically, these quotes do not differ from one another. They generally want to express that predection on future is risky and chanllenging. Moreover, it could lead to quantitative problems, such as underestimation or overestimation.&lt;/p&gt;
@@ -31,8 +31,6 @@
 
 
 
-  
-
 
 
 
@@ -46,10 +44,10 @@
 &lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-uk-1966-2030&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/uk_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, UK, 1966-2030&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./uk_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, UK, 1966-2030&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/uk_LEprojection.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;./uk_LEprojection.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -66,13 +64,11 @@
 &lt;h3 id=&#34;the-swedens-life-expectancy-projection&#34;&gt;The Sweden&amp;rsquo;s life expectancy projection&lt;/h3&gt;
 &lt;p&gt;Statistiska centralbyrån (Statistics Sweden) also published a similar report as the UK did to evaluate their previous projection on life expectancy. The following figure was downloaded from 
 &lt;a href=&#34;http://share.scb.se/ov9993/data/publikationer/statistik/_publikationer/be0401_2012i60_br_be51br1202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sveriges framtida befolkning 2012–2060&lt;/a&gt;(2).&lt;/p&gt;
-&lt;p&gt;
 
 
 
 
 
-  
 
 
 
@@ -87,10 +83,10 @@
 &lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-sweden-1950-2012&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/se_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 1950-2012&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./se_LEprojection.png&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 1950-2012&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/se_LEprojection.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;./se_LEprojection.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -103,15 +99,13 @@
 
 &lt;/figure&gt;
 
-The similar issue happened here as well. Earlier projection (before 2000) was not quite right in comparison with the empirical one.&lt;/p&gt;
+&lt;p&gt;The similar issue happened here as well. Earlier projection (before 2000) was not quite right in comparison with the empirical one.&lt;/p&gt;
 &lt;p&gt;This report was done in 2012 (the empirical trend until 2012). I then followed what Statistics Sweden conducted to generate a similar graph with the earliest open-access projection data till 2009 and empirical data till 2018 using data from Statistics Sweden (3) as well.&lt;/p&gt;
 
 
 
 
 
-
-  
 
 
 
@@ -126,10 +120,10 @@ The similar issue happened here as well. Earlier projection (before 2000) was no
 &lt;figure id=&#34;figure-actual-and-projected-life-expectancy-at-birth-sweden-2000-2030&#34;&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/media/LEprojection_validation_SE_2030.jpg&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 2000-2030.&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;./LEprojection_validation_SE_2030.jpg&#34; data-caption=&#34;Actual and projected life expectancy at birth, Sweden, 2000-2030.&#34;&gt;
 
 
-  &lt;img src=&#34;enochytchen.github.io/enochytchen.github.io/media/LEprojection_validation_SE_2030.jpg&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;./LEprojection_validation_SE_2030.jpg&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 

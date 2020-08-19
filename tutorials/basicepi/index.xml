@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/tutorials/basicepi/</link>
-      <atom:link href="enochytchen.github.io/tutorials/basicepi/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.com/tutorials/basicepi/</link>
+      <atom:link href="enochytchen.com/tutorials/basicepi/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
-      <link>enochytchen.github.io/tutorials/basicepi/</link>
+      <link>enochytchen.com/tutorials/basicepi/</link>
     </image>
     
   </channel>

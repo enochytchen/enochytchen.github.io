@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/author/</link>
-      <atom:link href="enochytchen.github.io/author/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.com/author/</link>
+      <atom:link href="enochytchen.com/author/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
-      <url>/enochytchen.github.io/author/avatar_hubce357f9e63869389f00a643466a4462_210483_270x270_fill_q90_lanczos_center.jpeg</url>
+      <url>/enochytchen.com/author/avatar_hubce357f9e63869389f00a643466a4462_210483_270x270_fill_q90_lanczos_center.jpeg</url>
       <title>Enoch Yi-Tung Chen</title>
-      <link>enochytchen.github.io/author/</link>
+      <link>enochytchen.com/author/</link>
     </image>
     
   </channel>

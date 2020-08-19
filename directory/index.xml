@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Directory | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.github.io/directory/</link>
-      <atom:link href="enochytchen.github.io/directory/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.com/directory/</link>
+      <atom:link href="enochytchen.com/directory/index.xml" rel="self" type="application/rss+xml" />
     <description>Directory</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
-      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Directory</title>
-      <link>enochytchen.github.io/directory/</link>
+      <link>enochytchen.com/directory/</link>
     </image>
     
   </channel>
