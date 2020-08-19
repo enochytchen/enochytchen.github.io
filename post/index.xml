@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent posts | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.com/post/</link>
-      <atom:link href="enochytchen.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.github.io/post/</link>
+      <atom:link href="enochytchen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Recent posts</title>
-      <link>enochytchen.com/post/</link>
+      <link>enochytchen.github.io/post/</link>
     </image>
     
     <item>
       <title>Seven tips of good data management</title>
-      <link>enochytchen.com/post/gooddatamanagement/</link>
+      <link>enochytchen.github.io/post/gooddatamanagement/</link>
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.com/post/gooddatamanagement/</guid>
+      <guid>enochytchen.github.io/post/gooddatamanagement/</guid>
       <description>&lt;p&gt;I was pretty inspired by 
 &lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;lsquo;s 
 &lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
@@ -84,9 +84,9 @@ The same concept applies to keeping workbook or a working records. Believe me or
     
     <item>
       <title>Data management? Does it matter?</title>
-      <link>enochytchen.com/post/why_datamanagement/</link>
+      <link>enochytchen.github.io/post/why_datamanagement/</link>
       <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.com/post/why_datamanagement/</guid>
+      <guid>enochytchen.github.io/post/why_datamanagement/</guid>
       <description>&lt;h3 id=&#34;why-should-you-do-data-management&#34;&gt;Why should you do data management?&lt;/h3&gt;
 &lt;p&gt;We all have experienced unexpected shutdown of our laptops or even files we were still processing and haven&amp;rsquo;t saved yet. Maybe these nightmares are quite unavoidable sometimes; otherwise, I wouldn&amp;rsquo;t call it &lt;strong&gt;unexpected&lt;/strong&gt;, and we would not have &lt;strong&gt;cursed&lt;/strong&gt; as it happened.&lt;/p&gt;
 &lt;p&gt;The most attractive points of data management are&lt;/p&gt;
@@ -120,9 +120,9 @@ The same concept applies to keeping workbook or a working records. Believe me or
     
     <item>
       <title>Not easy to be a fortune teller: prediction is hard</title>
-      <link>enochytchen.com/post/prediction/</link>
+      <link>enochytchen.github.io/post/prediction/</link>
       <pubDate>Tue, 12 May 2020 14:52:16 +0200</pubDate>
-      <guid>enochytchen.com/post/prediction/</guid>
+      <guid>enochytchen.github.io/post/prediction/</guid>
       <description>&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
 
 &lt;a href=&#34;https://quoteinvestigator.com/2013/10/20/no-predict/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;It’s Difficult to Make Predictions, Especially About the Future&lt;/a&gt;. Basically, these quotes do not differ from one another. They generally want to express that predection on future is risky and chanllenging. Moreover, it could lead to quantitative problems, such as underestimation or overestimation.&lt;/p&gt;

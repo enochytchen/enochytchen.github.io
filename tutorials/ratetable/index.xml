@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Make ratetable using R | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.com/tutorials/ratetable/</link>
-      <atom:link href="enochytchen.com/tutorials/ratetable/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.github.io/tutorials/ratetable/</link>
+      <atom:link href="enochytchen.github.io/tutorials/ratetable/index.xml" rel="self" type="application/rss+xml" />
     <description>Make ratetable using R</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Make ratetable using R</title>
-      <link>enochytchen.com/tutorials/ratetable/</link>
+      <link>enochytchen.github.io/tutorials/ratetable/</link>
     </image>
     
     <item>
       <title>Make ratetable using R</title>
-      <link>enochytchen.com/tutorials/ratetable/content/</link>
+      <link>enochytchen.github.io/tutorials/ratetable/content/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.com/tutorials/ratetable/content/</guid>
+      <guid>enochytchen.github.io/tutorials/ratetable/content/</guid>
       <description>&lt;p&gt;The syntax used in this tutorial can be found 
 &lt;a href=&#34;create_ratetable&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h3&gt;
@@ -135,10 +135,10 @@ legend(&amp;quot;topleft&amp;quot;, legend=c(&amp;quot;Female&amp;quot;, &amp;qu
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
 
 
-  &lt;img data-src=&#34;enochytchen.com/enochytchen.com/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
+  &lt;img data-src=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/ratetable/content/loghazard_hud6a767dbdddc432ae6a3425963d41629_37068_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
 &lt;/a&gt;
 
 
@@ -287,10 +287,10 @@ summary(rssurv.plotdata)
 &lt;figure &gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.com/enochytchen.com/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; &gt;
 
 
-  &lt;img data-src=&#34;enochytchen.com/enochytchen.com/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
+  &lt;img data-src=&#34;enochytchen.github.io/enochytchen.github.io/tutorials/ratetable/content/ggplot_hud6a767dbdddc432ae6a3425963d41629_41383_2000x2000_fit_q90_lanczos.jpeg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;683&#34; height=&#34;401&#34;&gt;
 &lt;/a&gt;
 
 

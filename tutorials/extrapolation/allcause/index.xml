@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>All-cause survival | Enoch Yi-Tung Chen</title>
-    <link>enochytchen.com/tutorials/extrapolation/allcause/</link>
-      <atom:link href="enochytchen.com/tutorials/extrapolation/allcause/index.xml" rel="self" type="application/rss+xml" />
+    <link>enochytchen.github.io/tutorials/extrapolation/allcause/</link>
+      <atom:link href="enochytchen.github.io/tutorials/extrapolation/allcause/index.xml" rel="self" type="application/rss+xml" />
     <description>All-cause survival</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/enochytchen.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>All-cause survival</title>
-      <link>enochytchen.com/tutorials/extrapolation/allcause/</link>
+      <link>enochytchen.github.io/tutorials/extrapolation/allcause/</link>
     </image>
     
     <item>
       <title>Extrapolating survival (all-cause survival framework)</title>
-      <link>enochytchen.com/tutorials/extrapolation/allcause/article/</link>
+      <link>enochytchen.github.io/tutorials/extrapolation/allcause/article/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>enochytchen.com/tutorials/extrapolation/allcause/article/</guid>
+      <guid>enochytchen.github.io/tutorials/extrapolation/allcause/article/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_allcause_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This blogpost introduces how to extrapolate patients&amp;rsquo; survival using flexible parametric model with age groups (categorical variable) as covariates. The tutorial is following the post 
