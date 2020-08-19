@@ -18,7 +18,7 @@
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/tutorials/ratetable/content/</guid>
       <description>&lt;p&gt;The syntax used in this tutorial can be found 
-&lt;a href=&#34;create_ratetable.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;./create_ratetable.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h3&gt;
 &lt;p&gt;First, please install and use the packages needed in the following syntax, and read the colon data.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; 1 Preparation
