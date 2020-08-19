@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="Research Assistant in Biostatistics">
+  <meta name="description" content="As estimating relative survival, it is commonly done by using rs.surv() in R and strs in Stata. But are the results identical?">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/post/">
+  <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/post/estimatingrs/">
 
   
 
@@ -225,14 +225,12 @@
   
 
   
-  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Enoch Yi-Tung Chen">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://enochytchen.com/post/">
+  <link rel="canonical" href="https://enochytchen.com/post/estimatingrs/">
 
   
   
@@ -248,18 +246,63 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Enoch Yi-Tung Chen">
-  <meta property="og:url" content="https://enochytchen.com/post/">
-  <meta property="og:title" content="Recent posts | Enoch Yi-Tung Chen">
-  <meta property="og:description" content="Research Assistant in Biostatistics"><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="https://enochytchen.com/post/estimatingrs/">
+  <meta property="og:title" content="Estimating relative survival: using rs.surv() vs. strs | Enoch Yi-Tung Chen">
+  <meta property="og:description" content="As estimating relative survival, it is commonly done by using rs.surv() in R and strs in Stata. But are the results identical?"><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-08-19T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2020-08-19T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-08-19T00:00:00&#43;00:00">
   
 
   
 
 
+    
 
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://enochytchen.com/post/estimatingrs/"
+  },
+  "headline": "Estimating relative survival: using rs.surv() vs. strs",
+  
+  "datePublished": "2020-08-19T00:00:00Z",
+  "dateModified": "2020-08-19T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Enoch Chen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Enoch Yi-Tung Chen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "As estimating relative survival, it is commonly done by using rs.surv() in R and strs in Stata. But are the results identical?"
+}
+</script>
+
+  
 
   
 
@@ -267,10 +310,13 @@
   
 
 
+  
 
 
 
-  <title>Recent posts | Enoch Yi-Tung Chen</title>
+
+
+  <title>Estimating relative survival: using rs.surv() vs. strs | Enoch Yi-Tung Chen</title>
 
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -496,44 +542,12 @@
 </nav>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
+  <article class="article">
 
   
 
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1>Recent posts</h1>
-
-  
-
-  
-</div>
 
 
-
-<div class="universal-wrapper">
-
-  
-
-  
-  
-    
-      
 
 
 
@@ -545,8 +559,13 @@
 
   
 
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Estimating relative survival: using rs.surv() vs. strs</h1>
 
-<div class="card-simple">
+  
 
   
     
@@ -590,32 +609,149 @@
 
 </div>
 
-  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
-  
-  
-
-  <h3 class="article-title mb-1 mt-3">
-    <a href="/post/estimatingrs/">Estimating relative survival: using rs.surv() vs. strs</a>
-  </h3>
-
-  
-  <a href="/post/estimatingrs/" class="summary-link">
-    <div class="article-style">
-      <p>As estimating relative survival, it is commonly done by using rs.surv() in R and strs in Stata. But are the results identical?</p>
-    </div>
-  </a>
-  
-
-  
-
 </div>
 
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>The beauty of using relative survival to estimate net survival is that cause of death information is not required, whereas cause of death needs to be classified completely within cause-specific framework (1). Both <code>relsurv::rs.surv()</code> command in R and <code>strs</code> command in Stata supports estimating net survival in relative survival framework. However, people might be curious about the difference in between. Here is an example below of using the same dataset, identical definition of status (alive, dead from cancer, or dead from other causes), and same approaches (Ederer II and Pohar Perme estimator) to estimate relative survival using <code>rs.surv()</code> and <code>strs</code>.</p>
+<h3 id="edererii-esitmator">EdererII esitmator</h3>
+<h4 id="strs-in-stata"><code>strs</code> in Stata</h4>
+<pre><code class="language-r">use http://enochytchen.com/directory/data/colon.dta if stage==1, clear
+stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
+strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex)
+</code></pre>
+<h3 id="pohar-perme-estimator">Pohar Perme estimator</h3>
+<h4 id="strs-in-stata-1"><code>strs</code> in Stata</h4>
+<pre><code class="language-r">use http://enochytchen.com/directory/data/colon.dta if stage==1, clear
+stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
+strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex) pohar
+</code></pre>
+<h3 id="reference">Reference</h3>
+<ol>
+<li>Dickman2006</li>
+</ol>
+
+    </div>
+
     
+
+
+
+
+
+
+<div class="article-tags">
   
+  <a class="badge badge-light" href="/tag/expected-survival/">expected survival</a>
+  
+  <a class="badge badge-light" href="/tag/relative-survival/">relative survival</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
     
       
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://enochytchen.com/post/estimatingrs/&amp;text=Estimating%20relative%20survival:%20using%20rs.surv%28%29%20vs.%20strs" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://enochytchen.com/post/estimatingrs/&amp;t=Estimating%20relative%20survival:%20using%20rs.surv%28%29%20vs.%20strs" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Estimating%20relative%20survival:%20using%20rs.surv%28%29%20vs.%20strs&amp;body=https://enochytchen.com/post/estimatingrs/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://enochytchen.com/post/estimatingrs/&amp;title=Estimating%20relative%20survival:%20using%20rs.surv%28%29%20vs.%20strs" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Estimating%20relative%20survival:%20using%20rs.surv%28%29%20vs.%20strs%20https://enochytchen.com/post/estimatingrs/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://enochytchen.com/post/estimatingrs/&amp;title=Estimating%20relative%20survival:%20using%20rs.surv%28%29%20vs.%20strs" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
@@ -625,226 +761,37 @@
 
 
 
-  
 
 
-<div class="card-simple">
 
   
     
-
-
-<div class="article-metadata">
-
-  
-  
-  
-  
-  <div>
     
 
+
+
+
+
   
-  <span >Enoch Chen</span>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    May 18, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-  
-
-  
-  
-  
-
-  <h3 class="article-title mb-1 mt-3">
-    <a href="/post/gooddatamanagement/">Seven tips of good data management</a>
-  </h3>
-
-  
-  <a href="/post/gooddatamanagement/" class="summary-link">
-    <div class="article-style">
-      <p>Dos and don&rsquo;ts of data management. Let&rsquo;s pick them up together.</p>
-    </div>
-  </a>
-  
-
-  
-
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="card-simple">
-
-  
-    
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    May 16, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-  
-
-  
-  
-  
-
-  <h3 class="article-title mb-1 mt-3">
-    <a href="/post/why_datamanagement/">Data management? Does it matter?</a>
-  </h3>
-
-  
-  <a href="/post/why_datamanagement/" class="summary-link">
-    <div class="article-style">
-      <p>Data management is boring for sure. Take a look at my poor experience. Then you would agree it is essential.</p>
-    </div>
-  </a>
-  
-
-  
-
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="card-simple">
-
-  
-    
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    May 12, 2020
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-
-  
-  
-
-</div>
-
-  
-
-  
-  
-  
-
-  <h3 class="article-title mb-1 mt-3">
-    <a href="/post/prediction/">Not easy to be a fortune teller: prediction is hard</a>
-  </h3>
-
-  
-  <a href="/post/prediction/" class="summary-link">
-    <div class="article-style">
-      <p>Is it easy to make prediction about the future? Take a look at the UK&rsquo;s and Sweden&rsquo;s life expectancy projection.</p>
-    </div>
-  </a>
-  
-
-  
-
-</div>
-
-    
-  
-
-  
-
-
-</div>
+</article>
 
       
 

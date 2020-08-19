@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>relative survival | Enoch Yi-Tung Chen</title>
+    <link>https://enochytchen.com/tag/relative-survival/</link>
+      <atom:link href="https://enochytchen.com/tag/relative-survival/index.xml" rel="self" type="application/rss+xml" />
+    <description>relative survival</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>relative survival</title>
+      <link>https://enochytchen.com/tag/relative-survival/</link>
+    </image>
+    
+    <item>
+      <title>Estimating relative survival: using rs.surv() vs. strs</title>
+      <link>https://enochytchen.com/post/estimatingrs/</link>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/post/estimatingrs/</guid>
+      <description>&lt;p&gt;The beauty of using relative survival to estimate net survival is that cause of death information is not required, whereas cause of death needs to be classified completely within cause-specific framework (1). Both &lt;code&gt;relsurv::rs.surv()&lt;/code&gt; command in R and &lt;code&gt;strs&lt;/code&gt; command in Stata supports estimating net survival in relative survival framework. However, people might be curious about the difference in between. Here is an example below of using the same dataset, identical definition of status (alive, dead from cancer, or dead from other causes), and same approaches (Ederer II and Pohar Perme estimator) to estimate relative survival using &lt;code&gt;rs.surv()&lt;/code&gt; and &lt;code&gt;strs&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;edererii-esitmator&#34;&gt;EdererII esitmator&lt;/h3&gt;
+&lt;h4 id=&#34;strs-in-stata&#34;&gt;&lt;code&gt;strs&lt;/code&gt; in Stata&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use http://enochytchen.com/directory/data/colon.dta if stage==1, clear
+stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
+strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;pohar-perme-estimator&#34;&gt;Pohar Perme estimator&lt;/h3&gt;
+&lt;h4 id=&#34;strs-in-stata-1&#34;&gt;&lt;code&gt;strs&lt;/code&gt; in Stata&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use http://enochytchen.com/directory/data/colon.dta if stage==1, clear
+stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
+strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex) pohar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Dickman2006&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
