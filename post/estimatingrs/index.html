@@ -632,19 +632,230 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>The beauty of using relative survival to estimate net survival is that cause of death information is not required, whereas cause of death needs to be classified completely within cause-specific framework (1). Both <code>relsurv::rs.surv()</code> command in R and <code>strs</code> command in Stata supports estimating net survival in relative survival framework. However, people might be curious about the difference in between. Here is an example below of using the same dataset, identical definition of status (alive, dead from cancer, or dead from other causes), and same approaches (Ederer II and Pohar Perme estimator) to estimate relative survival using <code>rs.surv()</code> and <code>strs</code>.</p>
-<h3 id="edererii-esitmator">EdererII esitmator</h3>
+       <h2>Table of Contents</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#ederer-ii-esitmator">Ederer II esitmator</a></li>
+        <li><a href="#pohar-perme-estimator">Pohar-Perme estimator</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<h3 id="introduction">Introduction</h3>
+<p>The codes of this blog post can be found at 
+<a href="https://enochytchen.com/post/estimatingrs/rssurv.R" target="_blank" rel="noopener">rssurv.R</a> and 
+<a href="https://enochytchen.com/post/estimatingrs/strs.do" target="_blank" rel="noopener">strs.do</a>.</p>
+<p>The beauty of using relative survival to estimate net survival is that cause of death information is not required, whereas cause of death needs to be classified completely within cause-specific framework (1). Both <code>relsurv::rs.surv()</code> command in R and <code>strs</code> command in Stata supports estimating net survival in relative survival framework. However, people might be curious about the difference in between. Here is an example below of using the same dataset, identical definition of status (alive, dead from cancer, or dead from other causes), and same approaches (Ederer II and Pohar Perme estimator) to estimate relative survival using <code>rs.surv()</code> and <code>strs</code>.</p>
+<h3 id="ederer-ii-esitmator">Ederer II esitmator</h3>
+<h4 id="rssurv-in-r"><code>rs.surv()</code> in R</h4>
+<pre><code>rssurv_e2 &lt;- rs.surv(Surv(time  =  (decimal_date(exit)-  decimal_date(dx)) * 365.241, # time in days
+                          event = status== 1 | status== 2 ) ~ sex,
+                     rmap = list(age = age * 365.241, year = dx),
+                     data = colon1,
+                     ratetable = popmort_new,
+                     method = &quot;ederer2&quot;)
+
+rs.table_e2 &lt;- as.data.frame(summary(rssurv_e2, time = c(0:10) * 365.241, scale = 365.241)
+                             [c(&quot;strata&quot;, &quot;time&quot;, &quot;n.risk&quot;, &quot;n.event&quot;, &quot;surv&quot;, &quot;std.err&quot;, &quot;lower&quot;, &quot;upper&quot;)])
+
+#' Rename the columns
+strs_e2 &lt;- rs.table_e2 %&gt;%
+  mutate(cr_e2 = surv, 
+         lo_cr_e2 = round(lower, digits = 4),
+         hi_cr_e2 = round(upper, digits = 4),
+         sex = ifelse(strata == &quot;sexFemale=0&quot;, &quot;Male&quot;, &quot;Female&quot;),
+         
+  )%&gt;%
+  select(sex, time, n.risk, n.event, r, cr_e2, lo_cr_e2, hi_cr_e2)
+</code></pre>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-estimating-net-survival-using-rssurv-ederer-ii">
+
+
+  <a data-fancybox="" href="/post/estimatingrs/rssurv_e2_hu8abfbb7ac3a206dbc575ca0455fad598_77860_2000x2000_fit_lanczos_2.png" data-caption="Estimating net survival using rs.surv(), Ederer II">
+
+
+  <img data-src="/post/estimatingrs/rssurv_e2_hu8abfbb7ac3a206dbc575ca0455fad598_77860_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="532" height="533">
+</a>
+
+
+  
+  
+  <figcaption>
+    Estimating net survival using rs.surv(), Ederer II
+  </figcaption>
+
+
+</figure>
+
 <h4 id="strs-in-stata"><code>strs</code> in Stata</h4>
 <pre><code class="language-r">use http://enochytchen.com/directory/data/colon.dta if stage==1, clear
 stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
 strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex)
 </code></pre>
-<h3 id="pohar-perme-estimator">Pohar Perme estimator</h3>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-estimating-net-survival-using-strs-ederer-ii">
+
+
+  <a data-fancybox="" href="/post/estimatingrs/strs_e2_hu749bcb2913d93d919789b0b56e4bc420_115885_2000x2000_fit_lanczos_2.png" data-caption="Estimating net survival using strs, Ederer II">
+
+
+  <img data-src="/post/estimatingrs/strs_e2_hu749bcb2913d93d919789b0b56e4bc420_115885_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="1028" height="761">
+</a>
+
+
+  
+  
+  <figcaption>
+    Estimating net survival using strs, Ederer II
+  </figcaption>
+
+
+</figure>
+
+<h3 id="pohar-perme-estimator">Pohar-Perme estimator</h3>
+<h4 id="rssurv-in-r-1"><code>rs.surv()</code> in R</h4>
+<pre><code>rssurv_pohar &lt;- rs.surv(Surv(time  =  (decimal_date(exit) - decimal_date(dx)) * 365.241, # time in days
+                             event = status== 1 | status== 2 ) ~ sex,
+                        rmap = list(age = age * 365.241, year = dx),
+                        data = colon1,
+                        ratetable = popmort_new,
+                        method = &quot;pohar-perme&quot;)
+
+rs.table_pohar &lt;- as.data.frame(summary(rssurv_pohar, time = c(0:10) * 365.241, scale = 365.241)
+                                [c(&quot;strata&quot;, &quot;time&quot;, &quot;n.risk&quot;, &quot;n.event&quot;, &quot;surv&quot;, &quot;std.err&quot;, &quot;lower&quot;, &quot;upper&quot;)])
+
+#' Rename the columns
+strs_pohar &lt;- rs.table_pohar %&gt;%
+  mutate(cr_pp = surv, 
+         lo_pp = round(lower, digits = 4),
+         hi_pp = round(upper, digits = 4),
+         sex = ifelse(strata == &quot;sexFemale=0&quot;, &quot;Male&quot;, &quot;Female&quot;),
+         r   =   round( cr_pp/lag(cr_pp), digits = 4),
+  )%&gt;%
+  select(sex, time, n.risk, n.event, cr_pp, lo_pp, hi_pp)
+</code></pre>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-estimating-net-survival-using-rssurv-pohar-perme">
+
+
+  <a data-fancybox="" href="/post/estimatingrs/rssurv_pp_hu0d92bc10ef8284b5b0c994a22a5a6aa6_75914_2000x2000_fit_lanczos_2.png" data-caption="Estimating net survival using rs.surv(), Pohar-Perme">
+
+
+  <img data-src="/post/estimatingrs/rssurv_pp_hu0d92bc10ef8284b5b0c994a22a5a6aa6_75914_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="494" height="534">
+</a>
+
+
+  
+  
+  <figcaption>
+    Estimating net survival using rs.surv(), Pohar-Perme
+  </figcaption>
+
+
+</figure>
+
 <h4 id="strs-in-stata-1"><code>strs</code> in Stata</h4>
 <pre><code class="language-r">use http://enochytchen.com/directory/data/colon.dta if stage==1, clear
 stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
 strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex) pohar
 </code></pre>
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-estimating-net-survival-using-strs-pohar-perme">
+
+
+  <a data-fancybox="" href="/post/estimatingrs/strs_pp_hu37c54d9fc66187598c1072038a6e423a_110462_2000x2000_fit_lanczos_2.png" data-caption="Estimating net survival using strs, Pohar-Perme">
+
+
+  <img data-src="/post/estimatingrs/strs_pp_hu37c54d9fc66187598c1072038a6e423a_110462_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="951" height="762">
+</a>
+
+
+  
+  
+  <figcaption>
+    Estimating net survival using strs, Pohar-Perme
+  </figcaption>
+
+
+</figure>
+
 <h3 id="reference">Reference</h3>
 <ol>
 <li>Dickman2006</li>

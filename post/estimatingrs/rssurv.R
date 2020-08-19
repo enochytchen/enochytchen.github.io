@@ -21,8 +21,8 @@ x<-c(  "haven",       # read.dta()
 
 lapply(x, require, character.only = TRUE)
 
-#' Read the data from web (FIXME: local copy?!)
-colon <- read_dta( "http://enochytchen.com/directory/data/colon.dta")
+#' Read the data from web
+colon <- read_dta( "https://enochytchen.com/directory/data/colon.dta")
 str(colon)
 
 #' Extract the date of birth,
@@ -42,7 +42,7 @@ colon1 <- colon_temp[colon_temp$stage==1,]
 #'===============================================================================
 #' 2 Make ratetable
 #' Read the popmort file from pauldickman.com
-popmort <- read_dta( "http://enochytchen.com/directory/data/popmort.dta")[c(1:4)]
+popmort <- read_dta( "https://enochytchen.com/directory/data/popmort.dta")[c(1:4)]
 
 #'Rename the columns, since R cannot read underscore
 colnames(popmort)[1:4] <- c("sex", "year", "age", "prob")
@@ -84,7 +84,7 @@ strs_e2 <- rs.table_e2 %>%
          sex = ifelse(strata == "sexFemale=0", "Male", "Female"),
          
   )%>%
-  select(sex, time, n.risk, n.event, r, cr_e2, lo_cr_e2, hi_cr_e2)
+  select(sex, time, n.risk, n.event, cr_e2, lo_cr_e2, hi_cr_e2)
 
 #'===============================================================================
 #' 3B pohar-perme
@@ -107,7 +107,7 @@ strs_pohar <- rs.table_pohar %>%
          sex = ifelse(strata == "sexFemale=0", "Male", "Female"),
          r   =   round( cr_pp/lag(cr_pp), digits = 4),
   )%>%
-  select(sex, time, n.risk, n.event, r, cr_pp, lo_pp, hi_pp)
+  select(sex, time, n.risk, n.event, cr_pp, lo_pp, hi_pp)
 
 # Ende of R file ===============================================================
 
