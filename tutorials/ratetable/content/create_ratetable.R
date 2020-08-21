@@ -1,10 +1,46 @@
 #' create_ratetable.R
-#'
+#' 
+#' Authors: Enoch Chen, Paul Dickman
+#' Contact info: enoch.yitung.chen@ki.se 
+#' Tutorial: https://enochytchen.com/tutorials/ratetable/
 #' Latest Update: 20200817 Enoch Chen
+#'
 #' Purpose: To model survival in multiple time scales (continuous attained age & time-split calendar year) 
 #'          using stpm2, and then based on the model create a ratetable
 #'          In this example. we use two dimensions (subsite + stage) in the ratetable.
 #'===============================================================================
+#' Acknowledgements: we acknowledge the people who contributed to this porject
+#'                   - Alexander Ploner's contribution on optimising the codes, including making the syntax more tidy, solving the convergence problem of the models, and transforming the data frame into lists
+#'                   - Nurgul Batyrbekova's insight in modeling survival data on multiple time scale
+#'                   - Joshua Entrop's teaching on plotting regression model results
+#'                   - Quang Thinh Trac's help on writing a loop to run AIC/BIC test
+#'===============================================================================
+#' MIT licenses
+#' Based on <http://opensource.org/licenses/MIT>
+
+#' Copyright (c) <2020>, <Enoch Chen>
+
+#' Permission is hereby granted, free of charge, to any person obtaining
+#' a copy of this software and associated documentation files (the
+#' "Software"), to deal in the Software without restriction, including
+#' without limitation the rights to use, copy, modify, merge, publish,
+#' distribute, sublicense, and/or sell copies of the Software, and to
+#' permit persons to whom the Software is furnished to do so, subject to
+#' the following conditions:
+
+#' The above copyright notice and this permission notice shall be
+#' included in all copies or substantial portions of the Software.
+
+#' THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+#' EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+#' MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+#' NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+#' LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+#' OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+#' WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#'===============================================================================
+#' Start of R file ===============================================================
+
 #' 1 Preparation
 
 #' Clear all
@@ -235,6 +271,6 @@ ggplot(rssurv.plotdata, aes(x = time, y = surv, color = sex, fill = sex )) +
        y="Cumulative relative survival") +
   theme(plot.title = element_text(size = 10))
 
-# End of R file ===============================================================
+#' End of R file ===============================================================
 
 
