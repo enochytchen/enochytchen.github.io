@@ -31,8 +31,7 @@
     
   
   <meta name="description" content="The syntax used in this tutorial can be found here.
-Data preparation First, please install and use the packages needed in the following syntax, and read the colon data.
-#&#39; 1 Preparation #&#39; Clear all #&#39; Use it if you need to clear all #&#39; rm(list = ls()) #&#39; Load required packages x&lt;-c( &quot;haven&quot;, # read.">
+Data preparation Install required packages and read the data. We are using a data set containing information on individuals diagnosed with colon cancer (because the data are publically available).">
 
   
   <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/tutorials/ratetable/content/">
@@ -251,8 +250,7 @@ Data preparation First, please install and use the packages needed in the follow
   <meta property="og:url" content="https://enochytchen.com/tutorials/ratetable/content/">
   <meta property="og:title" content="Make ratetable using R | Enoch Yi-Tung Chen">
   <meta property="og:description" content="The syntax used in this tutorial can be found here.
-Data preparation First, please install and use the packages needed in the following syntax, and read the colon data.
-#&#39; 1 Preparation #&#39; Clear all #&#39; Use it if you need to clear all #&#39; rm(list = ls()) #&#39; Load required packages x&lt;-c( &quot;haven&quot;, # read."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+Data preparation Install required packages and read the data. We are using a data set containing information on individuals diagnosed with colon cancer (because the data are publically available)."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -607,7 +605,7 @@ Data preparation First, please install and use the packages needed in the follow
             <p>The syntax used in this tutorial can be found 
 <a href="https://enochytchen.com/tutorials/ratetable/content/create_ratetable.R" target="_blank" rel="noopener">here</a>.</p>
 <h3 id="data-preparation">Data preparation</h3>
-<p>First, please install and use the packages needed in the following syntax, and read the colon data.</p>
+<p>Install required packages and read the data. We are using a data set containing information on individuals diagnosed with colon cancer (because the data are publically available). In a real application we would use data on individuals randomly selected from the general population.</p>
 <pre><code class="language-r">#' 1 Preparation
 
 #' Clear all
@@ -631,8 +629,8 @@ lapply(x, require, character.only = TRUE)
 colon &lt;- read_dta( &quot;http://enochytchen.com/directory/data/colon.dta&quot;)
 str(colon)
 </code></pre>
-<p>We then exacted the birth date of each observation by using dx (date of diagnosis) - age at diagnosis * 365.241. The unit here is days in order to be consistent with the unit in <code>relsurv::rs.surv()</code>. Variables sex, subsite, stage, and strata were converted into factor class, which will be automatically converted into dummy varaibles in a regression model in R. In this example, we used two dimensions: subsite + stage, and combined them into one stratum, a combination of all the dimensions except sex, age, and year. Splitting the data frame into lists will be done on this stratum afterwards.  However, if there is only one extra dimension, it is not required to create a stratum. Instead, it is straightforward to split on that single variable.</p>
-<pre><code class="language-r">#' Extract the date of birth,
+<p>We then created an approximate birth date for each individual by using dx (date of diagnosis) - age at diagnosis * 365.241. The unit here is days in order to be consistent with the unit in <code>relsurv::rs.surv()</code>. Variables sex, subsite, stage, and strata were converted into factor class, which will be automatically converted into dummy varaibles in a regression model in R. In this example, we used two dimensions: subsite + stage, and combined them into one stratum, a combination of all the dimensions except sex, age, and year. Splitting the data frame into lists will be done on this stratum afterwards.  However, if there is only one extra dimension, it is not required to create a stratum. Instead, it is straightforward to split on that single variable.</p>
+<pre><code class="language-r">#' Approximate the date of birth,
 #' Will take care of derived variables (entry/exit years) later
 colon2 &lt;- colon %&gt;%
   mutate(sex     = as_factor(sex),       ## as_factor preserves labels
@@ -647,7 +645,7 @@ str(colon2)
 summary(colon2)
 </code></pre>
 <h3 id="splitting-the-time">Splitting the time</h3>
-<p>Since the secondary time scale in this example is calendar year, we splitted the survival data time at specified times (2 years). One-year interval would lead to convergence problem on <code>stpm2</code> due to insufficient sample size within each time interval, so we splitted into 2-year intervals instead.</p>
+<p>We split calendar time into 2-year intervals; for our relatively small data set (15000 individuals) 1-year intervals resulted in convergence problems when we modelled mortality in a later step.</p>
 <p>It is worth taking a look at the definition of <code>episode</code> in <code>survival::survSplit</code>, where it explains, &ldquo;<code>episode</code> 1= less than the first cutpoint, 2= between the first and the second.&rdquo; Based on this default setting, we then moved each episode (period) by 2.</p>
 <pre><code>#' Split calendar time into 2-year intervals;
 #' splitting in 1-year intervals leads to convergence problems later if

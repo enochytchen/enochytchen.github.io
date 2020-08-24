@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="Learn how to make ratetable based on multiple time-scale flexible parametric models in R">
+  <meta name="description" content="Illustrates an approach to constructing a ratetable object in R by fitting a multiple time-scale flexible parametric models in to individual data">
 
   
   <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/tutorials/ratetable/">
@@ -250,7 +250,7 @@
   <meta property="og:site_name" content="Enoch Yi-Tung Chen">
   <meta property="og:url" content="https://enochytchen.com/tutorials/ratetable/">
   <meta property="og:title" content="Make ratetable using R | Enoch Yi-Tung Chen">
-  <meta property="og:description" content="Learn how to make ratetable based on multiple time-scale flexible parametric models in R"><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="Illustrates an approach to constructing a ratetable object in R by fitting a multiple time-scale flexible parametric models in to individual data"><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     <meta property="og:updated_time" content="2020-08-19T00:00:00&#43;00:00">
@@ -573,6 +573,7 @@
       <ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#steps-in-a-nutshell">Steps in a nutshell</a></li>
+        <li><a href="#references">References</a></li>
         <li><a href="#acknowledgements">Acknowledgements</a></li>
       </ul>
     </li>
@@ -592,26 +593,33 @@
 
           <div class="article-style">
             <p>Author: Enoch Chen, Paul Dickman</p>
-<p>The syntax used in this tutorial can be found 
-<a href="https://enochytchen.com/tutorials/ratetable/content/create_ratetable.R" target="_blank" rel="noopener">here</a>.</p>
 <h3 id="introduction">Introduction</h3>
-<p>Population mortality rate tables (life tables) are typically stratified by age, sex, and year, and tabulated by government statistics offices (e.g., Human Mortality Database available at <a href="https://www.mortality.org/)">https://www.mortality.org/)</a>. Occasionally, we would also aim to stratify the rate table by other factors (e.g., race, social class, comorbidity, etc). This tutorial illustrates how to create a rate table from individual data for a cohort representative of the target population (i.e., a random sample of individuals without a diagnosis of cancer).</p>
-<p>Data on a cohort of patients with colon cancer diagnosis is used as an example dataset in this tutorial.
-The original data is available (in Stata format) at <a href="https://pauldickman.com/data/colon.dta,">https://pauldickman.com/data/colon.dta,</a> whereas it is stored in the directory of this website as well.</p>
+<p>An R 
+<a href="https://www.rdocumentation.org/packages/survival/versions/3.2-3/topics/ratetable" target="_blank" rel="noopener">ratetable object</a> contains event rates per unit time and is typically used to estimate expected event rates for analyses in epidemiology where one compares the numbers of observed and expected events (e.g., SIR, SMR, or relative survival). Our interest is in using rate tables for estimating relative survival (the ratio of observed survival among a cohort of cancer patients to the expected survival in the absence of cancer). The R ratetable is analogous to what is often called the &lsquo;popmort file&rsquo; used in relative survival in Stata (e.g., by the 
+<a href="http://www.pauldickman.com/software/strs/strs/" target="_blank" rel="noopener">strs</a> command).</p>
+<p>For cancer patient survival, ratetables are typically stratified by age, sex, and year (maybe race) and based on rates tabulated by government statistics offices. Rates for many countries are available at the 
+<a href="https://www.mortality.org/" target="_blank" rel="noopener">Human Mortality Database</a> and can be converted to a ratetable object using the <code>relsurv::transrate.hmd()</code> function. Occasionally we wish to stratify the ratetable by additional factors (e.g., social class, comorbidity) for which tabulated rates are not available. This document illustrates how to create a ratetable from individual data for a cohort that is representative of the target population (i.e., a random sample of individuals without a diagnosis of cancer). For example, we may wish to stratify the expected mortality rates by socio-economic status, in addition to age, sex, and year. Such rates are often not available, but we may have access to a cohort representative of the general population (called the &lsquo;control population&rsquo;) from which we can construct such rates. That is, we assume we have access to a cohort representative of the target population (i.e., a random sample of individuals without a diagnosis of cancer) with follow-up information to facilitate estimation of all-cause mortality.</p>
+<p>
+<a href="https://doi.org/10.1093/aje/kwx303" target="_blank" rel="noopener">Bower et al. (2017)</a> describe the problem, some previous solutions, and present a solution where they use the control population to scale the nationwide rates for each level of social class. The approach we describe here is not as sofisticated; we will simply model the control population to produce the ratetable stratified by the desired factors. The approach is straightforward; fit a suitable model for all-cause mortality and predict rates for each combination of variables one wants in the ratetable. We will fit a Royston-Parmar model (a.k.a.\ flexible parametric model). We need to model two time scales; we&rsquo;ll use age as the primary timescale (which is modelled as a natural spline as it&rsquo;s the baseline hazard) and calendar year as the second time scale (by time-splitting and explicitly fitting a natural spline).</p>
+<p>We are not aware of suitable publicly-available individual-level data from the general population, so we will use data on a cohort of patients with a cancer diagnosis as an illustrative example. The data are available (in Stata format) at <a href="https://pauldickman.com/data/colon.dta">https://pauldickman.com/data/colon.dta</a>. We&rsquo;ll model the data as a function of age, sex, and year. We don&rsquo;t have a sensible &lsquo;extra&rsquo; dimension (e.g., education or social class) but will use subsite and stage as the additional dimensions. That is, this data set is used purely to demonstrate the approach and the R code. In practice, one would apply the approach to a cohort of individuals representative of the general population.</p>
 <h3 id="steps-in-a-nutshell">Steps in a nutshell</h3>
 <ol>
-<li>Model survival in multiple time scale flexible parametric model, where age is modeled continuously, and calendar year is a time-split variable.</li>
-<li>Save the predicted rates for each combination of variables in a data frame. In this example, besides sex, age, and calendar year, we use other two dimensions (subsite + stage) as well.</li>
-<li>Split the data frame of this mortality rate table into lists in order to apply <code>transrate()</code> and <code>joinrate()</code> to make a <code>ratetable</code> format in R.</li>
-<li>Use  <code>rs.surv() </code> along with  the rate table  to estimate net survival.</li>
+<li>Model all-cause mortality using a flexible parametric model with two time scales; attained age is modeled continuously (as te underlying timescale) and attained calendar year is a time-split variable.</li>
+<li>Save the predicted rates for each combination of variables in a data frame. In this example, besides sex, age, and calendar year, we use other two additonal dimensions (subsite + stage).</li>
+<li>Split the data frame into lists in order to apply <code>transrate()</code> and <code>joinrate()</code> to create a <code>ratetable</code> object. The <code>relsurv::transrate()</code> function converts a data frame containing rates into a ratetable object. The function only operates on data frames containing rates stratified by sex, age, and year (i.e., it does not support additional dimensions). To add aditional dimensions we need to apply <code>transrate()</code> to rates for each level of the additional dimensions and then join the resulting ratetables using <code>joinrate()</code>.</li>
+<li>As a test, use  <code>rs.surv() </code> along with the newly created ratetable to estimate net survival. The resulting estimates of net survival should be 1.</li>
 </ol>
+<h3 id="references">References</h3>
+<p>Bower H, Andersson TM, Crowther MJ, Dickman PW, Lambe M, Lambert PC. Adjusting Expected Mortality Rates Using Information From a Control Population: An Example Using Socioeconomic Status. <em>Am J Epidemiol.</em> 2018;187(4):828-836. 
+<a href="https://doi.org/10.1093/aje/kwx303" target="_blank" rel="noopener">doi: 10.1093/aje/kwx303</a>.</p>
+<p>Rachet B, Maringe C, Woods LM, Ellis L, Spika D, Allemani C. Multivariable flexible modelling for estimating complete, smoothed life tables for sub-national populations. <em>BMC Public Health</em>. 2015;15:1240. 
+<a href="https://doi.org/10.1186/s12889-015-2534-3" target="_blank" rel="noopener">doi: 10.1186/s12889-015-2534-3</a>.</p>
 <h3 id="acknowledgements">Acknowledgements</h3>
 <p>We especially want to thank 
 <a href="https://staff.ki.se/people/aleplo" target="_blank" rel="noopener">Alexander Ploner</a> for providing statistical consulting and R code optimisation tips, 
 <a href="https://staff.ki.se/people/nurbat" target="_blank" rel="noopener">Nurgul Batyrbekova</a> for her insight in modeling survival data on multiple time scale, 
 <a href="https://joshua-entrop.com" target="_blank" rel="noopener">Joshua Entrop</a> for his teaching on plotting regression model results, and 
-<a href="https://staff.ki.se/people/quatra" target="_blank" rel="noopener">
-Quang Thinh Trac</a> for his assistance in optimising the syntax.</p>
+<a href="https://staff.ki.se/people/quatra" target="_blank" rel="noopener">Quang Thinh Trac</a> for his assistance in optimising the syntax.</p>
 
           </div>
 
@@ -623,7 +631,7 @@ Quang Thinh Trac</a> for his assistance in optimising the syntax.</p>
         </div>
 
         <div class="body-footer">
-          <p>Last updated on Aug 19, 2020</p>
+          <p>Last updated on Aug 23, 2020</p>
 
           
 

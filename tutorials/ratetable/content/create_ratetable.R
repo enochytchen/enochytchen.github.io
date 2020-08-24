@@ -9,7 +9,7 @@
 #'          using stpm2, and then based on the model create a ratetable
 #'          In this example. we use two dimensions (subsite + stage) in the ratetable.
 #'===============================================================================
-#' Acknowledgements: we acknowledge the people who contributed to this poject.
+#' Acknowledgements: we acknowledge the people who contributed to this porject
 #'                   - Alexander Ploner's contribution on optimising the codes, including making the syntax more tidy, solving the convergence problem of the models, and transforming the data frame into lists
 #'                   - Nurgul Batyrbekova's insight in modeling survival data on multiple time scale
 #'                   - Joshua Entrop's teaching on plotting regression model results

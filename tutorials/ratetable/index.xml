@@ -20,7 +20,7 @@
       <description>&lt;p&gt;The syntax used in this tutorial can be found 
 &lt;a href=&#34;https://enochytchen.com/tutorials/ratetable/content/create_ratetable.R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h3&gt;
-&lt;p&gt;First, please install and use the packages needed in the following syntax, and read the colon data.&lt;/p&gt;
+&lt;p&gt;Install required packages and read the data. We are using a data set containing information on individuals diagnosed with colon cancer (because the data are publically available). In a real application we would use data on individuals randomly selected from the general population.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; 1 Preparation
 
 #&#39; Clear all
@@ -44,8 +44,8 @@ lapply(x, require, character.only = TRUE)
 colon &amp;lt;- read_dta( &amp;quot;http://enochytchen.com/directory/data/colon.dta&amp;quot;)
 str(colon)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We then exacted the birth date of each observation by using dx (date of diagnosis) - age at diagnosis * 365.241. The unit here is days in order to be consistent with the unit in &lt;code&gt;relsurv::rs.surv()&lt;/code&gt;. Variables sex, subsite, stage, and strata were converted into factor class, which will be automatically converted into dummy varaibles in a regression model in R. In this example, we used two dimensions: subsite + stage, and combined them into one stratum, a combination of all the dimensions except sex, age, and year. Splitting the data frame into lists will be done on this stratum afterwards.  However, if there is only one extra dimension, it is not required to create a stratum. Instead, it is straightforward to split on that single variable.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; Extract the date of birth,
+&lt;p&gt;We then created an approximate birth date for each individual by using dx (date of diagnosis) - age at diagnosis * 365.241. The unit here is days in order to be consistent with the unit in &lt;code&gt;relsurv::rs.surv()&lt;/code&gt;. Variables sex, subsite, stage, and strata were converted into factor class, which will be automatically converted into dummy varaibles in a regression model in R. In this example, we used two dimensions: subsite + stage, and combined them into one stratum, a combination of all the dimensions except sex, age, and year. Splitting the data frame into lists will be done on this stratum afterwards.  However, if there is only one extra dimension, it is not required to create a stratum. Instead, it is straightforward to split on that single variable.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; Approximate the date of birth,
 #&#39; Will take care of derived variables (entry/exit years) later
 colon2 &amp;lt;- colon %&amp;gt;%
   mutate(sex     = as_factor(sex),       ## as_factor preserves labels
@@ -60,7 +60,7 @@ str(colon2)
 summary(colon2)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;splitting-the-time&#34;&gt;Splitting the time&lt;/h3&gt;
-&lt;p&gt;Since the secondary time scale in this example is calendar year, we splitted the survival data time at specified times (2 years). One-year interval would lead to convergence problem on &lt;code&gt;stpm2&lt;/code&gt; due to insufficient sample size within each time interval, so we splitted into 2-year intervals instead.&lt;/p&gt;
+&lt;p&gt;We split calendar time into 2-year intervals; for our relatively small data set (15000 individuals) 1-year intervals resulted in convergence problems when we modelled mortality in a later step.&lt;/p&gt;
 &lt;p&gt;It is worth taking a look at the definition of &lt;code&gt;episode&lt;/code&gt; in &lt;code&gt;survival::survSplit&lt;/code&gt;, where it explains, &amp;ldquo;&lt;code&gt;episode&lt;/code&gt; 1= less than the first cutpoint, 2= between the first and the second.&amp;rdquo; Based on this default setting, we then moved each episode (period) by 2.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#&#39; Split calendar time into 2-year intervals;
 #&#39; splitting in 1-year intervals leads to convergence problems later if
