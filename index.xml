@@ -5,12 +5,64 @@
     <link>https://enochytchen.com/</link>
       <atom:link href="https://enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2020 10:49:13 +0200</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
       <link>https://enochytchen.com/</link>
     </image>
+    
+    <item>
+      <title>Avoid dehumanizing language use</title>
+      <link>https://enochytchen.com/post/avoid_dehumanizing/</link>
+      <pubDate>Mon, 24 Aug 2020 10:49:13 +0200</pubDate>
+      <guid>https://enochytchen.com/post/avoid_dehumanizing/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#principles&#34;&gt;Principles&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reference&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;My recent work was on analyzing a patient cohort data. When I was documenting the syntax, there was one sentence I wrote, &amp;ldquo;We then exacted the birth date of &lt;strong&gt;each observation&lt;/strong&gt;.&amp;rdquo; My colleague then suggested me to use the other term &amp;ldquo;&lt;strong&gt;each individual&lt;/strong&gt;&amp;rdquo; instead. The reason behind his argument is to avoid dehumanizing language. This is such a important component of scientific writing I should have picked up!&lt;/p&gt;
+&lt;p&gt;In scientific writing, we aim to pre-conceive ideas about individuals, both the treatment group and the control group, whereas it is essential to use correct languages to describe them. Incorrect, or even poorly selected, words can harm patients. Furthermore, it definitely has negative impact on the relationship between clinicians/researchers and patients. Once trust is broken, it is difficult to regain.&lt;/p&gt;
+&lt;p&gt;Leopold S. et al wrote an article, entitled: Editorial: Words Hurt – Avoiding Dehumanizing Language in Orthopaedic Research and Practice (1), offers a holistic viewpoint on using people-first language on scientific writing, especially in biomedicine fields. Here are some priciples I summarized from their publication.&lt;/p&gt;
+&lt;h3 id=&#34;principles&#34;&gt;Principles&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Patients are humans. They should be referred to the correct relative pronoun &amp;ldquo;&lt;strong&gt;who&lt;/strong&gt;&amp;rdquo; rather than &amp;ldquo;that&amp;rdquo;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Patients &lt;del&gt;that&lt;/del&gt; who present for treatment of &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Make clear that patients are more than their symptoms and diagnoses.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;Diabetic patients&lt;/del&gt; Patients with diabetes&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Amputees&lt;/del&gt; Patients who have had amputations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Evaluate patients&amp;rsquo; self perception. Thus, use correct terms to characterize control groups as well. A value-neutral terminology is preferred. Otherwise, we might in fact implicate insulting the treatment/exposure group.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Using normal/able-bodied individuals to refer to the control individuals. Are we saying that the treatment group is &lt;strong&gt;NOT&lt;/strong&gt; normal/able-bodied.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Being a thoughtful and sensible writer is the milestone of delievering good research languag, isn&amp;rsquo;t it?&lt;/p&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Leopold s et al, Editorial: Words Hurt – Avoiding Dehumanizing Language in Orthopaedic Research and Practice. Clin Orthop Relat Res. 2014 Sep; 472(9): 2561–2563. doi: 
+&lt;a href=&#34;10.1007/s11999-014-3802-8&#34;&gt;10.1007/s11999-014-3802-8&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Make ratetable using R</title>
