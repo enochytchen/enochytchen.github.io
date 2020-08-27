@@ -5,12 +5,20 @@
     <link>https://enochytchen.com/author/enoch-chen/</link>
       <atom:link href="https://enochytchen.com/author/enoch-chen/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2020 10:49:13 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2020 11:30:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Chen</title>
       <link>https://enochytchen.com/author/enoch-chen/</link>
     </image>
+    
+    <item>
+      <title>Thesis Journey at MPH, Epidemiology</title>
+      <link>https://enochytchen.com/talk/mphthesis/</link>
+      <pubDate>Mon, 31 Aug 2020 11:30:00 +0000</pubDate>
+      <guid>https://enochytchen.com/talk/mphthesis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Avoid dehumanizing language use</title>
@@ -306,7 +314,7 @@ strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex) pohar
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/post/gooddatamanagement/</guid>
       <description>&lt;p&gt;I was pretty inspired by 
-&lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;lsquo;s 
+&lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;rsquo;s 
 &lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
 &lt;a href=&#34;http://enochytchen.com/post/why_datamanaegment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data management? Does it matter?&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;tip-1-use-a-shared-drive&#34;&gt;Tip 1: Use a shared drive&lt;/h4&gt;
