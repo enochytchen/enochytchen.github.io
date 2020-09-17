@@ -5,12 +5,57 @@
     <link>https://enochytchen.com/</link>
       <atom:link href="https://enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2020 11:30:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
       <link>https://enochytchen.com/</link>
     </image>
+    
+    <item>
+      <title>Make ratetable using R</title>
+      <link>https://enochytchen.com/tutorials/ratetable/otherapp/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/tutorials/ratetable/otherapp/</guid>
+      <description>&lt;p&gt;In the last section of this tutorial, we would like to briefly introduce two other approaches for making rate table from a sub-population (Bower et al. 2018, Rachet et al. 2015).&lt;/p&gt;
+&lt;h3 id=&#34;example-1-adjust-expected-mortality-rate-by-using-adjustment-factor&#34;&gt;Example 1: Adjust expected mortality rate by using adjustment factor&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://doi.org/10.1093/aje/kwx303&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bower et al. (2018)&lt;/a&gt; concluded some previous solutions on creating a stratified life tables by other factors, and presented a solution where they used the control population to scale the nationwide rates for each level of social class.&lt;/p&gt;
+&lt;p&gt;Rather than using the the typical defintion of relative survival ($R(t)$, defined as the ration between $S(t)$, the all-cause survival of a patient cohort and $S^*(t)$, the expected survival of a general population), Bower et al. extended it to estimate the relative survival between the breast cancer patients and the Swedish population, with available data on SES, age at diagnosis, year of diagnosis (in their case, all the breast cancer patients were women, so sex was exempted), shown below:&lt;/p&gt;
+&lt;p&gt;$$
+R\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)=\frac{S\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)}{S^{*}\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)}
+$$&lt;/p&gt;
+&lt;p&gt;That is, on hazard scale, the expected hazard (or so-called expected mortality rate) is required to be stratified by SES. Thus, they proposed estimating adjustment factors, $\rho_{j}$, corresponding to SES grops, and multiplied it with the unadjusted rate to generate SES-adjusted mortality rate.
+$$
+\frac{h_{c}(a, y, j)}{h^{*}(a, y)}=\exp \left[\sum_{j=1}^{3} \rho_{j}(a, y) \times \operatorname{SES}_{j}\right]
+$$&lt;/p&gt;
+&lt;p&gt;In the article, they further showed that how this framework works using Poisson models and flexible parametric models with restricted cubic spline function. For tackling uncertainty in using a sub-population, they ran a parametric bootstrap method for 100 times.&lt;/p&gt;
+&lt;h3 id=&#34;example-2-multivariable-flexible-modelling&#34;&gt;Example 2: Multivariable flexible modelling&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://doi.org/10.1186/s12889-015-2534-3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rachet et al. (2015)&lt;/a&gt; pointed out that nationwide life tables are not always available in such settings like low- and middle-income countries. They proposed a flexible method to constructs smoothed life tables for sub-populations by using flexible relational model or flexible Poisson model. The mortality rate in the life table generated from their method can further be tranformed into the expected survival and then applied to relative survival.&lt;/p&gt;
+&lt;p&gt;For the flexible relational model, a logit transformation was applied to the survival function, $l_x$, and make a linear regression out of it, along with a logit transformation of the reference population&amp;rsquo;s survival function, $l_{x_{s}}$, and other covariates, such as deprivation level and the interaction between deprivation level and age.&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\operatorname{logit}\left(l_{x, i}\right) &amp;amp;=f\left(\log i t\left(l_{x_{s}}\right)\right) +\sum_{i=2}^{5} \beta_{i} \text {dep}_{i}+g(\text {agedep})
+\end{aligned},
+$$
+where $f$ and $g$ are restricted cubic spline functions.&lt;/p&gt;
+&lt;p&gt;For the flexible Poisson model, in which Rachet et al. modelled the number of age-specific deaths in generalised lineal model, shown below:
+$$
+\begin{aligned}
+\log \left(d_{x, i}\right) &amp;amp;=\beta_{0}+f(x)+\sum_{i=2}^{5} \beta_{i} \text {dep}_{i}+g(\text {agedep})+\log \left(\text {pyrs}_{x, i}\right)
+\end{aligned},
+$$
+where ${pyrs}_{x, i}$ denotes the number of person-years at risk corresponding to specific age and deprivation level.&lt;/p&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;In these two examples, Bower et al. and Rachet et al. separately used socioeconomic status (SES) and deprivation level as a dimension to model hazard (mortality rate), which is eligible to be further transformed into expected survival and used for estimating net survival using relative survial framework. However, other dimensions, such as race, region, comorbidity can also be considered to be adopted (if there is available data) in a sensible way in the model.&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;p&gt;Bower H, Andersson TM, Crowther MJ, Dickman PW, Lambe M, Lambert PC. Adjusting Expected Mortality Rates Using Information From a Control Population: An Example Using Socioeconomic Status. &lt;em&gt;Am J Epidemiol.&lt;/em&gt; 2018;187(4):828-836. 
+&lt;a href=&#34;https://doi.org/10.1093/aje/kwx303&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;doi: 10.1093/aje/kwx303&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Rachet B, Maringe C, Woods LM, Ellis L, Spika D, Allemani C. Multivariable flexible modelling for estimating complete, smoothed life tables for sub-national populations. &lt;em&gt;BMC Public Health&lt;/em&gt;. 2015;15:1240. 
+&lt;a href=&#34;https://doi.org/10.1186/s12889-015-2534-3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;doi: 10.1186/s12889-015-2534-3&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Thesis Journey at MPH, Epidemiology</title>
@@ -77,7 +122,8 @@
       <link>https://enochytchen.com/tutorials/ratetable/content/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/tutorials/ratetable/content/</guid>
-      <description>&lt;p&gt;The syntax used in this tutorial can be found 
+      <description>&lt;p&gt;Enoch Chen, Paul Dickman&lt;/p&gt;
+&lt;p&gt;The syntax used in this tutorial can be found 
 &lt;a href=&#34;https://enochytchen.com/tutorials/ratetable/content/create_ratetable.R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;data-preparation&#34;&gt;Data preparation&lt;/h3&gt;
 &lt;p&gt;Install required packages and read the data. We are using a data set containing information on individuals diagnosed with colon cancer (because the data are publically available). In a real application we would use data on individuals randomly selected from the general population.&lt;/p&gt;
