@@ -600,10 +600,46 @@
           <h1>Make ratetable using R</h1>
 
           <div class="article-style">
-            <p>In the last section of this tutorial, we would like to briefly introduce two other approaches for making rate table from a sub-population (Bower et al. 2018, Rachet et al. 2015).</p>
+            <p>In the last section of this tutorial, we would like to briefly introduce two other approaches for making rate table from a sub-population (Bower et al. 2018, Rachet et al. 2015). First, to summarise these three approaches, we made a comparison chart shown below:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Our approach</th>
+<th>Bower 2018</th>
+<th>Rachet 2015</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nationwide life table</td>
+<td>x</td>
+<td>v</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Individual data on a reference population</td>
+<td>v</td>
+<td>v</td>
+<td>x (Grouped data by age, sex, deprivation)</td>
+</tr>
+<tr>
+<td>Dealing with unceratinty</td>
+<td>x</td>
+<td>Parametric bootstrapping</td>
+<td>Using data on multiple sampling populations</td>
+</tr>
+<tr>
+<td>Characteristics</td>
+<td>Modelling mortality rates directly without requiring nationwide life table</td>
+<td>Stabilised  by nationwide life table</td>
+<td>Not relying on underlying pattern of nationwide life table</td>
+</tr>
+</tbody>
+</table>
 <h3 id="example-1-adjust-expected-mortality-rate-by-using-adjustment-factor">Example 1: Adjust expected mortality rate by using adjustment factor</h3>
 <p>
-<a href="https://doi.org/10.1093/aje/kwx303" target="_blank" rel="noopener">Bower et al. (2018)</a> concluded some previous solutions on creating a stratified life tables by other factors, and presented a solution where they used the control population to scale the nationwide rates for each level of social class.</p>
+<a href="https://doi.org/10.1093/aje/kwx303" target="_blank" rel="noopener">Bower et al. (2018)</a>  used the individual-level data from a reference population to scale the expected mortality for each level of social class, aided by nationwide life tables.</p>
 <p>Rather than using the the typical defintion of relative survival ($R(t)$, defined as the ration between $S(t)$, the all-cause survival of a patient cohort and $S^*(t)$, the expected survival of a general population), Bower et al. extended it to estimate the relative survival between the breast cancer patients and the Swedish population, with available data on SES, age at diagnosis, year of diagnosis (in their case, all the breast cancer patients were women, so sex was exempted), shown below:</p>
 <p>$$
 R\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)=\frac{S\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)}{S^{*}\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)}
@@ -615,7 +651,7 @@ $$</p>
 <p>In the article, they further showed that how this framework works using Poisson models and flexible parametric models with restricted cubic spline function. For tackling uncertainty in using a sub-population, they ran a parametric bootstrap method for 100 times.</p>
 <h3 id="example-2-multivariable-flexible-modelling">Example 2: Multivariable flexible modelling</h3>
 <p>
-<a href="https://doi.org/10.1186/s12889-015-2534-3" target="_blank" rel="noopener">Rachet et al. (2015)</a> pointed out that nationwide life tables are not always available in such settings like low- and middle-income countries. They proposed a flexible method to constructs smoothed life tables for sub-populations by using flexible relational model or flexible Poisson model. The mortality rate in the life table generated from their method can further be tranformed into the expected survival and then applied to relative survival.</p>
+<a href="https://doi.org/10.1186/s12889-015-2534-3" target="_blank" rel="noopener">Rachet et al. (2015)</a>  proposed a flexible method to construct smoothed life tables for sub-populations by using flexible relational model or flexible Poisson model. Individual-level data is not required in their method, whereas grouped data from multiple sampling populations was used (in their examples, simulation datasets of life tables and Wales&rsquo; census data by age, sex, and calendar year).</p>
 <p>For the flexible relational model, a logit transformation was applied to the survival function, $l_x$, and make a linear regression out of it, along with a logit transformation of the reference population&rsquo;s survival function, $l_{x_{s}}$, and other covariates, such as deprivation level and the interaction between deprivation level and age.</p>
 <p>$$
 \begin{aligned}
@@ -630,8 +666,10 @@ $$
 \end{aligned},
 $$
 where ${pyrs}_{x, i}$ denotes the number of person-years at risk corresponding to specific age and deprivation level.</p>
+<p>Rather than using exisiting pattern of mortality by age, e.g., from a standard population mortality life table, they took account of the variance existing in the data.</p>
 <h3 id="conclusion">Conclusion</h3>
-<p>In these two examples, Bower et al. and Rachet et al. separately used socioeconomic status (SES) and deprivation level as a dimension to model hazard (mortality rate), which is eligible to be further transformed into expected survival and used for estimating net survival using relative survial framework. However, other dimensions, such as race, region, comorbidity can also be considered to be adopted (if there is available data) in a sensible way in the model.</p>
+<p>Our approach is distinct from Bower et al. and Rachet et al. , since only individual-level data is required to model the mortality rate directly from a representative population free of the disease of interest, the advantages of which are that in some situation nationwide life tables are not available and allowing more variance on the estimates directly generated from the reference population. However, the disadvantage is that the estimates of the model is not aided by the underlying pattern of existing life tables.</p>
+<p>In terms of concerns on uncertainty, Rachet et al. sampled the grouped data for multiple times, and Bower et al. used a sensible approach of bootstrapping to tackle the issue, which is eligible to be considered in optimising our approach.</p>
 <h3 id="references">References</h3>
 <p>Bower H, Andersson TM, Crowther MJ, Dickman PW, Lambe M, Lambert PC. Adjusting Expected Mortality Rates Using Information From a Control Population: An Example Using Socioeconomic Status. <em>Am J Epidemiol.</em> 2018;187(4):828-836. 
 <a href="https://doi.org/10.1093/aje/kwx303" target="_blank" rel="noopener">doi: 10.1093/aje/kwx303</a>.</p>
