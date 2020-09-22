@@ -252,9 +252,9 @@
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-09-17T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-09-22T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-09-17T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-09-22T00:00:00&#43;00:00">
   
 
   
@@ -615,13 +615,13 @@
 <td>Nationwide life table</td>
 <td>x</td>
 <td>v</td>
-<td>x</td>
+<td>Flexible relation model: v Flexible Poisson model: x</td>
 </tr>
 <tr>
 <td>Individual data on a reference population</td>
 <td>v</td>
 <td>v</td>
-<td>x (Grouped data by age, sex, deprivation)</td>
+<td>individual-level or grouped data</td>
 </tr>
 <tr>
 <td>Dealing with unceratinty</td>
@@ -633,7 +633,7 @@
 <td>Characteristics</td>
 <td>Modelling mortality rates directly without requiring nationwide life table</td>
 <td>Stabilised  by nationwide life table</td>
-<td>Not relying on underlying pattern of nationwide life table</td>
+<td>Alternative to avoiding integrating the pattern of nationwide life table, but still obtaining robust estimates</td>
 </tr>
 </tbody>
 </table>
@@ -651,25 +651,26 @@ $$</p>
 <p>In the article, they further showed that how this framework works using Poisson models and flexible parametric models with restricted cubic spline function. For tackling uncertainty in using a sub-population, they ran a parametric bootstrap method for 100 times.</p>
 <h3 id="example-2-multivariable-flexible-modelling">Example 2: Multivariable flexible modelling</h3>
 <p>
-<a href="https://doi.org/10.1186/s12889-015-2534-3" target="_blank" rel="noopener">Rachet et al. (2015)</a>  proposed a flexible method to construct smoothed life tables for sub-populations by using flexible relational model or flexible Poisson model. Individual-level data is not required in their method, whereas grouped data from multiple sampling populations was used (in their examples, simulation datasets of life tables and Wales&rsquo; census data by age, sex, and calendar year).</p>
-<p>For the flexible relational model, a logit transformation was applied to the survival function, $l_x$, and make a linear regression out of it, along with a logit transformation of the reference population&rsquo;s survival function, $l_{x_{s}}$, and other covariates, such as deprivation level and the interaction between deprivation level and age.</p>
+<a href="https://doi.org/10.1186/s12889-015-2534-3" target="_blank" rel="noopener">Rachet et al. (2015)</a>  proposed two alternative approaches to construct smoothed life tables for sub-populations. Both these two models can be applied into either abriged or complete data. That is to say, both individual-level data and grouped data can be modelled.</p>
+<h4 id="flexible-relational-model">Flexible relational model</h4>
+<p>The first one, flexible relational model, requires survival function of a reliable standard population, $l_{x_{s}}$, and multivariables, such as deprivation level and the interaction between deprivation level and age.</p>
 <p>$$
 \begin{aligned}
 \operatorname{logit}\left(l_{x, i}\right) &amp;=f\left(\log i t\left(l_{x_{s}}\right)\right) +\sum_{i=2}^{5} \beta_{i} \text {dep}_{i}+g(\text {agedep})
 \end{aligned},
 $$
 where $f$ and $g$ are restricted cubic spline functions.</p>
-<p>For the flexible Poisson model, in which Rachet et al. modelled the number of age-specific deaths in generalised lineal model, shown below:
-$$
+<h4 id="flexible-poisson-model">Flexible Poisson model</h4>
+<p>The second one, flexible Poisson model, does not require  external infromation on standard population mortality, and it models age-specific death counts with multiple variables.
+The advantage is that this approach takes account of the variance existing in the data.</p>
+<p>$$
 \begin{aligned}
 \log \left(d_{x, i}\right) &amp;=\beta_{0}+f(x)+\sum_{i=2}^{5} \beta_{i} \text {dep}_{i}+g(\text {agedep})+\log \left(\text {pyrs}_{x, i}\right)
 \end{aligned},
-$$
-where ${pyrs}_{x, i}$ denotes the number of person-years at risk corresponding to specific age and deprivation level.</p>
-<p>Rather than using exisiting pattern of mortality by age, e.g., from a standard population mortality life table, they took account of the variance existing in the data.</p>
+$$</p>
 <h3 id="conclusion">Conclusion</h3>
 <p>Our approach is distinct from Bower et al. and Rachet et al. , since only individual-level data is required to model the mortality rate directly from a representative population free of the disease of interest, the advantages of which are that in some situation nationwide life tables are not available and allowing more variance on the estimates directly generated from the reference population. However, the disadvantage is that the estimates of the model is not aided by the underlying pattern of existing life tables.</p>
-<p>In terms of concerns on uncertainty, Rachet et al. sampled the grouped data for multiple times, and Bower et al. used a sensible approach of bootstrapping to tackle the issue, which is eligible to be considered in optimising our approach.</p>
+<p>In terms of concerns on uncertainty, Bower et al. used a sensible approach of bootstrapping to tackle the issue, which is eligible to be considered in optimising our approach.</p>
 <h3 id="references">References</h3>
 <p>Bower H, Andersson TM, Crowther MJ, Dickman PW, Lambe M, Lambert PC. Adjusting Expected Mortality Rates Using Information From a Control Population: An Example Using Socioeconomic Status. <em>Am J Epidemiol.</em> 2018;187(4):828-836. 
 <a href="https://doi.org/10.1093/aje/kwx303" target="_blank" rel="noopener">doi: 10.1093/aje/kwx303</a>.</p>
@@ -686,7 +687,7 @@ where ${pyrs}_{x, i}$ denotes the number of person-years at risk corresponding t
         </div>
 
         <div class="body-footer">
-          <p>Last updated on Sep 17, 2020</p>
+          <p>Last updated on Sep 22, 2020</p>
 
           
 

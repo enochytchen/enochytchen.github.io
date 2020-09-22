@@ -15,7 +15,7 @@
     <item>
       <title>Make ratetable using R</title>
       <link>https://enochytchen.com/tutorials/ratetable/otherapp/</link>
-      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/tutorials/ratetable/otherapp/</guid>
       <description>&lt;p&gt;In the last section of this tutorial, we would like to briefly introduce two other approaches for making rate table from a sub-population (Bower et al. 2018, Rachet et al. 2015). First, to summarise these three approaches, we made a comparison chart shown below:&lt;/p&gt;
 &lt;table&gt;
@@ -32,13 +32,13 @@
 &lt;td&gt;Nationwide life table&lt;/td&gt;
 &lt;td&gt;x&lt;/td&gt;
 &lt;td&gt;v&lt;/td&gt;
-&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;Flexible relation model: v Flexible Poisson model: x&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Individual data on a reference population&lt;/td&gt;
 &lt;td&gt;v&lt;/td&gt;
 &lt;td&gt;v&lt;/td&gt;
-&lt;td&gt;x (Grouped data by age, sex, deprivation)&lt;/td&gt;
+&lt;td&gt;individual-level or grouped data&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Dealing with unceratinty&lt;/td&gt;
@@ -50,7 +50,7 @@
 &lt;td&gt;Characteristics&lt;/td&gt;
 &lt;td&gt;Modelling mortality rates directly without requiring nationwide life table&lt;/td&gt;
 &lt;td&gt;Stabilised  by nationwide life table&lt;/td&gt;
-&lt;td&gt;Not relying on underlying pattern of nationwide life table&lt;/td&gt;
+&lt;td&gt;Alternative to avoiding integrating the pattern of nationwide life table, but still obtaining robust estimates&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -68,25 +68,26 @@ $$&lt;/p&gt;
 &lt;p&gt;In the article, they further showed that how this framework works using Poisson models and flexible parametric models with restricted cubic spline function. For tackling uncertainty in using a sub-population, they ran a parametric bootstrap method for 100 times.&lt;/p&gt;
 &lt;h3 id=&#34;example-2-multivariable-flexible-modelling&#34;&gt;Example 2: Multivariable flexible modelling&lt;/h3&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://doi.org/10.1186/s12889-015-2534-3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rachet et al. (2015)&lt;/a&gt;  proposed a flexible method to construct smoothed life tables for sub-populations by using flexible relational model or flexible Poisson model. Individual-level data is not required in their method, whereas grouped data from multiple sampling populations was used (in their examples, simulation datasets of life tables and Wales&amp;rsquo; census data by age, sex, and calendar year).&lt;/p&gt;
-&lt;p&gt;For the flexible relational model, a logit transformation was applied to the survival function, $l_x$, and make a linear regression out of it, along with a logit transformation of the reference population&amp;rsquo;s survival function, $l_{x_{s}}$, and other covariates, such as deprivation level and the interaction between deprivation level and age.&lt;/p&gt;
+&lt;a href=&#34;https://doi.org/10.1186/s12889-015-2534-3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rachet et al. (2015)&lt;/a&gt;  proposed two alternative approaches to construct smoothed life tables for sub-populations. Both these two models can be applied into either abriged or complete data. That is to say, both individual-level data and grouped data can be modelled.&lt;/p&gt;
+&lt;h4 id=&#34;flexible-relational-model&#34;&gt;Flexible relational model&lt;/h4&gt;
+&lt;p&gt;The first one, flexible relational model, requires survival function of a reliable standard population, $l_{x_{s}}$, and multivariables, such as deprivation level and the interaction between deprivation level and age.&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
 \operatorname{logit}\left(l_{x, i}\right) &amp;amp;=f\left(\log i t\left(l_{x_{s}}\right)\right) +\sum_{i=2}^{5} \beta_{i} \text {dep}_{i}+g(\text {agedep})
 \end{aligned},
 $$
 where $f$ and $g$ are restricted cubic spline functions.&lt;/p&gt;
-&lt;p&gt;For the flexible Poisson model, in which Rachet et al. modelled the number of age-specific deaths in generalised lineal model, shown below:
-$$
+&lt;h4 id=&#34;flexible-poisson-model&#34;&gt;Flexible Poisson model&lt;/h4&gt;
+&lt;p&gt;The second one, flexible Poisson model, does not require  external infromation on standard population mortality, and it models age-specific death counts with multiple variables.
+The advantage is that this approach takes account of the variance existing in the data.&lt;/p&gt;
+&lt;p&gt;$$
 \begin{aligned}
 \log \left(d_{x, i}\right) &amp;amp;=\beta_{0}+f(x)+\sum_{i=2}^{5} \beta_{i} \text {dep}_{i}+g(\text {agedep})+\log \left(\text {pyrs}_{x, i}\right)
 \end{aligned},
-$$
-where ${pyrs}_{x, i}$ denotes the number of person-years at risk corresponding to specific age and deprivation level.&lt;/p&gt;
-&lt;p&gt;Rather than using exisiting pattern of mortality by age, e.g., from a standard population mortality life table, they took account of the variance existing in the data.&lt;/p&gt;
+$$&lt;/p&gt;
 &lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;Our approach is distinct from Bower et al. and Rachet et al. , since only individual-level data is required to model the mortality rate directly from a representative population free of the disease of interest, the advantages of which are that in some situation nationwide life tables are not available and allowing more variance on the estimates directly generated from the reference population. However, the disadvantage is that the estimates of the model is not aided by the underlying pattern of existing life tables.&lt;/p&gt;
-&lt;p&gt;In terms of concerns on uncertainty, Rachet et al. sampled the grouped data for multiple times, and Bower et al. used a sensible approach of bootstrapping to tackle the issue, which is eligible to be considered in optimising our approach.&lt;/p&gt;
+&lt;p&gt;In terms of concerns on uncertainty, Bower et al. used a sensible approach of bootstrapping to tackle the issue, which is eligible to be considered in optimising our approach.&lt;/p&gt;
 &lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
 &lt;p&gt;Bower H, Andersson TM, Crowther MJ, Dickman PW, Lambe M, Lambert PC. Adjusting Expected Mortality Rates Using Information From a Control Population: An Example Using Socioeconomic Status. &lt;em&gt;Am J Epidemiol.&lt;/em&gt; 2018;187(4):828-836. 
 &lt;a href=&#34;https://doi.org/10.1093/aje/kwx303&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;doi: 10.1093/aje/kwx303&lt;/a&gt;.&lt;/p&gt;
