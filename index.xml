@@ -97,6 +97,115 @@ $$&lt;/p&gt;
     </item>
     
     <item>
+      <title>Tied time data</title>
+      <link>https://enochytchen.com/tutorials/relsurv/tied/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/tutorials/relsurv/tied/</guid>
+      <description>&lt;p&gt;The codes used in this tutorial are available below.&lt;br&gt;
+
+&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/rs.surv.R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rs.surv&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/using_colon_tied.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stpp, strs, stnet (original tied data)&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/using_colon_untied.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stpp, strs, stnet (untied data)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The data used in this example can be found below.&lt;br&gt;
+
+&lt;a href=&#34;https://enochytchen.com/directory/data/colon.dta&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;colon.dta&lt;/a&gt; 
+&lt;a href=&#34;https://enochytchen.com/directory/data/popmort.dta&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;popmort.dta&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;settings&#34;&gt;Settings&lt;/h3&gt;
+&lt;p&gt;This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by &lt;code&gt;rs.surv()&lt;/code&gt; in R, &lt;code&gt;stpp&lt;/code&gt;,  &lt;code&gt;strs&lt;/code&gt;,  &lt;code&gt;stnet&lt;/code&gt; in Stata. In the second part, an small epislon ~ $Norm(0, 0.01)$ was added into each individual&amp;rsquo;s survival time to make no individual have exactly the same survival time (to untie the data).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Survival time was calculated by (date of exit - date of diagnosis).&lt;/li&gt;
+&lt;li&gt;We define failure as &lt;code&gt;status == 1 2 &lt;/code&gt; (died from cancer or other causes).&lt;/li&gt;
+&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt;, &lt;code&gt;ht&lt;/code&gt; (hazard transformation) must be specified to command the survival be calculated by transforming cumulative excess hazard ($\lambda$) instead of an actuarial approach (default) (2). However, in &lt;code&gt;stnet&lt;/code&gt;, the default of calculating the survival is hazard transformation.&lt;/li&gt;
+&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;, monthly intervals were calculated  up to ten years by specifying &lt;code&gt;br(0(`=1/12&#39;)10)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;p&gt;The esimates of 1-, 5-, and 10-year relative survival by each program are shown below:&lt;/p&gt;
+&lt;h4 id=&#34;using-colondta-original-tied-time-data&#34;&gt;Using colon.dta (original tied time data)&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;t&lt;/th&gt;
+&lt;th&gt;rs.surv&lt;/th&gt;
+&lt;th&gt;stpp&lt;/th&gt;
+&lt;th&gt;strs&lt;/th&gt;
+&lt;th&gt;stnet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.676 (0.669-0.684)&lt;/td&gt;
+&lt;td&gt;0.682 (0.674-0.690)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;0.473 (0.463-0.484)&lt;/td&gt;
+&lt;td&gt;0.479 (0.468-0.490)&lt;/td&gt;
+&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
+&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;0.433 (0.414-0.453)&lt;/td&gt;
+&lt;td&gt;0.440 (0.421-0.461)&lt;/td&gt;
+&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
+&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;using-colondta-untied-time-data&#34;&gt;Using colon.dta (untied time data)&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;rs.surv&lt;/th&gt;
+&lt;th&gt;stpp&lt;/th&gt;
+&lt;th&gt;strs&lt;/th&gt;
+&lt;th&gt;stnet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.676 (0.668-0.684)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;0.472 (0.461-0.483)&lt;/td&gt;
+&lt;td&gt;0.473 (0.463-0.484)&lt;/td&gt;
+&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
+&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;0.431 (0.411-0.451)&lt;/td&gt;
+&lt;td&gt;0.433 (0.414-0.453)&lt;/td&gt;
+&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
+&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;explanation&#34;&gt;Explanation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;stnet&lt;/code&gt; should generate the identical estimates as &lt;code&gt;strs&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Removing ties did not have an effect with discrete time estimators using life-table framework. (&lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Pohar Perme M, Stare J, Estève J. On Estimation in Relative Survival. Biometrics. 2012;68:113-120&lt;/li&gt;
+&lt;li&gt;Dickman P, Coviello E. Estimating and modelling relative survival. The Stata Journal. 2015;15:186-215.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Thesis Journey at MPH, Epidemiology</title>
       <link>https://enochytchen.com/talk/mphthesis/</link>
       <pubDate>Mon, 31 Aug 2020 11:30:00 +0000</pubDate>
@@ -462,242 +571,6 @@ summary(rssurv.plotdata)
 1 (dead from colon cancer);
 2 (dead from other causes)&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Estimating relative survival: using rs.surv() vs. strs</title>
-      <link>https://enochytchen.com/post/estimatingrs/</link>
-      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/post/estimatingrs/</guid>
-      <description> &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#ederer-ii-esitmator&#34;&gt;Ederer II esitmator&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#pohar-perme-estimator&#34;&gt;Pohar-Perme estimator&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#reference&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
-&lt;p&gt;The codes of this blog post can be found at 
-&lt;a href=&#34;https://enochytchen.com/post/estimatingrs/rssurv.R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rssurv.R&lt;/a&gt; and 
-&lt;a href=&#34;https://enochytchen.com/post/estimatingrs/strs.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;strs.do&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The beauty of using relative survival to estimate net survival is that cause of death information is not required, whereas cause of death needs to be classified completely within cause-specific framework (1). Both &lt;code&gt;relsurv::rs.surv()&lt;/code&gt; command in R and &lt;code&gt;strs&lt;/code&gt; command in Stata supports estimating net survival in relative survival framework. However, people might be curious about the difference in between. Here is an example below of using the same dataset, identical definition of status (alive, dead from cancer, or dead from other causes), and same approaches (Ederer II and Pohar Perme estimator) to estimate relative survival using &lt;code&gt;rs.surv()&lt;/code&gt; and &lt;code&gt;strs&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;ederer-ii-esitmator&#34;&gt;Ederer II esitmator&lt;/h3&gt;
-&lt;h4 id=&#34;rssurv-in-r&#34;&gt;&lt;code&gt;rs.surv()&lt;/code&gt; in R&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;rssurv_e2 &amp;lt;- rs.surv(Surv(time  =  (decimal_date(exit)-  decimal_date(dx)) * 365.241, # time in days
-                          event = status== 1 | status== 2 ) ~ sex,
-                     rmap = list(age = age * 365.241, year = dx),
-                     data = colon1,
-                     ratetable = popmort_new,
-                     method = &amp;quot;ederer2&amp;quot;)
-
-rs.table_e2 &amp;lt;- as.data.frame(summary(rssurv_e2, time = c(0:10) * 365.241, scale = 365.241)
-                             [c(&amp;quot;strata&amp;quot;, &amp;quot;time&amp;quot;, &amp;quot;n.risk&amp;quot;, &amp;quot;n.event&amp;quot;, &amp;quot;surv&amp;quot;, &amp;quot;std.err&amp;quot;, &amp;quot;lower&amp;quot;, &amp;quot;upper&amp;quot;)])
-
-#&#39; Rename the columns
-strs_e2 &amp;lt;- rs.table_e2 %&amp;gt;%
-  mutate(cr_e2 = surv, 
-         lo_cr_e2 = round(lower, digits = 4),
-         hi_cr_e2 = round(upper, digits = 4),
-         sex = ifelse(strata == &amp;quot;sexFemale=0&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;),
-         
-  )%&amp;gt;%
-  select(sex, time, n.risk, n.event, r, cr_e2, lo_cr_e2, hi_cr_e2)
-&lt;/code&gt;&lt;/pre&gt;
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure id=&#34;figure-estimating-net-survival-using-rssurv-ederer-ii&#34;&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://enochytchen.com/post/estimatingrs/rssurv_e2_hu8abfbb7ac3a206dbc575ca0455fad598_77860_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Estimating net survival using rs.surv(), Ederer II&#34;&gt;
-
-
-  &lt;img data-src=&#34;https://enochytchen.com/post/estimatingrs/rssurv_e2_hu8abfbb7ac3a206dbc575ca0455fad598_77860_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;532&#34; height=&#34;533&#34;&gt;
-&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    Estimating net survival using rs.surv(), Ederer II
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-&lt;h4 id=&#34;strs-in-stata&#34;&gt;&lt;code&gt;strs&lt;/code&gt; in Stata&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use http://enochytchen.com/directory/data/colon.dta if stage==1, clear
-stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
-strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex)
-&lt;/code&gt;&lt;/pre&gt;
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure id=&#34;figure-estimating-net-survival-using-strs-ederer-ii&#34;&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://enochytchen.com/post/estimatingrs/strs_e2_hu749bcb2913d93d919789b0b56e4bc420_115885_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Estimating net survival using strs, Ederer II&#34;&gt;
-
-
-  &lt;img data-src=&#34;https://enochytchen.com/post/estimatingrs/strs_e2_hu749bcb2913d93d919789b0b56e4bc420_115885_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1028&#34; height=&#34;761&#34;&gt;
-&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    Estimating net survival using strs, Ederer II
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;pohar-perme-estimator&#34;&gt;Pohar-Perme estimator&lt;/h3&gt;
-&lt;h4 id=&#34;rssurv-in-r-1&#34;&gt;&lt;code&gt;rs.surv()&lt;/code&gt; in R&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;rssurv_pohar &amp;lt;- rs.surv(Surv(time  =  (decimal_date(exit) - decimal_date(dx)) * 365.241, # time in days
-                             event = status== 1 | status== 2 ) ~ sex,
-                        rmap = list(age = age * 365.241, year = dx),
-                        data = colon1,
-                        ratetable = popmort_new,
-                        method = &amp;quot;pohar-perme&amp;quot;)
-
-rs.table_pohar &amp;lt;- as.data.frame(summary(rssurv_pohar, time = c(0:10) * 365.241, scale = 365.241)
-                                [c(&amp;quot;strata&amp;quot;, &amp;quot;time&amp;quot;, &amp;quot;n.risk&amp;quot;, &amp;quot;n.event&amp;quot;, &amp;quot;surv&amp;quot;, &amp;quot;std.err&amp;quot;, &amp;quot;lower&amp;quot;, &amp;quot;upper&amp;quot;)])
-
-#&#39; Rename the columns
-strs_pohar &amp;lt;- rs.table_pohar %&amp;gt;%
-  mutate(cr_pp = surv, 
-         lo_pp = round(lower, digits = 4),
-         hi_pp = round(upper, digits = 4),
-         sex = ifelse(strata == &amp;quot;sexFemale=0&amp;quot;, &amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;),
-         r   =   round( cr_pp/lag(cr_pp), digits = 4),
-  )%&amp;gt;%
-  select(sex, time, n.risk, n.event, cr_pp, lo_pp, hi_pp)
-&lt;/code&gt;&lt;/pre&gt;
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure id=&#34;figure-estimating-net-survival-using-rssurv-pohar-perme&#34;&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://enochytchen.com/post/estimatingrs/rssurv_pp_hu0d92bc10ef8284b5b0c994a22a5a6aa6_75914_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Estimating net survival using rs.surv(), Pohar-Perme&#34;&gt;
-
-
-  &lt;img data-src=&#34;https://enochytchen.com/post/estimatingrs/rssurv_pp_hu0d92bc10ef8284b5b0c994a22a5a6aa6_75914_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;494&#34; height=&#34;534&#34;&gt;
-&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    Estimating net survival using rs.surv(), Pohar-Perme
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-&lt;h4 id=&#34;strs-in-stata-1&#34;&gt;&lt;code&gt;strs&lt;/code&gt; in Stata&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use http://enochytchen.com/directory/data/colon.dta if stage==1, clear
-stset exit,fail(status==1 2) origin (dx) exit(exit) id(id) scale(365.241) 
-strs using popmort, br(0(1)10) mergeby(_year sex _age) by(sex) pohar
-&lt;/code&gt;&lt;/pre&gt;
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure id=&#34;figure-estimating-net-survival-using-strs-pohar-perme&#34;&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://enochytchen.com/post/estimatingrs/strs_pp_hu37c54d9fc66187598c1072038a6e423a_110462_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Estimating net survival using strs, Pohar-Perme&#34;&gt;
-
-
-  &lt;img data-src=&#34;https://enochytchen.com/post/estimatingrs/strs_pp_hu37c54d9fc66187598c1072038a6e423a_110462_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;951&#34; height=&#34;762&#34;&gt;
-&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    Estimating net survival using strs, Pohar-Perme
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Dickman2006&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     
