@@ -38,13 +38,13 @@ replace yydx = 1960 + dx/365.241
 // to estimation (rather than the actuarial) is used.
 // Download popmort from: https://enochytchen.com/directory/data/popmort.dta 
 
-strs using "popmort", ///
+strs using "popmort.dta", ///
 	 br(0(`=1/12')10) ///
 	 diagage(age) diagyear(yydx) ///
 	 mergeby(_year sex _age) ht pohar format(%5.3f)
 
 // by year
-strs using "~/cansurv/data/popmort", br(0(1)10) ///
+strs using  "popmort.dta", br(0(1)10) ///
 	 diagage(age) diagyear(yydx) ///
 	 mergeby(_year sex _age) pohar format(%5.3f)
 
@@ -55,13 +55,13 @@ strs using "~/cansurv/data/popmort", br(0(1)10) ///
 gen dob=dx-age*365.241
 
 // by months
-stnet using "~/cansurv/data/popmort", br(0(`=1/12')10.1) ///
+stnet using  "popmort.dta", br(0(`=1/12')10.1) ///
 diagdate(dx) birthdate(dob) ///
 mergeby(_year sex _age) ///
 listyearly format(%5.3f)
 
 // by year
-stnet using "~/cansurv/data/popmort", br(0(1)10) ///
+stnet using  "popmort.dta", br(0(1)10) ///
 diagdate(dx) birthdate(dob) ///
 mergeby(_year sex _age) format(%5.3f)
 

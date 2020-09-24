@@ -13,6 +13,85 @@
     </image>
     
     <item>
+      <title>Untied time data</title>
+      <link>https://enochytchen.com/tutorials/relsurv/untied/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/tutorials/relsurv/untied/</guid>
+      <description>&lt;p&gt;(Not completed yet)&lt;/p&gt;
+&lt;h3 id=&#34;using-scenario2_1dta-original-untied-time-data&#34;&gt;Using scenario2_1.dta (original untied time data)&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;t&lt;/th&gt;
+&lt;th&gt;rs.surv&lt;/th&gt;
+&lt;th&gt;stpp&lt;/th&gt;
+&lt;th&gt;strs&lt;/th&gt;
+&lt;th&gt;stnet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.797 (0.770-0.825)&lt;/td&gt;
+&lt;td&gt;0.797 (0.770-0.825)&lt;/td&gt;
+&lt;td&gt;0.798 (0.769-0.824)&lt;/td&gt;
+&lt;td&gt;0.798 (0.769-0.824)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;0.618 (0.577-0.663)&lt;/td&gt;
+&lt;td&gt;0.613 (0.573-0.657)&lt;/td&gt;
+&lt;td&gt;0.612 (0.569-0.653)&lt;/td&gt;
+&lt;td&gt;0.612 (0.569-0.653)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;0.534 (0.481-0.593)&lt;/td&gt;
+&lt;td&gt;0.513 (0.463-0.568)&lt;/td&gt;
+&lt;td&gt;0.513 (0.459-0.564)&lt;/td&gt;
+&lt;td&gt;0.513 (0.459-0.564)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;using-scenario2_1dta-tied-time-data&#34;&gt;Using scenario2_1.dta (tied time data)&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;t&lt;/th&gt;
+&lt;th&gt;rs.surv&lt;/th&gt;
+&lt;th&gt;stpp&lt;/th&gt;
+&lt;th&gt;strs&lt;/th&gt;
+&lt;th&gt;stnet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.797 (0.770-0.825)&lt;/td&gt;
+&lt;td&gt;0.797 (0.770-0.825)&lt;/td&gt;
+&lt;td&gt;0.798 (0.769-0.824)&lt;/td&gt;
+&lt;td&gt;0.798 (0.769-0.824)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;0.618 (0.577-0.663)&lt;/td&gt;
+&lt;td&gt;0.613 (0.573-0.657)&lt;/td&gt;
+&lt;td&gt;0.612 (0.569-0.653)&lt;/td&gt;
+&lt;td&gt;0.612 (0.569-0.653)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;0.534 (0.481-0.593)&lt;/td&gt;
+&lt;td&gt;0.513 (0.463-0.568)&lt;/td&gt;
+&lt;td&gt;0.513 (0.459-0.564)&lt;/td&gt;
+&lt;td&gt;0.513 (0.459-0.564)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Tied time data</title>
       <link>https://enochytchen.com/tutorials/relsurv/tied/</link>
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
