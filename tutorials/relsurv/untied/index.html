@@ -31,7 +31,10 @@
     
   
   <meta name="description" content="(Not completed yet)
-Using scenario2_1.dta (original untied time data)    t rs.surv stpp strs stnet     1 0.797 (0.770-0.825) 0.797 (0.770-0.825) 0.798 (0.769-0.824) 0.798 (0.769-0.824)   5 0.">
+The codes used in this tutorial are available below.
+rs.surv
+stpp, strs, stnet
+Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/tutorials/relsurv/untied/">
@@ -248,9 +251,12 @@ Using scenario2_1.dta (original untied time data)    t rs.surv stpp strs stnet  
   
   <meta property="og:site_name" content="Enoch Yi-Tung Chen">
   <meta property="og:url" content="https://enochytchen.com/tutorials/relsurv/untied/">
-  <meta property="og:title" content="Untied time data | Enoch Yi-Tung Chen">
+  <meta property="og:title" content="Untied time data → Tied | Enoch Yi-Tung Chen">
   <meta property="og:description" content="(Not completed yet)
-Using scenario2_1.dta (original untied time data)    t rs.surv stpp strs stnet     1 0.797 (0.770-0.825) 0.797 (0.770-0.825) 0.798 (0.769-0.824) 0.798 (0.769-0.824)   5 0."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+The codes used in this tutorial are available below.
+rs.surv
+stpp, strs, stnet
+Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -275,7 +281,7 @@ Using scenario2_1.dta (original untied time data)    t rs.surv stpp strs stnet  
 
 
 
-  <title>Untied time data | Enoch Yi-Tung Chen</title>
+  <title>Untied time data → Tied | Enoch Yi-Tung Chen</title>
 
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -557,12 +563,12 @@ Using scenario2_1.dta (original untied time data)    t rs.surv stpp strs stnet  
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/tutorials/relsurv/tied/">Tied time data</a>
+    <a class="docs-toc-link" href="/tutorials/relsurv/tied/">Tied → Untied</a>
 
   </div>
   
   <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="/tutorials/relsurv/untied/">Untied time data</a>
+    <a class="docs-toc-link" href="/tutorials/relsurv/untied/">Untied → Tied</a>
 
   </div>
   
@@ -581,8 +587,15 @@ Using scenario2_1.dta (original untied time data)    t rs.surv stpp strs stnet  
   <ul>
     <li>
       <ul>
-        <li><a href="#using-scenario2_1dta-original-untied-time-data">Using scenario2_1.dta (original untied time data)</a></li>
-        <li><a href="#using-scenario2_1dta-tied-time-data">Using scenario2_1.dta (tied time data)</a></li>
+        <li><a href="#dataset">Dataset</a></li>
+      </ul>
+    </li>
+    <li><a href="#relative-survival-estimates">Relative survival estimates</a>
+      <ul>
+        <li><a href="#rssurv">rs.surv()</a></li>
+        <li><a href="#stpp">stpp</a></li>
+        <li><a href="#strs">strs</a></li>
+        <li><a href="#stnet">stnet</a></li>
       </ul>
     </li>
   </ul>
@@ -597,77 +610,237 @@ Using scenario2_1.dta (original untied time data)    t rs.surv stpp strs stnet  
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>Untied time data</h1>
+          <h1>Untied time data → Tied</h1>
 
           <div class="article-style">
             <p>(Not completed yet)</p>
-<h3 id="using-scenario2_1dta-original-untied-time-data">Using scenario2_1.dta (original untied time data)</h3>
+<p>The codes used in this tutorial are available below.<br>
+
+<a href="https://enochytchen.com/tutorials/relsurv/untied/using_sim.R" target="_blank" rel="noopener">rs.surv</a><br>
+
+<a href="https://enochytchen.com/tutorials/relsurv/untied/using_sim.do" target="_blank" rel="noopener">stpp, strs, stnet</a></p>
+<h3 id="dataset">Dataset</h3>
+<p>The dataset (<code>scenario2_1.dta</code>) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0.0027; max: 12). We then added ties into the data by flooring the time into discrete days, weeks, months, quaters, or years. More ties are added (i.e., less distinct values) as the time interval becomes larger (days→years).</p>
+<p>The following table shows how the time was treated in different units.</p>
 <table>
 <thead>
 <tr>
-<th>t</th>
-<th>rs.surv</th>
-<th>stpp</th>
-<th>strs</th>
-<th>stnet</th>
+<th>Time variable</th>
+<th>Discrete time in</th>
+<th>Stata code</th>
+<th>Distinct values</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>0.797 (0.770-0.825)</td>
-<td>0.797 (0.770-0.825)</td>
-<td>0.798 (0.769-0.824)</td>
-<td>0.798 (0.769-0.824)</td>
+<td>tt1</td>
+<td>Original continuous time</td>
+<td></td>
+<td>651</td>
 </tr>
 <tr>
-<td>5</td>
-<td>0.618 (0.577-0.663)</td>
-<td>0.613 (0.573-0.657)</td>
-<td>0.612 (0.569-0.653)</td>
-<td>0.612 (0.569-0.653)</td>
+<td>tt2</td>
+<td>Days</td>
+<td>floor(tt1*365.241)/365.241</td>
+<td>569</td>
 </tr>
 <tr>
-<td>10</td>
-<td>0.534 (0.481-0.593)</td>
-<td>0.513 (0.463-0.568)</td>
-<td>0.513 (0.459-0.564)</td>
-<td>0.513 (0.459-0.564)</td>
+<td>tt3</td>
+<td>Weeks</td>
+<td>floor(tt1*52.177)/52.177</td>
+<td>332</td>
+</tr>
+<tr>
+<td>tt4</td>
+<td>Months</td>
+<td>floor(tt1*12)/12</td>
+<td>132</td>
+</tr>
+<tr>
+<td>tt5</td>
+<td>Quarters</td>
+<td>floor(tt1*4)/4</td>
+<td>49</td>
+</tr>
+<tr>
+<td>tt6</td>
+<td>Years</td>
+<td>floor(tt1)</td>
+<td>13</td>
 </tr>
 </tbody>
 </table>
-<h3 id="using-scenario2_1dta-tied-time-data">Using scenario2_1.dta (tied time data)</h3>
+<h2 id="relative-survival-estimates">Relative survival estimates</h2>
+<p>The following tables show the estimates of 1-, 5-, and 10-year relative survival (RS) using the Pohar-Perme estimator by <code>rs.surv</code>, <code>stpp</code>, <code>strs</code>, and <code>stnet</code>. To make the tables look tidier, here we dismissed the 95% CI, which however can be found in the outputs of the syntax.</p>
+<h3 id="rssurv">rs.surv()</h3>
 <table>
 <thead>
 <tr>
-<th>t</th>
-<th>rs.surv</th>
-<th>stpp</th>
-<th>strs</th>
-<th>stnet</th>
+<th>RS</th>
+<th>tt1</th>
+<th>tt2</th>
+<th>tt3</th>
+<th>tt4</th>
+<th>tt5</th>
+<th>tt6</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td>0.797 (0.770-0.825)</td>
-<td>0.797 (0.770-0.825)</td>
-<td>0.798 (0.769-0.824)</td>
-<td>0.798 (0.769-0.824)</td>
+<td>0.797</td>
+<td>0.812</td>
+<td>0.823</td>
+<td>0.852</td>
+<td>0.884</td>
+<td>0.915</td>
 </tr>
 <tr>
 <td>5</td>
-<td>0.618 (0.577-0.663)</td>
-<td>0.613 (0.573-0.657)</td>
-<td>0.612 (0.569-0.653)</td>
-<td>0.612 (0.569-0.653)</td>
+<td>0.618</td>
+<td>0.630</td>
+<td>0.639</td>
+<td>0.667</td>
+<td>0.691</td>
+<td>0.769</td>
 </tr>
 <tr>
 <td>10</td>
-<td>0.534 (0.481-0.593)</td>
-<td>0.513 (0.463-0.568)</td>
-<td>0.513 (0.459-0.564)</td>
-<td>0.513 (0.459-0.564)</td>
+<td>0.534</td>
+<td>0.544</td>
+<td>0.552</td>
+<td>0.572</td>
+<td>0.594</td>
+<td>0.644</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stpp">stpp</h3>
+<table>
+<thead>
+<tr>
+<th>RS</th>
+<th>tt1</th>
+<th>tt2</th>
+<th>tt3</th>
+<th>tt4</th>
+<th>tt5</th>
+<th>tt6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.797</td>
+<td>0.812</td>
+<td>0.823</td>
+<td>0.853</td>
+<td>0.886</td>
+<td>0.919</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.613</td>
+<td>0.625</td>
+<td>0.634</td>
+<td>0.663</td>
+<td>0.690</td>
+<td>0.775</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0.513</td>
+<td>0.522</td>
+<td>0.530</td>
+<td>0.551</td>
+<td>0.575</td>
+<td>0.633</td>
+</tr>
+</tbody>
+</table>
+<h3 id="strs">strs</h3>
+<table>
+<thead>
+<tr>
+<th>RS</th>
+<th>tt1</th>
+<th>tt2</th>
+<th>tt3</th>
+<th>tt4</th>
+<th>tt5</th>
+<th>tt6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.798</td>
+<td>0.812</td>
+<td>0.823</td>
+<td>0.853</td>
+<td>0.886</td>
+<td>0.920</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.612</td>
+<td>0.624</td>
+<td>0.633</td>
+<td>0.663</td>
+<td>0.689</td>
+<td>0.775</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0.513</td>
+<td>0.523</td>
+<td>0.531</td>
+<td>0.551</td>
+<td>0.576</td>
+<td>0.636</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stnet">stnet</h3>
+<table>
+<thead>
+<tr>
+<th>RS</th>
+<th>tt1</th>
+<th>tt2</th>
+<th>tt3</th>
+<th>tt4</th>
+<th>tt5</th>
+<th>tt6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.798</td>
+<td>0.812</td>
+<td>0.823</td>
+<td>0.861</td>
+<td>0.909</td>
+<td>1.037</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.612</td>
+<td>0.624</td>
+<td>0.633</td>
+<td>0.661</td>
+<td>0.698</td>
+<td>0.796</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0.513</td>
+<td>0.523</td>
+<td>0.531</td>
+<td>0.553</td>
+<td>0.584</td>
+<td>0.667</td>
 </tr>
 </tbody>
 </table>

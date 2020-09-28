@@ -34,7 +34,7 @@
 rs.surv
 stpp, strs, stnet (original tied data)
 stpp, strs, stnet (untied data)
-The data used in this example can be found below.">
+Settings This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by rs.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/tutorials/relsurv/tied/">
@@ -251,12 +251,12 @@ The data used in this example can be found below.">
   
   <meta property="og:site_name" content="Enoch Yi-Tung Chen">
   <meta property="og:url" content="https://enochytchen.com/tutorials/relsurv/tied/">
-  <meta property="og:title" content="Tied time data | Enoch Yi-Tung Chen">
+  <meta property="og:title" content="Tied time data → Untied | Enoch Yi-Tung Chen">
   <meta property="og:description" content="The codes used in this tutorial are available below.
 rs.surv
 stpp, strs, stnet (original tied data)
 stpp, strs, stnet (untied data)
-The data used in this example can be found below."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+Settings This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by rs."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -281,7 +281,7 @@ The data used in this example can be found below."><meta property="og:image" con
 
 
 
-  <title>Tied time data | Enoch Yi-Tung Chen</title>
+  <title>Tied time data → Untied | Enoch Yi-Tung Chen</title>
 
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -563,12 +563,12 @@ The data used in this example can be found below."><meta property="og:image" con
   </div>
   
   <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="/tutorials/relsurv/tied/">Tied time data</a>
+    <a class="docs-toc-link" href="/tutorials/relsurv/tied/">Tied → Untied</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/tutorials/relsurv/untied/">Untied time data</a>
+    <a class="docs-toc-link" href="/tutorials/relsurv/untied/">Untied → Tied</a>
 
   </div>
   
@@ -605,7 +605,7 @@ The data used in this example can be found below."><meta property="og:image" con
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>Tied time data</h1>
+          <h1>Tied time data → Untied</h1>
 
           <div class="article-style">
             <p>The codes used in this tutorial are available below.<br>
@@ -615,10 +615,6 @@ The data used in this example can be found below."><meta property="og:image" con
 <a href="https://enochytchen.com/tutorials/relsurv/tied/using_colon_tied.do" target="_blank" rel="noopener">stpp, strs, stnet (original tied data)</a><br>
 
 <a href="https://enochytchen.com/tutorials/relsurv/tied/using_colon_untied.do" target="_blank" rel="noopener">stpp, strs, stnet (untied data)</a></p>
-<p>The data used in this example can be found below.<br>
-
-<a href="https://enochytchen.com/directory/data/colon.dta" target="_blank" rel="noopener">colon.dta</a> 
-<a href="https://enochytchen.com/directory/data/popmort.dta" target="_blank" rel="noopener">popmort.dta</a></p>
 <h3 id="settings">Settings</h3>
 <p>This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by <code>rs.surv()</code> in R, <code>stpp</code>,  <code>strs</code>,  <code>stnet</code> in Stata. In the second part, an small epislon ~ $Norm(0, 0.01)$ was added into each individual&rsquo;s survival time to make no individual have exactly the same survival time (to untie the data).</p>
 <ul>

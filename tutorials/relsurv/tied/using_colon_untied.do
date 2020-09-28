@@ -34,12 +34,12 @@ list(1 5 10) // See 1, 5, 10-year RS
 replace yydx = 1960 + dx/365.241
 
 // by months
-strs using  "popmort", br(0(`=1/12')10) ///
+strs using  "http://enochytchen.com/directory/data/popmort.dta", br(0(`=1/12')10) ///
 	 diagage(age) diagyear(yydx) ///
 	 mergeby(_year sex _age) ht pohar format(%5.3f)
 
 // by year
-strs using "~/cansurv/data/popmort", br(0(1)10) ///
+strs using "http://enochytchen.com/directory/data/popmort.dta", br(0(1)10) ///
 	 diagage(age) diagyear(yydx) ///
 	 mergeby(_year sex _age) ht pohar format(%5.3f)
 
@@ -50,13 +50,13 @@ strs using "~/cansurv/data/popmort", br(0(1)10) ///
 gen dob=dx-age*365.241
 
 // by months
-stnet using "~/cansurv/data/popmort", br(0(`=1/12')10.1) ///
+stnet using "http://enochytchen.com/directory/data/popmort.dta", br(0(`=1/12')10.1) ///
 diagdate(dx) birthdate(dob) ///
 mergeby(_year sex _age) ///
 listyearly format(%5.3f)
 
 // by year
-stnet using "~/cansurv/data/popmort", br(0(1)10) ///
+stnet using "http://enochytchen.com/directory/data/popmort.dta", br(0(1)10) ///
 diagdate(dx) birthdate(dob) ///
 mergeby(_year sex _age) format(%5.3f)
 
