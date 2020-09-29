@@ -79,12 +79,18 @@ sc2 <- sc2 %>%
          tt3 = floor(t*52.177)/52.177,   # weeks
          tt4 = floor(t*12)/12,           # months
          tt5 = floor(t*4)/4,             # quarters
-         tt6 = floor(t),
+         tt6 = floor(t),                 # years
           )%>%
        select(id, sex, dead, t, agediag, yeardiag, tt1, tt2, tt3, tt4, tt5, tt6)
 str(sc2)
 
+sc2$tt2 <- ifelse(sc2$tt2 == 0, 0.5/365.241, sc2$tt2)
+sc2$tt3 <- ifelse(sc2$tt3 == 0, 0.5/52.177,  sc2$tt3)
+sc2$tt4 <- ifelse(sc2$tt4 == 0, 0.5/12,      sc2$tt4)
+sc2$tt5 <- ifelse(sc2$tt5 == 0, 0.5/4,       sc2$tt5)
+sc2$tt6 <- ifelse(sc2$tt6 == 0, 0.5,         sc2$tt6)
 
+# Regression models
 regmodels <- lapply(1:6, function(i){
   
   #' select ttn
