@@ -8,17 +8,82 @@
   </url>
   
   <url>
-    <loc>https://enochytchen.com/</loc>
-    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+    <loc>https://enochytchen.com/courses/biostatbasics/dataman/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.com/tutorials/relsurv/tied/</loc>
-    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+    <loc>https://enochytchen.com/courses/biostatbasics/sumstat/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/biostatbasics/graphs/</loc>
+    <lastmod>2020-09-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/biostatbasics/distribution/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/biostatbasics/confidence/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/biostatbasics/hypotest/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/authors/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/author/enoch-chen/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/post/analogue/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/post/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/biostatbasics/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/relsurv/qa/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://enochytchen.com/tutorials/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/relsurv/tied/</loc>
     <lastmod>2020-09-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,16 +103,6 @@
   </url>
   
   <url>
-    <loc>https://enochytchen.com/authors/</loc>
-    <lastmod>2020-08-31T11:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enochytchen.com/author/enoch-chen/</loc>
-    <lastmod>2020-08-31T11:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://enochytchen.com/talk/</loc>
     <lastmod>2020-08-31T11:30:00+00:00</lastmod>
   </url>
@@ -63,7 +118,7 @@
   </url>
   
   <url>
-    <loc>https://enochytchen.com/post/</loc>
+    <loc>https://enochytchen.com/author/enoch/</loc>
     <lastmod>2020-08-24T10:49:13+02:00</lastmod>
   </url>
   
@@ -185,10 +240,6 @@
   
   <url>
     <loc>https://enochytchen.com/publication/</loc>
-  </url>
-  
-  <url>
-    <loc>https://enochytchen.com/tutorials/_index-/</loc>
   </url>
   
 </urlset>

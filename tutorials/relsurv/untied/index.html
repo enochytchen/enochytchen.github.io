@@ -34,7 +34,7 @@
 The codes used in this tutorial are available below.
 rs.surv
 stpp, strs, stnet
-Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0.">
+This example showed how the relative survival estimates change given more and more ties are added into the data.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/tutorials/relsurv/untied/">
@@ -256,7 +256,7 @@ Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subje
 The codes used in this tutorial are available below.
 rs.surv
 stpp, strs, stnet
-Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+This example showed how the relative survival estimates change given more and more ties are added into the data."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -572,6 +572,11 @@ Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subje
 
   </div>
   
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/tutorials/relsurv/qa/">FAQ</a>
+
+  </div>
+  
   
 </nav>
 
@@ -588,14 +593,7 @@ Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subje
     <li>
       <ul>
         <li><a href="#dataset">Dataset</a></li>
-      </ul>
-    </li>
-    <li><a href="#relative-survival-estimates">Relative survival estimates</a>
-      <ul>
-        <li><a href="#rssurv">rs.surv()</a></li>
-        <li><a href="#stpp">stpp</a></li>
-        <li><a href="#strs">strs</a></li>
-        <li><a href="#stnet">stnet</a></li>
+        <li><a href="#relative-survival-estimates">Relative survival estimates</a></li>
       </ul>
     </li>
   </ul>
@@ -619,8 +617,9 @@ Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subje
 <a href="https://enochytchen.com/tutorials/relsurv/untied/using_sim.R" target="_blank" rel="noopener">rs.surv</a><br>
 
 <a href="https://enochytchen.com/tutorials/relsurv/untied/using_sim.do" target="_blank" rel="noopener">stpp, strs, stnet</a></p>
+<p>This example showed how the relative survival estimates change given more and more ties are added into the data.</p>
 <h3 id="dataset">Dataset</h3>
-<p>The dataset (<code>scenario2_1.dta</code>) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0.0027; max: 12). We then added ties into the data by flooring the time into discrete days, weeks, months, quaters, or years. More ties are added (i.e., less distinct values) as the time interval becomes larger (days→years).</p>
+<p>The dataset (<code>scenario2_1.dta</code>) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0.0027; max: 12). We then added ties into the data by flooring the time into discrete days, weeks, months, quaters, or years. More ties are added (i.e., less distinct values) as the time interval becomes larger (days→years). If any survival time became 0 due to flooring, we then made it 0.5 of the time interval (e.g., 0.5 months).</p>
 <p>The following table shows how the time was treated in different units.</p>
 <table>
 <thead>
@@ -670,9 +669,9 @@ Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subje
 </tr>
 </tbody>
 </table>
-<h2 id="relative-survival-estimates">Relative survival estimates</h2>
+<h3 id="relative-survival-estimates">Relative survival estimates</h3>
 <p>The following tables show the estimates of 1-, 5-, and 10-year relative survival (RS) using the Pohar-Perme estimator by <code>rs.surv</code>, <code>stpp</code>, <code>strs</code>, and <code>stnet</code>. To make the tables look tidier, here we dismissed the 95% CI, which however can be found in the outputs of the syntax.</p>
-<h3 id="rssurv">rs.surv()</h3>
+<h4 id="rssurv">rs.surv()</h4>
 <table>
 <thead>
 <tr>
@@ -715,7 +714,7 @@ Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subje
 </tr>
 </tbody>
 </table>
-<h3 id="stpp">stpp</h3>
+<h4 id="stpp">stpp</h4>
 <table>
 <thead>
 <tr>
@@ -734,31 +733,31 @@ Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subje
 <td>0.797</td>
 <td>0.797</td>
 <td>0.796</td>
-<td>0.793</td>
-<td>0.785</td>
-<td>0.732</td>
+<td>0.790</td>
+<td>0.777</td>
+<td>0.709</td>
 </tr>
 <tr>
 <td>5</td>
 <td>0.613</td>
 <td>0.613</td>
-<td>0.614</td>
-<td>0.616</td>
-<td>0.610</td>
-<td>0.617</td>
+<td>0.613</td>
+<td>0.611</td>
+<td>0.603</td>
+<td>0.595</td>
 </tr>
 <tr>
 <td>10</td>
-<td>0.513</td>
-<td>0.513</td>
-<td>0.513</td>
+<td>0.512</td>
+<td>0.512</td>
 <td>0.512</td>
 <td>0.509</td>
-<td>0.504</td>
+<td>0.502</td>
+<td>0.484</td>
 </tr>
 </tbody>
 </table>
-<h3 id="strs">strs</h3>
+<h4 id="strs">strs</h4>
 <table>
 <thead>
 <tr>
@@ -801,7 +800,7 @@ Dataset The dataset (scenario2_1.dta) is a simulated data, containing 1000 subje
 </tr>
 </tbody>
 </table>
-<h3 id="stnet">stnet</h3>
+<h4 id="stnet">stnet</h4>
 <table>
 <thead>
 <tr>

@@ -5,12 +5,129 @@
     <link>https://enochytchen.com/post/</link>
       <atom:link href="https://enochytchen.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Aug 2020 10:49:13 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 03 Oct 2020 12:46:05 +0200</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Recent posts</title>
       <link>https://enochytchen.com/post/</link>
     </image>
+    
+    <item>
+      <title>Excess hazard is an analogue of relative survival. How come!?</title>
+      <link>https://enochytchen.com/post/analogue/</link>
+      <pubDate>Sat, 03 Oct 2020 12:46:05 +0200</pubDate>
+      <guid>https://enochytchen.com/post/analogue/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#basics-of-survival-analysis&#34;&gt;Basics of survival analysis&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#proof-of-relative-survival&#34;&gt;Proof of relative survival&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;It was mentioned numerous times in different articles that excess hazard is the analogue of relative survival on the hazard scale (1-4). However, how is it derived from?&lt;/p&gt;
+&lt;p&gt;We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^*(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^*(t)$.
+\begin{equation}
+R(t) = \frac{S(t)}{S^*(t)}
+\end{equation}
+\begin{equation}
+\lambda (t) = h(t) - h^*(t)
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;basics-of-survival-analysis&#34;&gt;Basics of survival analysis&lt;/h3&gt;
+&lt;h4 id=&#34;survival-function&#34;&gt;Survival function&lt;/h4&gt;
+&lt;p&gt;To illustrate the relationship in between these two terms, we need to come back to some basics of hazard and survival (5).
+First, in almost every chapter one of any survival analysis book, you can find the definition of cumulative distribution function (c.d.f.) of a time $T$ variable, giving the probablity that the event has occurred as time is less than $t$.&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+F(t)=\operatorname{P}(T&amp;lt;t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;The complement of this c.d.f. is survival function, , which is a &lt;strong&gt;proportion&lt;/strong&gt;, shown as
+\begin{equation}
+S(t)=\operatorname{P}(T \geq t)=1-F(t)=\int_{t}^{\infty} f(x) d x,
+\end{equation}
+which is defined as the probability that the event has not occurred by time $t$. That is, for example, the probability that the patient is still alive by time $t$, where $f(t)$ is the probability density function (p.d.f.). And $-f(t)$ is the derivative of $S(t)$.
+$$\begin{eqnarray}
+\frac{d S(t)}{dt} &amp;amp;=&amp;amp; \frac{d}{dt} \int_{t}^{\infty} f(x) d x \\\&lt;br&gt;
+&amp;amp;=&amp;amp; -f(t)
+\end{eqnarray}$$&lt;/p&gt;
+&lt;h4 id=&#34;hazard-function&#34;&gt;Hazard function&lt;/h4&gt;
+&lt;p&gt;We have to know by heart that the hazard function is the instantaneous rate of occurrence of the event, which is a &lt;strong&gt;rate&lt;/strong&gt; (event occurrence per unit of time).&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+h(t)=\lim _{d t \rightarrow 0} \frac{\operatorname{P}(t \leq T&amp;lt;t+d t \mid T \geq t)}{d t}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Let us take a look at the numerator itself, which is a conditional probability.
+\begin{equation}
+\operatorname{P}(t \leq T&amp;lt;t+d t \mid T \geq t) = \frac{P(t \leq T&amp;lt;t+dt )}{P(T\geq t)},
+\end{equation}
+where the denominator part is in fact the survival function, $S(t)$, and the numerator part means the probability that the event happens $[t, t+dt)$, which is $f(t)dt$. So we then extend the equation:
+$$\begin{eqnarray}
+\operatorname{P}(t \leq T&amp;lt;t+d t \mid T \geq t) &amp;amp;=&amp;amp; \frac{P(t \leq T&amp;lt;t+dt )}{P(T\geq t)}&lt;br&gt;
+\\\ &amp;amp;=&amp;amp;\frac{f(t)dt}{S(t)}
+\end{eqnarray}$$
+Dividing both sides by $dt$, it gives the relationship between the hazard function and the survival function, which is
+$$\begin{eqnarray}
+h(t) &amp;amp;=&amp;amp; \frac{f(t)}{S(t)} \\\&lt;br&gt;
+&amp;amp;=&amp;amp; \frac{\frac{-d S(t)}{dt}}{S(t)} \\\&lt;br&gt;
+&amp;amp;=&amp;amp; \frac{-{S}&#39;(t)}{S(t)}
+&amp;amp;=&amp;amp; \frac{-d \ln S(t)}{dt}
+\end{eqnarray} $$
+(Please catch up your Calculus 101: $\frac{d \ln x}{dx} = \frac{1}{x}$)&lt;/p&gt;
+&lt;p&gt;If we rewrite the equation above, we will obtain:
+\begin{equation}
+\ln S(t) = -\int_{0}^{t} h(x) d x
+\end{equation}&lt;/p&gt;
+&lt;p&gt;$$\begin{eqnarray}
+S(t) &amp;amp;=&amp;amp; exp(-\int_{0}^{t} h(x) d x) \\\&lt;br&gt;
+&amp;amp;=&amp;amp; exp(-H(t))
+\end{eqnarray}$$&lt;/p&gt;
+&lt;p&gt;This is pretty! Then we get to know the cumulative hazard function.&lt;/p&gt;
+&lt;h4 id=&#34;cumulative-hazard-function&#34;&gt;Cumulative hazard function&lt;/h4&gt;
+&lt;p&gt;The cumulative hazard function is the integral from 0 to time $t$, defined as
+\begin{equation}
+H(t)=\int_{0}^{t} h(x) d x.
+\end{equation}
+Thus, it is easy to understand that the hazard function is the derivative of the cumulative hazard function.
+\begin{equation}
+h(t) = \frac{d H(t)}{dt}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;proof-of-relative-survival&#34;&gt;Proof of relative survival&lt;/h3&gt;
+&lt;p&gt;\begin{equation}
+R(t) = \frac{S(t)}{S^*(t)}
+\end{equation}
+First, by defintion of the relationship between the cumulative hazard function and the survival function, we will obtain
+\begin{equation}
+exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^*(t))} \\\&lt;br&gt;
+\end{equation}
+\begin{equation}
+exp(- \Lambda (t)) = exp(- H(t) + H^*(t))
+\end{equation}
+\begin{equation}
+\Lambda (t) = H(t) - H^*(t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Then we got the cumulative excess hazard, $\Lambda (t)$, is the difference between the cumulative all-cause  hazard (of the cancer patient cohort) and the cumulative expected hazard (of the reference population). Then, take the derivative of both sides, shown as:&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\frac{d \int_{0}^{t} \lambda(x) d x }{dt} = \frac{d \int_{0}^{t} h(x) d x }{dt} - \frac{d \int_{0}^{t} h^*(x) d x }{dt},
+\end{equation}
+which is exactly,&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\lambda (t) = h(t) - h^*(t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;This is fantastic!
+Now you know why excess hazard is the hazard analogue of relative survival.&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Andersson TML, Dickman PW, Eloranta S, Lambe M, Lambert PC. Estimating the loss in expectation of life due to cancer using flexible parametric survival models. Statistics in Medicine 2013;32:5286–5300.&lt;/li&gt;
+&lt;li&gt;Andersson T. Quantifying cancer patient survival: extensions and applications of cure models and life expectancy estimation. Phd thesis, Karolinska Institutet, 2013.&lt;/li&gt;
+&lt;li&gt;Eloranta S. Development and Application of Statistical Methods for Population-Based Cancer
+Patient Survival. Phd thesis, Karolinska Institutet, 2013.&lt;/li&gt;
+&lt;li&gt;Eloranta S, Smedby KE, Dickman PW, Andersson TM. Cancer survival statistics for patients and healthcare professionals–a tutorial of real‐world data analysis. Journal of Internal Medicine. 2020.&lt;/li&gt;
+&lt;li&gt;Germán Rodríguez. Generalized Linear Models: Survival Models. &lt;a href=&#34;https://data.princeton.edu&#34;&gt;https://data.princeton.edu&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Avoid dehumanizing language use</title>
@@ -69,7 +186,18 @@
       <link>https://enochytchen.com/post/gooddatamanagement/</link>
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/post/gooddatamanagement/</guid>
-      <description>&lt;p&gt;I was pretty inspired by 
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reference&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;I was pretty inspired by 
 &lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;rsquo;s 
 &lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
 &lt;a href=&#34;http://enochytchen.com/post/why_datamanaegment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data management? Does it matter?&lt;/a&gt;&lt;/p&gt;
@@ -175,7 +303,20 @@ The same concept applies to keeping workbook or a working records. Believe me or
       <link>https://enochytchen.com/post/prediction/</link>
       <pubDate>Tue, 12 May 2020 14:52:16 +0200</pubDate>
       <guid>https://enochytchen.com/post/prediction/</guid>
-      <description>&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#the-uks-life-expectancy-projection&#34;&gt;The UK&amp;rsquo;s life expectancy projection&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#the-swedens-life-expectancy-projection&#34;&gt;The Sweden&amp;rsquo;s life expectancy projection&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reflection&#34;&gt;Reflection&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reference&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
 
 &lt;a href=&#34;https://quoteinvestigator.com/2013/10/20/no-predict/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;It’s Difficult to Make Predictions, Especially About the Future&lt;/a&gt;. Basically, these quotes do not differ from one another. They generally want to express that predection on future is risky and chanllenging. Moreover, it could lead to quantitative problems, such as underestimation or overestimation.&lt;/p&gt;
 &lt;p&gt;Recently, while I was working on life expectancy estimation, a colleague proposed a quesiton, &amp;ldquo;If you are validating expected survival of patients in 1990s, shall you use the survival projection made in 1990s rather than the empircal survival?&amp;rdquo; As a person living in 2020, it was quite intuitive to me to use empirical data to validate the survival prediction. Nevertheless, practically, statisticians back to 1990s only had projection data. Based on this fact, I was quite convinced that I should have used the projection data made at that time.&lt;/p&gt;

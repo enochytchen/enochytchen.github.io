@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basic Biostatistics | Enoch Yi-Tung Chen</title>
+    <link>https://enochytchen.com/courses/biostatbasics/</link>
+      <atom:link href="https://enochytchen.com/courses/biostatbasics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Basic Biostatistics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 30 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Basic Biostatistics</title>
+      <link>https://enochytchen.com/courses/biostatbasics/</link>
+    </image>
+    
+    <item>
+      <title>Data management</title>
+      <link>https://enochytchen.com/courses/biostatbasics/dataman/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/dataman/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Descriptive statistics</title>
+      <link>https://enochytchen.com/courses/biostatbasics/sumstat/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/sumstat/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Graphs and charts say more than words</title>
+      <link>https://enochytchen.com/courses/biostatbasics/graphs/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/graphs/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Distributions</title>
+      <link>https://enochytchen.com/courses/biostatbasics/distribution/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/distribution/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Confidence Intervals</title>
+      <link>https://enochytchen.com/courses/biostatbasics/confidence/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/confidence/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hypothesis tests</title>
+      <link>https://enochytchen.com/courses/biostatbasics/hypotest/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/hypotest/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

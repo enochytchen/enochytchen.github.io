@@ -5,12 +5,247 @@
     <link>https://enochytchen.com/</link>
       <atom:link href="https://enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 28 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 03 Oct 2020 12:46:05 +0200</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
       <link>https://enochytchen.com/</link>
     </image>
+    
+    <item>
+      <title>Data management</title>
+      <link>https://enochytchen.com/courses/biostatbasics/dataman/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/dataman/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Descriptive statistics</title>
+      <link>https://enochytchen.com/courses/biostatbasics/sumstat/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/sumstat/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Graphs and charts say more than words</title>
+      <link>https://enochytchen.com/courses/biostatbasics/graphs/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/graphs/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Distributions</title>
+      <link>https://enochytchen.com/courses/biostatbasics/distribution/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/distribution/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Confidence Intervals</title>
+      <link>https://enochytchen.com/courses/biostatbasics/confidence/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/confidence/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hypothesis tests</title>
+      <link>https://enochytchen.com/courses/biostatbasics/hypotest/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/hypotest/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Study
+cite goldman and pagemo&lt;/p&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;p&gt;Stata:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Excess hazard is an analogue of relative survival. How come!?</title>
+      <link>https://enochytchen.com/post/analogue/</link>
+      <pubDate>Sat, 03 Oct 2020 12:46:05 +0200</pubDate>
+      <guid>https://enochytchen.com/post/analogue/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#basics-of-survival-analysis&#34;&gt;Basics of survival analysis&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#proof-of-relative-survival&#34;&gt;Proof of relative survival&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;It was mentioned numerous times in different articles that excess hazard is the analogue of relative survival on the hazard scale (1-4). However, how is it derived from?&lt;/p&gt;
+&lt;p&gt;We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^*(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^*(t)$.
+\begin{equation}
+R(t) = \frac{S(t)}{S^*(t)}
+\end{equation}
+\begin{equation}
+\lambda (t) = h(t) - h^*(t)
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;basics-of-survival-analysis&#34;&gt;Basics of survival analysis&lt;/h3&gt;
+&lt;h4 id=&#34;survival-function&#34;&gt;Survival function&lt;/h4&gt;
+&lt;p&gt;To illustrate the relationship in between these two terms, we need to come back to some basics of hazard and survival (5).
+First, in almost every chapter one of any survival analysis book, you can find the definition of cumulative distribution function (c.d.f.) of a time $T$ variable, giving the probablity that the event has occurred as time is less than $t$.&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+F(t)=\operatorname{P}(T&amp;lt;t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;The complement of this c.d.f. is survival function, , which is a &lt;strong&gt;proportion&lt;/strong&gt;, shown as
+\begin{equation}
+S(t)=\operatorname{P}(T \geq t)=1-F(t)=\int_{t}^{\infty} f(x) d x,
+\end{equation}
+which is defined as the probability that the event has not occurred by time $t$. That is, for example, the probability that the patient is still alive by time $t$, where $f(t)$ is the probability density function (p.d.f.). And $-f(t)$ is the derivative of $S(t)$.
+$$\begin{eqnarray}
+\frac{d S(t)}{dt} &amp;amp;=&amp;amp; \frac{d}{dt} \int_{t}^{\infty} f(x) d x \\\&lt;br&gt;
+&amp;amp;=&amp;amp; -f(t)
+\end{eqnarray}$$&lt;/p&gt;
+&lt;h4 id=&#34;hazard-function&#34;&gt;Hazard function&lt;/h4&gt;
+&lt;p&gt;We have to know by heart that the hazard function is the instantaneous rate of occurrence of the event, which is a &lt;strong&gt;rate&lt;/strong&gt; (event occurrence per unit of time).&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+h(t)=\lim _{d t \rightarrow 0} \frac{\operatorname{P}(t \leq T&amp;lt;t+d t \mid T \geq t)}{d t}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Let us take a look at the numerator itself, which is a conditional probability.
+\begin{equation}
+\operatorname{P}(t \leq T&amp;lt;t+d t \mid T \geq t) = \frac{P(t \leq T&amp;lt;t+dt )}{P(T\geq t)},
+\end{equation}
+where the denominator part is in fact the survival function, $S(t)$, and the numerator part means the probability that the event happens $[t, t+dt)$, which is $f(t)dt$. So we then extend the equation:
+$$\begin{eqnarray}
+\operatorname{P}(t \leq T&amp;lt;t+d t \mid T \geq t) &amp;amp;=&amp;amp; \frac{P(t \leq T&amp;lt;t+dt )}{P(T\geq t)}&lt;br&gt;
+\\\ &amp;amp;=&amp;amp;\frac{f(t)dt}{S(t)}
+\end{eqnarray}$$
+Dividing both sides by $dt$, it gives the relationship between the hazard function and the survival function, which is
+$$\begin{eqnarray}
+h(t) &amp;amp;=&amp;amp; \frac{f(t)}{S(t)} \\\&lt;br&gt;
+&amp;amp;=&amp;amp; \frac{\frac{-d S(t)}{dt}}{S(t)} \\\&lt;br&gt;
+&amp;amp;=&amp;amp; \frac{-{S}&#39;(t)}{S(t)}
+&amp;amp;=&amp;amp; \frac{-d \ln S(t)}{dt}
+\end{eqnarray} $$
+(Please catch up your Calculus 101: $\frac{d \ln x}{dx} = \frac{1}{x}$)&lt;/p&gt;
+&lt;p&gt;If we rewrite the equation above, we will obtain:
+\begin{equation}
+\ln S(t) = -\int_{0}^{t} h(x) d x
+\end{equation}&lt;/p&gt;
+&lt;p&gt;$$\begin{eqnarray}
+S(t) &amp;amp;=&amp;amp; exp(-\int_{0}^{t} h(x) d x) \\\&lt;br&gt;
+&amp;amp;=&amp;amp; exp(-H(t))
+\end{eqnarray}$$&lt;/p&gt;
+&lt;p&gt;This is pretty! Then we get to know the cumulative hazard function.&lt;/p&gt;
+&lt;h4 id=&#34;cumulative-hazard-function&#34;&gt;Cumulative hazard function&lt;/h4&gt;
+&lt;p&gt;The cumulative hazard function is the integral from 0 to time $t$, defined as
+\begin{equation}
+H(t)=\int_{0}^{t} h(x) d x.
+\end{equation}
+Thus, it is easy to understand that the hazard function is the derivative of the cumulative hazard function.
+\begin{equation}
+h(t) = \frac{d H(t)}{dt}
+\end{equation}&lt;/p&gt;
+&lt;h3 id=&#34;proof-of-relative-survival&#34;&gt;Proof of relative survival&lt;/h3&gt;
+&lt;p&gt;\begin{equation}
+R(t) = \frac{S(t)}{S^*(t)}
+\end{equation}
+First, by defintion of the relationship between the cumulative hazard function and the survival function, we will obtain
+\begin{equation}
+exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^*(t))} \\\&lt;br&gt;
+\end{equation}
+\begin{equation}
+exp(- \Lambda (t)) = exp(- H(t) + H^*(t))
+\end{equation}
+\begin{equation}
+\Lambda (t) = H(t) - H^*(t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Then we got the cumulative excess hazard, $\Lambda (t)$, is the difference between the cumulative all-cause  hazard (of the cancer patient cohort) and the cumulative expected hazard (of the reference population). Then, take the derivative of both sides, shown as:&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\frac{d \int_{0}^{t} \lambda(x) d x }{dt} = \frac{d \int_{0}^{t} h(x) d x }{dt} - \frac{d \int_{0}^{t} h^*(x) d x }{dt},
+\end{equation}
+which is exactly,&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\lambda (t) = h(t) - h^*(t)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;This is fantastic!
+Now you know why excess hazard is the hazard analogue of relative survival.&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Andersson TML, Dickman PW, Eloranta S, Lambe M, Lambert PC. Estimating the loss in expectation of life due to cancer using flexible parametric survival models. Statistics in Medicine 2013;32:5286–5300.&lt;/li&gt;
+&lt;li&gt;Andersson T. Quantifying cancer patient survival: extensions and applications of cure models and life expectancy estimation. Phd thesis, Karolinska Institutet, 2013.&lt;/li&gt;
+&lt;li&gt;Eloranta S. Development and Application of Statistical Methods for Population-Based Cancer
+Patient Survival. Phd thesis, Karolinska Institutet, 2013.&lt;/li&gt;
+&lt;li&gt;Eloranta S, Smedby KE, Dickman PW, Andersson TM. Cancer survival statistics for patients and healthcare professionals–a tutorial of real‐world data analysis. Journal of Internal Medicine. 2020.&lt;/li&gt;
+&lt;li&gt;Germán Rodríguez. Generalized Linear Models: Survival Models. &lt;a href=&#34;https://data.princeton.edu&#34;&gt;https://data.princeton.edu&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>https://enochytchen.com/tutorials/relsurv/qa/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/tutorials/relsurv/qa/</guid>
+      <description>&lt;p&gt;The following FAQs are some tips we should be aware of as using these programs to estimate relative survival.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;, life-table framework is implemented to estimate relative survival. However, should the cutpoints be in months &lt;code&gt;br(0(`=1/12&#39;)10)&lt;/code&gt;  or in years &lt;code&gt;br(0(1)10)&lt;/code&gt;?&lt;br&gt;
+A: Monthly estimate is more accurate.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Thanks. Let’s look at it on Wednesday.&lt;/p&gt;
+&lt;p&gt;The answer to your question is that monthly intervals are more accurate.&lt;/p&gt;
+&lt;p&gt;-strs- calculates the attained age and attained year at the start of each interval and looks up the popmort file for the floor() of those values. It then assumes the expected probability of death is applicable for the entire interval.&lt;/p&gt;
+&lt;p&gt;The probabilities in the popmort file are the probabilities of surviving 1 year. The probability of surviving the interval is given by p^k where k is the interval length. That is, for monthly intervals we take the twelfth root of the probability.&lt;/p&gt;
+&lt;p&gt;This means that if a person is 71.5 years old at diagnosis then, with annual intervals it is assumed they have the expected survival of a 71 year old for the first year of follow-up.&lt;/p&gt;
+&lt;p&gt;If you use monthly intervals then we assume the expect survival is that of a 71 year old until he turns 72 after which we use the expected survival of a 72 year old. That’s because we are looking up the popmort file at the start of every interval. With monthly intervals we are doing it 12 times and for annual intervals we are doing it just once.&lt;/p&gt;
+&lt;p&gt;I think these comparisons you are doing are interesting.&lt;/p&gt;
+&lt;p&gt;It was before your time, but when the Pohar Perme paper was published (that showed Ederer II was biased) there were a lot of people who were alarmist and essentially said “everything we’ve done is wrong and all previous methods should be abandoned”. Paul Lambert and I tried to bring back some sanity and showed that, in practice, the bias in the age-standardised estimates is negligible (&lt;a href=&#34;https://doi.org/10.1186/s12874-015-0057-3)&#34;&gt;https://doi.org/10.1186/s12874-015-0057-3)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I think it’s interesting to look at these other small differences due to various assumptions that can be made (e.g., assuming everyone is diagnosed on their birthday) and comparing the magnitude of the differences to the bias in Ederer II.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Tied time data → Untied time data</title>
@@ -106,7 +341,7 @@
 &lt;/table&gt;
 &lt;h3 id=&#34;explanation&#34;&gt;Explanation&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;The default of &lt;code&gt;rs.surv()&lt;/code&gt; calculates the product integral on the hazard level, whereas &lt;code&gt;stpp&lt;/code&gt; uses  the Fleming-Harrington estimate (3), which seems to be more sensitive to ties.&lt;/li&gt;
+&lt;li&gt;By default, both &lt;code&gt;rs.surv()&lt;/code&gt; and  &lt;code&gt;stpp&lt;/code&gt; calculate survival using the product integral method on the hazard level, whereas the Fleming-Harrington estimator (using the expoential of the negative cumulative (excess) hazard), which appears to be more sensitive to ties, is also eligible to be applied (3).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;stnet&lt;/code&gt; should generate the identical estimates as &lt;code&gt;strs&lt;/code&gt;, given &lt;code&gt;ht&lt;/code&gt; is specified in &lt;code&gt;strs&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Removing ties did not have an effect with discrete time estimators using life-table framework. (&lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;).&lt;/li&gt;
 &lt;/ul&gt;
@@ -130,8 +365,9 @@
 &lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/untied/using_sim.R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rs.surv&lt;/a&gt;&lt;br&gt;
 
 &lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/untied/using_sim.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stpp, strs, stnet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This example showed how the relative survival estimates change given more and more ties are added into the data.&lt;/p&gt;
 &lt;h3 id=&#34;dataset&#34;&gt;Dataset&lt;/h3&gt;
-&lt;p&gt;The dataset (&lt;code&gt;scenario2_1.dta&lt;/code&gt;) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0.0027; max: 12). We then added ties into the data by flooring the time into discrete days, weeks, months, quaters, or years. More ties are added (i.e., less distinct values) as the time interval becomes larger (days→years).&lt;/p&gt;
+&lt;p&gt;The dataset (&lt;code&gt;scenario2_1.dta&lt;/code&gt;) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0.0027; max: 12). We then added ties into the data by flooring the time into discrete days, weeks, months, quaters, or years. More ties are added (i.e., less distinct values) as the time interval becomes larger (days→years). If any survival time became 0 due to flooring, we then made it 0.5 of the time interval (e.g., 0.5 months).&lt;/p&gt;
 &lt;p&gt;The following table shows how the time was treated in different units.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -181,9 +417,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;relative-survival-estimates&#34;&gt;Relative survival estimates&lt;/h2&gt;
+&lt;h3 id=&#34;relative-survival-estimates&#34;&gt;Relative survival estimates&lt;/h3&gt;
 &lt;p&gt;The following tables show the estimates of 1-, 5-, and 10-year relative survival (RS) using the Pohar-Perme estimator by &lt;code&gt;rs.surv&lt;/code&gt;, &lt;code&gt;stpp&lt;/code&gt;, &lt;code&gt;strs&lt;/code&gt;, and &lt;code&gt;stnet&lt;/code&gt;. To make the tables look tidier, here we dismissed the 95% CI, which however can be found in the outputs of the syntax.&lt;/p&gt;
-&lt;h3 id=&#34;rssurv&#34;&gt;rs.surv()&lt;/h3&gt;
+&lt;h4 id=&#34;rssurv&#34;&gt;rs.surv()&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -226,7 +462,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;stpp&#34;&gt;stpp&lt;/h3&gt;
+&lt;h4 id=&#34;stpp&#34;&gt;stpp&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -245,31 +481,31 @@
 &lt;td&gt;0.797&lt;/td&gt;
 &lt;td&gt;0.797&lt;/td&gt;
 &lt;td&gt;0.796&lt;/td&gt;
-&lt;td&gt;0.793&lt;/td&gt;
-&lt;td&gt;0.785&lt;/td&gt;
-&lt;td&gt;0.732&lt;/td&gt;
+&lt;td&gt;0.790&lt;/td&gt;
+&lt;td&gt;0.777&lt;/td&gt;
+&lt;td&gt;0.709&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;5&lt;/td&gt;
 &lt;td&gt;0.613&lt;/td&gt;
 &lt;td&gt;0.613&lt;/td&gt;
-&lt;td&gt;0.614&lt;/td&gt;
-&lt;td&gt;0.616&lt;/td&gt;
-&lt;td&gt;0.610&lt;/td&gt;
-&lt;td&gt;0.617&lt;/td&gt;
+&lt;td&gt;0.613&lt;/td&gt;
+&lt;td&gt;0.611&lt;/td&gt;
+&lt;td&gt;0.603&lt;/td&gt;
+&lt;td&gt;0.595&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;0.513&lt;/td&gt;
-&lt;td&gt;0.513&lt;/td&gt;
-&lt;td&gt;0.513&lt;/td&gt;
+&lt;td&gt;0.512&lt;/td&gt;
+&lt;td&gt;0.512&lt;/td&gt;
 &lt;td&gt;0.512&lt;/td&gt;
 &lt;td&gt;0.509&lt;/td&gt;
-&lt;td&gt;0.504&lt;/td&gt;
+&lt;td&gt;0.502&lt;/td&gt;
+&lt;td&gt;0.484&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;strs&#34;&gt;strs&lt;/h3&gt;
+&lt;h4 id=&#34;strs&#34;&gt;strs&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -312,7 +548,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;stnet&#34;&gt;stnet&lt;/h3&gt;
+&lt;h4 id=&#34;stnet&#34;&gt;stnet&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -816,7 +1052,18 @@ summary(rssurv.plotdata)
       <link>https://enochytchen.com/post/gooddatamanagement/</link>
       <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/post/gooddatamanagement/</guid>
-      <description>&lt;p&gt;I was pretty inspired by 
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reference&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;I was pretty inspired by 
 &lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;rsquo;s 
 &lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
 &lt;a href=&#34;http://enochytchen.com/post/why_datamanaegment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data management? Does it matter?&lt;/a&gt;&lt;/p&gt;
@@ -922,7 +1169,20 @@ The same concept applies to keeping workbook or a working records. Believe me or
       <link>https://enochytchen.com/post/prediction/</link>
       <pubDate>Tue, 12 May 2020 14:52:16 +0200</pubDate>
       <guid>https://enochytchen.com/post/prediction/</guid>
-      <description>&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#the-uks-life-expectancy-projection&#34;&gt;The UK&amp;rsquo;s life expectancy projection&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#the-swedens-life-expectancy-projection&#34;&gt;The Sweden&amp;rsquo;s life expectancy projection&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reflection&#34;&gt;Reflection&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reference&#34;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;There are a bunch of quotes related to prediction which can be found at
 
 &lt;a href=&#34;https://quoteinvestigator.com/2013/10/20/no-predict/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;It’s Difficult to Make Predictions, Especially About the Future&lt;/a&gt;. Basically, these quotes do not differ from one another. They generally want to express that predection on future is risky and chanllenging. Moreover, it could lead to quantitative problems, such as underestimation or overestimation.&lt;/p&gt;
 &lt;p&gt;Recently, while I was working on life expectancy estimation, a colleague proposed a quesiton, &amp;ldquo;If you are validating expected survival of patients in 1990s, shall you use the survival projection made in 1990s rather than the empircal survival?&amp;rdquo; As a person living in 2020, it was quite intuitive to me to use empirical data to validate the survival prediction. Nevertheless, practically, statisticians back to 1990s only had projection data. Based on this fact, I was quite convinced that I should have used the projection data made at that time.&lt;/p&gt;
@@ -1392,14 +1652,6 @@ The survival was by age groups, where the first 10 years were observed survival 
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/popmort_projection.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Recent posts</title>
-      <link>https://enochytchen.com/tutorials/_index-/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/tutorials/_index-/</guid>
-      <description></description>
     </item>
     
   </channel>
