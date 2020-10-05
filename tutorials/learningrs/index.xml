@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning relative survival with me | Enoch Yi-Tung Chen</title>
+    <link>https://enochytchen.com/tutorials/learningrs/</link>
+      <atom:link href="https://enochytchen.com/tutorials/learningrs/index.xml" rel="self" type="application/rss+xml" />
+    <description>Learning relative survival with me</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 04 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Learning relative survival with me</title>
+      <link>https://enochytchen.com/tutorials/learningrs/</link>
+    </image>
+    
+    <item>
+      <title>Eloranta2020</title>
+      <link>https://enochytchen.com/tutorials/learningrs/eloranta2020/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/tutorials/learningrs/eloranta2020/</guid>
+      <description>&lt;h3 id=&#34;title&#34;&gt;Title&lt;/h3&gt;
+&lt;p&gt;Cancer survival statistics for patients and healthcare professionals–a tutorial of real‐world data analysis&lt;/p&gt;
+&lt;h3 id=&#34;authors&#34;&gt;Authors&lt;/h3&gt;
+&lt;p&gt;Eloranta S, Smedby KE, Dickman PW, Andersson TM&lt;/p&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Why do we use net survival?&lt;/strong&gt;&lt;br&gt;
+We want to compare survival between groups and over time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Definition of net survival&lt;/strong&gt;: In a hypothetical world, cancer patients can only die from the cancer of interest.&lt;/li&gt;
+&lt;li&gt;Comparison between&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Cause-specific survival&lt;/strong&gt;:&lt;br&gt;
+a. requires information on cause-specific deaths; deaths due to cancer/other than caner&lt;br&gt;
+b. cause-specific death is not always complete or available.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Relative survival&lt;/strong&gt;:&lt;br&gt;
+a. does not require information on cause-specific deaths&lt;br&gt;
+b. requires a reference population, e.g., life-table data&lt;br&gt;
+c. 
+&lt;a href=&#34;https://enochytchen.com/post/analogue/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the mortality analogue of relative survival is excess mortality&lt;/a&gt;, which captures both direct and indirect mortality due to cancer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Competeing events&lt;/strong&gt;&lt;br&gt;
+Net survival measure is a clever way to compare survival between different groups, but in the real world, competing events exist.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loss of life expectancy&lt;/strong&gt;: the number of life years a cancer patient is estimated to lose.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;Eloranta S, Smedby KE, Dickman PW, Andersson TM. Cancer survival statistics for patients and healthcare professionals–a tutorial of real‐world data analysis. Journal of Internal Medicine. 2020.
+doi: 
+&lt;a href=&#34;https://doi.org/10.1111/joim.13139&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1111/joim.13139&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
