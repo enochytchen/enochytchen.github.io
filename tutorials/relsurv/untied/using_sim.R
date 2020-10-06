@@ -75,20 +75,14 @@ summary(rssurv, time = c(0:10) * 365.241, scale = 365.241)
 sc2 <- sc2 %>%
        mutate(
          tt1 = t,                        # original time in days
-         tt2 = floor(t*365.241)/365.241, # Add some ties in days
-         tt3 = floor(t*52.177)/52.177,   # weeks
-         tt4 = floor(t*12)/12,           # months
-         tt5 = floor(t*4)/4,             # quarters
-         tt6 = floor(t),                 # years
+         tt2 = (floor(t*365.241) + 0.5) / 365.241, # Add some ties in days
+         tt3 = (floor(t*52.177)  + 0.5) / 52.177,   # weeks
+         tt4 = (floor(t*12)      + 0.5) / 12,           # months
+         tt5 = (floor(t*4)       + 0.5) / 4,             # quarters
+         tt6 = (floor(t)         + 0.5),                 # years
           )%>%
        select(id, sex, dead, t, agediag, yeardiag, tt1, tt2, tt3, tt4, tt5, tt6)
 str(sc2)
-
-sc2$tt2 <- ifelse(sc2$tt2 == 0, 0.5/365.241, sc2$tt2)
-sc2$tt3 <- ifelse(sc2$tt3 == 0, 0.5/52.177,  sc2$tt3)
-sc2$tt4 <- ifelse(sc2$tt4 == 0, 0.5/12,      sc2$tt4)
-sc2$tt5 <- ifelse(sc2$tt5 == 0, 0.5/4,       sc2$tt5)
-sc2$tt6 <- ifelse(sc2$tt6 == 0, 0.5,         sc2$tt6)
 
 # Regression models
 regmodels <- lapply(1:6, function(i){

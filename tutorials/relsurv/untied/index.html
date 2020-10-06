@@ -640,31 +640,31 @@ This example showed how the relative survival estimates change given more and mo
 <tr>
 <td>tt2</td>
 <td>Days</td>
-<td>floor(tt1*365.241)/365.241 <br/> replace tt2 = 0.5/365.241  if tt2 == 0</td>
+<td>(floor(tt1*365.241) + 0.5) /365.241</td>
 <td>569</td>
 </tr>
 <tr>
 <td>tt3</td>
 <td>Weeks</td>
-<td>floor(tt1*52.177)/52.177 <br/> replace tt3 = 0.5/52.177   if tt3 == 0</td>
+<td>(floor(tt1*52.177)  + 0.5) /52.177</td>
 <td>332</td>
 </tr>
 <tr>
 <td>tt4</td>
 <td>Months</td>
-<td>floor(tt1*12)/12 <br/> replace tt4 = 0.5/12       if tt4 == 0</td>
+<td>(floor(tt1*12)      + 0.5) /12</td>
 <td>132</td>
 </tr>
 <tr>
 <td>tt5</td>
 <td>Quarters</td>
-<td>floor(tt1*4)/4 <br/> replace tt5 = 0.5/4        if tt5 == 0</td>
+<td>(floor(tt1*4)       + 0.5) /4</td>
 <td>49</td>
 </tr>
 <tr>
 <td>tt6</td>
 <td>Years</td>
-<td>floor(tt1) <br/> replace tt6 = 0.5	       if tt6 == 0</td>
+<td>(floor(tt1)         + 0.5)</td>
 <td>13</td>
 </tr>
 </tbody>
@@ -689,10 +689,10 @@ This example showed how the relative survival estimates change given more and mo
 <td>1</td>
 <td>0.797</td>
 <td>0.797</td>
-<td>0.796</td>
+<td>0.797</td>
 <td>0.790</td>
-<td>0.777</td>
-<td>0.708</td>
+<td>0.796</td>
+<td>0.788</td>
 </tr>
 <tr>
 <td>5</td>
@@ -700,17 +700,17 @@ This example showed how the relative survival estimates change given more and mo
 <td>0.618</td>
 <td>0.618</td>
 <td>0.618</td>
-<td>0.607</td>
-<td>0.595</td>
+<td>0.617</td>
+<td>0.613</td>
 </tr>
 <tr>
 <td>10</td>
 <td>0.534</td>
 <td>0.534</td>
-<td>0.533</td>
-<td>0.531</td>
-<td>0.522</td>
-<td>0.498</td>
+<td>0.534</td>
+<td>0.536</td>
+<td>0.535</td>
+<td>0.529</td>
 </tr>
 </tbody>
 </table>
@@ -732,28 +732,28 @@ This example showed how the relative survival estimates change given more and mo
 <td>1</td>
 <td>0.797</td>
 <td>0.797</td>
+<td>0.797</td>
+<td>0.798</td>
 <td>0.796</td>
-<td>0.790</td>
-<td>0.777</td>
-<td>0.709</td>
+<td>0.789</td>
 </tr>
 <tr>
 <td>5</td>
 <td>0.613</td>
 <td>0.613</td>
 <td>0.613</td>
-<td>0.611</td>
-<td>0.603</td>
-<td>0.595</td>
+<td>0.613</td>
+<td>0.613</td>
+<td>0.615</td>
 </tr>
 <tr>
 <td>10</td>
 <td>0.512</td>
 <td>0.512</td>
 <td>0.512</td>
-<td>0.509</td>
-<td>0.502</td>
-<td>0.484</td>
+<td>0.514</td>
+<td>0.515</td>
+<td>0.519</td>
 </tr>
 </tbody>
 </table>
@@ -774,29 +774,29 @@ This example showed how the relative survival estimates change given more and mo
 <tr>
 <td>1</td>
 <td>0.798</td>
-<td>0.797</td>
-<td>0.795</td>
-<td>0.792</td>
-<td>0.778</td>
-<td>0.732</td>
+<td>0.798</td>
+<td>0.798</td>
+<td>0.798</td>
+<td>0.798</td>
+<td>0.825</td>
 </tr>
 <tr>
 <td>5</td>
 <td>0.612</td>
 <td>0.612</td>
 <td>0.612</td>
-<td>0.616</td>
-<td>0.605</td>
-<td>0.617</td>
+<td>0.612</td>
+<td>0.613</td>
+<td>0.649</td>
 </tr>
 <tr>
 <td>10</td>
 <td>0.513</td>
 <td>0.513</td>
 <td>0.513</td>
-<td>0.512</td>
-<td>0.505</td>
-<td>0.506</td>
+<td>0.513</td>
+<td>0.513</td>
+<td>0.554</td>
 </tr>
 </tbody>
 </table>
@@ -817,8 +817,8 @@ This example showed how the relative survival estimates change given more and mo
 <tr>
 <td>1</td>
 <td>0.798</td>
-<td>0.797</td>
-<td>0.795</td>
+<td>0.798</td>
+<td>0.798</td>
 <td>0.798</td>
 <td>0.798</td>
 <td>0.799</td>
