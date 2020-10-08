@@ -13,138 +13,9 @@
     </image>
     
     <item>
-      <title>FAQ</title>
-      <link>https://enochytchen.com/tutorials/relsurv/qa/</link>
-      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/tutorials/relsurv/qa/</guid>
-      <description>&lt;p&gt;The following FAQs are some tips we should be aware of as using these programs to estimate relative survival.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;, life-table framework is implemented to estimate relative survival. However, should the cutpoints be in months &lt;code&gt;br(0(`=1/12&#39;)10)&lt;/code&gt;  or in years &lt;code&gt;br(0(1)10)&lt;/code&gt;?&lt;br&gt;
-A: Monthly estimate is more accurate.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Thanks. Let’s look at it on Wednesday.&lt;/p&gt;
-&lt;p&gt;The answer to your question is that monthly intervals are more accurate.&lt;/p&gt;
-&lt;p&gt;-strs- calculates the attained age and attained year at the start of each interval and looks up the popmort file for the floor() of those values. It then assumes the expected probability of death is applicable for the entire interval.&lt;/p&gt;
-&lt;p&gt;The probabilities in the popmort file are the probabilities of surviving 1 year. The probability of surviving the interval is given by p^k where k is the interval length. That is, for monthly intervals we take the twelfth root of the probability.&lt;/p&gt;
-&lt;p&gt;This means that if a person is 71.5 years old at diagnosis then, with annual intervals it is assumed they have the expected survival of a 71 year old for the first year of follow-up.&lt;/p&gt;
-&lt;p&gt;If you use monthly intervals then we assume the expect survival is that of a 71 year old until he turns 72 after which we use the expected survival of a 72 year old. That’s because we are looking up the popmort file at the start of every interval. With monthly intervals we are doing it 12 times and for annual intervals we are doing it just once.&lt;/p&gt;
-&lt;p&gt;I think these comparisons you are doing are interesting.&lt;/p&gt;
-&lt;p&gt;It was before your time, but when the Pohar Perme paper was published (that showed Ederer II was biased) there were a lot of people who were alarmist and essentially said “everything we’ve done is wrong and all previous methods should be abandoned”. Paul Lambert and I tried to bring back some sanity and showed that, in practice, the bias in the age-standardised estimates is negligible (&lt;a href=&#34;https://doi.org/10.1186/s12874-015-0057-3)&#34;&gt;https://doi.org/10.1186/s12874-015-0057-3)&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I think it’s interesting to look at these other small differences due to various assumptions that can be made (e.g., assuming everyone is diagnosed on their birthday) and comparing the magnitude of the differences to the bias in Ederer II.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Tied time data → Untied time data</title>
-      <link>https://enochytchen.com/tutorials/relsurv/tied/</link>
-      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/tutorials/relsurv/tied/</guid>
-      <description>&lt;p&gt;The codes used in this tutorial are available below.&lt;br&gt;
-
-&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/rs.surv.R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rs.surv&lt;/a&gt;&lt;br&gt;
-
-&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/using_colon_tied.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stpp, strs, stnet (original tied data)&lt;/a&gt;&lt;br&gt;
-
-&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/using_colon_untied.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stpp, strs, stnet (untied data)&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;settings&#34;&gt;Settings&lt;/h3&gt;
-&lt;p&gt;This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by &lt;code&gt;rs.surv()&lt;/code&gt; in R, &lt;code&gt;stpp&lt;/code&gt;,  &lt;code&gt;strs&lt;/code&gt;,  &lt;code&gt;stnet&lt;/code&gt; in Stata. In the second part, an small epislon ~ $Norm(0, 0.01)$ was added into each individual&amp;rsquo;s survival time to make no individual have exactly the same survival time (to untie the data).&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Survival time was calculated by (date of exit - date of diagnosis).&lt;/li&gt;
-&lt;li&gt;We define failure as &lt;code&gt;status == 1 2 &lt;/code&gt; (died from cancer or other causes).&lt;/li&gt;
-&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt;, &lt;code&gt;ht&lt;/code&gt; (hazard transformation) must be specified to command the survival be calculated by transforming cumulative excess hazard ($\lambda$) instead of an actuarial approach (default) (2). However, in &lt;code&gt;stnet&lt;/code&gt;, by default, survival is calculated by using hazard transformation.&lt;/li&gt;
-&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;, monthly intervals were calculated  up to ten years by specifying &lt;code&gt;br(0(`=1/12&#39;)10)&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
-&lt;p&gt;The esimates of 1-, 5-, and 10-year relative survival by each program are shown below:&lt;/p&gt;
-&lt;h4 id=&#34;using-colondta-original-tied-time-data&#34;&gt;Using colon.dta (original tied time data)&lt;/h4&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;t&lt;/th&gt;
-&lt;th&gt;rs.surv&lt;/th&gt;
-&lt;th&gt;stpp&lt;/th&gt;
-&lt;th&gt;strs&lt;/th&gt;
-&lt;th&gt;stnet&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0.676 (0.669-0.684)&lt;/td&gt;
-&lt;td&gt;0.682 (0.674-0.690)&lt;/td&gt;
-&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
-&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;0.473 (0.463-0.484)&lt;/td&gt;
-&lt;td&gt;0.479 (0.468-0.490)&lt;/td&gt;
-&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
-&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;0.433 (0.414-0.453)&lt;/td&gt;
-&lt;td&gt;0.440 (0.421-0.461)&lt;/td&gt;
-&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
-&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&#34;using-colondta-untied-time-data&#34;&gt;Using colon.dta (untied time data)&lt;/h4&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;rs.surv&lt;/th&gt;
-&lt;th&gt;stpp&lt;/th&gt;
-&lt;th&gt;strs&lt;/th&gt;
-&lt;th&gt;stnet&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;0.676 (0.668-0.684)&lt;/td&gt;
-&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
-&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
-&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;0.472 (0.461-0.483)&lt;/td&gt;
-&lt;td&gt;0.473 (0.463-0.484)&lt;/td&gt;
-&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
-&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;0.431 (0.411-0.451)&lt;/td&gt;
-&lt;td&gt;0.433 (0.414-0.453)&lt;/td&gt;
-&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
-&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;explanation&#34;&gt;Explanation&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;By default, both &lt;code&gt;rs.surv()&lt;/code&gt; and  &lt;code&gt;stpp&lt;/code&gt; calculate survival using the product integral method on the hazard level, whereas the Fleming-Harrington estimator (using the expoential of the negative cumulative (excess) hazard), which appears to be more sensitive to ties, is also eligible to be applied (3).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;stnet&lt;/code&gt; should generate the identical estimates as &lt;code&gt;strs&lt;/code&gt;, given &lt;code&gt;ht&lt;/code&gt; is specified in &lt;code&gt;strs&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Removing ties did not have an effect with discrete time estimators using life-table framework. (&lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Pohar Perme M, Stare J, Estève J. On Estimation in Relative Survival. Biometrics. 2012;68:113-120&lt;/li&gt;
-&lt;li&gt;Dickman P, Coviello E. Estimating and modelling relative survival. The Stata Journal. 2015;15:186-215.&lt;/li&gt;
-&lt;li&gt;Fleming TR, and Harrington DP. Nonparametric Estimation of the Survival Distribution in Censored Data.Communications in Statistics—Theory and Methods. 1984;13:2469–2486.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Untied time data → Tied</title>
       <link>https://enochytchen.com/tutorials/relsurv/untied/</link>
-      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/tutorials/relsurv/untied/</guid>
       <description>&lt;p&gt;(Not completed yet)&lt;/p&gt;
 &lt;p&gt;The codes used in this tutorial are available below.&lt;br&gt;
@@ -378,6 +249,144 @@ A: Monthly estimate is more accurate.&lt;/li&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h3 id=&#34;explanation&#34;&gt;Explanation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Generally, introducing ties into the data did not change the esitmates of relative survival no matter which package was used for calculation in this case. One exception happened if discrete time was made into years, which merely 13 distinct values exist, &lt;code&gt;rs.surv()&lt;/code&gt; gave a slightly lower estimates for 1-year relative survival (0.788); &lt;code&gt;stpp&lt;/code&gt; gave a much lower survival in 1-, 5- and 10-year relative survival (0.709, 0.595, and 0.484 respectively); &lt;code&gt;strs&lt;/code&gt;, however, outputed higher esitmates (0.825, 0.649, and 0.554 separately); surprisingly, the output estimated by &lt;code&gt;stnet&lt;/code&gt;almost did not change given heavy ties were added.&lt;/li&gt;
+&lt;li&gt;One thing we should bear in mind is that introducing ties to the data is in fact changing the original data. I tried to add ties in a sensible way and not to change the order of the data as much as possible. However, I am innocent of the lower or higher estimates  &lt;code&gt;rs.surv()&lt;/code&gt;, &lt;code&gt;stpp&lt;/code&gt;, and &lt;code&gt;strs&lt;/code&gt; gave.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;It is common that the data from cancer register has tied time, e.g., due to protection on patients&amp;rsquo; privacy. As estimating survival, we should pay attention to the potential change on the estimates given the amount of tie is introduced.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FAQ</title>
+      <link>https://enochytchen.com/tutorials/relsurv/qa/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/tutorials/relsurv/qa/</guid>
+      <description>&lt;p&gt;The following FAQs are some tips we should be aware of as using these programs to estimate relative survival.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;, life-table framework is implemented to estimate relative survival. However, should the cutpoints be in months &lt;code&gt;br(0(`=1/12&#39;)10)&lt;/code&gt;  or in years &lt;code&gt;br(0(1)10)&lt;/code&gt;?&lt;br&gt;
+A: Monthly estimate is more accurate.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Thanks. Let’s look at it on Wednesday.&lt;/p&gt;
+&lt;p&gt;The answer to your question is that monthly intervals are more accurate.&lt;/p&gt;
+&lt;p&gt;-strs- calculates the attained age and attained year at the start of each interval and looks up the popmort file for the floor() of those values. It then assumes the expected probability of death is applicable for the entire interval.&lt;/p&gt;
+&lt;p&gt;The probabilities in the popmort file are the probabilities of surviving 1 year. The probability of surviving the interval is given by p^k where k is the interval length. That is, for monthly intervals we take the twelfth root of the probability.&lt;/p&gt;
+&lt;p&gt;This means that if a person is 71.5 years old at diagnosis then, with annual intervals it is assumed they have the expected survival of a 71 year old for the first year of follow-up.&lt;/p&gt;
+&lt;p&gt;If you use monthly intervals then we assume the expect survival is that of a 71 year old until he turns 72 after which we use the expected survival of a 72 year old. That’s because we are looking up the popmort file at the start of every interval. With monthly intervals we are doing it 12 times and for annual intervals we are doing it just once.&lt;/p&gt;
+&lt;p&gt;I think these comparisons you are doing are interesting.&lt;/p&gt;
+&lt;p&gt;It was before your time, but when the Pohar Perme paper was published (that showed Ederer II was biased) there were a lot of people who were alarmist and essentially said “everything we’ve done is wrong and all previous methods should be abandoned”. Paul Lambert and I tried to bring back some sanity and showed that, in practice, the bias in the age-standardised estimates is negligible (&lt;a href=&#34;https://doi.org/10.1186/s12874-015-0057-3)&#34;&gt;https://doi.org/10.1186/s12874-015-0057-3)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I think it’s interesting to look at these other small differences due to various assumptions that can be made (e.g., assuming everyone is diagnosed on their birthday) and comparing the magnitude of the differences to the bias in Ederer II.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tied time data → Untied time data</title>
+      <link>https://enochytchen.com/tutorials/relsurv/tied/</link>
+      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/tutorials/relsurv/tied/</guid>
+      <description>&lt;p&gt;The codes used in this tutorial are available below.&lt;br&gt;
+
+&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/rs.surv.R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rs.surv&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/using_colon_tied.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stpp, strs, stnet (original tied data)&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;https://enochytchen.com/tutorials/relsurv/tied/using_colon_untied.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stpp, strs, stnet (untied data)&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;settings&#34;&gt;Settings&lt;/h3&gt;
+&lt;p&gt;This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by &lt;code&gt;rs.surv()&lt;/code&gt; in R, &lt;code&gt;stpp&lt;/code&gt;,  &lt;code&gt;strs&lt;/code&gt;,  &lt;code&gt;stnet&lt;/code&gt; in Stata. In the second part, an small epislon ~ $Norm(0, 0.01)$ was added into each individual&amp;rsquo;s survival time to make no individual have exactly the same survival time (to untie the data).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Survival time was calculated by (date of exit - date of diagnosis).&lt;/li&gt;
+&lt;li&gt;We define failure as &lt;code&gt;status == 1 2 &lt;/code&gt; (died from cancer or other causes).&lt;/li&gt;
+&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt;, &lt;code&gt;ht&lt;/code&gt; (hazard transformation) must be specified to command the survival be calculated by transforming cumulative excess hazard ($\lambda$) instead of an actuarial approach (default) (2). However, in &lt;code&gt;stnet&lt;/code&gt;, by default, survival is calculated by using hazard transformation.&lt;/li&gt;
+&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;, monthly intervals were calculated  up to ten years by specifying &lt;code&gt;br(0(`=1/12&#39;)10)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;p&gt;The esimates of 1-, 5-, and 10-year relative survival by each program are shown below:&lt;/p&gt;
+&lt;h4 id=&#34;using-colondta-original-tied-time-data&#34;&gt;Using colon.dta (original tied time data)&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;t&lt;/th&gt;
+&lt;th&gt;rs.surv&lt;/th&gt;
+&lt;th&gt;stpp&lt;/th&gt;
+&lt;th&gt;strs&lt;/th&gt;
+&lt;th&gt;stnet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.676 (0.669-0.684)&lt;/td&gt;
+&lt;td&gt;0.682 (0.674-0.690)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;0.473 (0.463-0.484)&lt;/td&gt;
+&lt;td&gt;0.479 (0.468-0.490)&lt;/td&gt;
+&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
+&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;0.433 (0.414-0.453)&lt;/td&gt;
+&lt;td&gt;0.440 (0.421-0.461)&lt;/td&gt;
+&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
+&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;using-colondta-untied-time-data&#34;&gt;Using colon.dta (untied time data)&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;rs.surv&lt;/th&gt;
+&lt;th&gt;stpp&lt;/th&gt;
+&lt;th&gt;strs&lt;/th&gt;
+&lt;th&gt;stnet&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.676 (0.668-0.684)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;td&gt;0.677 (0.669-0.685)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;0.472 (0.461-0.483)&lt;/td&gt;
+&lt;td&gt;0.473 (0.463-0.484)&lt;/td&gt;
+&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
+&lt;td&gt;0.474 (0.463-0.484)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;0.431 (0.411-0.451)&lt;/td&gt;
+&lt;td&gt;0.433 (0.414-0.453)&lt;/td&gt;
+&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
+&lt;td&gt;0.434 (0.415-0.454)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;explanation&#34;&gt;Explanation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;By default, both &lt;code&gt;rs.surv()&lt;/code&gt; and  &lt;code&gt;stpp&lt;/code&gt; calculate survival using the product integral method on the hazard level, whereas the Fleming-Harrington estimator (using the expoential of the negative cumulative (excess) hazard), which appears to be more sensitive to ties, is also eligible to be applied (3).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stnet&lt;/code&gt; should generate the identical estimates as &lt;code&gt;strs&lt;/code&gt;, given &lt;code&gt;ht&lt;/code&gt; is specified in &lt;code&gt;strs&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Removing ties did not have an effect with discrete time estimators using life-table framework. (&lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Pohar Perme M, Stare J, Estève J. On Estimation in Relative Survival. Biometrics. 2012;68:113-120&lt;/li&gt;
+&lt;li&gt;Dickman P, Coviello E. Estimating and modelling relative survival. The Stata Journal. 2015;15:186-215.&lt;/li&gt;
+&lt;li&gt;Fleming TR, and Harrington DP. Nonparametric Estimation of the Survival Distribution in Censored Data.Communications in Statistics—Theory and Methods. 1984;13:2469–2486.&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
