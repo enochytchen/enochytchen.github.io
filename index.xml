@@ -29,34 +29,57 @@ cite goldman and pagemo&lt;/p&gt;
     </item>
     
     <item>
-      <title>Descriptive statistics</title>
+      <title>Summary Statistics</title>
       <link>https://enochytchen.com/courses/biostatbasics/sumstat/</link>
       <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/courses/biostatbasics/sumstat/</guid>
       <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
-&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
-&lt;p&gt;Study
-cite goldman and pagemo&lt;/p&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;get to know the data by performing &lt;code&gt;summarize&lt;/code&gt;, &lt;code&gt;describe&lt;/code&gt;, &lt;code&gt;codebook&lt;/code&gt;, &lt;code&gt;list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;measure central tendency of the data (mean, median, amd mode)&lt;/li&gt;
+&lt;li&gt;measure dispersion of the data (range, interquartile range, variance, and standard deviation)&lt;/li&gt;
+&lt;li&gt;make a two-by-two table ad interpret relative risk and odds ratio from it by using &lt;code&gt;csi&lt;/code&gt; in &lt;code&gt;epitab&lt;/code&gt; package&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;video-lectures&#34;&gt;Video lectures&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/BwknA6aGqvs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
-&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;p&gt;Slides can be downloaded (in pdf format) 
+&lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;&#34;&gt;Ch1 Descriptive statistics&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
-&lt;p&gt;Stata:&lt;/p&gt;
+&lt;p&gt;Stata codes be downloaded (do file) 
+&lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Graphs and charts say more than words</title>
+      <title>Graphs</title>
       <link>https://enochytchen.com/courses/biostatbasics/graphs/</link>
       <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/courses/biostatbasics/graphs/</guid>
       <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
-&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
-&lt;p&gt;Study
-cite goldman and pagemo&lt;/p&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;use Stata to create histograms, bar charts, box plots, scatter plots, and line graphs&lt;/li&gt;
+&lt;li&gt;edit and customise graphs in &lt;code&gt;twoway&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;export graph in any format using &lt;code&gt;graph export&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
-&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
+&lt;p&gt;Slides can be downloaded (in pdf format) 
+&lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;Please refer to &lt;strong&gt;1.3 Data presentation&lt;/strong&gt; in  
+&lt;a href=&#34;&#34;&gt;Ch1 Descriptive statistics&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
-&lt;p&gt;Stata:&lt;/p&gt;
+&lt;p&gt;Stata codes be downloaded (do file) 
+&lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -518,10 +541,10 @@ A: Monthly estimate is more accurate.&lt;/li&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;td&gt;0.797&lt;/td&gt;
 &lt;td&gt;0.797&lt;/td&gt;
-&lt;td&gt;0.797&lt;/td&gt;
-&lt;td&gt;0.798&lt;/td&gt;
 &lt;td&gt;0.796&lt;/td&gt;
-&lt;td&gt;0.789&lt;/td&gt;
+&lt;td&gt;0.798&lt;/td&gt;
+&lt;td&gt;0.777&lt;/td&gt;
+&lt;td&gt;0.709&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;5&lt;/td&gt;
@@ -529,8 +552,8 @@ A: Monthly estimate is more accurate.&lt;/li&gt;
 &lt;td&gt;0.613&lt;/td&gt;
 &lt;td&gt;0.613&lt;/td&gt;
 &lt;td&gt;0.613&lt;/td&gt;
-&lt;td&gt;0.613&lt;/td&gt;
-&lt;td&gt;0.615&lt;/td&gt;
+&lt;td&gt;0.603&lt;/td&gt;
+&lt;td&gt;0.595&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;10&lt;/td&gt;
@@ -538,8 +561,8 @@ A: Monthly estimate is more accurate.&lt;/li&gt;
 &lt;td&gt;0.512&lt;/td&gt;
 &lt;td&gt;0.512&lt;/td&gt;
 &lt;td&gt;0.514&lt;/td&gt;
-&lt;td&gt;0.515&lt;/td&gt;
-&lt;td&gt;0.519&lt;/td&gt;
+&lt;td&gt;0.502&lt;/td&gt;
+&lt;td&gt;0.484&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
