@@ -71,6 +71,7 @@ cite goldman and pagemo&lt;/p&gt;
 &lt;li&gt;edit and customise graphs in &lt;code&gt;twoway&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;export graph in any format using &lt;code&gt;graph export&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;video-lectures&#34;&gt;Video lectures&lt;/h2&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in pdf format) 
 &lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -536,28 +537,6 @@ Patient Survival. Phd thesis, Karolinska Institutet, 2013.&lt;/li&gt;
     </item>
     
     <item>
-      <title>FAQ</title>
-      <link>https://enochytchen.com/tutorials/relsurv/qa/</link>
-      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/tutorials/relsurv/qa/</guid>
-      <description>&lt;p&gt;The following FAQs are some tips we should be aware of as using these programs to estimate relative survival.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;, life-table framework is implemented to estimate relative survival. However, should the cutpoints be in months &lt;code&gt;br(0(`=1/12&#39;)10)&lt;/code&gt;  or in years &lt;code&gt;br(0(1)10)&lt;/code&gt;?&lt;br&gt;
-A: Monthly estimate is more accurate.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Thanks. Let’s look at it on Wednesday.&lt;/p&gt;
-&lt;p&gt;The answer to your question is that monthly intervals are more accurate.&lt;/p&gt;
-&lt;p&gt;-strs- calculates the attained age and attained year at the start of each interval and looks up the popmort file for the floor() of those values. It then assumes the expected probability of death is applicable for the entire interval.&lt;/p&gt;
-&lt;p&gt;The probabilities in the popmort file are the probabilities of surviving 1 year. The probability of surviving the interval is given by p^k where k is the interval length. That is, for monthly intervals we take the twelfth root of the probability.&lt;/p&gt;
-&lt;p&gt;This means that if a person is 71.5 years old at diagnosis then, with annual intervals it is assumed they have the expected survival of a 71 year old for the first year of follow-up.&lt;/p&gt;
-&lt;p&gt;If you use monthly intervals then we assume the expect survival is that of a 71 year old until he turns 72 after which we use the expected survival of a 72 year old. That’s because we are looking up the popmort file at the start of every interval. With monthly intervals we are doing it 12 times and for annual intervals we are doing it just once.&lt;/p&gt;
-&lt;p&gt;I think these comparisons you are doing are interesting.&lt;/p&gt;
-&lt;p&gt;It was before your time, but when the Pohar Perme paper was published (that showed Ederer II was biased) there were a lot of people who were alarmist and essentially said “everything we’ve done is wrong and all previous methods should be abandoned”. Paul Lambert and I tried to bring back some sanity and showed that, in practice, the bias in the age-standardised estimates is negligible (&lt;a href=&#34;https://doi.org/10.1186/s12874-015-0057-3)&#34;&gt;https://doi.org/10.1186/s12874-015-0057-3)&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I think it’s interesting to look at these other small differences due to various assumptions that can be made (e.g., assuming everyone is diagnosed on their birthday) and comparing the magnitude of the differences to the bias in Ederer II.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Tied time data → Untied time data</title>
       <link>https://enochytchen.com/tutorials/relsurv/tied/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
@@ -654,6 +633,8 @@ A: Monthly estimate is more accurate.&lt;/li&gt;
 &lt;li&gt;By default, both &lt;code&gt;rs.surv()&lt;/code&gt; and  &lt;code&gt;stpp&lt;/code&gt; calculate survival using the product integral method on the hazard level, whereas the Fleming-Harrington estimator (using the expoential of the negative cumulative (excess) hazard), which appears to be more sensitive to ties, is also eligible to be applied (3).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;stnet&lt;/code&gt; should generate the identical estimates as &lt;code&gt;strs&lt;/code&gt;, given &lt;code&gt;ht&lt;/code&gt; is specified in &lt;code&gt;strs&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Removing ties did not have an effect with discrete time estimators using life-table framework. (&lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;In &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt;, life-table framework is implemented to estimate relative survival. However, should the cutpoints be in months &lt;code&gt;br(0(`=1/12&#39;)10)&lt;/code&gt; or in years &lt;code&gt;br(0(1)10)&lt;/code&gt;?&lt;br&gt;
+A: Monthly estimate is more accurate. Both &lt;code&gt;strs&lt;/code&gt; and &lt;code&gt;stnet&lt;/code&gt; - calculates the attained age and attained year at the beginning  of each interval and takes the &lt;code&gt;floor()&lt;/code&gt; of these values from the popmort file to obtain the expected mortality rate. However, typically the survivaly probility from the popmort file (calculated from 1-year probability of death, by using  by $-exp(H)$) is the probability of surviving 1 year, $p$. If it is monthly interval, we take the twelth root of the survival probability, $p^{1/12}$. Calculating by month literally means we do it 12 times to calculate the survival from an $x$ year-old person until he turns $(x+1)$ years old, but if using annual interval, we do it once instead.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
 &lt;ol&gt;

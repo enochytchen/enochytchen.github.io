@@ -39,7 +39,8 @@ use sc_new, clear
 // See how many distinct values there are
 distinct tt*
 
-// stpp 
+// stpp
+ssc install stpp, replace // get the latest stpp 
 forvalues i = 1/6{
 stset tt`i', failure(dead) id(id)
 

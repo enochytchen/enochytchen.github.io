@@ -572,11 +572,6 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
 
   </div>
   
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/tutorials/relsurv/qa/">FAQ</a>
-
-  </div>
-  
   
 </nav>
 
@@ -705,6 +700,8 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
 <li>By default, both <code>rs.surv()</code> and  <code>stpp</code> calculate survival using the product integral method on the hazard level, whereas the Fleming-Harrington estimator (using the expoential of the negative cumulative (excess) hazard), which appears to be more sensitive to ties, is also eligible to be applied (3).</li>
 <li><code>stnet</code> should generate the identical estimates as <code>strs</code>, given <code>ht</code> is specified in <code>strs</code>.</li>
 <li>Removing ties did not have an effect with discrete time estimators using life-table framework. (<code>strs</code> and <code>stnet</code>).</li>
+<li>In <code>strs</code> and <code>stnet</code>, life-table framework is implemented to estimate relative survival. However, should the cutpoints be in months <code>br(0(`=1/12')10)</code> or in years <code>br(0(1)10)</code>?<br>
+A: Monthly estimate is more accurate. Both <code>strs</code> and <code>stnet</code> - calculates the attained age and attained year at the beginning  of each interval and takes the <code>floor()</code> of these values from the popmort file to obtain the expected mortality rate. However, typically the survivaly probility from the popmort file (calculated from 1-year probability of death, by using  by $-exp(H)$) is the probability of surviving 1 year, $p$. If it is monthly interval, we take the twelth root of the survival probability, $p^{1/12}$. Calculating by month literally means we do it 12 times to calculate the survival from an $x$ year-old person until he turns $(x+1)$ years old, but if using annual interval, we do it once instead.</li>
 </ul>
 <h3 id="references">References</h3>
 <ol>
