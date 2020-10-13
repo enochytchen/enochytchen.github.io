@@ -20,6 +20,12 @@ generate stime = (exit-dx)/365.241 + rnormal(0, 0.01) // with mean=0, s.d.=0.01
 // stset
 stset stime, failure(status == 1 2) id(id)
 
+// stns
+stns list using "http://enochytchen.com/directory/data/popmort.dta", ///
+age(age=_age) period(yydx=_year) ///
+rate(rate) strata(sex) ///
+survival at(1 5 10)
+
 // stpp
 stpp R_pp2 using "http://enochytchen.com/directory/data/popmort.dta", pmother(sex) ///
 agediag(age) ///

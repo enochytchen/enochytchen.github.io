@@ -15,9 +15,16 @@ use "http://enochytchen.com/directory/data/colon.dta", clear
 // Calculate stime in days, then convert into years
 generate stime = (exit-dx)/365.241
 
+
 // Declare survival-time data
 // stpp requires survival time in years,
 stset stime, failure(status == 1 2) id(id) 
+
+//stns
+stns list using "http://enochytchen.com/directory/data/popmort.dta", ///
+age(age=_age) period(yydx=_year) ///
+rate(rate) strata(sex) ///
+survival at(1 5 10)
 
 // stpp:  step function and changes at each event time
 // popmort.dta: a popmort file 1951 - 2000

@@ -33,7 +33,7 @@
   <meta name="description" content="(Not completed yet)
 The codes used in this tutorial are available below.
 rs.surv
-stpp, strs, stnet
+stns, stpp, strs, stnet
 This example showed how the relative survival estimates change given more and more ties are added into the data.">
 
   
@@ -255,7 +255,7 @@ This example showed how the relative survival estimates change given more and mo
   <meta property="og:description" content="(Not completed yet)
 The codes used in this tutorial are available below.
 rs.surv
-stpp, strs, stnet
+stns, stpp, strs, stnet
 This example showed how the relative survival estimates change given more and more ties are added into the data."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
@@ -613,7 +613,7 @@ This example showed how the relative survival estimates change given more and mo
 
 <a href="https://enochytchen.com/tutorials/relsurv/untied/using_sim.R" target="_blank" rel="noopener">rs.surv</a><br>
 
-<a href="https://enochytchen.com/tutorials/relsurv/untied/using_sim.do" target="_blank" rel="noopener">stpp, strs, stnet</a></p>
+<a href="https://enochytchen.com/tutorials/relsurv/untied/using_sim.do" target="_blank" rel="noopener">stns, stpp, strs, stnet</a></p>
 <p>This example showed how the relative survival estimates change given more and more ties are added into the data.</p>
 <h3 id="dataset">Dataset</h3>
 <p>The dataset (<code>scenario2_1.dta</code>) is a simulated data, containing 1000 subjects. The original survival time is untied data with 651 distinct values in years (min: 0.0027; max: 12). We then added ties into the data by flooring the time into discrete days, weeks, months, quaters, or years. More ties are added (i.e., less distinct values) as the time interval becomes larger (days→years). If any survival time became 0 due to flooring, we then made it 0.5 of the time interval (e.g., 0.5 months).</p>
@@ -672,7 +672,7 @@ This example showed how the relative survival estimates change given more and mo
 <table>
 <thead>
 <tr>
-<th>RS</th>
+<th>Time <br/> (year)</th>
 <th>tt1<br/> original</th>
 <th>tt2 <br/> days</th>
 <th>tt3  <br/> weeks</th>
@@ -711,11 +711,54 @@ This example showed how the relative survival estimates change given more and mo
 </tr>
 </tbody>
 </table>
+<h4 id="stns">stns</h4>
+<table>
+<thead>
+<tr>
+<th>Time <br/> (year)</th>
+<th>tt1<br/> original</th>
+<th>tt2 <br/> days</th>
+<th>tt3  <br/> weeks</th>
+<th>tt4  <br/> months</th>
+<th>tt5  <br/> quarters</th>
+<th>tt6  <br/> years</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.788</td>
+<td>0.787</td>
+<td>0.786</td>
+<td>0.780</td>
+<td>0.767</td>
+<td>0.701</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.580</td>
+<td>0.580</td>
+<td>0.580</td>
+<td>0.580</td>
+<td>0.570</td>
+<td>0.563</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0.464</td>
+<td>0.464</td>
+<td>0.464</td>
+<td>0.465</td>
+<td>0.465</td>
+<td>0.463</td>
+</tr>
+</tbody>
+</table>
 <h4 id="stpp">stpp</h4>
 <table>
 <thead>
 <tr>
-<th>RS</th>
+<th>Time <br/> (year)</th>
 <th>tt1<br/> original</th>
 <th>tt2 <br/> days</th>
 <th>tt3  <br/> weeks</th>
@@ -730,7 +773,7 @@ This example showed how the relative survival estimates change given more and mo
 <td>0.797</td>
 <td>0.797</td>
 <td>0.796</td>
-<td>0.798</td>
+<td>0.790</td>
 <td>0.777</td>
 <td>0.709</td>
 </tr>
@@ -748,7 +791,7 @@ This example showed how the relative survival estimates change given more and mo
 <td>0.512</td>
 <td>0.512</td>
 <td>0.512</td>
-<td>0.514</td>
+<td>0.509</td>
 <td>0.502</td>
 <td>0.484</td>
 </tr>
@@ -758,7 +801,7 @@ This example showed how the relative survival estimates change given more and mo
 <table>
 <thead>
 <tr>
-<th>RS</th>
+<th>Time <br/> (year)</th>
 <th>tt1<br/> original</th>
 <th>tt2 <br/> days</th>
 <th>tt3  <br/> weeks</th>
@@ -771,29 +814,29 @@ This example showed how the relative survival estimates change given more and mo
 <tr>
 <td>1</td>
 <td>0.798</td>
-<td>0.798</td>
-<td>0.798</td>
-<td>0.798</td>
-<td>0.798</td>
-<td>0.825</td>
+<td>0.797</td>
+<td>0.795</td>
+<td>0.792</td>
+<td>0.778</td>
+<td>0.732</td>
 </tr>
 <tr>
 <td>5</td>
 <td>0.612</td>
 <td>0.612</td>
 <td>0.612</td>
-<td>0.612</td>
-<td>0.613</td>
-<td>0.649</td>
+<td>0.616</td>
+<td>0.605</td>
+<td>0.617</td>
 </tr>
 <tr>
 <td>10</td>
 <td>0.513</td>
 <td>0.513</td>
 <td>0.513</td>
-<td>0.513</td>
-<td>0.513</td>
-<td>0.554</td>
+<td>0.512</td>
+<td>0.505</td>
+<td>0.506</td>
 </tr>
 </tbody>
 </table>
@@ -801,7 +844,7 @@ This example showed how the relative survival estimates change given more and mo
 <table>
 <thead>
 <tr>
-<th>RS</th>
+<th>Time <br/> (year)</th>
 <th>tt1<br/> original</th>
 <th>tt2 <br/> days</th>
 <th>tt3  <br/> weeks</th>
@@ -814,8 +857,8 @@ This example showed how the relative survival estimates change given more and mo
 <tr>
 <td>1</td>
 <td>0.798</td>
-<td>0.798</td>
-<td>0.798</td>
+<td>0.797</td>
+<td>0.795</td>
 <td>0.798</td>
 <td>0.798</td>
 <td>0.799</td>
@@ -842,8 +885,8 @@ This example showed how the relative survival estimates change given more and mo
 </table>
 <h3 id="explanation">Explanation</h3>
 <ul>
-<li>Generally, introducing ties into the data did not change the esitmates of relative survival no matter which package was used for calculation in this case. One exception happened if discrete time was made into years, which merely 13 distinct values exist, <code>rs.surv()</code> gave a slightly lower estimates for 1-year relative survival (0.788); <code>stpp</code> gave a much lower survival in 1-, 5- and 10-year relative survival (0.709, 0.595, and 0.484 respectively); <code>strs</code>, however, outputed higher esitmates (0.825, 0.649, and 0.554 separately); surprisingly, the output estimated by <code>stnet</code>almost did not change given heavy ties were added.</li>
-<li>One thing we should bear in mind is that introducing ties to the data is in fact changing the original data. I tried to add ties in a sensible way and not to change the order of the data as much as possible. However, I am innocent of the lower or higher estimates  <code>rs.surv()</code>, <code>stpp</code>, and <code>strs</code> gave.</li>
+<li>Generally, introducing ties into the data did not change the esitmates of relative survival no matter which package was used for calculation in this case. One exception happened if discrete time was made into years (<code>tt6</code>), which merely 13 distinct values exist, <code>rs.surv()</code> and <code>strs</code> gave slightly lower estimates for 1-year relative survival (0.788 and 0.732 separately);  <code>stns</code> and <code>stpp</code> gave much lower survival, particularly in 1-year net survival; surprisingly, the output estimated by <code>stnet</code>almost did not change given heavy ties were added.</li>
+<li>One thing we should bear in mind is that introducing ties to the data has in fact changed the original data. I tried to add ties in a sensible way and not to change the order of the data as much as possible. However, I am innocent of the lower or higher estimates  <code>rs.surv()</code>, <code>stns</code>, <code>stpp</code>, and <code>strs</code> gave.</li>
 </ul>
 <h3 id="conclusion">Conclusion</h3>
 <ul>

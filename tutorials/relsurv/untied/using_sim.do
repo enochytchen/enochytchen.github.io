@@ -38,11 +38,28 @@ use sc_new, clear
 
 // See how many distinct values there are
 distinct tt*
+/*=================================*/
+// stns
+ssc install stns, replace // get the latest stpp 
 
+use sc_new, clear
+
+forvalues i = 1/6{
+stset tt`i', failure(dead==1 2) id(id)
+stns list using "https://enochytchen.com/tutorials/relsurv/untied/lifetab.dta", ///
+age(agediag=_age) period(diagdate=_year) ///
+rate(rate) strata(sex) ///
+survival at (1 5 10) // See 1, 5, 10-year Net surv 
+}
+
+/*=================================*/
 // stpp
 ssc install stpp, replace // get the latest stpp 
+
+use sc_new, clear
+
 forvalues i = 1/6{
-stset tt`i', failure(dead) id(id)
+stset tt`i', failure(dead==1 2) id(id)
 
 // stpp:  step function and changes at each event time
 // lifetab.dta: a popmort file 1990-2009
@@ -56,7 +73,7 @@ list(1 5 10) // See 1, 5, 10-year RS
 use sc_new, clear
 
 forvalues i = 1/6{
-stset tt`i', failure(dead) id(id)
+stset tt`i', failure(dead==1 2) id(id)
 
 strs using "https://enochytchen.com/tutorials/relsurv/untied/lifetab.dta", br(0(`=1/12')10) ///
 	 diagage(agediag) diagyear(yeardiag) ///
@@ -74,7 +91,7 @@ list end cns_pp lo_cns_pp hi_cns_pp if end == 1 | end == 5 | end == 10
 use sc_new, clear
 
 forvalues i = 1/6{
-stset tt`i', failure(dead) id(id)
+stset tt`i', failure(dead==1 2) id(id)
 
 stnet using "https://enochytchen.com/tutorials/relsurv/untied/lifetab.dta", br(0(`=1/12')10.01) ///
 diagdate(diagdate) birthdate(dob) ///

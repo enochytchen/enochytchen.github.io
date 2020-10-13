@@ -597,9 +597,9 @@
 
           <div class="article-style">
             <h3 id="introduction">Introduction</h3>
-<p>Tied event times in survival mean that some individuals have the same survival times (1), though in reality lifetime is a continuous variable; that is, no individual has exactly the same survival times. However, in practice, cancer registers often only provide data on discrete survival times (for example, in months or in years) (2).</p>
-<p>Pohar-Perme estimator is a non-parametric estimate of relative survival. It is distinct from other approaches (Ederer I, Ederer II, and Hakulinen), by  weighting by the inverse of the individual&rsquo;s expected survival (3), which makes it an unbiased estimator. For estimating relative survival using Pohar-Perme estimator, there are already multiple packages developed in R and Stata . In <code>rs.surv</code> and <code>stpp</code>, survival time is treated continuosly, whereas <code>strs</code> and <code>stnet</code> implemented Pohar-Perme estimator into discrete time, where survival time is split into intervals.</p>
-<p>In this tutorial, two different datasets were applied to compare the estimates of  <code>rs.surv</code> in R, <code>stpp</code>,  <code>strs</code>,  <code>stnet</code> in Stata. The colon.dta was used as an example data of tied times (discrete survival times), whereas the scenario2_1.dta has untied times (continuous survival times).</p>
+<p>Tied event times in survival mean that some individuals have the same survival times (1), though in reality lifetime is a continuous variable; that is, no individual has exactly the same survival times. However, in practice, cancer registers often only provide data on discrete survival times (for example, in months or in years) (2), which often results in some individuals having identical (tied) survival time.</p>
+<p>Pohar-Perme estimator is a non-parametric estimate of relative survival. It is distinct from other approaches (Ederer I, Ederer II, and Hakulinen), by  weighting by the inverse of the individual&rsquo;s expected survival (3), which makes it an unbiased estimator. For estimating relative survival using Pohar-Perme estimator, there are already multiple packages developed in R and Stata . In <code>rs.surv</code>,  <code>stns</code>,  <code>stpp</code>, survival time is treated continuosly, whereas <code>strs</code> and <code>stnet</code> implemented Pohar-Perme estimator into discrete time, where survival time is split into intervals (4).</p>
+<p>In this tutorial, two different datasets were applied to compare the estimates of  <code>rs.surv</code> in R, <code>stns</code>, <code>stpp</code>,  <code>strs</code>, and <code>stnet</code> in Stata. The colon.dta was used as an example data of tied times (discrete survival times), whereas the scenario2_1.dta has untied times (continuous survival times).</p>
 <h3 id="aim">Aim</h3>
 <ul>
 <li>To understand why different esimates exist between/within the commands as they treat tied/untied survival time data using the same Pohar-Perme estimator.</li>
@@ -609,6 +609,8 @@
 <li>Zhang MJ. Tied Survival Times. Encyclopedia of Biostatistics. 2005. doi: <a href="https://doi.org/10.1002/0470011815.b2a11075">https://doi.org/10.1002/0470011815.b2a11075</a></li>
 <li>Dickman P, Coviello E. Estimating and modelling relative survival. The Stata Journal. 2015;15:186-215.</li>
 <li>Pohar Perme M, Stare J, Estève J. On Estimation in Relative Survival. Biometrics. 2012;68:113-120</li>
+<li>Comparison between  <code>stns</code> and  <code>stpp</code>, please refer to 
+<a href="https://pclambert.net/software/stpp/" target="_blank" rel="noopener">https://pclambert.net/software/stpp/</a></li>
 </ol>
 
           </div>

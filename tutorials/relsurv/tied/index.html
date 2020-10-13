@@ -32,8 +32,8 @@
   
   <meta name="description" content="The codes used in this tutorial are available below.
 rs.surv
-stpp, strs, stnet (original tied data)
-stpp, strs, stnet (untied data)
+stns, stpp, strs, stnet (original tied data)
+stns, stpp, strs, stnet (untied data)
 Settings This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by rs.">
 
   
@@ -254,8 +254,8 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
   <meta property="og:title" content="Tied time data → Untied time data | Enoch Yi-Tung Chen">
   <meta property="og:description" content="The codes used in this tutorial are available below.
 rs.surv
-stpp, strs, stnet (original tied data)
-stpp, strs, stnet (untied data)
+stns, stpp, strs, stnet (original tied data)
+stns, stpp, strs, stnet (untied data)
 Settings This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by rs."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
@@ -612,9 +612,9 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
 
 <a href="https://enochytchen.com/tutorials/relsurv/tied/rs.surv.R" target="_blank" rel="noopener">rs.surv</a><br>
 
-<a href="https://enochytchen.com/tutorials/relsurv/tied/using_colon_tied.do" target="_blank" rel="noopener">stpp, strs, stnet (original tied data)</a><br>
+<a href="https://enochytchen.com/tutorials/relsurv/tied/using_colon_tied.do" target="_blank" rel="noopener">stns, stpp, strs, stnet (original tied data)</a><br>
 
-<a href="https://enochytchen.com/tutorials/relsurv/tied/using_colon_untied.do" target="_blank" rel="noopener">stpp, strs, stnet (untied data)</a></p>
+<a href="https://enochytchen.com/tutorials/relsurv/tied/using_colon_untied.do" target="_blank" rel="noopener">stns, stpp, strs, stnet (untied data)</a></p>
 <h3 id="settings">Settings</h3>
 <p>This tutorial first used the colon.dta, which is originally a tied survival time data, to generate the relative survival estimates of 1-, 5-, and 10-year relative survival using the Pohar-Perme estimator (1), by <code>rs.surv()</code> in R, <code>stpp</code>,  <code>strs</code>,  <code>stnet</code> in Stata. In the second part, an small epislon ~ $Norm(0, 0.01)$ was added into each individual&rsquo;s survival time to make no individual have exactly the same survival time (to untie the data).</p>
 <ul>
@@ -624,13 +624,15 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
 <li>In <code>strs</code> and <code>stnet</code>, monthly intervals were calculated  up to ten years by specifying <code>br(0(`=1/12')10)</code>.</li>
 </ul>
 <h3 id="results">Results</h3>
-<p>The esimates of 1-, 5-, and 10-year relative survival by each program are shown below:</p>
+<p>To make the tables look tidier, here we dismissed the 95% CI, which however can be found in the outputs of the syntax.
+The esimates of 1-, 5-, and 10-year relative survival by each program are shown below:</p>
 <h4 id="using-colondta-original-tied-time-data">Using colon.dta (original tied time data)</h4>
 <table>
 <thead>
 <tr>
 <th>t</th>
 <th>rs.surv</th>
+<th>stns</th>
 <th>stpp</th>
 <th>strs</th>
 <th>stnet</th>
@@ -639,24 +641,27 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
 <tbody>
 <tr>
 <td>1</td>
-<td>0.676 (0.669-0.684)</td>
-<td>0.682 (0.674-0.690)</td>
-<td>0.677 (0.669-0.685)</td>
-<td>0.677 (0.669-0.685)</td>
+<td>0.676</td>
+<td>0.677</td>
+<td>0.676</td>
+<td>0.677</td>
+<td>0.677</td>
 </tr>
 <tr>
 <td>5</td>
-<td>0.473 (0.463-0.484)</td>
-<td>0.479 (0.468-0.490)</td>
-<td>0.474 (0.463-0.484)</td>
-<td>0.474 (0.463-0.484)</td>
+<td>0.473</td>
+<td>0.474</td>
+<td>0.473</td>
+<td>0.474</td>
+<td>0.474</td>
 </tr>
 <tr>
 <td>10</td>
-<td>0.433 (0.414-0.453)</td>
-<td>0.440 (0.421-0.461)</td>
-<td>0.434 (0.415-0.454)</td>
-<td>0.434 (0.415-0.454)</td>
+<td>0.433</td>
+<td>0.437</td>
+<td>0.434</td>
+<td>0.434</td>
+<td>0.434</td>
 </tr>
 </tbody>
 </table>
@@ -664,8 +669,9 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
 <table>
 <thead>
 <tr>
-<th></th>
+<th>t</th>
 <th>rs.surv</th>
+<th>stns</th>
 <th>stpp</th>
 <th>strs</th>
 <th>stnet</th>
@@ -674,31 +680,35 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
 <tbody>
 <tr>
 <td>1</td>
-<td>0.676 (0.668-0.684)</td>
-<td>0.677 (0.669-0.685)</td>
-<td>0.677 (0.669-0.685)</td>
-<td>0.677 (0.669-0.685)</td>
+<td>0.676</td>
+<td>0.677</td>
+<td>0.677</td>
+<td>0.677</td>
+<td>0.677</td>
 </tr>
 <tr>
 <td>5</td>
-<td>0.472 (0.461-0.483)</td>
-<td>0.473 (0.463-0.484)</td>
-<td>0.474 (0.463-0.484)</td>
-<td>0.474 (0.463-0.484)</td>
+<td>0.472</td>
+<td>0.474</td>
+<td>0.473</td>
+<td>0.474</td>
+<td>0.474</td>
 </tr>
 <tr>
 <td>10</td>
-<td>0.431 (0.411-0.451)</td>
-<td>0.433 (0.414-0.453)</td>
-<td>0.434 (0.415-0.454)</td>
-<td>0.434 (0.415-0.454)</td>
+<td>0.431</td>
+<td>0.435</td>
+<td>0.433</td>
+<td>0.434</td>
+<td>0.434</td>
 </tr>
 </tbody>
 </table>
 <h3 id="explanation">Explanation</h3>
 <ul>
-<li>By default, both <code>rs.surv()</code> and  <code>stpp</code> calculate survival using the product integral method on the hazard level, whereas the Fleming-Harrington estimator (using the expoential of the negative cumulative (excess) hazard), which appears to be more sensitive to ties, is also eligible to be applied (3).</li>
-<li><code>stnet</code> should generate the identical estimates as <code>strs</code>, given <code>ht</code> is specified in <code>strs</code>.</li>
+<li>By default, both <code>rs.surv()</code>, <code>stns</code>, <code>stpp</code> calculate survival using the product integral method on the hazard level, whereas in <code>strs</code> and <code>stnet</code> time-scale is split into numbers of intervals (using actuarial life-table approach).</li>
+<li>In <code>stpp</code>, the Fleming-Harrington estimator (using the expoential of the negative cumulative (excess) hazard), which appears to be more sensitive to ties, is also eligible to be applied (3).</li>
+<li><code>stnet</code> should generate the identical estimates as <code>strs</code>, given that <code>ht</code> is specified in <code>strs</code>.</li>
 <li>Removing ties did not have an effect with discrete time estimators using life-table framework. (<code>strs</code> and <code>stnet</code>).</li>
 <li>In <code>strs</code> and <code>stnet</code>, life-table framework is implemented to estimate relative survival. However, should the cutpoints be in months <code>br(0(`=1/12')10)</code> or in years <code>br(0(1)10)</code>?<br>
 A: Monthly estimate is more accurate. Both <code>strs</code> and <code>stnet</code> - calculates the attained age and attained year at the beginning  of each interval and takes the <code>floor()</code> of these values from the popmort file to obtain the expected mortality rate. However, typically the survivaly probility from the popmort file (calculated from 1-year probability of death, by using  by $-exp(H)$) is the probability of surviving 1 year, $p$. If it is monthly interval, we take the twelth root of the survival probability, $p^{1/12}$. Calculating by month literally means we do it 12 times to calculate the survival from an $x$ year-old person until he turns $(x+1)$ years old, but if using annual interval, we do it once instead.</li>
