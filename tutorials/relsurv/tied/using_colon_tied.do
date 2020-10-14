@@ -5,6 +5,11 @@
 // We want to compare using tied/untied data while estimating net survival-time
 // using stpp, strs, stnet
 // colon.dta, which has "tied" survival time data
+
+/*===============================================*/ 
+// Acknowledgement: we acknowledge Paul Lambert's contribution to this tutorial, 
+//                  particularly for offering his scenario2_1.dta as an example dataset
+//                  and substantial insights on the syntaxes of stns and stnet.
 /*===============================================*/ 
 // stpp
 // This part is the same as https://pclambert.net/software/stpp/using_stpp/

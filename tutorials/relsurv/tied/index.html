@@ -591,6 +591,7 @@ Settings This tutorial first used the colon.dta, which is originally a tied surv
         <li><a href="#results">Results</a></li>
         <li><a href="#explanation">Explanation</a></li>
         <li><a href="#references">References</a></li>
+        <li><a href="#acknowledgement">Acknowledgement</a></li>
       </ul>
     </li>
   </ul>
@@ -713,12 +714,26 @@ The esimates of 1-, 5-, and 10-year relative survival by each program are shown 
 <li>In <code>strs</code> and <code>stnet</code>, life-table framework is implemented to estimate relative survival. However, should the cutpoints be in months <code>br(0(`=1/12')10)</code> or in years <code>br(0(1)10)</code>?<br>
 A: Monthly estimate is more accurate. Both <code>strs</code> and <code>stnet</code> - calculates the attained age and attained year at the beginning  of each interval and takes the <code>floor()</code> of these values from the popmort file to obtain the expected mortality rate. However, typically the survivaly probility from the popmort file (calculated from 1-year probability of death, by using  by $-exp(H)$) is the probability of surviving 1 year, $p$. If it is monthly interval, we take the twelth root of the survival probability, $p^{1/12}$. Calculating by month literally means we do it 12 times to calculate the survival from an $x$ year-old person until he turns $(x+1)$ years old, but if using annual interval, we do it once instead.</li>
 </ul>
+<div class="alert alert-note">
+  <div>
+    <p>It is worth paying attention to how age and year are managed in each program.</p>
+<ul>
+<li><code>stns</code>: age of dianosis in the cohort data and age in the popmort file are needed in <code>age()</code>;  year of dianosis <del>date of diagnosis</del> and the calendar year in the popmort file should be specified in <code>period()</code> .</li>
+<li><code>stpp</code>: age and date of diagnosis should be specified in <code>agediag()</code> and <code>datediag()</code>.</li>
+<li><code>strs</code>: age and year of diagnosis are required in <code>diagage()</code> and <code>diagyear()</code>.</li>
+<li><code>stnet</code>: date of dianosis <code>diagdate()</code> and date of birth <code>birthdate()</code> are required.</li>
+</ul>
+  </div>
+</div>
 <h3 id="references">References</h3>
 <ol>
 <li>Pohar Perme M, Stare J, Estève J. On Estimation in Relative Survival. Biometrics. 2012;68:113-120</li>
 <li>Dickman P, Coviello E. Estimating and modelling relative survival. The Stata Journal. 2015;15:186-215.</li>
 <li>Fleming TR, and Harrington DP. Nonparametric Estimation of the Survival Distribution in Censored Data.Communications in Statistics—Theory and Methods. 1984;13:2469–2486.</li>
 </ol>
+<h3 id="acknowledgement">Acknowledgement</h3>
+<p>We especially want to say thank-you to 
+<a href="https://pclambert.net" target="_blank" rel="noopener">Paul Lambert</a> for offering his scenario2_1.dta as an example dataset and substantial insights on the syntaxes of <code>stns</code>and <code>stnet</code>.</p>
 
           </div>
 

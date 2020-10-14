@@ -7,6 +7,10 @@
 // 
 // Make tied data by adding ceiling()/floor() in days, weeks, months, quarters
 /*=================================*/
+// Acknowledgement: we acknowledge Paul Lambert's contribution to this tutorial, 
+//                  particularly for offering his scenario2_1.dta as an example dataset
+//                  and substantial insights on the syntaxes of stns and stnet.
+/*=================================*/
 // Start of Stata code
 // Make tied data
 use "https://enochytchen.com/tutorials/relsurv/untied/scenario2_1", clear
@@ -47,8 +51,9 @@ use sc_new, clear
 forvalues i = 1/6{
 stset tt`i', failure(dead==1 2) id(id)
 stns list using "https://enochytchen.com/tutorials/relsurv/untied/lifetab.dta", ///
-age(agediag=_age) period(diagdate=_year) ///
+age(agediag=_age) period(yeardiag=_year) ///
 rate(rate) strata(sex) ///
+citype(log) /// 95% CI
 survival at (1 5 10) // See 1, 5, 10-year Net surv 
 }
 
