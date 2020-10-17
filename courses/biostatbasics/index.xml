@@ -27,12 +27,34 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in PDF format) 
-&lt;a href=&#34;https://enochytchen.com/DataManagement_EC_202010.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;DataManagement_EC_202010.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
-&lt;p&gt;Study
-cite goldman and pagemo&lt;/p&gt;
+&lt;p&gt;No study notes in this section&lt;/p&gt;
+&lt;h2 id=&#34;excercise&#34;&gt;Excercise&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Clearance</title>
+      <link>https://enochytchen.com/courses/biostatbasics/dataclearance/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/dataclearance/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;h2 id=&#34;in-this-section-you-will-learn-how-to&#34;&gt;In this section, you will learn how to&lt;/h2&gt;
+&lt;h2 id=&#34;video-lectures&#34;&gt;Video lectures&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/BwknA6aGqvs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in pdf format) 
+&lt;a href=&#34;data_clearance_EC.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
+&lt;p&gt;No study notes for this session&lt;/p&gt;
 &lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
-&lt;p&gt;Stata:&lt;/p&gt;
+&lt;p&gt;Stata codes be downloaded (do file) 
+&lt;a href=&#34;data_clearance.do&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -89,22 +111,6 @@ cite goldman and pagemo&lt;/p&gt;
 &lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
 &lt;p&gt;Stata codes be downloaded (do file) 
 &lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Distributions</title>
-      <link>https://enochytchen.com/courses/biostatbasics/distribution/</link>
-      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/courses/biostatbasics/distribution/</guid>
-      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
-&lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
-&lt;p&gt;Study
-cite goldman and pagemo&lt;/p&gt;
-&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
-&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
-&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
-&lt;p&gt;Stata:&lt;/p&gt;
 </description>
     </item>
     
