@@ -18,11 +18,19 @@
       <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/courses/biostatbasics/dataman/</guid>
       <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ensure the analysis is reproducible&lt;/li&gt;
+&lt;li&gt;work coherently and efficiently with yourself&lt;/li&gt;
+&lt;li&gt;ensure the project can be understood by others (supervisors, collaborators, and future readers)&lt;/li&gt;
+&lt;li&gt;create a good work flow and enhance accuracy of work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) 
+&lt;a href=&#34;https://enochytchen.com/DataManagement_EC_202010.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
 &lt;p&gt;Study
 cite goldman and pagemo&lt;/p&gt;
-&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
-&lt;p&gt;Slides can be downloaded (in PDF format) here.&lt;/p&gt;
 &lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
 &lt;p&gt;Stata:&lt;/p&gt;
 </description>
