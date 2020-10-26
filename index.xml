@@ -119,14 +119,15 @@
       <link>https://enochytchen.com/cansurv/exercises/</link>
       <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/cansurv/exercises/</guid>
-      <description>&lt;p&gt;This is a testing page for using Stata Markdown.&lt;/p&gt;
-&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+      <description>&lt;p&gt;This is a testing page for using Stata Markdown.
+The questions and solutions are corresponding to their &lt;code&gt;stmd&lt;/code&gt; files.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
 &lt;th&gt;Markstat&lt;/th&gt;
 &lt;th&gt;Questions&lt;/th&gt;
+&lt;th&gt;Markstat&lt;/th&gt;
 &lt;th&gt;Solutions&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;Stata&lt;/th&gt;
 &lt;/tr&gt;
@@ -134,10 +135,10 @@
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Cox regression with observed (all-cause) mortality as the outcome&lt;/td&gt;
-&lt;td&gt;
-&lt;a href=&#34;q122.stmd&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;q122.stmd&#34; target=&#34;_blank&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q122.pdf&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;s122.stmd&#34; target=&#34;_blank&#34;&gt;S122&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s122.pdf&#34;&gt;S122&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;
@@ -149,6 +150,7 @@
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q282.stmd&#34;&gt;Q282&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q282.pdf&#34;&gt;Q282&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;s282.stmd&#34; target=&#34;_blank&#34;&gt;S282&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s282.pdf&#34;&gt;S282&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;
