@@ -23,6 +23,7 @@
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;th&gt;Markstat&lt;/th&gt;
 &lt;th&gt;Questions&lt;/th&gt;
 &lt;th&gt;Solutions&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;Stata&lt;/th&gt;
@@ -32,6 +33,8 @@
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Cox regression with observed (all-cause) mortality as the outcome&lt;/td&gt;
 &lt;td&gt;
+&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q122.stmd&#34;&gt;Q122.stmd&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q122.pdf&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s122.pdf&#34;&gt;S122&lt;/a&gt;&lt;/td&gt;
@@ -40,6 +43,8 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Calculating excess and ‘avoidable’ deaths from life tables&lt;/td&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q282.stmd&#34;&gt;Q282.stmd&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q282.pdf&#34;&gt;Q282&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
