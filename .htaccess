@@ -1,3 +1,5 @@
 <IfModule mod_mime.c>
-AddType text/plain .do .r .R .md .stmd
+
+    AddType text/plain .do .r .R .stmd
+
 </IfModule>
