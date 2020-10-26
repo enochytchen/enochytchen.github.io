@@ -5,7 +5,7 @@
     <link>https://enochytchen.com/</link>
       <atom:link href="https://enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 26 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
@@ -52,7 +52,7 @@
 &lt;a href=&#34;data_clearance_EC.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
 &lt;p&gt;No study notes for this session&lt;/p&gt;
-&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
 &lt;p&gt;Stata codes be downloaded (do file) 
 &lt;a href=&#34;data_clearance.do&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -83,7 +83,7 @@
 &lt;h2 id=&#34;study-notes&#34;&gt;Study notes&lt;/h2&gt;
 &lt;p&gt;
 &lt;a href=&#34;&#34;&gt;Ch1 Descriptive statistics&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
 &lt;p&gt;Stata codes be downloaded (do file) 
 &lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -111,6 +111,46 @@
 &lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
 &lt;p&gt;Stata codes be downloaded (do file) 
 &lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Exercises</title>
+      <link>https://enochytchen.com/cansurv/exercises/</link>
+      <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/cansurv/exercises/</guid>
+      <description>&lt;p&gt;This is a testing page for using Stata Markdown.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-shown-in-the-lecture&#34;&gt;Stata syntax shown in the lecture&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;th&gt;Questions&lt;/th&gt;
+&lt;th&gt;Solutions&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Stata&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cox regression with observed (all-cause) mortality as the outcome&lt;/td&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q122.pdf&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s122.pdf&#34;&gt;S122&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;
+&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s122.do&#34;&gt;s122.do&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Calculating excess and ‘avoidable’ deaths from life tables&lt;/td&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q282.pdf&#34;&gt;Q282&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s282.pdf&#34;&gt;S282&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;
+&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s282.do&#34;&gt;s282.do&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
     </item>
     

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>s122</title>
+  <style>
+    html {
+      line-height: 1.7;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 40em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin-top: 1.7em;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.7em;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1.7em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1.7em 0 1.7em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      font-style: italic;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      background-color: #f0f0f0;
+      font-size: 85%;
+      margin: 0;
+      padding: .2em .4em;
+    }
+    pre {
+      line-height: 1.5em;
+      padding: 1em;
+      background-color: #f0f0f0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin-top: 1.7em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border-bottom: 1px solid lightgray;
+      padding: 1em 3em 1em 0;
+    }
+    header {
+      margin-bottom: 6em;
+      text-align: center;
+    }
+    nav a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">s122</h1>
+</header>
+<h2 id="cox-regression-with-observed-all-cause-mortality-as-the-outcome">122. Cox regression with observed (all-cause) mortality as the outcome</h2>
+<pre class='stata'>. 
+. //==================//
+. // EXERCISE 122
+. // REVISED MAY 2015
+. //==================//
+. 
+. /* Data set used */
+. use melanoma11 if stage == 1, clear
+(Skin melanoma, diagnosed 1975-94, follow-up to 1995)
+
+. 
+. /* All-cause survival */
+. stset surv_mm, failure(status==1,2) exit(time 120) 
+
+     failure event:  status == 1 2
+obs. time interval:  (0, surv_mm]
+ exit on or before:  time 120
+
+──────────────────────────────────────────────────────────────────────────────
+      5,318  total observations
+          0  exclusions
+──────────────────────────────────────────────────────────────────────────────
+      5,318  observations remaining, representing
+      1,580  failures in single-record/single-failure data
+    388,520  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =       120
+
+. 
+. /* Cox regression */
+. stcox i.sex i.year8594 i.agegrp
+
+         failure _d:  status == 1 2
+   analysis time _t:  surv_mm
+  exit on or before:  time 120
+
+Iteration 0:   log likelihood = -12951.328
+Iteration 1:   log likelihood = -12680.429
+Iteration 2:   log likelihood = -12507.064
+Iteration 3:   log likelihood = -12506.146
+Iteration 4:   log likelihood = -12506.145
+Refining estimates:
+Iteration 0:   log likelihood = -12506.145
+
+Cox regression -- Breslow method for ties
+
+No. of subjects =        5,318                  Number of obs    =       5,318
+No. of failures =        1,580
+Time at risk    =       388520
+                                                LR chi2(5)       =      890.37
+Log likelihood  =   -12506.145                  Prob > chi2      =      0.0000
+
+─────────────────┬────────────────────────────────────────────────────────────────
+              _t │ Haz. Ratio   Std. Err.      z    P>|z|     [95% Conf. Interval]
+─────────────────┼────────────────────────────────────────────────────────────────
+             sex │
+         Female  │   .6101738   .0311091    -9.69   0.000     .5521485     .674297
+                 │
+        year8594 │
+Diagnosed 85-94  │    .753006   .0390759    -5.47   0.000     .6801847    .8336238
+                 │
+          agegrp │
+          45-59  │   1.502939   .1307488     4.68   0.000     1.267333    1.782346
+          60-74  │   2.937808    .234755    13.49   0.000     2.511917    3.435907
+            75+  │   8.427357   .6966317    25.79   0.000     7.166851     9.90956
+─────────────────┴────────────────────────────────────────────────────────────────
+
+. 
+. /* Now cause-specific survival */
+. stset surv_mm, failure(status==1)
+
+     failure event:  status == 1
+obs. time interval:  (0, surv_mm]
+ exit on or before:  failure
+
+──────────────────────────────────────────────────────────────────────────────
+      5,318  total observations
+          0  exclusions
+──────────────────────────────────────────────────────────────────────────────
+      5,318  observations remaining, representing
+      1,013  failures in single-record/single-failure data
+    463,519  total analysis time at risk and under observation
+                                                at risk from t =         0
+                                     earliest observed entry t =         0
+                                          last observed exit t =     251.5
+
+. 
+. /* Cox regression */
+. stcox i.sex i.year8594 i.agegrp
+
+         failure _d:  status == 1
+   analysis time _t:  surv_mm
+
+Iteration 0:   log likelihood = -8262.7792
+Iteration 1:   log likelihood = -8163.4913
+Iteration 2:   log likelihood = -8158.3831
+Iteration 3:   log likelihood =  -8158.363
+Refining estimates:
+Iteration 0:   log likelihood =  -8158.363
+
+Cox regression -- Breslow method for ties
+
+No. of subjects =        5,318                  Number of obs    =       5,318
+No. of failures =        1,013
+Time at risk    =       463519
+                                                LR chi2(5)       =      208.83
+Log likelihood  =    -8158.363                  Prob > chi2      =      0.0000
+
+─────────────────┬────────────────────────────────────────────────────────────────
+              _t │ Haz. Ratio   Std. Err.      z    P>|z|     [95% Conf. Interval]
+─────────────────┼────────────────────────────────────────────────────────────────
+             sex │
+         Female  │   .6060685   .0385507    -7.87   0.000     .5350306    .6865384
+                 │
+        year8594 │
+Diagnosed 85-94  │   .7154353   .0472398    -5.07   0.000     .6285878    .8142818
+                 │
+          agegrp │
+          45-59  │   1.297032   .1173508     2.87   0.004     1.086268     1.54869
+          60-74  │   1.830303   .1601515     6.91   0.000     1.541852    2.172716
+            75+  │   3.282573   .3360783    11.61   0.000     2.685753    4.012015
+─────────────────┴────────────────────────────────────────────────────────────────
+</pre>
+<ol type="a">
+<li>For patients of the same sex diagnosed in the same period, those aged 60–74 at diagnosis have a 2.9 times higher risk of death due to any causes than those aged 0–44 at diagnosis. This difference is statistically significant.</li>
+<li>Note that the previous model estimated cause-specific hazard ratios whereas the current model estimates all-cause hazard ratios. The estimated hazard ratios for sex and period are similar, whereas the estimated hazard ratios for age are markedly different. This is because non-cancer mortality is heavily dependent on age, but only lightly dependent on sex and calendar period.</li>
+</ol>
+</body>
+</html>

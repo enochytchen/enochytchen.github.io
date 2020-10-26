@@ -1,0 +1,16 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/yitche/My_Website/content/cansurv/exercises/q122.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}26 Oct 2020, 14:20:09
+{txt}
+{com}. //_^
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/yitche/My_Website/content/cansurv/exercises/q122.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}26 Oct 2020, 14:20:09
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
