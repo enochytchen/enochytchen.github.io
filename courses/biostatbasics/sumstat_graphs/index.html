@@ -31,10 +31,10 @@
     
   
   <meta name="description" content="Learning outcomes In this section, you will learn how to
- set up working directory import and save data manage datasets get to know the data manage variables  Course notes Slides can be downloaded (in pdf format) here.">
+ measure central tendency of the data (mean, median, amd mode) measure dispersion of the data (range, interquartile range, variance, and standard deviation) select suitable graphs to demonstrate the data use Stata to create histograms, bar charts, box plots, scatter plots, and line graphs customise graphs export graphs in any format  Course notes Slides can be downloaded (in pdf format) here.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/courses/biostatbasics/dataclearance/">
+  <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/courses/biostatbasics/sumstat_graphs/">
 
   
 
@@ -231,7 +231,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://enochytchen.com/courses/biostatbasics/dataclearance/">
+  <link rel="canonical" href="https://enochytchen.com/courses/biostatbasics/sumstat_graphs/">
 
   
   
@@ -247,16 +247,16 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Enoch Yi-Tung Chen">
-  <meta property="og:url" content="https://enochytchen.com/courses/biostatbasics/dataclearance/">
-  <meta property="og:title" content="Data Clearance | Enoch Yi-Tung Chen">
+  <meta property="og:url" content="https://enochytchen.com/courses/biostatbasics/sumstat_graphs/">
+  <meta property="og:title" content="Summary Statistics and Graphs | Enoch Yi-Tung Chen">
   <meta property="og:description" content="Learning outcomes In this section, you will learn how to
- set up working directory import and save data manage datasets get to know the data manage variables  Course notes Slides can be downloaded (in pdf format) here."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+ measure central tendency of the data (mean, median, amd mode) measure dispersion of the data (range, interquartile range, variance, and standard deviation) select suitable graphs to demonstrate the data use Stata to create histograms, bar charts, box plots, scatter plots, and line graphs customise graphs export graphs in any format  Course notes Slides can be downloaded (in pdf format) here."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-09-30T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-11-20T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-09-30T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-11-20T00:00:00&#43;00:00">
   
 
   
@@ -275,7 +275,7 @@
 
 
 
-  <title>Data Clearance | Enoch Yi-Tung Chen</title>
+  <title>Summary Statistics and Graphs | Enoch Yi-Tung Chen</title>
 
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -575,11 +575,11 @@
 
 
 
-  <li class="active"><a href="/courses/biostatbasics/dataclearance/">Data Clearance</a></li>
+  <li class=""><a href="/courses/biostatbasics/dataclearance/">Data Clearance</a></li>
 
 
 
-  <li class=""><a href="/courses/biostatbasics/sumstat_graphs/">Summary Statistics and Graphs</a></li>
+  <li class="active"><a href="/courses/biostatbasics/sumstat_graphs/">Summary Statistics and Graphs</a></li>
 
       
         </ul>
@@ -624,26 +624,34 @@
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>Data Clearance</h1>
+          <h1>Summary Statistics and Graphs</h1>
 
           <div class="article-style">
             <h2 id="learning-outcomes">Learning outcomes</h2>
 <p>In this section, you will learn how to</p>
 <ul>
-<li>set up working directory</li>
-<li>import and save data</li>
-<li>manage datasets</li>
-<li>get to know the data</li>
-<li>manage variables</li>
+<li>measure central tendency of the data (mean, median, amd mode)</li>
+<li>measure dispersion of the data (range, interquartile range, variance, and standard deviation)</li>
+<li>select suitable graphs to demonstrate the data</li>
+<li>use Stata to create histograms, bar charts, box plots, scatter plots, and line graphs</li>
+<li>customise graphs</li>
+<li>export graphs in any format</li>
 </ul>
 <!--## Video lecture-->
 <h2 id="course-notes">Course notes</h2>
 <p>Slides can be downloaded (in pdf format) 
-<a href="data_clearance.pdf">here</a>.</p>
+<a href="sumstat_graphs.pdf">here</a>.</p>
+<!--## Study notes
+[Ch1 Descriptive statistics]()-->
 <h2 id="stata-syntax-in-the-slides">Stata syntax in the slides</h2>
-<p>Stata codes be downloaded (do file) 
-<a href="data_clearance.do">here</a>.</p>
-<!--## Excercise The exercise of this lecture can be downloaded [here](data_clearance_ex)-->
+<p>Stata codes be downloaded (do file) below</p>
+<ul>
+<li>
+<a href="sumstat.do">Summary statistics</a></li>
+<li>
+<a href="graphs.do">Graphs</a></li>
+</ul>
+
           </div>
 
           
@@ -660,15 +668,9 @@
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="/courses/biostatbasics/dataman/" rel="next">Data management</a>
+    <a href="/courses/biostatbasics/dataclearance/" rel="next">Data Clearance</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/courses/biostatbasics/sumstat_graphs/" rel="prev">Summary Statistics and Graphs</a>
-  </div>
   
 </div>
 
@@ -677,7 +679,7 @@
         </div>
 
         <div class="body-footer">
-          <p>Last updated on Sep 30, 2020</p>
+          <p>Last updated on Nov 20, 2020</p>
 
           
 
