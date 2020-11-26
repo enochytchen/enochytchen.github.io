@@ -1,0 +1,28 @@
+% s122 
+122. Cox regression with observed (all-cause) mortality as the outcome
+------
+```s
+
+//==================//
+// EXERCISE 122
+// REVISED MAY 2015
+//==================//
+
+/* Data set used */
+use melanoma11 if stage == 1, clear
+
+/* All-cause survival */
+stset surv_mm, failure(status==1,2) exit(time 120) 
+
+/* Cox regression */
+stcox i.sex i.year8594 i.agegrp
+
+/* Now cause-specific survival */
+stset surv_mm, failure(status==1)
+
+/* Cox regression */
+stcox i.sex i.year8594 i.agegrp
+```
+
+(a) For patients of the same sex diagnosed in the same period, those aged 60–74 at diagnosis have a 2.9 times higher risk of death due to any causes than those aged 0–44 at diagnosis. This difference is statistically significant.
+(b) Note that the previous model estimated cause-specific hazard ratios whereas the current model estimates all-cause hazard ratios. The estimated hazard ratios for sex and period are similar, whereas the estimated hazard ratios for age are markedly different. This is because non-cancer mortality is heavily dependent on age, but only lightly dependent on sex and calendar period.

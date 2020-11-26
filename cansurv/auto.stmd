@@ -1,0 +1,9 @@
+Let's read the fuel efficiency data that comes with Stata,
+compute gallons per 100 miles, and regress that on weight
+
+    sysuse auto, clear
+    gen gphm = 100/mpg
+    regress gphm weight
+
+We see that heavier cars use more fuel, with 1,000 pounds requiring
+an extra 1.4 gallons to travel 100 miles.

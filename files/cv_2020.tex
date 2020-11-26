@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wenneker Resume/CV
+% LaTeX Template
+
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,12pt]{memoir} % Font and paper size
+
+\input{structure.tex} % Include the file specifying document layout and packages
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION 
+%----------------------------------------------------------------------------------------
+
+\userinformation{ % Set the content that goes into the sidebar of each page
+\begin{flushright}
+
+% Comment out this figure block if you don't want a photo
+\includegraphics[width=1\columnwidth]{Enoch_Chen}\\[\baselineskip] % Your photo
+
+\CVItem{Personal info} \\
+Enoch Yi-Tung Chen \\ % Your name 
+\href{linkedin.com/in/enoch-yi-tung-chen-299021157}{LinkedIn}
+\url{enochytchen.com} \\ % Your URL
+\begin{footnotesize} enoch.yitung.chen@ki.se \end{footnotesize} \\
++46 738774134 \\ % Your phone number
+\Sep % Some whitespace
+
+\CVItem{Language} \\
+Mandarin Chinese \\
+English \\
+Taiwanese  \\
+Swedish (beginner)
+
+\Sep
+
+\CVItem{Software}\\
+\Verb+Stata+ \\
+\Verb+R+ \\
+\LaTeX \\
+\Verb+MS Office+
+
+\vfill % Whitespace under this block to push it up under the photo
+\end{flushright}
+
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\userinformation % Print your information in the left column
+\framebreak % End of the first column
+
+%----------------------------------------------------------------------------------------
+%	HEADING
+%----------------------------------------------------------------------------------------
+
+\cvheading{Enoch Yi-Tung Chen} % Large heading - your nae
+
+%----------------------------------------------------------------------------------------
+%	ABOUT ME
+%----------------------------------------------------------------------------------------
+\CVSection{About me}
+
+\CVItem{Coffee drinker/  Swimmer/  Research Assistant in Biostatistics}{ My main research interests are developing and applying statistical approaches for register-based epidemiological studies, particularly in survival analysis and cost-effectiveness studies in health technology assessment.}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\CVSection{Education}
+
+%------------------------------------------------
+
+\CVItem{Karolinska Institutet \hspace*{\fill} 2018 - 2020}{MSc in Public Health Sciences, Epidemiology}
+
+%------------------------------------------------
+
+\CVItem{National Taiwan University \hspace*{\fill} 2014 - 2018}{BSc in Public Health (Honour Graduate)}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\CVSection{Work \& Research}
+
+%------------------------------------------------
+
+\CVItem{Research Assistant \hspace*{\fill}Jun 2020 - present \\ 
+							Department of Medical Epidemiology and Biostatistics (MEB) \\ Karolinska Institutet, Sweden}{
+Detailed achievements:
+\begin{itemize}
+	\item Learned how to make amazing coffee
+	\item Completed tutorials on
+		  \begin{itemize}
+		  	\item  \href{https://enochytchen.com/tutorials/extrapolation/}{Survival extrapolation using Stata}
+		  	\item \href{https://enochytchen.com/tutorials/relsurv/}{Estimate relative survival: tied data vs. untied data}
+		  	\item \href{https://enochytchen.com/tutorials/ratetable/}{Make ratetable using R.}
+		  \end{itemize}
+	\item Teaching Assistant of Biostatistics workshops for medical students
+	\item Organised the Biostatistics Student Seminar at MEB
+	\item I continue working on
+		\begin{itemize}
+			\item preparation for \Verb+Stata+ lab session in Applied Epidemiology course
+			\item offering statistical assistance in  clinical epidemiological studies
+			\item writing a \Verb+Stata+ package called \Verb+stpopmort+ for creating population mortality files. 
+		\end{itemize}
+\end{itemize}
+}
+\Sep
+%------------------------------------------------
+\CVItem{Project Intern \hspace*{\fill} Sep 2019 - Mar 2020 \\
+		Synergus Read-World Evidence, Sweden}{Transferability studies in health technology assessment,focusing on stroke healthcare delivery in Sweden.}
+
+%------------------------------------------------
+\Sep
+\CVItem{Research Intern \hspace*{\fill}Jul - Aug 2019 \\
+		Institute of Public Health, National Cheng Kung University, Taiwan}{Learned extrapolating cancer patients' survival, cost and quality of life using Taiwan's National Healthcare data}
+
+%------------------------------------------------
+\Sep
+\CVItem{Fieldwork Intern \hspace*{\fill}Jul 2017 - Aug 2018\\
+	    Luke International Norway, Malawi}{Conducted a sero-epidemiological study of dengueprevalence in Northern Malawi}
+
+%------------------------------------------------
+\Sep
+\CVItem{Principal Investigator \hspace*{\fill}Jul 2017 - Jun 2018}{Correlational study of class suspension and school enterovirus epidemic in Taiwan, 2010-2015}
+
+
+%------------------------------------------------
+
+\Sep % Extra whitespace after the end of a major section
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

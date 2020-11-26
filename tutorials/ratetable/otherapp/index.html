@@ -1,0 +1,909 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In the last section of this tutorial, we would like to briefly introduce two other approaches for making rate table from a sub-population (Bower et al. 2018, Rachet et al. 2015).">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://enochytchen.com/tutorials/ratetable/otherapp/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/stata.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/stata.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://enochytchen.com/tutorials/ratetable/otherapp/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Enoch Yi-Tung Chen">
+  <meta property="og:url" content="https://enochytchen.com/tutorials/ratetable/otherapp/">
+  <meta property="og:title" content="Make ratetable using R | Enoch Yi-Tung Chen">
+  <meta property="og:description" content="In the last section of this tutorial, we would like to briefly introduce two other approaches for making rate table from a sub-population (Bower et al. 2018, Rachet et al. 2015)."><meta property="og:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-09-22T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-09-22T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Make ratetable using R | Enoch Yi-Tung Chen</title>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Enoch Yi-Tung Chen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Enoch Yi-Tung Chen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/talk/"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/tutorials/ratetable/">Make ratetable</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/tutorials/ratetable/content/">Content</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/tutorials/ratetable/otherapp/">Other approaches</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#example-1-adjust-expected-mortality-rate-by-using-adjustment-factor">Example 1: Adjust expected mortality rate by using adjustment factor</a></li>
+        <li><a href="#example-2-multivariable-flexible-modelling">Example 2: Multivariable flexible modelling</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Make ratetable using R</h1>
+
+          <div class="article-style">
+            <p>In the last section of this tutorial, we would like to briefly introduce two other approaches for making rate table from a sub-population (Bower et al. 2018, Rachet et al. 2015). First, to summarise these three approaches, we made a comparison chart shown below:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Our approach</th>
+<th>Bower 2018</th>
+<th>Rachet 2015</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nationwide life table</td>
+<td>x</td>
+<td>v</td>
+<td>Flexible relation model: v Flexible Poisson model: x</td>
+</tr>
+<tr>
+<td>Individual data on a reference population</td>
+<td>v</td>
+<td>v</td>
+<td>individual-level or grouped data</td>
+</tr>
+<tr>
+<td>Dealing with unceratinty</td>
+<td>x</td>
+<td>Parametric bootstrapping</td>
+<td>Using data on multiple sampling populations</td>
+</tr>
+<tr>
+<td>Characteristics</td>
+<td>Modelling mortality rates directly without requiring nationwide life table</td>
+<td>Stabilised  by nationwide life table</td>
+<td>Alternative to avoiding integrating the pattern of nationwide life table, but still obtaining robust estimates</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-1-adjust-expected-mortality-rate-by-using-adjustment-factor">Example 1: Adjust expected mortality rate by using adjustment factor</h3>
+<p>
+<a href="https://doi.org/10.1093/aje/kwx303" target="_blank" rel="noopener">Bower et al. (2018)</a>  used the individual-level data from a reference population to scale the expected mortality for each level of social class, aided by nationwide life tables.</p>
+<p>Rather than using the the typical defintion of relative survival ($R(t)$, defined as the ration between $S(t)$, the all-cause survival of a patient cohort and $S^*(t)$, the expected survival of a general population), Bower et al. extended it to estimate the relative survival between the breast cancer patients and the Swedish population, with available data on SES, age at diagnosis, year of diagnosis (in their case, all the breast cancer patients were women, so sex was exempted), shown below:</p>
+<p>$$
+R\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)=\frac{S\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)}{S^{*}\left(t \mid \mathrm{SES}, a_{d}, y_{d}\right)}
+$$</p>
+<p>That is, on hazard scale, the expected hazard (or so-called expected mortality rate) is required to be stratified by SES. Thus, they proposed estimating adjustment factors, $\rho_{j}$, corresponding to SES grops, and multiplied it with the unadjusted rate to generate SES-adjusted mortality rate.
+$$
+\frac{h_{c}(a, y, j)}{h^{*}(a, y)}=\exp \left[\sum_{j=1}^{3} \rho_{j}(a, y) \times \operatorname{SES}_{j}\right]
+$$</p>
+<p>In the article, they further showed that how this framework works using Poisson models and flexible parametric models with restricted cubic spline function. For tackling uncertainty in using a sub-population, they ran a parametric bootstrap method for 100 times.</p>
+<h3 id="example-2-multivariable-flexible-modelling">Example 2: Multivariable flexible modelling</h3>
+<p>
+<a href="https://doi.org/10.1186/s12889-015-2534-3" target="_blank" rel="noopener">Rachet et al. (2015)</a>  proposed two alternative approaches to construct smoothed life tables for sub-populations. Both these two models can be applied into either abriged or complete data. That is to say, both individual-level data and grouped data can be modelled.</p>
+<h4 id="flexible-relational-model">Flexible relational model</h4>
+<p>The first one, flexible relational model, requires survival function of a reliable standard population, $l_{x_{s}}$, and multivariables, such as deprivation level and the interaction between deprivation level and age.</p>
+<p>$$
+\begin{aligned}
+\operatorname{logit}\left(l_{x, i}\right) &amp;=f\left(\log i t\left(l_{x_{s}}\right)\right) +\sum_{i=2}^{5} \beta_{i} \text {dep}_{i}+g(\text {agedep})
+\end{aligned},
+$$
+where $f$ and $g$ are restricted cubic spline functions.</p>
+<h4 id="flexible-poisson-model">Flexible Poisson model</h4>
+<p>The second one, flexible Poisson model, does not require  external infromation on standard population mortality, and it models age-specific death counts with multiple variables.
+The advantage is that this approach takes account of the variance existing in the data.</p>
+<p>$$
+\begin{aligned}
+\log \left(d_{x, i}\right) &amp;=\beta_{0}+f(x)+\sum_{i=2}^{5} \beta_{i} \text {dep}_{i}+g(\text {agedep})+\log \left(\text {pyrs}_{x, i}\right)
+\end{aligned},
+$$</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Our approach is distinct from Bower et al. and Rachet et al. , since only individual-level data is required to model the mortality rate directly from a representative population free of the disease of interest, the advantages of which are that in some situation nationwide life tables are not available and allowing more variance on the estimates directly generated from the reference population. However, the disadvantage is that the estimates of the model is not aided by the underlying pattern of existing life tables.</p>
+<p>In terms of concerns on uncertainty, Bower et al. used a sensible approach of bootstrapping to tackle the issue, which is eligible to be considered in optimising our approach.</p>
+<h3 id="references">References</h3>
+<p>Bower H, Andersson TM, Crowther MJ, Dickman PW, Lambe M, Lambert PC. Adjusting Expected Mortality Rates Using Information From a Control Population: An Example Using Socioeconomic Status. <em>Am J Epidemiol.</em> 2018;187(4):828-836. 
+<a href="https://doi.org/10.1093/aje/kwx303" target="_blank" rel="noopener">doi: 10.1093/aje/kwx303</a>.</p>
+<p>Rachet B, Maringe C, Woods LM, Ellis L, Spika D, Allemani C. Multivariable flexible modelling for estimating complete, smoothed life tables for sub-national populations. <em>BMC Public Health</em>. 2015;15:1240. 
+<a href="https://doi.org/10.1186/s12889-015-2534-3" target="_blank" rel="noopener">doi: 10.1186/s12889-015-2534-3</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Sep 22, 2020</p>
+
+          
+
+
+
+
+
+          
+
+
+          
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/true.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

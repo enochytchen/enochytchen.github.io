@@ -8,27 +8,122 @@
   </url>
   
   <url>
-    <loc>https://enochytchen.com/authors/</loc>
-    <lastmod>2020-08-24T10:49:13+02:00</lastmod>
+    <loc>https://enochytchen.com/courses/biostatbasics/dataman/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.com/post/avoid_dehumanizing/</loc>
-    <lastmod>2020-08-24T10:49:13+02:00</lastmod>
+    <loc>https://enochytchen.com/courses/biostatbasics/dataclearance/</loc>
+    <lastmod>2020-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://enochytchen.com/author/enoch-chen/</loc>
-    <lastmod>2020-08-24T10:49:13+02:00</lastmod>
+    <loc>https://enochytchen.com/courses/biostatbasics/sumstat_graphs/</loc>
+    <lastmod>2020-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/biostatbasics/tab_results/</loc>
+    <lastmod>2020-11-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/cansurv/exercises/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/</loc>
+    <lastmod>2020-11-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://enochytchen.com/</loc>
-    <lastmod>2020-08-24T10:49:13+02:00</lastmod>
+    <lastmod>2020-11-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/cansurv/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/relsurv/untied/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/learningrs/eloranta2020/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/learningrs/</loc>
+    <lastmod>2020-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/authors/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/author/enoch/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/author/enoch-chen/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/post/analogue/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://enochytchen.com/post/</loc>
+    <lastmod>2020-10-03T12:46:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/courses/biostatbasics/</loc>
+    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/relsurv/tied/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/relsurv/</loc>
+    <lastmod>2020-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tutorials/ratetable/otherapp/</loc>
+    <lastmod>2020-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/talk/</loc>
+    <lastmod>2020-08-31T11:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/talk/mphthesis/</loc>
+    <lastmod>2020-08-31T11:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/post/avoid_dehumanizing/</loc>
     <lastmod>2020-08-24T10:49:13+02:00</lastmod>
   </url>
   
@@ -38,32 +133,7 @@
   </url>
   
   <url>
-    <loc>https://enochytchen.com/post/estimatingrs/</loc>
-    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enochytchen.com/tag/expected-survival/</loc>
-    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://enochytchen.com/tutorials/ratetable/</loc>
-    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enochytchen.com/tag/relative-survival/</loc>
-    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enochytchen.com/tags/</loc>
-    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://enochytchen.com/tutorials/</loc>
     <lastmod>2020-08-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -83,8 +153,18 @@
   </url>
   
   <url>
+    <loc>https://enochytchen.com/tags/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://enochytchen.com/post/why_datamanagement/</loc>
     <lastmod>2020-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://enochytchen.com/tag/expected-survival/</loc>
+    <lastmod>2020-05-12T14:52:16+02:00</lastmod>
   </url>
   
   <url>
@@ -165,14 +245,6 @@
   
   <url>
     <loc>https://enochytchen.com/publication/</loc>
-  </url>
-  
-  <url>
-    <loc>https://enochytchen.com/tutorials/_index-/</loc>
-  </url>
-  
-  <url>
-    <loc>https://enochytchen.com/talk/</loc>
   </url>
   
 </urlset>

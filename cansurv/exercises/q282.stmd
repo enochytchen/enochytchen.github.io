@@ -1,0 +1,51 @@
+% q282
+282. Calculating excess and ‘avoidable’ deaths from life tables
+------
+(a) Load the Melanoma data, drop subjects diagnosed 1975-1984 and then and use strs to obtain life-tables stratified by age group and sex. Load the grouped data and keep the following variables.
+```
+keep start end n cp cp_e2 cr_e2 sex agegrp
+```
+(b) What is the difference in five-year relative survival between males and females in each age group?
+(c) We will now investigate excess deaths and ‘avoidable’ deaths. The question of interest is how many fewer deaths we would expect to see if males could achieve the same relative survival as females. To do this we will reshape the data from long form to wide form to make calculations easier.
+```
+bysort sex (agegrp start): gen j = _n
+gen sexlab =cond(sex==1,"_m","_f")
+drop sex
+reshape wide start end n cp cp_e2 cr_e2 agegrp, i(j) j(sexlab) string 
+rename agegrp_m agegrp
+rename start_m start
+rename end_m end
+drop agegrp_f start_f end_f
+```
+Look at the data in the data browser to make sure you understand what the reshape command has done.
+
+(d) In order to calculate the predicted number of deaths we need to define how many subjects were at risk at the the start of follow-up. For simplicity, we will use the average number of cases per year over the 10 year diagnosis period. This can be calculated as follows.
+```
+bys agegrp: gen Nrisk_m = n_m[1]/10
+```
+
+Calculate the overall (all-cause) probability of death, $1 - S^*(t) R(t)$, for males.
+
+```
+gen p_dead_m = 1 - cp_e2_m * cr_e2_m
+```
+For males, calculate the expected number of all-cause deaths, Nd m, the expected number of deaths if the study population were free of cancer, NExp d m and the excess deaths associated with a diagnosis of cancer, ED m.
+```
+gen Nd_m = Nrisk_m*p_dead_m
+gen NExp_d_m = Nrisk_m*(1-cp_e2_m) 
+gen ED_m = Nd_m - NExp_d_m
+```
+i. How many all cause deaths would we expect to see in each age group at 5 years post diagnosis?
+ii. How many more deaths are there than would be expected in a similar cancer free group in the population?
+iii. How many excess deaths by 5 years are associated with a diagnosis of melanoma over all age groups?
+
+(e) Repeat the above calculations for females. How do the excess deaths for females compare to the males?
+
+(f) We will now apply the relative survival estimates for females to the males’ expected survival in order to calculate the ‘avoidable’ deaths.
+```
+gen Nd_m_f = Nrisk_m*(1 - cp_e2_m * cr_e2_f) 
+gen AD_m = Nd_m - Nd_m_f
+```
+How many deaths would be avoided if males could achieve the same relative survival as females for Melanoma?.
+
+(g) List the avoidable deaths for the oldest age group over all follow-up times. Why are the number of avoidable deaths decreasing as follow-up time increases?

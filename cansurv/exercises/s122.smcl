@@ -1,0 +1,141 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/yitche/My_Website/content/cansurv/exercises/s122.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}26 Oct 2020, 14:21:55
+{txt}
+{com}. //_1
+. 
+. //==================//
+. // EXERCISE 122
+. // REVISED MAY 2015
+. //==================//
+. 
+. /* Data set used */
+. use melanoma11 if stage == 1, clear
+{txt}(Skin melanoma, diagnosed 1975-94, follow-up to 1995)
+
+{com}. 
+. /* All-cause survival */
+. stset surv_mm, failure(status==1,2) exit(time 120) 
+
+     {txt}failure event:  {res}status == 1 2
+{txt}obs. time interval:  {res}(0, surv_mm]
+{txt} exit on or before:  {res}time 120
+
+{txt}{hline 78}
+{res}      5,318{txt}  total observations
+{res}          0{txt}  exclusions
+{hline 78}
+{res}      5,318{txt}  observations remaining, representing
+{res}      1,580{txt}  failures in single-record/single-failure data
+{res}    388,520{txt}  total analysis time at risk and under observation
+                                                at risk from t = {res}        0
+                                     {txt}earliest observed entry t = {res}        0
+                                          {txt}last observed exit t = {res}      120
+{txt}
+{com}. 
+. /* Cox regression */
+. stcox i.sex i.year8594 i.agegrp
+
+         {txt}failure _d:  {res}status == 1 2
+   {txt}analysis time _t:  {res}surv_mm
+{txt}  exit on or before:  {res}time 120
+
+{txt}Iteration 0:   log likelihood = {res}-12951.328
+{txt}Iteration 1:   log likelihood = {res}-12680.429
+{txt}Iteration 2:   log likelihood = {res}-12507.064
+{txt}Iteration 3:   log likelihood = {res}-12506.146
+{txt}Iteration 4:   log likelihood = {res}-12506.145
+{txt}Refining estimates:
+Iteration 0:   log likelihood = {res}-12506.145
+
+{txt}Cox regression -- Breslow method for ties
+
+No. of subjects = {res}       5,318                  {txt}Number of obs    =  {res}     5,318
+{txt}No. of failures = {res}       1,580
+{txt}Time at risk    = {res}      388520
+                                                {txt}LR chi2({res}5{txt})       =  {res}    890.37
+{txt}Log likelihood  =   {res}-12506.145                  {txt}Prob > chi2      =  {res}    0.0000
+
+{txt}{hline 17}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}              _t{col 18}{c |} Haz. Ratio{col 30}   Std. Err.{col 42}      z{col 50}   P>|z|{col 58}     [95% Con{col 71}f. Interval]
+{hline 17}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 13}sex {c |}
+{space 9}Female  {c |}{col 18}{res}{space 2} .6101738{col 30}{space 2} .0311091{col 41}{space 1}   -9.69{col 50}{space 3}0.000{col 58}{space 4} .5521485{col 71}{space 3}  .674297
+{txt}{space 16} {c |}
+{space 8}year8594 {c |}
+Diagnosed 85-94  {c |}{col 18}{res}{space 2}  .753006{col 30}{space 2} .0390759{col 41}{space 1}   -5.47{col 50}{space 3}0.000{col 58}{space 4} .6801847{col 71}{space 3} .8336238
+{txt}{space 16} {c |}
+{space 10}agegrp {c |}
+{space 10}45-59  {c |}{col 18}{res}{space 2} 1.502939{col 30}{space 2} .1307488{col 41}{space 1}    4.68{col 50}{space 3}0.000{col 58}{space 4} 1.267333{col 71}{space 3} 1.782346
+{txt}{space 10}60-74  {c |}{col 18}{res}{space 2} 2.937808{col 30}{space 2}  .234755{col 41}{space 1}   13.49{col 50}{space 3}0.000{col 58}{space 4} 2.511917{col 71}{space 3} 3.435907
+{txt}{space 12}75+  {c |}{col 18}{res}{space 2} 8.427357{col 30}{space 2} .6966317{col 41}{space 1}   25.79{col 50}{space 3}0.000{col 58}{space 4} 7.166851{col 71}{space 3}  9.90956
+{txt}{hline 17}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. /* Now cause-specific survival */
+. stset surv_mm, failure(status==1)
+
+     {txt}failure event:  {res}status == 1
+{txt}obs. time interval:  {res}(0, surv_mm]
+{txt} exit on or before:  {res}failure
+
+{txt}{hline 78}
+{res}      5,318{txt}  total observations
+{res}          0{txt}  exclusions
+{hline 78}
+{res}      5,318{txt}  observations remaining, representing
+{res}      1,013{txt}  failures in single-record/single-failure data
+{res}    463,519{txt}  total analysis time at risk and under observation
+                                                at risk from t = {res}        0
+                                     {txt}earliest observed entry t = {res}        0
+                                          {txt}last observed exit t = {res}    251.5
+{txt}
+{com}. 
+. /* Cox regression */
+. stcox i.sex i.year8594 i.agegrp
+
+         {txt}failure _d:  {res}status == 1
+   {txt}analysis time _t:  {res}surv_mm
+
+{txt}Iteration 0:   log likelihood = {res}-8262.7792
+{txt}Iteration 1:   log likelihood = {res}-8163.4913
+{txt}Iteration 2:   log likelihood = {res}-8158.3831
+{txt}Iteration 3:   log likelihood = {res} -8158.363
+{txt}Refining estimates:
+Iteration 0:   log likelihood = {res} -8158.363
+
+{txt}Cox regression -- Breslow method for ties
+
+No. of subjects = {res}       5,318                  {txt}Number of obs    =  {res}     5,318
+{txt}No. of failures = {res}       1,013
+{txt}Time at risk    = {res}      463519
+                                                {txt}LR chi2({res}5{txt})       =  {res}    208.83
+{txt}Log likelihood  =   {res} -8158.363                  {txt}Prob > chi2      =  {res}    0.0000
+
+{txt}{hline 17}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}              _t{col 18}{c |} Haz. Ratio{col 30}   Std. Err.{col 42}      z{col 50}   P>|z|{col 58}     [95% Con{col 71}f. Interval]
+{hline 17}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 13}sex {c |}
+{space 9}Female  {c |}{col 18}{res}{space 2} .6060685{col 30}{space 2} .0385507{col 41}{space 1}   -7.87{col 50}{space 3}0.000{col 58}{space 4} .5350306{col 71}{space 3} .6865384
+{txt}{space 16} {c |}
+{space 8}year8594 {c |}
+Diagnosed 85-94  {c |}{col 18}{res}{space 2} .7154353{col 30}{space 2} .0472398{col 41}{space 1}   -5.07{col 50}{space 3}0.000{col 58}{space 4} .6285878{col 71}{space 3} .8142818
+{txt}{space 16} {c |}
+{space 10}agegrp {c |}
+{space 10}45-59  {c |}{col 18}{res}{space 2} 1.297032{col 30}{space 2} .1173508{col 41}{space 1}    2.87{col 50}{space 3}0.004{col 58}{space 4} 1.086268{col 71}{space 3}  1.54869
+{txt}{space 10}60-74  {c |}{col 18}{res}{space 2} 1.830303{col 30}{space 2} .1601515{col 41}{space 1}    6.91{col 50}{space 3}0.000{col 58}{space 4} 1.541852{col 71}{space 3} 2.172716
+{txt}{space 12}75+  {c |}{col 18}{res}{space 2} 3.282573{col 30}{space 2} .3360783{col 41}{space 1}   11.61{col 50}{space 3}0.000{col 58}{space 4} 2.685753{col 71}{space 3} 4.012015
+{txt}{hline 17}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. //_^
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/yitche/My_Website/content/cansurv/exercises/s122.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}26 Oct 2020, 14:21:55
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

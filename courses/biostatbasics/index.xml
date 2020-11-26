@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basic Biostatistics Stata lab | Enoch Yi-Tung Chen</title>
+    <link>https://enochytchen.com/courses/biostatbasics/</link>
+      <atom:link href="https://enochytchen.com/courses/biostatbasics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Basic Biostatistics Stata lab</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 30 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Basic Biostatistics Stata lab</title>
+      <link>https://enochytchen.com/courses/biostatbasics/</link>
+    </image>
+    
+    <item>
+      <title>Data management</title>
+      <link>https://enochytchen.com/courses/biostatbasics/dataman/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/dataman/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ensure the analysis is reproducible&lt;/li&gt;
+&lt;li&gt;work coherently and efficiently with yourself&lt;/li&gt;
+&lt;li&gt;ensure the project can be understood by others (supervisors, collaborators, and future readers)&lt;/li&gt;
+&lt;li&gt;create a good work flow&lt;/li&gt;
+&lt;li&gt;enhance accuracy of work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in PDF format) 
+&lt;a href=&#34;data_man.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;templates-for-do-files&#34;&gt;Templates for do files&lt;/h2&gt;
+&lt;!--- [Do-file template](do_template.do)
+- Analysis plan template
+- Codebook template
+- Dummy table template
+- Logbook template
+- Readme.txt template
+--&gt;
+&lt;!--## Suggested readings
+- The Department of Medical Epidemiology and Biostatistics, Karolinska Institutet.
+MEB Guidelines for Documentation and Archiving Version 6. 2018.
+
+
+--&gt;
+&lt;!--## Excercise
+The exercise of this lecture can be downloaded [here](data_man_ex). 
+--&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Clearance</title>
+      <link>https://enochytchen.com/courses/biostatbasics/dataclearance/</link>
+      <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/dataclearance/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;set up working directory&lt;/li&gt;
+&lt;li&gt;import and save data&lt;/li&gt;
+&lt;li&gt;manage datasets&lt;/li&gt;
+&lt;li&gt;get to know the data&lt;/li&gt;
+&lt;li&gt;manage variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--## Video lecture--&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in pdf format) 
+&lt;a href=&#34;data_clearance.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
+&lt;p&gt;Stata codes be downloaded (do-file) 
+&lt;a href=&#34;data_clearance.do&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!--## Excercise The exercise of this lecture can be downloaded [here](data_clearance_ex)--&gt;</description>
+    </item>
+    
+    <item>
+      <title>Summary Statistics and Graphs</title>
+      <link>https://enochytchen.com/courses/biostatbasics/sumstat_graphs/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/sumstat_graphs/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;measure central tendency of the data (mean, median, amd mode)&lt;/li&gt;
+&lt;li&gt;measure dispersion of the data (range, interquartile range, variance, and standard deviation)&lt;/li&gt;
+&lt;li&gt;select suitable graphs to demonstrate the data&lt;/li&gt;
+&lt;li&gt;use Stata to create histograms, bar charts, box plots, scatter plots, and line graphs&lt;/li&gt;
+&lt;li&gt;customise graphs&lt;/li&gt;
+&lt;li&gt;export graphs in any format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--## Video lecture--&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in pdf format) 
+&lt;a href=&#34;sumstat_graphs.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!--## Study notes
+[Ch1 Descriptive statistics]()--&gt;
+&lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
+&lt;p&gt;Stata codes be downloaded (do-file) below&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;sumstat.do&#34;&gt;Summary statistics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;graphs.do&#34;&gt;Graphs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tables and Interpreting results</title>
+      <link>https://enochytchen.com/courses/biostatbasics/tab_results/</link>
+      <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/tab_results/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make one-way and two by two tables&lt;/li&gt;
+&lt;li&gt;use Stata tool for Epidemiology&lt;/li&gt;
+&lt;li&gt;recapture basic epidemiology terms, including
+&lt;ul&gt;
+&lt;li&gt;rate, proportion&lt;/li&gt;
+&lt;li&gt;risk, risk difference, risk ratio&lt;/li&gt;
+&lt;li&gt;odds, odds ratio&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;interpret results of ratios&lt;/li&gt;
+&lt;li&gt;calculate ratios using Stata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--## Video lecture--&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in pdf format) 
+&lt;a href=&#34;tab_results.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!--## Study notes
+[Ch1 Descriptive statistics]()--&gt;
+&lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
+&lt;p&gt;Stata codes be downloaded (do-file) 
+&lt;a href=&#34;tab_results.do&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

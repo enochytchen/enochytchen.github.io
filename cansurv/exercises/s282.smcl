@@ -1,0 +1,221 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/yitche/My_Website/content/cansurv/exercises/s282.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}26 Oct 2020, 16:46:00
+{txt}
+{com}. //_1
+. //==================//
+. // EXERCISE 282
+. // REVISED MAY 2015
+. //==================//
+. 
+. use melanoma11, clear
+{txt}(Skin melanoma, diagnosed 1975-94, follow-up to 1995)
+
+{com}. keep if year8594 == 1
+{txt}(3,031 observations deleted)
+
+{com}. stset surv_mm, fail(status==1 2) id(id) scale(12)
+
+                {txt}id:  {res}id
+     {txt}failure event:  {res}status == 1 2
+{txt}obs. time interval:  {res}(surv_mm[_n-1], surv_mm]
+{txt} exit on or before:  {res}failure
+    {txt}t for analysis:  {res}time/12
+
+{txt}{hline 78}
+{res}      4,744{txt}  total observations
+{res}          0{txt}  exclusions
+{hline 78}
+{res}      4,744{txt}  observations remaining, representing
+{res}      4,744{txt}  subjects
+{res}      1,404{txt}  failures in single-failure-per-subject data
+{res}   22,108.5{txt}  total analysis time at risk and under observation
+                                                at risk from t = {res}        0
+                                     {txt}earliest observed entry t = {res}        0
+                                          {txt}last observed exit t = {res} 10.95833
+{txt}
+{com}. set trace off
+{txt}
+{com}. strs using popmort, notables br(0(1)5) mergeby(_year sex _age) by(agegrp sex) save(replace)  
+
+         {txt}failure _d:  {res}status == 1 2
+   {txt}analysis time _t:  {res}surv_mm/12
+                 {txt}id:  {res}id
+
+No late entry detected - p is estimated using the actuarial method
+{txt}
+{com}. 
+. use grouped, clear
+{txt}(Collapsed (or grouped) survival data)
+
+{com}. keep start end n cp cp_e2 cr_e2 sex agegrp
+{txt}
+{com}. //_2
+. list agegrp sex cr_e2 if end == 5, noobs sepby(agegrp)
+{txt}
+  {c TLC}{hline 8}{c -}{hline 8}{c -}{hline 8}{c TRC}
+  {c |} {res}agegrp      sex    cr_e2 {txt}{c |}
+  {c LT}{hline 8}{c -}{hline 8}{c -}{hline 8}{c RT}
+  {c |} {res}  0-44     Male   0.8236 {txt}{c |}
+  {c |} {res}  0-44   Female   0.9233 {txt}{c |}
+  {c LT}{hline 8}{c -}{hline 8}{c -}{hline 8}{c RT}
+  {c |} {res} 45-59     Male   0.7969 {txt}{c |}
+  {c |} {res} 45-59   Female   0.8740 {txt}{c |}
+  {c LT}{hline 8}{c -}{hline 8}{c -}{hline 8}{c RT}
+  {c |} {res} 60-74     Male   0.7413 {txt}{c |}
+  {c |} {res} 60-74   Female   0.7958 {txt}{c |}
+  {c LT}{hline 8}{c -}{hline 8}{c -}{hline 8}{c RT}
+  {c |} {res}   75+     Male   0.6627 {txt}{c |}
+  {c |} {res}   75+   Female   0.7006 {txt}{c |}
+  {c BLC}{hline 8}{c -}{hline 8}{c -}{hline 8}{c BRC}
+
+{com}. //_3
+. bysort sex (agegrp start): gen j = _n
+{txt}
+{com}. gen sexlab =cond(sex==1,"_m","_f")
+{txt}
+{com}. drop sex
+{txt}
+{com}. reshape wide start end n cp cp_e2 cr_e2 agegrp, i(j) j(sexlab) string
+{txt}(note: j = _f _m)
+
+Data{col 36}long{col 43}->{col 48}wide
+{hline 77}
+Number of obs.                 {res}      40   {txt}->{res}      20
+{txt}Number of variables            {res}       9   {txt}->{res}      15
+{txt}j variable (2 values)            {res}sexlab   {txt}->   (dropped)
+xij variables:
+                                  {res}start   {txt}->   {res}start_f start_m
+                                    end   {txt}->   {res}end_f end_m
+                                      n   {txt}->   {res}n_f n_m
+                                     cp   {txt}->   {res}cp_f cp_m
+                                  cp_e2   {txt}->   {res}cp_e2_f cp_e2_m
+                                  cr_e2   {txt}->   {res}cr_e2_f cr_e2_m
+                                 agegrp   {txt}->   {res}agegrp_f agegrp_m
+{txt}{hline 77}
+
+{com}. rename agegrp_m agegrp
+{res}{txt}
+{com}. rename start_m start
+{res}{txt}
+{com}. rename end_m end
+{res}{txt}
+{com}. drop agegrp_f start_f end_f
+{txt}
+{com}. //_4
+. bys agegrp: gen Nrisk_m = n_m[1]/10
+{txt}
+{com}. gen p_dead_m = 1 - cp_e2_m * cr_e2_m 
+{txt}
+{com}. gen Nd_m = Nrisk_m*p_dead_m
+{txt}
+{com}. gen NExp_d_m = Nrisk_m*(1-cp_e2_m)
+{txt}
+{com}. gen ED_m = Nd_m - NExp_d_m
+{txt}
+{com}. format Nd_m NExp_d_m ED_m %4.1f
+{txt}
+{com}. list agegrp Nrisk_m p_dead_m Nd_m NExp_d_m ED_m if end==5, noobs
+{txt}
+  {c TLC}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c TRC}
+  {c |} {res}agegrp   Nrisk_m   p_dead_m   Nd_m   NExp_d_m   ED_m {txt}{c |}
+  {c LT}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c RT}
+  {c |} {res}  0-44      53.7   .1889797   10.1        0.8    9.3 {txt}{c |}
+  {c |} {res} 45-59      75.2   .2440302   18.4        3.9   14.5 {txt}{c |}
+  {c |} {res} 60-74      70.9   .3905036   27.7       12.6   15.1 {txt}{c |}
+  {c |} {res}   75+      33.7   .6542017   22.0       16.1    5.9 {txt}{c |}
+  {c BLC}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c BRC}
+
+{com}. table agegrp if end == 5, c(sum Nd_m sum NExp_d_m sum ED_m) row format(%4.1f)
+
+{txt}{hline 10}{c TT}{hline 44}
+_m agegrp {c |}     sum(Nd_m)  sum(NExp_d_m)      sum(ED_m)
+{hline 10}{c +}{hline 44}
+     0-44 {c |}          {res}10.1            0.8            9.3
+    {txt}45-59 {c |}          {res}18.4            3.9           14.5
+    {txt}60-74 {c |}          {res}27.7           12.6           15.1
+      {txt}75+ {c |}          {res}22.0           16.1            5.9
+          {txt}{c |} 
+    Total {c |}          {res}78.2           33.4           44.8
+{txt}{hline 10}{c BT}{hline 44}
+
+{com}. //_5
+. bys agegrp: gen Nrisk_f = n_f[1]/10
+{txt}
+{com}. gen p_dead_f = 1 - cp_e2_f * cr_e2_f
+{txt}
+{com}. gen Nd_f = Nrisk_f*p_dead_f
+{txt}
+{com}. gen NExp_d_f = Nrisk_f*(1-cp_e2_f)
+{txt}
+{com}. gen ED_f = Nd_f - NExp_d_f
+{txt}
+{com}. format Nd_f NExp_d_f ED_f %4.1f
+{txt}
+{com}. list agegrp Nrisk_f p_dead_f Nd_f NExp_d_f ED_f if end==5, noobs
+{txt}
+  {c TLC}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c TRC}
+  {c |} {res}agegrp   Nrisk_f   p_dead_f   Nd_f   NExp_d_f   ED_f {txt}{c |}
+  {c LT}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c RT}
+  {c |} {res}  0-44      62.4   .0814915    5.1        0.3    4.8 {txt}{c |}
+  {c |} {res} 45-59      61.2   .1431934    8.8        1.2    7.6 {txt}{c |}
+  {c |} {res} 60-74      66.1   .2800009   18.5        6.3   12.2 {txt}{c |}
+  {c |} {res}   75+      51.2   .5766043   29.5       20.3    9.3 {txt}{c |}
+  {c BLC}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c BRC}
+
+{com}. table agegrp if end == 5, c(sum Nd_f sum NExp_d_f sum ED_f) row format(%4.1f)
+
+{txt}{hline 10}{c TT}{hline 44}
+_m agegrp {c |}     sum(Nd_f)  sum(NExp_d_f)      sum(ED_f)
+{hline 10}{c +}{hline 44}
+     0-44 {c |}           {res}5.1            0.3            4.8
+    {txt}45-59 {c |}           {res}8.8            1.2            7.6
+    {txt}60-74 {c |}          {res}18.5            6.3           12.2
+      {txt}75+ {c |}          {res}29.5           20.3            9.3
+          {txt}{c |} 
+    Total {c |}          {res}61.9           28.1           33.8
+{txt}{hline 10}{c BT}{hline 44}
+
+{com}. //_6
+. gen Nd_m_f = Nrisk_m*(1 - cp_e2_m * cr_e2_f)
+{txt}
+{com}. gen AD_m = Nd_m - Nd_m_f
+{txt}
+{com}. format Nd_m_f AD_m %4.1f
+{txt}
+{com}. list agegrp Nrisk_m p_dead_m Nd_m NExp_d_m ED_m Nd_m_f AD_m if end==5, noobs
+{txt}
+  {c TLC}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c -}{hline 8}{c -}{hline 6}{c TRC}
+  {c |} {res}agegrp   Nrisk_m   p_dead_m   Nd_m   NExp_d_m   ED_m   Nd_m_f   AD_m {txt}{c |}
+  {c LT}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c -}{hline 8}{c -}{hline 6}{c RT}
+  {c |} {res}  0-44      53.7   .1889797   10.1        0.8    9.3      4.9    5.3 {txt}{c |}
+  {c |} {res} 45-59      75.2   .2440302   18.4        3.9   14.5     12.9    5.5 {txt}{c |}
+  {c |} {res} 60-74      70.9   .3905036   27.7       12.6   15.1     24.5    3.2 {txt}{c |}
+  {c |} {res}   75+      33.7   .6542017   22.0       16.1    5.9     21.4    0.7 {txt}{c |}
+  {c BLC}{hline 8}{c -}{hline 9}{c -}{hline 10}{c -}{hline 6}{c -}{hline 10}{c -}{hline 6}{c -}{hline 8}{c -}{hline 6}{c BRC}
+
+{com}. //_7
+. list agegrp end AD_m if agegrp==3 
+{txt}
+     {c TLC}{hline 8}{c -}{hline 5}{c -}{hline 6}{c TRC}
+     {c |} {res}agegrp   end   AD_m {txt}{c |}
+     {c LT}{hline 8}{c -}{hline 5}{c -}{hline 6}{c RT}
+ 16. {c |} {res}   75+     1    1.4 {txt}{c |}
+ 17. {c |} {res}   75+     2    2.2 {txt}{c |}
+ 18. {c |} {res}   75+     3    2.1 {txt}{c |}
+ 19. {c |} {res}   75+     4    1.2 {txt}{c |}
+ 20. {c |} {res}   75+     5    0.7 {txt}{c |}
+     {c BLC}{hline 8}{c -}{hline 5}{c -}{hline 6}{c BRC}
+
+{com}. //_^
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/yitche/My_Website/content/cansurv/exercises/s282.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}26 Oct 2020, 16:46:01
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

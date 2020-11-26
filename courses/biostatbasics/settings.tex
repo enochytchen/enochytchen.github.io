@@ -1,0 +1,45 @@
+\documentclass[handout]{beamer}
+\usetheme{Madrid}
+\usepackage{pdfpages}
+\usepackage[utf8x]{inputenc}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage{amsmath, amssymb}
+\usepackage{verbatim}
+\usepackage{soul}
+\usepackage{textpos}
+\usepackage{xcolor}
+\usepackage{lmodern,textcomp}
+ \setbeamertemplate{enumerate items}[default]
+ \setbeamertemplate{itemize items}[circle]
+ \setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
+
+\usepackage{tabulary, booktabs}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=cyan,
+    linkcolor=true,
+    filecolor=cyan,      
+    urlcolor=cyan,
+}
+
+\beamertemplatenavigationsymbolsempty
+
+%%%%%%%%%%%%%%%Color%%%%%%%%%%%%%%%
+\definecolor{KIPlum}{HTML}{880052}
+\definecolor{box}{RGB}{250, 117, 144}
+\usecolortheme[named=KIPlum]{structure}
+
+%%%%%%%%%%%%%%%Bibliography setting%%%%%%%%%%%%%%%
+\usepackage[numbers,comma,sort&compress]{natbib}
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} %remove brackets from the ref list
+\makeatother
+
+

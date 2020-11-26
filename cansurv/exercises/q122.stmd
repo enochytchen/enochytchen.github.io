@@ -1,0 +1,15 @@
+% q122 
+122. Cox regression with observed (all-cause) mortality as the outcome
+------
+Now fit a model to the localised melanoma data where the outcome is observed survival (i.e. all deaths are considered to be events).
+  
+```
+use melanoma11 if stage == 1, clear
+stset surv_mm, failure(status==1,2) exit(time 120) 
+keep if stage==1
+stcox sex year8594 i.agegrp
+```
+
+
+(a) Interpret the estimated hazard ratio for the parameter labelled 2.agegrp, including a comment on statistical significance.
+(b) On comparing the estimates between the observed and cause-specific survival models it appears that only the parameters for age have changed substantially. Can you explain why the estimates for the effect of age would be expected to change more than the estimates of the effect of sex and period?
