@@ -14,11 +14,8 @@
 \maketitle 
 \end{frame}
 
-%%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
-\begin{frame}{Acknowledgements}
-This course material in data clearance is based on my learning from \href{https://staff.ki.se/people/analam}{Anastasia Lam}'s teachings in last year's Applied Epidemiology I lab sessions, and readings from \textit{A First Course in Probability and Statistics} by Goldsman and Goldsman \cite{Goldsman2020}, \textit{Principles of Biostatistics} by Pagano and Gauvreau \cite{Pagano2000}, and \textit{Biostatistics I} by Gabriel and Frumento \cite{Gabriel2020}.
-
-\end{frame}
+%%%%%%%%%%%%%%Ack%%%%%%%%%%%%%%%%
+\input{/Users/yitche/My_Website/content/courses/biostatbasics/ack2}
 
 %%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
 \section*{Outline (also learning outcomes)}
@@ -37,15 +34,15 @@ This course material in data clearance is based on my learning from \href{https:
 \section{Set up working directory}
 \begin{frame}[fragile]{\secname}
 \begin{itemize}
- \item	Working directory is the folder where all your files are stored, and should be set each time you start.
- \item Where is it?
- \item[] \begin{verbatim}
+ \item<1|handout:1-> 	Working directory is the folder where all your files are stored, and should be set each time you start.
+ \item<2|handout:2->  Where is it?
+ \item[]<2|handout:2->  \begin{verbatim}
 . cd
 /Users/Desktop
 . pwd
 /Users/Desktop
 \end{verbatim}
- \item Change working directory
+ \item<3|handout:3>  Change working directory
  	\begin{itemize}
   	\item \begin{verbatim}
 // Change working directory to Download
@@ -74,11 +71,7 @@ infile filename, clear\end{verbatim}
 \subsection{Save}
 \begin{frame}[fragile]{\secname: \subsecname}
 \begin{itemize}
-\item Save your dataset as a Stata file: 
-\begin{verbatim}
-save "filename", replace
-\end{verbatim} 
-
+\item Save your dataset as a Stata file \verb|.dta|
 \item The \verb|replace| option lets you overwrite the existing dataset.
 \begin{verbatim}
 save "filename", replace
@@ -134,7 +127,7 @@ save "filename", replace
 \subsection{Summarize}
 \begin{frame}[fragile]{\secname : \subsecname}
 \verb|summarize| gives summaries for all your variables, such as number of observations, mean, standard deviation, etc. \\[4mm]
-\small
+\scriptsize
 \begin{verbatim}
 . sysuse cancer, clear
 (Patient Survival in Drug Trial)
@@ -158,13 +151,13 @@ save "filename", replace
 \subsection{Describe}
 \begin{frame}[fragile]{\secname : \subsecname}
 \verb|describe| gives descriptions for all your variables, such as storage type and labels. \\[4mm]
-\small
+\scriptsize
 \begin{verbatim}
 . describe  age 
 
               storage   display value
 variable name   type    format  label variable label
------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------
 age             byte    %8.0g         Patient's age at start of exp.
 
 
@@ -175,7 +168,7 @@ age             byte    %8.0g         Patient's age at start of exp.
 %%%%
 \subsection{Codebook}
 \begin{frame}[fragile]{\secname : \subsecname}
-\verb|codebook| is a combination of summarize and describe and will give a detailed summary of all your variables, including mean, sd, range, percentiles, missing, frequency, etc. \\[4mm]
+\verb|codebook| is a combination of \verb|summarize| and \verb|describe| and will give a detailed summary of all your variables, including mean, sd, range, percentiles, missing, frequency, etc. \\[4mm]
 \tiny
 \begin{verbatim}
 . codebook  age
@@ -252,15 +245,22 @@ age                                                                      Patient
 
 %%% 
 \subsection{Label}
-\begin{frame}[fragile]{\secname : \subsecname}
+\begin{frame}[fragile,allowframebreaks]{\secname : \subsecname}
 \begin{itemize}
 	\item 	\verb|label| helps you keep track of your dataset and variables, and helps others understand your data. 
-	\item \verb|label define| to a variable (usually the one you defined)
-	\item \verb|label values| attaches the labels defined using. 
 \end{itemize}
 
-\small
+\footnotesize
 \begin{verbatim}
+. // Label a dataset
+. label data "cancerdata" 
+\end{verbatim}
+\begin{center}
+	\includegraphics[scale=0.5]{image/label_data}
+\end{center}
+
+\begin{verbatim}
+. // Label variable in the "Variables" window
 . label variable drug "1=placebo, 2=mild, 3=strong"
 \end{verbatim}
 
@@ -268,14 +268,20 @@ age                                                                      Patient
 	\includegraphics[scale=0.4]{image/label_var}
 \end{center}
 
+\framebreak
 
 \begin{verbatim}
+. // Label define claims the value label
 . label define drug 1 "placebo" 2 "mild" 3 "strong"
+
+. // Label value then assigns the label to the variables
 . label values drug drug
 \end{verbatim}
+
 \begin{center}
-	\includegraphics[scale=0.3]{image/label_def}
+	\includegraphics[width=50mm,scale=0.5]{image/label_def}
 \end{center}
+
 \end{frame}
 
 %%% 

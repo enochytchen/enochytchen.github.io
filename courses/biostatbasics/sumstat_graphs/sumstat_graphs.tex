@@ -15,10 +15,9 @@
 \maketitle 
 \end{frame}
 
-%%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
-\begin{frame}{Acknowledgements}
-This course material in data clearance is based on my learning from \href{https://staff.ki.se/people/analam}{Anastasia Lam}'s teachings in last year's Applied Epidemiology I lab sessions, and readings from \textit{A First Course in Probability and Statistics} by Goldsman and Goldsman \cite{Goldsman2020}, \textit{Principles of Biostatistics} by Pagano and Gauvreau \cite{Pagano2000}, and \textit{Biostatistics I} by Gabriel and Frumento \cite{Gabriel2020}.
-\end{frame}
+%%%%%%%%%%%%%%Ack%%%%%%%%%%%%%%%%
+\input{/Users/yitche/My_Website/content/courses/biostatbasics/ack2}
+
 
 %%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
 \section*{Outline}
@@ -40,13 +39,13 @@ What is the problem here? \\
 
 
 \subsection{Measures of Central Tendency: mean, median, mode}
-\begin{frame}[fragile]{{\secname: \subsecname}}	
+\begin{frame}[fragile]{{\secname: \\ \subsecname}}	
 \begin{itemize}
-	\item Mean: the sum of the values of a variable and dividingby number of the observations
-	\item Median: the middle (the 50th centile) observation
-	\item Mode: the value that occurs most frequently
-	\item []
-\small
+	\item<1|handout:1-> Mean: the sum of the values of a variable and dividingby number of the observations
+	\item<2|handout:2->  Median: the middle (the 50th centile) observation
+	\item<3|handout:3->  Mode: the value that occurs most frequently
+	\item<4|handout:4>  []
+\scriptsize
 \begin{verbatim}
 
 . tabstat age // will only give you mean
@@ -71,9 +70,10 @@ What is the problem here? \\
 \subsection{Measures of Dispersion: range, IQR, variance, standard deviation}
 \begin{frame}[fragile]{{\secname: \subsecname}}	
 \begin{itemize}
-	\item Range: the difference between the maximum and the minimum 
-	\item Interquartile range: the absolute difference between the 25th percentile of the observations and the 75th.
-	\item Variance, standard deviation (sd): a measure of spread of the data
+	\item<1|handout:1-> Range: the difference between the maximum and the minimum 
+	\item<2|handout:2-> Interquartile range: the absolute difference between the 25th percentile of the observations and the 75th.
+	\item<3|handout:3-> Variance, standard deviation (sd): a measure of spread of the data
+	\item[]<4|handout:4>
 \footnotesize
 	\begin{displaymath}
 s^{2} = \widehat{Var}(x)=\frac{1}{n-1} \sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}
@@ -104,14 +104,27 @@ s^{2} = \widehat{Var}(x)=\frac{1}{n-1} \sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^
 \subsection{Bad examples}
 \begin{frame}[allowframebreaks]{\secname: \subsecname}
 	Graphs can say more than texts! But it depends.....
-	\includegraphics[scale=0.3]{images/Example2}
+	\begin{center}
+			\includegraphics[scale=0.3]{images/Example2}
+
+	\end{center}
+
+	
 	\framebreak
+	
+	Too fancy? \\
 	\includegraphics[scale=0.3]{images/Example1}
+	
 	\framebreak
+	
+		Insufficient info?
+
 	\begin{center}
 			\includegraphics[scale=0.5]{images/Example3}
 	\end{center}
-	\framebreak
+	
+	\framebreak 
+	
 	Sometimes there is no right nor wrong, it just depends on your interest.
 		\begin{center}
 				\includegraphics[scale=0.3]{images/Cancer_incidence}
@@ -154,17 +167,6 @@ sort
 
 \end{frame}
 %%
-\subsection{Study map}
-\begin{frame}{\secname: \subsecname}
-Check the webpage: \url{https://extremepresentation.com/tools/}
-
-\begin{center}
-	\includegraphics[scale=0.35]{images/chart}
-\end{center}
-
-
-\end{frame}
-
 \subsection{Histogram}
 \begin{frame}[fragile]{\secname: \subsecname}
 Histogram depicts the distribution of data, where x-axis is usually a continuous variable.
@@ -223,7 +225,7 @@ graph box lexp, over (region) ///
 %%%
 \subsection{Line graph}
 \begin{frame}[fragile]{\secname: \subsecname}
-Line graph functions similarly as scatter plots, with time as x-axis usually..
+Line graph functions similarly as scatter plots, with time as x-axis usually.
 \small
 \begin{verbatim}
 sysuse uslifeexp, clear
@@ -275,6 +277,16 @@ graph export "location" /// assign the location
 
 \end{frame}
 
+%%
+\subsection{Study map}
+\begin{frame}{\secname: \subsecname}
+Check the webpage: \url{https://extremepresentation.com/tools/}
+
+\begin{center}
+	\includegraphics[scale=0.35]{images/chart}
+\end{center}
+
+\end{frame}
 %%%
 \section{References}
 \begin{frame}[allowframebreaks,fragile]{\secname}

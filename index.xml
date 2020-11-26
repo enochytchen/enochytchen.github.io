@@ -5,7 +5,7 @@
     <link>https://enochytchen.com/</link>
       <atom:link href="https://enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 20 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 26 Nov 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
@@ -29,9 +29,20 @@
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in PDF format) 
 &lt;a href=&#34;data_man.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;template-for-do-files&#34;&gt;Template for do files&lt;/h2&gt;
-&lt;p&gt;The do-file template can be downloaded 
-&lt;a href=&#34;do_template.do&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;templates-for-do-files&#34;&gt;Templates for do files&lt;/h2&gt;
+&lt;!--- [Do-file template](do_template.do)
+- Analysis plan template
+- Codebook template
+- Dummy table template
+- Logbook template
+- Readme.txt template
+--&gt;
+&lt;!--## Suggested readings
+- The Department of Medical Epidemiology and Biostatistics, Karolinska Institutet.
+MEB Guidelines for Documentation and Archiving Version 6. 2018.
+
+
+--&gt;
 &lt;!--## Excercise
 The exercise of this lecture can be downloaded [here](data_man_ex). 
 --&gt;
@@ -91,6 +102,38 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;li&gt;
 &lt;a href=&#34;graphs.do&#34;&gt;Graphs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tables and Interpreting results</title>
+      <link>https://enochytchen.com/courses/biostatbasics/tab_results/</link>
+      <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/tab_results/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make one-way and two by two tables&lt;/li&gt;
+&lt;li&gt;use Stata tool for Epidemiology&lt;/li&gt;
+&lt;li&gt;recapture basic epidemiology terms, including
+&lt;ul&gt;
+&lt;li&gt;rate, proportion&lt;/li&gt;
+&lt;li&gt;risk, risk difference, risk ratio&lt;/li&gt;
+&lt;li&gt;odds, odds ratio&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;interpret results of ratios&lt;/li&gt;
+&lt;li&gt;calculate ratios using Stata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--## Video lecture--&gt;
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded (in pdf format) 
+&lt;a href=&#34;tab_results.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!--## Study notes
+[Ch1 Descriptive statistics]()--&gt;
+&lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
+&lt;p&gt;Stata codes be downloaded (do-file) at 
+&lt;a href=&#34;tab_results.do&#34;&gt;tab_results&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

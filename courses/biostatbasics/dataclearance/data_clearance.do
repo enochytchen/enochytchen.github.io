@@ -66,8 +66,14 @@ keep if drug ==1 | drug == 2 // So drug == 3 will be dropped
 
 // Label
 sysuse cancer, clear
+
+// Label a dataset
+label data "cancerdata" 
+// Label variable in the "Variables" window
 label variable drug "1=placebo, 2=mild, 3=strong"
+// Label define claims the value label
 label define drug 1 "placebo" 2 "mild" 3 "strong"
+// Label value then assigns the label to the variables
 label values drug drug
 
 // Rename, recode, generate, replace

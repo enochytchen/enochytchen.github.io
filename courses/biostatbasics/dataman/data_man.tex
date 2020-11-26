@@ -19,6 +19,8 @@
 \begin{frame}{Acknowledgements}
 This course material in data management is based on my learning from \href{https://staff.ki.se/people/annajo}{Anna Johansson}'s \href{https://play.ki.se/media/Data+Management+and+research+documentation+for+researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020}{workshop at KI library}\footnote{This workshop is currently available on KI Play as well. }, teachings in \href{https://kiwas.ki.se/katalog/katalog/kurs/851;jsessionid=e42ee2c1f6b081f28bf83e3d0321?lang=en}{Good Data Management Practice in Epidemiological Research}, and MEB Guidelines for Documentation and Archiving Version 6 \footnote{The Department of Medical Epidemiology and Biostatistics, Karolinska Institutet. MEB Guidelines for Documentation and Archiving Version 6. 2018.}. I personally want to thank for their effort on education in data management.
 
+I especially want to thank Marlene Stratmann for reviewing the slides and Prof. Paul Dickman for providing me with suggestions to improving the teaching.
+
 \end{frame}
 
 %%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
@@ -54,11 +56,12 @@ At the end, or saying you cannot even walk till the end?
 
 \begin{frame}{\secname}
 Imagine now 
-\begin{itemize}[<+->]
-	\item if you want to correct Table I, where is the do file for descriptive analysis?
-	\item if your supervisor says, "Please summarise how far you've gone in this project." You probably cannot just drop him/her your syntax. 
-	\item if your classmate asks you to teach her how to write a certain Stata code, you remember you've done it before, but where did you put it?
-	\item if your collaborator needs to take over your analysis, can he/she understand what you've completed?
+\begin{itemize}
+
+	\item<1|handout:1-> if you want to correct Table I, where is the do file for descriptive analysis?
+	\item<2|handout:2-> if your supervisor says, "Please summarise how far you've gone in this project." You probably cannot just drop him/her your syntax. 
+	\item<3|handout:3-> if your classmate asks you to teach her how to write a certain Stata code, you remember you've done it before, but where did you put it?
+	\item<4|handout:4> if your collaborator needs to take over your analysis, can he/she understand what you've completed?
 \end{itemize}
 \end{frame}
 
@@ -81,11 +84,11 @@ So I would say you need to have a friend called \\
 %%%%
 \section{Aims of data management (also learning outcomes)}
 \begin{frame}{\secname}
-\begin{itemize}[<+->]
-	\item To ensure the analysis is reproducible
-	\item To work coherently and efficiently with yourself 
-	\item To ensure the project can be understood by others (supervisors, collaborators, and future readers)
-	\item To create a good work flow and enhance accuracy of work 	
+\begin{itemize}
+	\item<1|handout:1-> To ensure the analysis is reproducible
+	\item<2|handout:2-> To work coherently and efficiently with yourself 
+	\item<3|handout:3-> To ensure the project can be understood by others (supervisors, collaborators, and future readers)
+	\item<4|handout:4> To create a good work flow and enhance accuracy of work 	
 \end{itemize}
 \end{frame}
 
@@ -195,7 +198,7 @@ So I would say you need to have a friend called \\
 	\item You've got a friend in me! (Parallel analysis)
 	\item Rubber duck debugging
 	\item[] 
-	\item[] \centering \includegraphics[scale=0.3]{image/rubberduck}
+	\item[]  \centering \includegraphics[scale=0.3]{image/rubberduck}
 \end{itemize}
 
 \end{frame}
@@ -206,16 +209,16 @@ So I would say you need to have a friend called \\
 \begin{frame}{\secname}
 
 \begin{enumerate}[<+->]
-	\item Use a shared drive. (Required to do that because of data privacy.)
-	\item Give appropriate names to your files and variables	
+	\item<1|handout:1->  Use a shared drive. (Required to do that because of data privacy.)
+	\item<2|handout:2->  Give appropriate names to your files and variables.
 		\begin{itemize}[<+->]
-			\item No stupid names, such as new1, new2, new3, final1, final2, final3, latest1
-			\item No space in-between \& No special character (in case, the software cannot read.)
-			\item For binomial variables, $=1$ implies yes, and $=0$ implies no.
-			\item Label your variables, please!
+			\item<3|handout:3->  No stupid names, such as new1, new2, new3, final1, final2, final3, latest1
+			\item<4|handout:4->  No space in-between \& No special character (in case, the software cannot read.)
+			\item<5|handout:5->  For binomial variables, $=1$ implies yes, and $=0$ implies no.
+			\item<6|handout:6->  Label your variables, please!
 		\end{itemize}
-	\item Same names for linking files (.do .r .sas $\rightarrow$ .log $\rightarrow$ .doc)
-	\item Don't replace the original files or variables. (Well if you accidentally do this, you still get a chance to revert if using shared drive.)
+	\item<7|handout:7->  Same names for linking files (.do .r .sas $\rightarrow$ .log $\rightarrow$ .doc)
+	\item<8|handout:8>  Don't replace the original files or variables. (Well if you accidentally do this, you still get a chance to revert if using shared drive.)
 \end{enumerate}
 	
 \end{frame}
@@ -225,7 +228,7 @@ So I would say you need to have a friend called \\
 \section{Wrap it up}
 \begin{frame}{Wrap it up}
 \begin{itemize}
-\item In summary, a good data management contains GOOD
+\item<1|handout:1->  In summary, a good data management contains GOOD
 \begin{enumerate}
 	\item folder structure
 	\item documents
@@ -233,8 +236,8 @@ So I would say you need to have a friend called \\
 	\item habits
 \end{enumerate}
 
-\item How can this lecture help you? \\
-\item I attached the resources you can use for DM your current and future projects.
+\item<2|handout:2>  How can this lecture help you? \\
+\item<2|handout:2>  I attached the resources you can use for DM your current and future projects.
 \end{itemize}
 \end{frame}
 
