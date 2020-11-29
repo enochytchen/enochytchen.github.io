@@ -26,6 +26,11 @@ tabulate died
 // One-way tables of frequencies each variable specified
 tab1 died drug
 
+// table1_mc
+// Create table I of baseline characteristics 
+ssc install table1_mc, replace
+table1_mc, vars(age conts)
+
 // tabulate 2 by 2
 // 2 by 2 table for drug and died with relative frequency by column or row
 tabulate died drug, col row

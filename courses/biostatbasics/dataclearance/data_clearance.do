@@ -57,6 +57,12 @@ list      age if age < 50
 egen tot_st=total(studytime) // generate the sum of studytime
 
 // Manage variables
+// Destring/Tostring
+// Make age (numeric) into a string variable.
+tostring age, replace
+// convert string into numeric
+destring age, replace
+
 // Drop/Keep 
 sysuse cancer, clear
 drop if drug ==1 | drug == 2

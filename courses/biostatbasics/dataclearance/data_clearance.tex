@@ -231,8 +231,17 @@ age                                                                      Patient
 \section{Manage variables}
 \subsection{Numeric and string}
 \begin{frame}[fragile]{\secname : \subsecname}
-\textbf{Numeric}: byte, integer, long, float, double -- all types of numeric variables that just differ based on min and max length \\
-\textbf{String}: character variables with a certain length (\textit{str\#})
+\begin{itemize}
+\item \textbf{Numeric variables}: have values that are numbers \\
+\item \textbf{String variables}: have variables that contain not just numbers
+\item<2|handout:2>[] \begin{verbatim}
+// Make age (numeric) into a string variable.
+tostring age, replace
+// convert string into numeric
+destring age, replace	
+ \end{verbatim}
+
+\end{itemize}
 \end{frame}
 
 %%% 
