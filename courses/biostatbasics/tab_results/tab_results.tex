@@ -1,4 +1,4 @@
-\input{/Users/yitche/My_Website/content/courses/biostatbasics/settings.tex}
+\input{../settings.tex}
 %%%%%%%%%%%%%%%Title page%%%%%%%%%%%%%%%
 
 \title[Applied Epi I: Interpreting results]{Applied Epidemiology I: Tables and interpreting results}
@@ -15,7 +15,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
-\input{/Users/yitche/My_Website/content/courses/biostatbasics/ack2}
+\input{../ack2}
 
 %%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
 \section*{Outline}
@@ -111,6 +111,28 @@ died      |      Freq.   mean(age)     sd(age)
 \end{verbatim}
 \end{itemize}
 \end{frame}
+
+%%%
+\begin{frame}[fragile]{\secname: \subsecname}
+\begin{itemize}
+\item Create table I of baseline characteristics using \verb|table1_mc|
+\item This command is useful. Play it on your own!
+\item See \verb|help table1_mc|
+\end{itemize}
+\scriptsize
+\begin{verbatim}
+. ssc install table1_mc, replace
+. table1_mc, vars(age conts)
+  +---------------------------------------------+
+  |                                  Total      |
+  |---------------------------------------------|
+  |                                  N=34       |
+  |---------------------------------------------|
+  | Patient's age at start of exp.   56 (51-61) |
+  +---------------------------------------------+
+Data are presented as median (IQR).
+\end{verbatim}
+\end{frame}	
 
 %%%
 \subsection{Two by two tables}
@@ -264,15 +286,15 @@ died      |      Freq.   mean(age)     sd(age)
 \begin{itemize}
 	  \item<2|handout:2-> Incidence (rate): $\frac{\text{no. of diseased}}{\text{total person-time}}$
 	  \item<3|handout:3-> Mortality (rate): $\frac{\text{no. of deaths}}{\text{total person-time}}$
-	  \item<4|handout:4-> Hazard (rate): in survival analysis, usually hazard is defined as mortality rate.
+	  \item<4|handout:4-> Hazard (rate): in survival analysis, hazard is often defined as mortality rate.
 	  \end{itemize}
 \textbf{Proportion}
 	\begin{itemize}
 	\item<5|handout:5-> Cumulative incidence: \textbf{over a time period}, \begin{small}
  	$\frac{\text{no. of new cases of the disease}}{\text{no. of initially disease-free persons}}$
  \end{small}
-
-	\item<6|handout:6-> Point prevalence: \textbf{at a specified time}, $\frac{\text{no. of diseased}}{\text{no. of persons}}$
+	\item<6|handout:6-> Fatality: \textbf{over a time period}, $\frac{\text{no. of deaths of the disease}}{\text{no. of persons with the disease}}$
+	\item<7|handout:7-> Point prevalence: \textbf{at a specified time}, $\frac{\text{no. of diseased}}{\text{no. of persons}}$
 	\item<7|handout:7-> Period prevalence: \textbf{over a time period}, $\frac{\text{no. of diseased}}{\text{no. of persons}}$
 	\item<8|handout:8-> Survival (proportion/probability) \st{rate}: \begin{center}
  	$\frac{\text{no. of alive persons (since diagnosis)}}{\text{no. of initially disease-free persons (since diagnosis)}}$
@@ -280,9 +302,31 @@ died      |      Freq.   mean(age)     sd(age)
 	\end{itemize}
 \textbf{Risk}
 	\begin{itemize}
-	\item<9|handout:9-> Is risk a rate or a proportion?	
+	\item<9|handout:9> Is risk a rate or a proportion?	
 	\end{itemize}
 
+\end{frame}
+%%%
+\begin{frame}{\secname: \subsecname}
+\textbf{Quizs}
+\begin{enumerate}
+\item<2|handout:2->  What is the key difference between rate and proportion?
+\begin{itemize}
+	\item<3|handout:3-> TIME! 
+	\item<3|handout:3-> Rate: person-time
+	\item<3|handout:3-> Proportion: specify a period/point of time
+\end{itemize}
+
+\item<4|handout:4-> Mortality vs. fatality?
+	\begin{itemize}
+	\item<5|handout:5-> Mortality (rate): $\frac{\text{no. of deaths}}{\text{total person-time}}$
+    \item<5|handout:5-> Fatality: over a time period, $\frac{\text{no. of deaths of the disease}}{\text{no. of persons with the disease}}$
+ 	
+	\end{itemize}
+
+\item<6|handout:6-> Is risk a rate or a proportion?
+
+\end{enumerate}
 \end{frame}
 
 %%%%
@@ -300,9 +344,11 @@ died      |      Freq.   mean(age)     sd(age)
 \begin{itemize}
 \normalsize
 \item<4|handout:4-> Risk difference: the difference of the probabilities of an event between the exposed group and non-exposed group
-\item<5|handout:5> Risk ratio (relative risk): the ratio of the probabilities of an event between the exposed group and non-exposed group
+\item<5|handout:5-> Risk ratio: the ratio of the probabilities of an event between the exposed group and non-exposed group
+\item<6|handout:6> \textbf{Caution!} Relative risk could be either risk ratio or rate ratio! 
 \end{itemize}
 \end{frame}
+
 
 %%
 \begin{frame}{\secname: \subsecname}
@@ -581,13 +627,7 @@ Mid p-values for tests of incidence-rate difference:
 \end{frame}
 
 %%%
-\section{References}
-\begin{frame}[allowframebreaks,fragile]{\secname}
-    \begin{scriptsize}
-	\bibliographystyle{/Users/yitche/survbib/bibtex/bst/vancouv12}
-	\bibliography{/Users/yitche/Box/enochref.bib}
-    \end{scriptsize}
-\end{frame}
+\input{../bib/ref.tex}
 
 
 

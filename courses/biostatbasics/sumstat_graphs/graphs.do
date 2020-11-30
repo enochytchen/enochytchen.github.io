@@ -38,12 +38,12 @@ twoway line le year
 
 // LE stratified by sex
 twoway (line le_male year) ///
-	   (line le_female year)
+	   (line le_female year, lpattern(dash))
 	   
 // LE stratified by sex
 // More customisation 
-twoway (line le_male year,    lcolor(blue)) /// Add line color blue
-	   (line le_female year,  lcolor(red)), /// Add line color red
+twoway (line le_male year,    lcolor(blue) lpattern(shortdash)) /// Add line color blue
+	   (line le_female year,  lcolor(red) lpattern(dot)), /// Add line color red
 	   legend (order(1 "LE of male" 2 "LE of female")) ///
 	   xline(1918,lpattern(dash) lwidth(thin) lcolor(black)) /// Add vertical line x=1918
 	   xlabel(1900 1918 1990) /// Change the labels

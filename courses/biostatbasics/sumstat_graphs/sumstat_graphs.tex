@@ -1,4 +1,4 @@
-\input{/Users/yitche/My_Website/content/courses/biostatbasics/settings.tex}
+\input{../settings.tex}
 
 %%%%%%%%%%%%%%%Title page%%%%%%%%%%%%%%%
 
@@ -16,7 +16,7 @@
 \end{frame}
 
 %%%%%%%%%%%%%%Ack%%%%%%%%%%%%%%%%
-\input{/Users/yitche/My_Website/content/courses/biostatbasics/ack2}
+\input{../ack2}
 
 
 %%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
@@ -103,7 +103,8 @@ s^{2} = \widehat{Var}(x)=\frac{1}{n-1} \sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^
 \section{Graphs}
 \subsection{Bad examples}
 \begin{frame}[allowframebreaks]{\secname: \subsecname}
-	Graphs can say more than texts! But it depends.....
+	Graphs can say more than texts! But it depends..... \\
+	Sometimes less is more. \\
 	\begin{center}
 			\includegraphics[scale=0.3]{images/Example2}
 
@@ -243,7 +244,8 @@ twoway line le year, title("Life expectancy at birth by year, USA") ///
 \subsection{Stratification}
 \begin{frame}[fragile]{\secname: \subsecname}
 Data is already in separate columns. Or using \verb|by()|. \\
-Hint: \verb|by()| is often used in individual-level data.
+Hint: \verb|by()| is often used in individual-level data. \\
+Btw, why did I use one solid line and the other dash line here?
 \begin{center}
 	\includegraphics[scale=0.5]{images/stratification}
 \end{center}
@@ -270,9 +272,9 @@ graph export "location" /// assign the location
  \end{verbatim}
 	\item An intuitive way: \\
 	\begin{center}
-	\includegraphics[scale=0.2]{images/export}
+	\includegraphics[scale=0.15]{images/export}
 \end{center}
-
+\item And then copy and paste the code back to the do-file.
 \end{itemize}
 
 \end{frame}
@@ -287,13 +289,8 @@ Check the webpage: \url{https://extremepresentation.com/tools/}
 \end{center}
 
 \end{frame}
+
 %%%
-\section{References}
-\begin{frame}[allowframebreaks,fragile]{\secname}
-    \begin{scriptsize}
-	\bibliographystyle{/Users/yitche/survbib/bibtex/bst/vancouv12}
-	\bibliography{/Users/yitche/Box/enochref.bib}
-    \end{scriptsize}
-\end{frame}
+\input{../bib/ref.tex}
 
 \end{document}
