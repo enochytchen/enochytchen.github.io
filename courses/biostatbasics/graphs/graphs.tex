@@ -1,0 +1,269 @@
+\input{../settings.tex}
+
+%%%%%%%%%%%%%%%Title page%%%%%%%%%%%%%%%
+
+\title[Applied Epi I: Summary Statistics and Graphs]{Applied Epidemiology I: Summary Statistics and Graphs}
+\date{\today}
+\author[Enoch Yi-Tung Chen]{Enoch Yi-Tung Chen}
+\institute[MEB]{Department of Medical Epidemiology and Biostatistics, Karolinska Insitutet}
+
+%%%%%%%%%%%%%%\begin{document}%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+\maketitle 
+\end{frame}
+
+%%%%%%%%%%%%%%Ack%%%%%%%%%%%%%%%%
+\input{../ack2}
+
+
+%%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
+\section*{Outline}
+\begin{frame}{Outline}
+          \tableofcontents
+\end{frame}
+
+%%%%
+%%%%
+\section{Graphs}
+\subsection{Bad examples}
+\begin{frame}[allowframebreaks]{\secname: \subsecname}
+	Graphs can say more than texts! But it depends..... \\
+	Sometimes less is more. \\
+	\begin{center}
+			\includegraphics[scale=0.3]{images/Example2}
+
+	\end{center}
+
+	
+	\framebreak
+	
+	Too fancy? \\
+	\includegraphics[scale=0.3]{images/Example1}
+	
+	\framebreak
+	
+		Insufficient info?
+
+	\begin{center}
+			\includegraphics[scale=0.5]{images/Example3}
+	\end{center}
+	
+	\framebreak 
+	
+	Sometimes there is no right nor wrong, it just depends on your interest.
+		\begin{center}
+				\includegraphics[scale=0.3]{images/Cancer_incidence}
+		\end{center}
+
+\end{frame}
+
+%%
+\subsection{Learning from errors}
+\begin{frame}[fragile]{\secname: \subsecname}
+Which part went wrong here? \\
+Hint: something was missed in the code.
+
+\small
+\begin{verbatim}
+twoway connected prop diagyear, ///
+subtitle("Proportion of HL patients") ///
+ytitle(Proportion splenectomy) ///
+xlabel(1973(2)1995) 	
+\end{verbatim}
+\begin{center}
+	\includegraphics[scale=0.4]{images/nosort}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{\secname: \subsecname}
+It makes such a big difference if you missed \verb|sort|!
+
+\small
+\begin{verbatim}
+twoway connected prop diagyear, ///
+subtitle("Proportion of HL patients") ///
+ytitle(Proportion splenectomy) ///
+xlabel(1973(2)1995) ///
+sort	
+\end{verbatim}
+\begin{center}
+	\includegraphics[scale=0.4]{images/sort}
+\end{center}
+
+\end{frame}
+
+%%
+\subsection{Basics of making graphs}
+\begin{frame}{\secname: \subsecname}
+\begin{columns}[t]
+\begin{column}{0.6\textwidth}	
+	
+\begin{itemize}
+\item<1|handout:1-> Headings should be 
+	\begin{itemize}
+	\item self-explanatory and informative
+	\item placed below the graphs.
+	\item (Table headings  are placed above.)
+	\end{itemize}
+\item<2|handout:2-> Graphs are numbered sequentially.
+\item <3|handout:3-> Allowed to copy figures from the output of software.
+	\end{itemize}
+	
+\end{column}
+
+\begin{column}{0.4\textwidth}	
+\begin{itemize}
+
+\item <4|handout:4-> Grey scales + differentiable shapes
+\item <4|handout:4-> Colors + differentiable shapes
+\item <5|handout:5-> x-axis and y-axis are clearly defined. 
+\end{itemize}
+\end{column}
+\end{columns}
+
+\begin{itemize}
+\item[]<6|handout:6>	
+\begin{center}
+\includegraphics[width=10cm, height=4.5cm]{images/myexample}
+\end{center}
+\end{itemize}
+\end{frame}
+%%%
+\subsection{Study map}
+\begin{frame}{\secname: \subsecname}
+Check the webpage: \url{https://extremepresentation.com/tools/}
+\vspace{-10pt}
+\begin{center}
+	\includegraphics[scale=0.18]{images/chart}
+\end{center}
+
+\end{frame}
+%%%
+\subsection{Histogram}
+\begin{frame}[fragile]{\secname: \subsecname}
+Histogram depicts the distribution of data, where x-axis is usually a continuous variable.
+\begin{verbatim}
+hist lexp, title("Histogram of Life Expectancy") ///
+           xtitle(Age (years)) width(1) /// By each age
+           graphregion(color(white)) //	
+\end{verbatim}
+
+\begin{center}
+	\includegraphics[scale=0.5]{images/hist}
+\end{center}
+
+\end{frame}
+
+%%%
+\subsection{Bar chart}
+\begin{frame}[fragile]{\secname: \subsecname}
+Bar chart shows the distribution of discrete (categorical) data.
+\begin{verbatim}
+graph bar (count), over(region) ///
+                   title("Bar chart of Regions") ///
+                   graphregion(color(white)) //
+\end{verbatim}
+
+\begin{center}
+	\includegraphics[scale=0.5]{images/bar}
+\end{center}
+\end{frame}
+
+%%%
+\subsection{Scatter plot}
+\begin{frame}[fragile]{\secname: \subsecname}
+Scatter plot demonstrates the relationship between two continuous variables.
+\begin{verbatim}
+twoway scatter lexp gnppc, graphregion(color(white)) 
+\end{verbatim}
+
+\begin{center}
+	\includegraphics[scale=0.5]{images/scatter}
+\end{center}
+\end{frame}
+
+%%%
+\subsection{Box plot}
+\begin{frame}[fragile]{\secname: \subsecname}
+Box plot summarises the distribution of the data, with the 25th, 50th,and 75th percentile and 1.5 IQR.
+\begin{verbatim}
+graph box lexp, over (region) ///
+                graphregion(color(white))\end{verbatim}
+
+\begin{center}
+	\includegraphics[scale=0.5]{images/box}
+\end{center}
+\end{frame}
+%%%
+\subsection{Line graph}
+\begin{frame}[fragile]{\secname: \subsecname}
+Line graph functions similarly as scatter plots, with time as x-axis usually.
+\small
+\begin{verbatim}
+sysuse uslifeexp, clear
+twoway line le year, title("Life expectancy at birth by year, USA") ///
+       graphregion(color(white)) }
+\end{verbatim}
+\begin{center}
+	\includegraphics[scale=0.5]{images/line}
+\end{center}
+\end{frame}
+
+%%%
+
+%%%
+\subsection{Stratification}
+\begin{frame}[fragile]{\secname: \subsecname}
+Data is already in separate columns. Or using \verb|by()|. \\
+Hint: \verb|by()| is often used in individual-level data. \\
+Btw, why did I use one solid line and the other dash line here?
+\begin{center}
+	\includegraphics[scale=0.5]{images/stratification}
+\end{center}
+
+\end{frame}
+%%%
+\subsection{Putting graphs together}
+\begin{frame}[fragile]{\secname: \subsecname}
+\verb|grc1leg2| plays the role in plotting graphs together. \\
+Hint: \verb|grc1leg2| is not a default Stata command. See \verb|help grc1leg2| to install it.
+\begin{center}
+	\includegraphics[scale=0.5]{images/grc1leg2}
+\end{center}
+\end{frame}
+
+%%%
+\subsection{Export}
+\begin{frame}[fragile]{\secname: \subsecname}
+\begin{itemize}
+	\item A standard way: 
+	\item[] \begin{verbatim}
+graph export "location" /// assign the location
+, as(pdf) name("")	
+ \end{verbatim}
+	\item An intuitive way: \\
+	\begin{center}
+	\includegraphics[scale=0.15]{images/export}
+\end{center}
+\item And then copy and paste the code back to the do-file.
+\end{itemize}
+
+\end{frame}
+
+%%
+\begin{frame}{\secname:Study map}
+Check the webpage: \url{https://extremepresentation.com/tools/}
+\vspace{-10pt}
+\begin{center}
+	\includegraphics[scale=0.18]{images/chart}
+\end{center}
+
+\end{frame}
+
+%%%
+\input{../bib/ref.tex}
+
+\end{document}

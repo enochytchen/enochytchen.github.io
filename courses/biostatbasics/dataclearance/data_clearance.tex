@@ -1,4 +1,4 @@
-\input{/Users/yitche/My_Website/content/courses/biostatbasics/settings.tex}
+\input{../settings.tex}
 %%%%%%%%%%%%%%%Title page%%%%%%%%%%%%%%%
 
 \title[Applied Epi I: Data Management]{Applied Epidemiology I: Data clearance\\ A review of using Stata}
@@ -15,10 +15,10 @@
 \end{frame}
 
 %%%%%%%%%%%%%%Ack%%%%%%%%%%%%%%%%
-\input{/Users/yitche/My_Website/content/courses/biostatbasics/ack2}
+\input{../ack2}
 
 %%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
-\section*{Outline (also learning outcomes)}
+\section*{Outline}
 \begin{frame}{\secname}
  \begin{columns}[t]
         \begin{column}{.5\textwidth}
@@ -42,15 +42,29 @@
 . pwd
 /Users/Desktop
 \end{verbatim}
- \item<3|handout:3>  Change working directory
- 	\begin{itemize}
+\end{itemize}
+\begin{columns}[]
+	\begin{column}{0.60\textwidth}
+	\begin{itemize}
+	\item<3|handout:3>  Change working directory 
+ 		 	\begin{itemize}
   	\item \begin{verbatim}
-// Change working directory to Download
-. cd "/Users/Download"
+cd "/Users/Download"
 \end{verbatim}
   \item Click File - Change Working Directory
 \end{itemize}
 \end{itemize}
+	\end{column}
+
+\begin{column}{040\textwidth}
+	\begin{itemize}
+	\item[]<3|handout:3> \includegraphics[scale=0.3]{image/cwd}
+	
+	\end{itemize}
+\end{column}
+\end{columns}
+	
+
 \end{frame}
 
 %%%%
@@ -217,8 +231,17 @@ age                                                                      Patient
 \section{Manage variables}
 \subsection{Numeric and string}
 \begin{frame}[fragile]{\secname : \subsecname}
-\textbf{Numeric}: byte, integer, long, float, double -- all types of numeric variables that just differ based on min and max length \\
-\textbf{String}: character variables with a certain length (\textit{str\#})
+\begin{itemize}
+\item \textbf{Numeric variables}: have values that are numbers \\
+\item \textbf{String variables}: have variables that contain not just numbers
+\item<2|handout:2>[] \begin{verbatim}
+// Make age (numeric) into a string variable.
+tostring age, replace
+// convert string into numeric
+destring age, replace	
+ \end{verbatim}
+
+\end{itemize}
 \end{frame}
 
 %%% 
@@ -272,10 +295,10 @@ age                                                                      Patient
 
 \begin{verbatim}
 . // Label define claims the value label
-. label define drug 1 "placebo" 2 "mild" 3 "strong"
+. label define drug_label 1 "placebo" 2 "mild" 3 "strong"
 
 . // Label value then assigns the label to the variables
-. label values drug drug
+. label values drug drug_label
 \end{verbatim}
 
 \begin{center}
@@ -337,7 +360,8 @@ age                                                                      Patient
     \toprule
     \textbf{Operator} & \textbf{Purpose} & \textbf{Example} \\
     \midrule
-    == & Evaluates if true/false & summarize if sex==1 \\
+    =  & Sets equal operator & generate sex = 1 \\
+    == & Tests for equality & summarize if sex==1 \\
     $\sim$= or != & Indicates `not equal' & summarize if sex!=0 \\
     $< , <= \newline > , >=$ & Less than (equal to) or greater than (equal to) & summarize if age$<$35 \\
     \& & Indicates `and' & summarize outcome if sex==1 \& age$>=$60 \\
@@ -346,12 +370,6 @@ age                                                                      Patient
 \end{frame}
 
 %%%
-\section{References}
-\begin{frame}[allowframebreaks,fragile]{\secname}
-    \begin{scriptsize}
-	\bibliographystyle{/Users/yitche/survbib/bibtex/bst/vancouv12}
-	\bibliography{/Users/yitche/Box/enochref.bib}
-    \end{scriptsize}
-\end{frame}
+\input{../bib/ref.tex}
 
 \end{document}
