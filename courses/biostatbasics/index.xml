@@ -128,12 +128,14 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;!--## Video lecture--&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in pdf format) 
-&lt;a href=&#34;tab_results.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;sumstat_tab_results.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;!--## Study notes
 [Ch1 Descriptive statistics]()--&gt;
 &lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
-&lt;p&gt;Stata codes be downloaded (do-file) 
-&lt;a href=&#34;tab_results.do&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;sumstat.do&#34;&gt;sumstat.do&lt;/a&gt;
+
+&lt;a href=&#34;tab_results.do&#34;&gt;tab_results.do&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

@@ -416,7 +416,7 @@ A: Monthly estimate is more accurate. Both &lt;code&gt;strs&lt;/code&gt; and &lt
 &lt;/ul&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    &lt;p&gt;It is worth paying attention to how age and year are managed in each program.&lt;/p&gt;
+    It is worth paying attention to how age and year are managed in each program.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;stns&lt;/code&gt;: age of dianosis in the cohort data and age in the popmort file are needed in &lt;code&gt;age()&lt;/code&gt;;  year of dianosis &lt;del&gt;date of diagnosis&lt;/del&gt; and the calendar year in the popmort file should be specified in &lt;code&gt;period()&lt;/code&gt; .&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;stpp&lt;/code&gt;: age and date of diagnosis should be specified in &lt;code&gt;agediag()&lt;/code&gt; and &lt;code&gt;datediag()&lt;/code&gt;.&lt;/li&gt;
