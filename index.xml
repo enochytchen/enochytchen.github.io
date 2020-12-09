@@ -18,14 +18,22 @@
       <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/courses/biostatbasics/dataman/</guid>
       <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
-&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;p&gt;In this section, you will learn how to make&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;good folder structure for your project&lt;/li&gt;
+&lt;li&gt;good documentation&lt;/li&gt;
+&lt;li&gt;Readme.txt&lt;/li&gt;
+&lt;li&gt;habits on coding.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learning data management can help you&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ensure the analysis is reproducible&lt;/li&gt;
 &lt;li&gt;work coherently and efficiently with yourself&lt;/li&gt;
 &lt;li&gt;ensure the project can be understood by others (supervisors, collaborators, and future readers)&lt;/li&gt;
 &lt;li&gt;create a good work flow&lt;/li&gt;
-&lt;li&gt;enhance accuracy of work&lt;/li&gt;
+&lt;li&gt;enhance accuracy of work.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;video-lecture&#34;&gt;Video lecture&lt;/h2&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in PDF format) 
 &lt;a href=&#34;data_man.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -37,12 +45,11 @@
 - Logbook template
 - Readme.txt template
 --&gt;
-&lt;!--## Suggested readings
-- The Department of Medical Epidemiology and Biostatistics, Karolinska Institutet.
-MEB Guidelines for Documentation and Archiving Version 6. 2018.
-
-
---&gt;
+&lt;h2 id=&#34;suggested-readings&#34;&gt;Suggested readings&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;MEB_guideline_v6.pdf&#34;&gt;The Department of Medical Epidemiology and Biostatistics, Karolinska Institutet. MEB Guidelines for Documentation and Archiving Version 6. 2018&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!--## Excercise
 The exercise of this lecture can be downloaded [here](data_man_ex). 
 --&gt;
@@ -63,7 +70,7 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;li&gt;get to know the data&lt;/li&gt;
 &lt;li&gt;manage variables&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!--## Video lecture--&gt;
+&lt;h2 id=&#34;video-lecture&#34;&gt;Video lecture&lt;/h2&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in pdf format) 
 &lt;a href=&#34;data_clearance.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -81,14 +88,13 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
       <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
 &lt;p&gt;In this section, you will learn how to&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;measure central tendency of the data (mean, median, amd mode)&lt;/li&gt;
-&lt;li&gt;measure dispersion of the data (range, interquartile range, variance, and standard deviation)&lt;/li&gt;
-&lt;li&gt;select suitable graphs to demonstrate the data&lt;/li&gt;
+&lt;li&gt;make graph based on basic principles&lt;/li&gt;
+&lt;li&gt;choose what graph to generate&lt;/li&gt;
 &lt;li&gt;use Stata to create histograms, bar charts, box plots, scatter plots, and line graphs&lt;/li&gt;
 &lt;li&gt;customise graphs&lt;/li&gt;
-&lt;li&gt;export graphs in any format&lt;/li&gt;
+&lt;li&gt;export graphs&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!--## Video lecture--&gt;
+&lt;h2 id=&#34;video-lecture&#34;&gt;Video lecture&lt;/h2&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in pdf format) 
 &lt;a href=&#34;graphs.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -104,14 +110,25 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
     </item>
     
     <item>
-      <title>Tables and Interpreting results</title>
+      <title>Summary statistics, tables and interpreting results</title>
       <link>https://enochytchen.com/courses/biostatbasics/sumstat_tab_results/</link>
       <pubDate>Thu, 26 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/courses/biostatbasics/sumstat_tab_results/</guid>
       <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
 &lt;p&gt;In this section, you will learn how to&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;make one-way and two by two tables&lt;/li&gt;
+&lt;li&gt;describe summary statistics
+&lt;ul&gt;
+&lt;li&gt;measures of central tendency&lt;/li&gt;
+&lt;li&gt;measures of dispersion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;make tables
+&lt;ul&gt;
+&lt;li&gt;based on basic principles&lt;/li&gt;
+&lt;li&gt;one-way and two by two tables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;use Stata tool for Epidemiology&lt;/li&gt;
 &lt;li&gt;recapture basic epidemiology terms, including
 &lt;ul&gt;
@@ -123,7 +140,7 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;li&gt;interpret results of ratios&lt;/li&gt;
 &lt;li&gt;calculate ratios using Stata&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!--## Video lecture--&gt;
+&lt;h2 id=&#34;video-lecture&#34;&gt;Video lecture&lt;/h2&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in pdf format) 
 &lt;a href=&#34;sumstat_tab_results.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -131,7 +148,7 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 [Ch1 Descriptive statistics]()--&gt;
 &lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
 &lt;p&gt;
-&lt;a href=&#34;sumstat.do&#34;&gt;sumstat.do&lt;/a&gt;
+&lt;a href=&#34;sumstat.do&#34;&gt;sumstat.do&lt;/a&gt;&lt;br&gt;
 
 &lt;a href=&#34;tab_results.do&#34;&gt;tab_results.do&lt;/a&gt;.&lt;/p&gt;
 </description>

@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem, xcolor, soul}
+\usepackage{hyperref}
+
+\sethlcolor{lightgray}
+\setlist{nosep}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+\newcounter{lecture}[section]
+\newenvironment{lecture}[1][]{\refstepcounter{lecture}\par\medskip
+   \noindent \large \textbf{Lecture~\thelecture #1: }}{\medskip}
+
+\pagestyle{empty}
+
+\begin{document}
+
+
+
+% HEADER
+\begin{flushleft}
+    \rule[1mm]{\linewidth}{1.5pt} \\
+    \large \textbf{Applied Epidemiology I: Spring 2021} \hfill \large Enoch Yi-Tung Chen \\
+    \large  \textbf{Lab session using Stata}
+    \hfill (enoch.yitung.chen@ki.se) \\
+     \large Course website: \url{https://enochytchen.com/courses/biostatbasics/} \\
+    \rule[1mm]{\linewidth}{1.5pt} \\
+\end{flushleft}
+\vspace{-8pt}
+
+% LECTURE 1
+\begin{lecture}
+Data management \hfill \normalsize \textbf{}
+\end{lecture}
+
+\begin{itemize}
+    \item Aims 
+    \item Good folder structure, documents, Readme.txt, habits on coding
+    \item Other do’s and don’ts
+\end{itemize}
+
+%% Lab work - partners
+
+\vspace{5pt}
+
+
+% LECTURE 2
+\begin{lecture}
+Data clearance \hfill \normalsize \textbf{}
+\end{lecture}
+
+\begin{itemize}
+\item Set up working directory
+\item Import and save data
+        \begin{itemize}
+            \item File types: .xls, .txt, .csv, .dta, .xpt
+            \item \verb|save, replace|
+        \end{itemize}
+    \item Manage datasets: \\ \verb|merge, append|
+    \item Get to know the data: \\ \verb|summarize, describe, codebook, list|
+    \item Manage variables: \\ - Variable types: \verb|numeric, string, keep, drop| \\
+        - Action: \verb|label, rename, recode, generate, replace| \\
+        - Condition: \verb|sort, by, if, in| and other operators
+\end{itemize}
+
+\vspace{5pt}
+
+% LECTURE 3 -- see if students need more summary statistics, or want time to work on their own or what they need help on
+\begin{lecture}
+Graphs \hfill \normalsize \textbf{}
+\end{lecture}
+
+\begin{itemize}
+\item Graphs
+    \begin{itemize}
+        \item Bad examples, learning from errors
+        \item Basics of making graphs
+        \item Study map
+        \item Histogram, bar chart, scatter plot, box plot, line graph
+        \item Customisation: stratification, combine two graphs, export
+    \end{itemize}
+\end{itemize}
+
+\vspace{5pt}
+
+% LECTURE 4 -- exercises 
+\begin{lecture}
+Summary statistics, tables and interpreting results
+\end{lecture}
+
+\begin{itemize}
+  \item Summary statistics
+    \begin{itemize}
+        \item Measures of central tendency: mean, median, mode
+        \item Measures of dispersion: range, IQR, variance, standard deviation
+    \end{itemize}
+    \item Tables
+        \begin{itemize}
+        \item Bad example
+        \item Basics of making tables
+        \item One-way tables, two-by-two tables
+        \item Stata tool for Epidemiology
+    \end{itemize}
+    \item Basic Epidemiology terms
+            \begin{itemize}
+        \item Rate vs. proportion
+        \item Risk, risk difference, risk ratio
+        \item Odds, odds ratio
+    \end{itemize}
+    \item Interpreting results
+      \begin{itemize}
+        \item Principles
+        \item Ratio $>$ or $<$ 1, more examples
+    \end{itemize}
+    \item Calculate ratios using Stata
+\begin{itemize}
+        \item Risk ratio, odds ratio, incidence rate ratio
+    \end{itemize}
+\end{itemize}
+
+\vspace{5pt}
+
+% LECTURE 5
+\begin{lecture}
+Q \& A session \hfill \normalsize \textbf{}
+\end{lecture}
+
+\begin{itemize}
+    \item Any last statistical questions or clarifications on the halfway of the assignment
+\end{itemize}
+
+\vspace{16pt}
+
+% LECTURE 6
+\begin{lecture}
+Q \& A session \hfill \normalsize \textbf{}
+\end{lecture}
+
+\begin{itemize}
+    \item Any last statistical questions or clarifications before the assignment
+\end{itemize}
+
+\end{document}
