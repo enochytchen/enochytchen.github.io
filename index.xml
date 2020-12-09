@@ -74,7 +74,7 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
     </item>
     
     <item>
-      <title>Summary Statistics and Graphs</title>
+      <title>Graphs</title>
       <link>https://enochytchen.com/courses/biostatbasics/graphs/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/courses/biostatbasics/graphs/</guid>
@@ -91,14 +91,12 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;!--## Video lecture--&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in pdf format) 
-&lt;a href=&#34;sumstat_graphs.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;graphs.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;!--## Study notes
 [Ch1 Descriptive statistics]()--&gt;
 &lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
 &lt;p&gt;Stata codes be downloaded (do-file) below&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;sumstat.do&#34;&gt;Summary statistics&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;a href=&#34;graphs.do&#34;&gt;Graphs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -745,7 +743,7 @@ A: Monthly estimate is more accurate. Both &lt;code&gt;strs&lt;/code&gt; and &lt
 &lt;/ul&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    It is worth paying attention to how age and year are managed in each program.&lt;/p&gt;
+    &lt;p&gt;It is worth paying attention to how age and year are managed in each program.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;stns&lt;/code&gt;: age of dianosis in the cohort data and age in the popmort file are needed in &lt;code&gt;age()&lt;/code&gt;;  year of dianosis &lt;del&gt;date of diagnosis&lt;/del&gt; and the calendar year in the popmort file should be specified in &lt;code&gt;period()&lt;/code&gt; .&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;stpp&lt;/code&gt;: age and date of diagnosis should be specified in &lt;code&gt;agediag()&lt;/code&gt; and &lt;code&gt;datediag()&lt;/code&gt;.&lt;/li&gt;
@@ -1236,7 +1234,7 @@ summary(rssurv.plotdata)
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;p&gt;I was pretty inspired by 
-&lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;lsquo;s 
+&lt;a href=&#34;https://staff.ki.se/people/annajo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Anna Johansson&lt;/a&gt;&amp;rsquo;s 
 &lt;a href=&#34;%28https://play.ki.se/media/Data&amp;#43;Management&amp;#43;and&amp;#43;research&amp;#43;documentation&amp;#43;for&amp;#43;researchers/0_h64ki6v7?_ga=2.131118287.1557257458.1589785892-1364153581.1557067020%29&#34;&gt;workshop&lt;/a&gt; and course in good data management at Karolinska Institutet. Thus, I would like to share my experience along with my course notes in this blogpost. For the importance of good data management and my poor experience, please refer to my previous post: 
 &lt;a href=&#34;http://enochytchen.com/post/why_datamanaegment/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Data management? Does it matter?&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;tip-1-use-a-shared-drive&#34;&gt;Tip 1: Use a shared drive&lt;/h4&gt;
@@ -1498,7 +1496,7 @@ The same concept applies to keeping workbook or a working records. Believe me or
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_allcause_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This blogpost introduces how to extrapolate patients&amp;rsquo; survival using flexible parametric model with age groups (categorical variable) as covariates. The tutorial is following the post 
 &lt;a href=&#34;http://pauldickman.com/software/stata/prediction_new_data/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Predicting in a new data set with stpm2&lt;/a&gt; from 
-&lt;a href=&#34;http://pauldickman.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paul Dickman&lt;/a&gt;&amp;lsquo;s website, where he introduced how to extrapolate all-cause survival using flexible parametric model with age (continuous variable) and sex.&lt;/p&gt;
+&lt;a href=&#34;http://pauldickman.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paul Dickman&lt;/a&gt;&amp;rsquo;s website, where he introduced how to extrapolate all-cause survival using flexible parametric model with age (continuous variable) and sex.&lt;/p&gt;
 &lt;p&gt;The following extrapolation results can then answer questions such as&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;What is the estimated survival of patients aged 50-59 diagnosed with colon cancer during 1975-1985?&lt;/li&gt;

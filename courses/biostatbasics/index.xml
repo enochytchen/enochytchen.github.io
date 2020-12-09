@@ -74,7 +74,7 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
     </item>
     
     <item>
-      <title>Summary Statistics and Graphs</title>
+      <title>Graphs</title>
       <link>https://enochytchen.com/courses/biostatbasics/graphs/</link>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
       <guid>https://enochytchen.com/courses/biostatbasics/graphs/</guid>
@@ -91,14 +91,12 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;!--## Video lecture--&gt;
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
 &lt;p&gt;Slides can be downloaded (in pdf format) 
-&lt;a href=&#34;sumstat_graphs.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;graphs.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;!--## Study notes
 [Ch1 Descriptive statistics]()--&gt;
 &lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
 &lt;p&gt;Stata codes be downloaded (do-file) below&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;sumstat.do&#34;&gt;Summary statistics&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;a href=&#34;graphs.do&#34;&gt;Graphs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
