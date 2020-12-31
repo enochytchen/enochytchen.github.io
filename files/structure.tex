@@ -24,7 +24,7 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
-\usepackage[top=1cm,left=1cm,right=1cm,bottom=1cm]{geometry} % Modify margins
+\usepackage[top=1cm,left=1.5cm,right=1cm,bottom=1cm]{geometry} % Modify margins
 
 \usepackage{graphicx} % Required for figures
 
@@ -42,24 +42,24 @@
 \setlength{\columnsep}{\baselineskip} % Set the spacing between columns
 
 % Define the left frame (sidebar)
-\newflowframe{0.2\textwidth}{\textheight}{0pt}{0pt}[left]
+\newflowframe{0.26\textwidth}{\textheight}{-15pt}{0pt}[left]
 \newlength{\LeftMainSep}
 \setlength{\LeftMainSep}{0.2\textwidth}
 \addtolength{\LeftMainSep}{1\columnsep}
  
 % Small static frame for the vertical line
-\newstaticframe{1.5pt}{\textheight}{\LeftMainSep}{0pt}
+\newstaticframe{12pt}{\textheight}{\LeftMainSep}{2pt}
  
 % Content of the static frame with the vertical line
 \begin{staticcontents}{1}
 \hfill
-\tikz{\draw[loosely dotted,color=RoyalBlue,line width=1.5pt,yshift=0](0,0) -- (0,\textheight);}
-\hfill\mbox{}
+\tikz{\draw[loosely dotted,color=RoyalBlue,line width=2 pt, yshift=0](0,0) -- (0,\textheight);}
+\hfill
 \end{staticcontents}
  
 % Define the right frame (main body)
-\addtolength{\LeftMainSep}{1.5pt}
-\addtolength{\LeftMainSep}{1\columnsep}
+\addtolength{\LeftMainSep}{5pt}
+\addtolength{\LeftMainSep}{\columnsep}
 \newflowframe{0.7\textwidth}{\textheight}{\LeftMainSep}{0pt}[main01]
 
 \pagestyle{empty} % Disable all page numbering
@@ -75,8 +75,8 @@
 \newcommand{\cvheading}[1]{{\Huge\bfseries\color{RoyalBlue} #1} \par\vspace{.6\baselineskip}} % New command for the CV heading
 \newcommand{\cvsubheading}[1]{{\Large\bfseries #1} \bigbreak} % New command for the CV subheading
 
-\newcommand{\Sep}{\vspace{1em}} % New command for the spacing between headings
-\newcommand{\SmallSep}{\vspace{0.5em}} % New command for the spacing within headings
+\newcommand{\Sep}{\vspace{0.5em}} % New command for the spacing between headings
+\newcommand{\SmallSep}{\vspace{0.3em}} % New command for the spacing within headings
 
 \newcommand{\aboutme}[2]{ % New command for the about me section
 \textbf{\color{RoyalBlue} #1}~~#2\par\Sep

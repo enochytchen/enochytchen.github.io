@@ -175,7 +175,7 @@ colon_split = mutate(colon_split,
 #&#39; saveRDS(colon_split, &amp;quot;./Data/split_colon.rds&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;flexible-parametric-model&#34;&gt;Flexible parametric model&lt;/h3&gt;
-&lt;p&gt;The colon cancer patients&amp;rsquo; data was modelled in multiple time scales, where the primary time scale is attained age calculated from two time points (&lt;code&gt;age_start&lt;/code&gt; and &lt;code&gt;age_stop&lt;/code&gt;), and the secondary is time-split calendar year fitted a natural spline using &lt;code&gt;nsx()&lt;/code&gt; . Time-dependent effect of explanatory varibles was taken into consideration specifying &lt;code&gt;tvc=list()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The colon cancer patients&#39; data was modelled in multiple time scales, where the primary time scale is attained age calculated from two time points (&lt;code&gt;age_start&lt;/code&gt; and &lt;code&gt;age_stop&lt;/code&gt;), and the secondary is time-split calendar year fitted a natural spline using &lt;code&gt;nsx()&lt;/code&gt; . Time-dependent effect of explanatory varibles was taken into consideration specifying &lt;code&gt;tvc=list()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;fpm &amp;lt;- stpm2(Surv(time = age_start, time2 = age_stop, event = status==2) ~
                   sex + nsx(period, df=2) + subsite+ stage, data = colon_split,
              tvc = list(sex=3, period=2), df = 3)

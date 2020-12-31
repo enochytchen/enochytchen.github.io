@@ -184,28 +184,28 @@ The questions and solutions are corresponding to their &lt;code&gt;stmd&lt;/code
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
 &lt;th&gt;Markstat&lt;/th&gt;
 &lt;th&gt;Questions&lt;/th&gt;
 &lt;th&gt;Markstat&lt;/th&gt;
 &lt;th&gt;Solutions&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Stata&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Stata&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Cox regression with observed (all-cause) mortality as the outcome&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Cox regression with observed (all-cause) mortality as the outcome&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;q122.stmd&#34; target=&#34;_blank&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q122.pdf&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;s122.stmd&#34; target=&#34;_blank&#34;&gt;S122&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s122.pdf&#34;&gt;S122&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s122.do&#34;&gt;s122.do&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Calculating excess and ‘avoidable’ deaths from life tables&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Calculating excess and ‘avoidable’ deaths from life tables&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q282.stmd&#34;&gt;Q282&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
@@ -213,7 +213,7 @@ The questions and solutions are corresponding to their &lt;code&gt;stmd&lt;/code
 &lt;td&gt;&lt;a href=&#34;s282.stmd&#34; target=&#34;_blank&#34;&gt;S282&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;
 &lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s282.pdf&#34;&gt;S282&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;
 &lt;a href=&#34;s282.do&#34;&gt;s282.do&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -508,46 +508,8 @@ The questions and solutions are corresponding to their &lt;code&gt;stmd&lt;/code
 &lt;/ul&gt;
 &lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;It is common that the data from cancer register has tied time, e.g., due to protection on patients&amp;rsquo; privacy. As estimating survival, we should pay attention to the potential change on the estimates given the amount of tie is introduced.&lt;/li&gt;
+&lt;li&gt;It is common that the data from cancer register has tied time, e.g., due to protection on patients&#39; privacy. As estimating survival, we should pay attention to the potential change on the estimates given the amount of tie is introduced.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Eloranta2020</title>
-      <link>https://enochytchen.com/tutorials/learningrs/eloranta2020/</link>
-      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/tutorials/learningrs/eloranta2020/</guid>
-      <description>&lt;h3 id=&#34;title&#34;&gt;Title&lt;/h3&gt;
-&lt;p&gt;Cancer survival statistics for patients and healthcare professionals–a tutorial of real‐world data analysis&lt;/p&gt;
-&lt;h3 id=&#34;authors&#34;&gt;Authors&lt;/h3&gt;
-&lt;p&gt;Eloranta S, Smedby KE, Dickman PW, Andersson TM&lt;/p&gt;
-&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Why do we use net survival?&lt;/strong&gt;&lt;br&gt;
-We want to compare survival between groups and over time.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Definition of net survival&lt;/strong&gt;: In a hypothetical world, cancer patients can only die from the cancer of interest.&lt;/li&gt;
-&lt;li&gt;Comparison between&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Cause-specific survival&lt;/strong&gt;:&lt;br&gt;
-a. requires information on cause-specific deaths; deaths due to cancer/other than caner&lt;br&gt;
-b. cause-specific death is not always complete or available.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Relative survival&lt;/strong&gt;:&lt;br&gt;
-a. does not require information on cause-specific deaths&lt;br&gt;
-b. requires a reference population, e.g., life-table data&lt;br&gt;
-c. 
-&lt;a href=&#34;https://enochytchen.com/post/analogue/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the mortality analogue of relative survival is excess mortality&lt;/a&gt;, which captures both direct and indirect mortality due to cancer.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;&lt;strong&gt;Competeing events&lt;/strong&gt;&lt;br&gt;
-Net survival measure is a clever way to compare survival between different groups, but in the real world, competing events exist.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Loss of life expectancy&lt;/strong&gt;: the number of life years a cancer patient is estimated to lose.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
-&lt;p&gt;Eloranta S, Smedby KE, Dickman PW, Andersson TM. Cancer survival statistics for patients and healthcare professionals–a tutorial of real‐world data analysis. Journal of Internal Medicine. 2020.
-doi: 
-&lt;a href=&#34;https://doi.org/10.1111/joim.13139&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1111/joim.13139&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -569,12 +531,12 @@ doi:
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;p&gt;It was mentioned numerous times in different articles that excess hazard is the analogue of relative survival on the hazard scale (1-4). However, how is it derived from?&lt;/p&gt;
-&lt;p&gt;We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^*(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^*(t)$.
+&lt;p&gt;We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^&lt;em&gt;(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^&lt;/em&gt;(t)$.
 \begin{equation}
-R(t) = \frac{S(t)}{S^*(t)}
+R(t) = \frac{S(t)}{S^&lt;em&gt;(t)}
 \end{equation}
 \begin{equation}
-\lambda (t) = h(t) - h^*(t)
+\lambda (t) = h(t) - h^&lt;/em&gt;(t)
 \end{equation}&lt;/p&gt;
 &lt;h3 id=&#34;basics-of-survival-analysis&#34;&gt;Basics of survival analysis&lt;/h3&gt;
 &lt;h4 id=&#34;survival-function&#34;&gt;Survival function&lt;/h4&gt;
@@ -634,17 +596,17 @@ h(t) = \frac{d H(t)}{dt}
 \end{equation}&lt;/p&gt;
 &lt;h3 id=&#34;proof-of-relative-survival&#34;&gt;Proof of relative survival&lt;/h3&gt;
 &lt;p&gt;\begin{equation}
-R(t) = \frac{S(t)}{S^*(t)}
+R(t) = \frac{S(t)}{S^&lt;em&gt;(t)}
 \end{equation}
 First, by defintion of the relationship between the cumulative hazard function and the survival function, we will obtain
 \begin{equation}
-exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^*(t))} \\\&lt;br&gt;
+exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^&lt;/em&gt;(t))} \\\&lt;br&gt;
 \end{equation}
 \begin{equation}
-exp(- \Lambda (t)) = exp(- H(t) + H^*(t))
+exp(- \Lambda (t)) = exp(- H(t) + H^&lt;em&gt;(t))
 \end{equation}
 \begin{equation}
-\Lambda (t) = H(t) - H^*(t)
+\Lambda (t) = H(t) - H^&lt;/em&gt;(t)
 \end{equation}&lt;/p&gt;
 &lt;p&gt;Then we got the cumulative excess hazard, $\Lambda (t)$, is the difference between the cumulative all-cause  hazard (of the cancer patient cohort) and the cumulative expected hazard (of the reference population). Then, take the derivative of both sides, shown as:&lt;/p&gt;
 &lt;p&gt;\begin{equation}
@@ -930,7 +892,7 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;del&gt;Amputees&lt;/del&gt; Patients who have had amputations&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Evaluate patients&amp;rsquo; self perception. Thus, use correct terms to characterize control groups as well. A value-neutral terminology is preferred. Otherwise, we might in fact implicate insulting the treatment/exposure group.&lt;/li&gt;
+&lt;li&gt;Evaluate patients&#39; self perception. Thus, use correct terms to characterize control groups as well. A value-neutral terminology is preferred. Otherwise, we might in fact implicate insulting the treatment/exposure group.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Using normal/able-bodied individuals to refer to the control individuals. Are we saying that the treatment group is &lt;strong&gt;NOT&lt;/strong&gt; normal/able-bodied.&lt;/li&gt;
@@ -1024,7 +986,7 @@ colon_split = mutate(colon_split,
 #&#39; saveRDS(colon_split, &amp;quot;./Data/split_colon.rds&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;flexible-parametric-model&#34;&gt;Flexible parametric model&lt;/h3&gt;
-&lt;p&gt;The colon cancer patients&amp;rsquo; data was modelled in multiple time scales, where the primary time scale is attained age calculated from two time points (&lt;code&gt;age_start&lt;/code&gt; and &lt;code&gt;age_stop&lt;/code&gt;), and the secondary is time-split calendar year fitted a natural spline using &lt;code&gt;nsx()&lt;/code&gt; . Time-dependent effect of explanatory varibles was taken into consideration specifying &lt;code&gt;tvc=list()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The colon cancer patients&#39; data was modelled in multiple time scales, where the primary time scale is attained age calculated from two time points (&lt;code&gt;age_start&lt;/code&gt; and &lt;code&gt;age_stop&lt;/code&gt;), and the secondary is time-split calendar year fitted a natural spline using &lt;code&gt;nsx()&lt;/code&gt; . Time-dependent effect of explanatory varibles was taken into consideration specifying &lt;code&gt;tvc=list()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;fpm &amp;lt;- stpm2(Surv(time = age_start, time2 = age_stop, event = status==2) ~
                   sex + nsx(period, df=2) + subsite+ stage, data = colon_split,
              tvc = list(sex=3, period=2), df = 3)
@@ -1432,7 +1394,7 @@ The same concept applies to keeping workbook or a working records. Believe me or
 
 &lt;/figure&gt;
 
-&lt;p&gt;It seems that the projection made before 2002 did not perform quite well. For example, projection made in 1975 saying males&amp;rsquo; life expectancy at birth was estimated to be 71 in 2001, whereas in 2001 it was actuall 79. A 8 years of difference! Then let&amp;rsquo;s take a look on the Swedish population.&lt;/p&gt;
+&lt;p&gt;It seems that the projection made before 2002 did not perform quite well. For example, projection made in 1975 saying males&#39; life expectancy at birth was estimated to be 71 in 2001, whereas in 2001 it was actuall 79. A 8 years of difference! Then let&amp;rsquo;s take a look on the Swedish population.&lt;/p&gt;
 &lt;h3 id=&#34;the-swedens-life-expectancy-projection&#34;&gt;The Sweden&amp;rsquo;s life expectancy projection&lt;/h3&gt;
 &lt;p&gt;Statistiska centralbyrån (Statistics Sweden) also published a similar report as the UK did to evaluate their previous projection on life expectancy. The following figure was downloaded from 
 &lt;a href=&#34;http://share.scb.se/ov9993/data/publikationer/statistik/_publikationer/be0401_2012i60_br_be51br1202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sveriges framtida befolkning 2012–2060&lt;/a&gt;(2).&lt;/p&gt;
@@ -1531,7 +1493,7 @@ The same concept applies to keeping workbook or a working records. Believe me or
       <guid>https://enochytchen.com/tutorials/extrapolation/allcause/article/</guid>
       <description>&lt;p&gt;The codes used in this post are available 
 &lt;a href=&#34;http://enochytchen.com/directory/stata/extrapolating_allcause_stpm2.do&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This blogpost introduces how to extrapolate patients&amp;rsquo; survival using flexible parametric model with age groups (categorical variable) as covariates. The tutorial is following the post 
+&lt;p&gt;This blogpost introduces how to extrapolate patients&#39; survival using flexible parametric model with age groups (categorical variable) as covariates. The tutorial is following the post 
 &lt;a href=&#34;http://pauldickman.com/software/stata/prediction_new_data/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Predicting in a new data set with stpm2&lt;/a&gt; from 
 &lt;a href=&#34;http://pauldickman.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paul Dickman&lt;/a&gt;&amp;rsquo;s website, where he introduced how to extrapolate all-cause survival using flexible parametric model with age (continuous variable) and sex.&lt;/p&gt;
 &lt;p&gt;The following extrapolation results can then answer questions such as&lt;/p&gt;
@@ -1726,7 +1688,7 @@ merge m:1 _year sex _age ///
 	
 drop _age _year _merge
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;_year and _age were created corresponding to the life table. The maximum of _year was set as 1995, and _age as 105. Then the patients&amp;rsquo; survival data was merged with life table to obtain the expected mortality rate.&lt;/p&gt;
+&lt;p&gt;_year and _age were created corresponding to the life table. The maximum of _year was set as 1995, and _age as 105. Then the patients&#39; survival data was merged with life table to obtain the expected mortality rate.&lt;/p&gt;
 &lt;h4 id=&#34;modeling-relative-survival-with-stpm2&#34;&gt;Modeling relative survival with &lt;code&gt;stpm2&lt;/code&gt;&lt;/h4&gt;
 &lt;pre&gt;&lt;code&gt;stpm2 agegroup2-agegroup5, ///
 scale(hazard) df(5) eform ///

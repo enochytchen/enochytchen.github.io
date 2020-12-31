@@ -30,12 +30,12 @@
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;p&gt;It was mentioned numerous times in different articles that excess hazard is the analogue of relative survival on the hazard scale (1-4). However, how is it derived from?&lt;/p&gt;
-&lt;p&gt;We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^*(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^*(t)$.
+&lt;p&gt;We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^&lt;em&gt;(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^&lt;/em&gt;(t)$.
 \begin{equation}
-R(t) = \frac{S(t)}{S^*(t)}
+R(t) = \frac{S(t)}{S^&lt;em&gt;(t)}
 \end{equation}
 \begin{equation}
-\lambda (t) = h(t) - h^*(t)
+\lambda (t) = h(t) - h^&lt;/em&gt;(t)
 \end{equation}&lt;/p&gt;
 &lt;h3 id=&#34;basics-of-survival-analysis&#34;&gt;Basics of survival analysis&lt;/h3&gt;
 &lt;h4 id=&#34;survival-function&#34;&gt;Survival function&lt;/h4&gt;
@@ -95,17 +95,17 @@ h(t) = \frac{d H(t)}{dt}
 \end{equation}&lt;/p&gt;
 &lt;h3 id=&#34;proof-of-relative-survival&#34;&gt;Proof of relative survival&lt;/h3&gt;
 &lt;p&gt;\begin{equation}
-R(t) = \frac{S(t)}{S^*(t)}
+R(t) = \frac{S(t)}{S^&lt;em&gt;(t)}
 \end{equation}
 First, by defintion of the relationship between the cumulative hazard function and the survival function, we will obtain
 \begin{equation}
-exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^*(t))} \\\&lt;br&gt;
+exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^&lt;/em&gt;(t))} \\\&lt;br&gt;
 \end{equation}
 \begin{equation}
-exp(- \Lambda (t)) = exp(- H(t) + H^*(t))
+exp(- \Lambda (t)) = exp(- H(t) + H^&lt;em&gt;(t))
 \end{equation}
 \begin{equation}
-\Lambda (t) = H(t) - H^*(t)
+\Lambda (t) = H(t) - H^&lt;/em&gt;(t)
 \end{equation}&lt;/p&gt;
 &lt;p&gt;Then we got the cumulative excess hazard, $\Lambda (t)$, is the difference between the cumulative all-cause  hazard (of the cancer patient cohort) and the cumulative expected hazard (of the reference population). Then, take the derivative of both sides, shown as:&lt;/p&gt;
 &lt;p&gt;\begin{equation}
@@ -315,7 +315,7 @@ The same concept applies to keeping workbook or a working records. Believe me or
 
 &lt;/figure&gt;
 
-&lt;p&gt;It seems that the projection made before 2002 did not perform quite well. For example, projection made in 1975 saying males&amp;rsquo; life expectancy at birth was estimated to be 71 in 2001, whereas in 2001 it was actuall 79. A 8 years of difference! Then let&amp;rsquo;s take a look on the Swedish population.&lt;/p&gt;
+&lt;p&gt;It seems that the projection made before 2002 did not perform quite well. For example, projection made in 1975 saying males&#39; life expectancy at birth was estimated to be 71 in 2001, whereas in 2001 it was actuall 79. A 8 years of difference! Then let&amp;rsquo;s take a look on the Swedish population.&lt;/p&gt;
 &lt;h3 id=&#34;the-swedens-life-expectancy-projection&#34;&gt;The Sweden&amp;rsquo;s life expectancy projection&lt;/h3&gt;
 &lt;p&gt;Statistiska centralbyrån (Statistics Sweden) also published a similar report as the UK did to evaluate their previous projection on life expectancy. The following figure was downloaded from 
 &lt;a href=&#34;http://share.scb.se/ov9993/data/publikationer/statistik/_publikationer/be0401_2012i60_br_be51br1202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sveriges framtida befolkning 2012–2060&lt;/a&gt;(2).&lt;/p&gt;

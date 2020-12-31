@@ -682,12 +682,12 @@
   </ul>
 </nav>
 <p>It was mentioned numerous times in different articles that excess hazard is the analogue of relative survival on the hazard scale (1-4). However, how is it derived from?</p>
-<p>We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^*(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^*(t)$.
+<p>We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^<em>(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^</em>(t)$.
 \begin{equation}
-R(t) = \frac{S(t)}{S^*(t)}
+R(t) = \frac{S(t)}{S^<em>(t)}
 \end{equation}
 \begin{equation}
-\lambda (t) = h(t) - h^*(t)
+\lambda (t) = h(t) - h^</em>(t)
 \end{equation}</p>
 <h3 id="basics-of-survival-analysis">Basics of survival analysis</h3>
 <h4 id="survival-function">Survival function</h4>
@@ -747,17 +747,17 @@ h(t) = \frac{d H(t)}{dt}
 \end{equation}</p>
 <h3 id="proof-of-relative-survival">Proof of relative survival</h3>
 <p>\begin{equation}
-R(t) = \frac{S(t)}{S^*(t)}
+R(t) = \frac{S(t)}{S^<em>(t)}
 \end{equation}
 First, by defintion of the relationship between the cumulative hazard function and the survival function, we will obtain
 \begin{equation}
-exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^*(t))} \\\<br>
+exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^</em>(t))} \\\<br>
 \end{equation}
 \begin{equation}
-exp(- \Lambda (t)) = exp(- H(t) + H^*(t))
+exp(- \Lambda (t)) = exp(- H(t) + H^<em>(t))
 \end{equation}
 \begin{equation}
-\Lambda (t) = H(t) - H^*(t)
+\Lambda (t) = H(t) - H^</em>(t)
 \end{equation}</p>
 <p>Then we got the cumulative excess hazard, $\Lambda (t)$, is the difference between the cumulative all-cause  hazard (of the cancer patient cohort) and the cumulative expected hazard (of the reference population). Then, take the derivative of both sides, shown as:</p>
 <p>\begin{equation}

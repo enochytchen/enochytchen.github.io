@@ -705,7 +705,7 @@ colon_split = mutate(colon_split,
 #' saveRDS(colon_split, &quot;./Data/split_colon.rds&quot;)
 </code></pre>
 <h3 id="flexible-parametric-model">Flexible parametric model</h3>
-<p>The colon cancer patients&rsquo; data was modelled in multiple time scales, where the primary time scale is attained age calculated from two time points (<code>age_start</code> and <code>age_stop</code>), and the secondary is time-split calendar year fitted a natural spline using <code>nsx()</code> . Time-dependent effect of explanatory varibles was taken into consideration specifying <code>tvc=list()</code>.</p>
+<p>The colon cancer patients' data was modelled in multiple time scales, where the primary time scale is attained age calculated from two time points (<code>age_start</code> and <code>age_stop</code>), and the secondary is time-split calendar year fitted a natural spline using <code>nsx()</code> . Time-dependent effect of explanatory varibles was taken into consideration specifying <code>tvc=list()</code>.</p>
 <pre><code>fpm &lt;- stpm2(Surv(time = age_start, time2 = age_stop, event = status==2) ~
                   sex + nsx(period, df=2) + subsite+ stage, data = colon_split,
              tvc = list(sex=3, period=2), df = 3)

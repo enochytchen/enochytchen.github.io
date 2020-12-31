@@ -683,7 +683,7 @@ merge m:1 _year sex _age ///
 	
 drop _age _year _merge
 </code></pre>
-<p>_year and _age were created corresponding to the life table. The maximum of _year was set as 1995, and _age as 105. Then the patients&rsquo; survival data was merged with life table to obtain the expected mortality rate.</p>
+<p>_year and _age were created corresponding to the life table. The maximum of _year was set as 1995, and _age as 105. Then the patients' survival data was merged with life table to obtain the expected mortality rate.</p>
 <h4 id="modeling-relative-survival-with-stpm2">Modeling relative survival with <code>stpm2</code></h4>
 <pre><code>stpm2 agegroup2-agegroup5, ///
 scale(hazard) df(5) eform ///
