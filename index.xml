@@ -531,12 +531,13 @@ The questions and solutions are corresponding to their &lt;code&gt;stmd&lt;/code
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;p&gt;It was mentioned numerous times in different articles that excess hazard is the analogue of relative survival on the hazard scale (1-4). However, how is it derived from?&lt;/p&gt;
-&lt;p&gt;We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^&lt;em&gt;(t)$, whereas excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard, $h^&lt;/em&gt;(t)$.
-\begin{equation}
-R(t) = \frac{S(t)}{S^&lt;em&gt;(t)}
-\end{equation}
-\begin{equation}
-\lambda (t) = h(t) - h^&lt;/em&gt;(t)
+&lt;p&gt;We first look into the basic definition of relative survival and excess hazard. Relative survival, $R(t)$, is defined as the ratio between the survival of the cancer patient cohort, $S(t)$, and the reference population, $S^*(t)$.&lt;/p&gt;
+&lt;p&gt;The analogue is excess hazard, $\lambda (t)$, is the all-cause hazard, $h(t)$, minus the expected hazard,  $h^*(t)$.&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+R(t) = \frac{S(t)}{S^*(t)}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\lambda (t) = h(t) - h^*(t)
 \end{equation}&lt;/p&gt;
 &lt;h3 id=&#34;basics-of-survival-analysis&#34;&gt;Basics of survival analysis&lt;/h3&gt;
 &lt;h4 id=&#34;survival-function&#34;&gt;Survival function&lt;/h4&gt;
@@ -596,17 +597,17 @@ h(t) = \frac{d H(t)}{dt}
 \end{equation}&lt;/p&gt;
 &lt;h3 id=&#34;proof-of-relative-survival&#34;&gt;Proof of relative survival&lt;/h3&gt;
 &lt;p&gt;\begin{equation}
-R(t) = \frac{S(t)}{S^&lt;em&gt;(t)}
-\end{equation}
-First, by defintion of the relationship between the cumulative hazard function and the survival function, we then obtain
-\begin{equation}
-exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^&lt;/em&gt;(t))} \\\&lt;br&gt;
-\end{equation}
-\begin{equation}
-exp(- \Lambda (t)) = exp(- H(t) + H^&lt;em&gt;(t))
-\end{equation}
-\begin{equation}
-\Lambda (t) = H(t) - H^&lt;/em&gt;(t)
+R(t) = \frac{S(t)}{S^*(t)}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;First, by defintion of the relationship between the cumulative hazard function and the survival function, we then obtain&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+exp(- \Lambda (t)) = \frac{exp(- H(t))}{exp(-H^*(t))}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+exp(- \Lambda (t)) = exp(- H(t) + H^*(t))
+\end{equation}&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\Lambda (t) = H(t) - H^*(t)
 \end{equation}&lt;/p&gt;
 &lt;p&gt;Then we got the cumulative excess hazard, $\Lambda (t)$, is the difference between the cumulative all-cause  hazard (of the cancer patient cohort) and the cumulative expected hazard (of the reference population). Then, take the derivative of both sides, shown as:&lt;/p&gt;
 &lt;p&gt;\begin{equation}
