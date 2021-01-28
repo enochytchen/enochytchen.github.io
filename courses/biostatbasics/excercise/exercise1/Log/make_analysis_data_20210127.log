@@ -1,0 +1,130 @@
+---------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log/m
+> ake_analysis_data_20210127.log
+  log type:  text
+ opened on:  27 Jan 2021, 18:58:47
+
+. 
+. /*==============================================================================
+> FILENAME: make_analysis_data.do
+> 
+> PROJECT: Exercise 1, Stockholm Public Health Cohort     
+> 
+> PURPOSE: Demonstrate make_analysis_data.do to the students
+>         
+> AUTHOR: Enoch Chen
+> 
+> CREATED: 20210127 Enoch Chen    
+> UPDATED: 20210128 Enoch Chen            
+> 
+> INPUT DATA: N/A                                 
+> OUTPUT: N/A     
+> 
+> STATA VERSION: 16.1
+> ==============================================================================*/
+. clear all
+
+. 
+. // See where is my working directory
+. // Different command in Windows/Mac 
+. // If you are not sure, you can type help pwd
+. pwd 
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data
+
+. 
+. // Redirect my working directory
+. cd "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/"
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data
+
+. 
+. // Import the data, either click or direct type the command
+. // If you use click function, please remember to cope and paste the command back to do-file
+> .
+. // Import data 2002
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/sphc200
+> 2.xls", sheet("Sheet1") firstrow clear
+(31 vars, 31,182 obs)
+
+. 
+. // Save data (at the working directory)
+. save sphc2002, replace
+file sphc2002.dta saved
+
+. 
+. // Import data 2006
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/sphc200
+> 6.xls", sheet("Sheet1") firstrow clear
+(31 vars, 34,707 obs)
+
+. 
+. // Save data
+. save sphc2006, replace
+file sphc2006.dta saved
+
+. 
+. // Import data 2010
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/sphc201
+> 0.xls", sheet("Sheet1") firstrow clear
+(31 vars, 29,797 obs)
+
+. 
+. // Save data
+. save sphc2010, replace
+file sphc2010.dta saved
+
+. 
+. /*
+> Bonus: use the loop function to save your work
+>            Use -foreach-
+> */
+. foreach i in 2002 2006 2010{
+  2.         import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/D
+> ata/sphc`i'.xls", sheet("Sheet1") firstrow clear
+  3. save sphc`i', replace
+  4. }
+(31 vars, 31,182 obs)
+file sphc2002.dta saved
+(31 vars, 34,707 obs)
+file sphc2006.dta saved
+(31 vars, 29,797 obs)
+file sphc2010.dta saved
+
+. 
+. // Read sphc2002.dta only and append the two others
+. clear 
+
+. use sphc2002, clear 
+
+. 
+. append using sphc2006
+
+. append using sphc2010
+
+. 
+. // Quick check 
+. tab argang
+
+     argang |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       2002 |     31,182       32.59       32.59
+       2006 |     34,707       36.27       68.86
+       2010 |     29,797       31.14      100.00
+------------+-----------------------------------
+      Total |     95,686      100.00
+
+. 
+. // Save the appeneded data in one file
+. save sphc_all, replace
+(note: file sphc_all.dta not found)
+file sphc_all.dta saved
+
+. 
+. *==============================================================================
+. log close
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log/m
+> ake_analysis_data_20210127.log
+  log type:  text
+ closed on:  27 Jan 2021, 18:58:55
+---------------------------------------------------------------------------------------------

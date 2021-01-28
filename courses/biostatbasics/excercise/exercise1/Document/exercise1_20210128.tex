@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem, xcolor, soul}
+\sethlcolor{lightgray}
+\usepackage{hyperref}
+
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+\pagestyle{empty}
+
+\newcounter{Part}[section]
+\newenvironment{Part}[1][]{\refstepcounter{Part}\par\medskip
+   \noindent \large \textbf{Part~\thePart #1: }}{\medskip}
+
+
+
+\begin{document}
+
+% HEADER
+\begin{flushleft}
+    \rule[1mm]{\linewidth}{1.5pt} \\
+    \large \textbf{Applied Epidemiology I: Spring 2021} \hfill \large Enoch Yi-Tung Chen \\
+    \large  \textbf{Lab session using Stata}
+    \hfill (enoch.yitung.chen@ki.se) \\
+       \rule[1mm]{\linewidth}{1.5pt} \\
+\end{flushleft}
+
+\noindent \large{\textbf{Exercise 1}} \hfill \normalsize \textbf{15:15-16:45 (Thu.) 28 Jan, 2021}
+\medskip
+
+\noindent  Hi all, \\
+This exercise 1 follows the lecture \textbf{Data management \& Data clearance (1)}. For this practice, you will be using the Stockholm Public Health Cohort data, the same one for your assignment. The data are cross-sectional survey data of 2002, 2006, and 2010. Thus, we cannot merge these data together by unique id number. Through this exercise, I expect you will establish some good habits on documentation and coding, which will benefit not only the assignment of this course but also other future projects you will be working on. 
+\medskip
+
+
+\begin{Part}
+\textbf{Set up}
+\end{Part} 
+
+\begin{enumerate}
+    \item Create your project folder (ref. Data management: Good folder structure)
+    \item Create your analysis plan and code book files (ref. Data management: Good documents)
+    \item Create Readme.txt (ref. Data management: Good Readme.txt
+    \item Download the raw datasets and store them at the Data folder
+    \item[*] Templates of analysis plan, codebook, Read.me, and the datasets (sphc2002.xls, sphc2006.xls, sphc2010.xls) can be downloaded from the course website or Canvas.
+    
+\end{enumerate}
+
+
+\begin{Part}
+\textbf{Make analysis data}
+\end{Part} 
+
+\begin{enumerate} 
+	\item Create \verb|master.do| and store it at the Program folder
+	\item Create \verb|make_analysis_data.do| and store it at the Program folder
+	\item Set log file route along with log on/off and do-file header at  \verb|make_analysis_data.do| (ref. Data management: Good habits on coding)
+	\item At  \verb|make_analysis_data.do|, (ref. Data clearance)
+	\begin{enumerate}
+	\item Clear all
+	\item Set up working directory 
+	\item Import sphc2002.xls, sphc2006.xls, sphc2010.xls and save them as \verb|.dta|
+	\item[*] The datasets can be downloaded on Canvas. 
+	\end{enumerate}
+	\item Read sphc2002.dta and append sphc2006.dta and sphc2010.dta (Hint: \verb|use|, \verb|append use|. ref. Data clearance: Manage datasets)
+	\item Then save the appended data in one \verb|.dta| file at the Data folder.
+\end{enumerate}
+
+\begin{Part}
+\textbf{Create your own research question}
+\end{Part}
+
+\begin{enumerate}
+    \item Think of your own research questions and see what you can do to try and answer them. 
+        \begin{enumerate}
+            \item Be creative! 
+            \item If you think of an interesting question but don't quite know how to answer it yet, keep it in mind for the later exercises.
+        \end{enumerate}
+    \item Finish \textbf{Part 1}.
+\end{enumerate}
+
+
+
+
+\end{document}

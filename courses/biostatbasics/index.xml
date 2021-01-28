@@ -33,28 +33,42 @@
 &lt;li&gt;create a good work flow&lt;/li&gt;
 &lt;li&gt;enhance accuracy of work.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;video-lecture&#34;&gt;Video lecture&lt;/h2&gt;
+&lt;h2 id=&#34;video-lecture-recorded-in-2020&#34;&gt;Video lecture (recorded in 2020)&lt;/h2&gt;
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;https://www.youtube.com/embed/WEL23bR3NF0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
-&lt;p&gt;Slides can be downloaded below: \&lt;/p&gt;
+&lt;p&gt;Slides can be downloaded below:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;data_man_video.pdf&#34;&gt;data_man_lec2021&lt;/a&gt;&lt;/li&gt;
+&lt;a href=&#34;data_man_lec2021.pdf&#34;&gt;data_man_lec2021&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;data_man_video.pdf&#34;&gt;data_man_video2020&lt;/a&gt;&lt;/li&gt;
+&lt;a href=&#34;data_man_video2020.pdf&#34;&gt;data_man_video2020&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;templates-for-do-files&#34;&gt;Templates for do files&lt;/h2&gt;
-&lt;!--- [Do-file template](do_template.do)
-- Analysis plan template
-- Codebook template
-- Dummy table template
-- Logbook template
-- Readme.txt template
---&gt;
+&lt;h2 id=&#34;excercise&#34;&gt;Excercise&lt;/h2&gt;
+&lt;p&gt;Instructions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;exercise1_20210128.pdf&#34;&gt;exercise1_20210128&lt;/a&gt;
+Demonstration&lt;/li&gt;
+&lt;li&gt;[make_analysis_data]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;templates-for-files&#34;&gt;Templates for files&lt;/h2&gt;
+&lt;p&gt;(from the Data Management Group, Department of Medical Epidemiology and Biostatistics)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://enochytchen.com/Template/Template_analysis_plan.doc&#34;&gt;Template_analysis_plan.doc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://enochytchen.com/Template/Template_codebook.doc&#34;&gt;Template_codebook.doc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://enochytchen.com/Template/Template_Stata_program_header.do&#34;&gt;Template_Stata_program_header.do&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://enochytchen.com/Template/Template_readme.txt&#34;&gt;Template_readme.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://enochytchen.com/Template/Template_logbook.docx&#34;&gt;Template_logbook.docx&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;suggested-readings&#34;&gt;Suggested readings&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -87,12 +101,17 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;/div&gt;
 
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
-&lt;p&gt;Slides can be downloaded (in pdf format) 
-&lt;a href=&#34;data_clearance.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Slides can be downloaded below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;data_clearance_lec2021.pdf&#34;&gt;data_clearance_lec2021&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;data_clearance_video2020.pdf&#34;&gt;data_clearance_video2020&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
 &lt;p&gt;Stata codes be downloaded (do-file) 
 &lt;a href=&#34;data_clearance.do&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;!--## Excercise The exercise of this lecture can be downloaded [here](data_clearance_ex)--&gt;</description>
+</description>
     </item>
     
     <item>
