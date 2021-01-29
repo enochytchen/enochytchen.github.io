@@ -170,6 +170,7 @@ So I would say you need to have a friend called \\
 	\footnotetext[3]{can be included in analysis plan as well}
 \end{frame}
 
+
 %%%%
 \section{Good Readme.txt}	
 \begin{frame}{Good Readme.txt}
@@ -186,6 +187,25 @@ So I would say you need to have a friend called \\
 	\begin{figure}
 			\includegraphics[scale=0.4]{image/structure}
 			\caption{Good project folder structure.}
+	\end{figure}
+	\end{column}
+	\end{columns}
+\end{frame}
+%%%%
+\section{Good master.do}
+\begin{frame}{\secname}
+\begin{columns}
+	\begin{column}{0.4\textwidth} 
+	\begin{itemize}
+	\item master.do file tells the order of executing the do files.
+	\item Do not do all the analyses in the same do file. 
+	\item Separate them and use master.do to organise them.
+	\end{itemize}
+	\end{column}
+	\begin{column}{0.6\textwidth}
+	\begin{figure}
+			\includegraphics[scale=0.3]{image/master}
+			\caption{Once you execute master.do, it will run all the specified do-files. }
 	\end{figure}
 	\end{column}
 	\end{columns}

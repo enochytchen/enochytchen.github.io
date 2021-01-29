@@ -1,0 +1,122 @@
+---------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log/m
+> ake_analysis_data_.log
+  log type:  text
+ opened on:  28 Jan 2021, 16:01:03
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. clear all
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. pwd 
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+end of do-file
+
+. cd
+/Users/yitche
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. cd "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data"
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+end of do-file
+
+. help pwd
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. import excel "sphc2002.xls", sheet("Sheet1") firstrow clear
+(31 vars, 31,182 obs)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. clear all
+
+. 
+. // See where is my working directory
+. // Different command in Windows/Mac 
+. // If you are not sure, you can type help pwd
+. pwd 
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Redirect my working directory
+. cd "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data"
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. 
+. 
+. // Import the data, either click or direct type the command
+. // If you use click function, please remember to cope and paste the command back to do-file
+> .
+. // Import data 2002
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Da
+> ta/sphc2002.xls", sheet("Sheet1") firstrow 
+(31 vars, 31,182 obs)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. // Save data (at the working directory)
+. save sphc2002, replace
+file sphc2002.dta saved
+
+. 
+. // Import data 2006
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Da
+> ta/sphc2006.xls", sheet("Sheet1") firstrow 
+no; data in memory would be lost
+r(4);
+
+end of do-file
+
+r(4);
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. // Import data 2006
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Da
+> ta/sphc2006.xls", sheet("Sheet1") firstrow clear
+(31 vars, 34,707 obs)
+
+. 
+end of do-file
+
+. 
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Da
+> ta/sphc2002.xls", sheet("Sheet1") firstrow clear
+(31 vars, 31,182 obs)
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Da
+> ta/sphc2002.xls", firstrow clear 
+(31 vars, 31,182 obs)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. local todaydate: di %tdCYND date(c(current_date),"DMY")
+
+. capture log close

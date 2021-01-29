@@ -17,7 +17,3 @@ STATA VERSION: 16.1
 ==============================================================================*/
 clear all
 do make_analysis_data
-do desc_analysis
-do make_table
-
-exit

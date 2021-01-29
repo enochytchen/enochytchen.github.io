@@ -1,7 +1,10 @@
+// Caution: You have to change the folder routes into your own ones.
+// Both for the Log and Data folder
+
 local todaydate: di %tdCYND date(c(current_date),"DMY")
 capture log close
 // Your Log folder route/ do-file name_todaydate
-log using "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log/make_analysis_data_`todaydate'.log", replace
+log using "Your Log folder route/make_analysis_data_`todaydate'.log", replace
 
 /*==============================================================================
 FILENAME: make_analysis_data.do
@@ -10,9 +13,9 @@ PROJECT: Exercise 1, Stockholm Public Health Cohort
 
 PURPOSE: Demonstrate make_analysis_data.do to the students
 	
-AUTHOR: Enoch Chen
+AUTHOR: Enoch Chen (Remember to change it to your name)
 
-CREATED: 20210127 Enoch Chen	
+CREATED: 20210127 Enoch Chen	 
 UPDATED: 20210128 Enoch Chen		
 
 INPUT DATA: sphc2002.xls, sphc2006.xls, sphc2010.xls				
@@ -24,7 +27,7 @@ clear all
 
 /*
 Bonus: you can global route to save your work
-global route "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/excercise1/Data"
+global route "Your Data folder route"
 */
 
 // See where is my working directory
@@ -33,24 +36,24 @@ global route "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/e
 pwd 
 
 // Redirect my working directory
-cd "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data"
+cd "Your Data folder route"
 
 // Import the data, either click or direct type the command
 // If you use click function, please remember to cope and paste the command back to do-file.
 // Import data 2002
-import excel "$route/sphc2002.xls", sheet("Sheet1") firstrow clear
+import excel "sphc2002.xls", sheet("Sheet1") firstrow clear
 
 // Save data (at the working directory)
 save sphc2002, replace
 
 // Import data 2006
-import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/sphc2006.xls", sheet("Sheet1") firstrow clear
+import excel "sphc2006.xls", sheet("Sheet1") firstrow clear
 
 // Save data
 save sphc2006, replace
 
 // Import data 2010
-import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/sphc2010.xls", sheet("Sheet1") firstrow clear
+import excel "sphc2010.xls", sheet("Sheet1") firstrow clear
 
 // Save data
 save sphc2010, replace
@@ -60,7 +63,7 @@ Bonus: use the loop function to save your work
 	   Use -foreach-
 */
 foreach i in 2002 2006 2010{
-	import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/sphc`i'.xls", sheet("Sheet1") firstrow clear
+	import excel "sphc`i'.xls", sheet("Sheet1") firstrow clear
 save sphc`i', replace
 }
 

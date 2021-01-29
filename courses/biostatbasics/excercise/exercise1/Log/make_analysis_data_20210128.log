@@ -1,0 +1,143 @@
+---------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log/m
+> ake_analysis_data_20210128.log
+  log type:  text
+ opened on:  28 Jan 2021, 16:08:39
+
+. 
+. /*==============================================================================
+> FILENAME: make_analysis_data.do
+> 
+> PROJECT: Exercise 1, Stockholm Public Health Cohort     
+> 
+> PURPOSE: Demonstrate make_analysis_data.do to the students
+>         
+> AUTHOR: Enoch Chen
+> 
+> CREATED: 20210127 Enoch Chen    
+> UPDATED: 20210128 Enoch Chen            
+> 
+> INPUT DATA: sphc2002.xls, sphc2006.xls, sphc2010.xls                            
+> OUTPUT: sphc2002.dta, sphc2006.dta, sphc2010.dta, sphc_all.dta
+> 
+> STATA VERSION: 16.1
+> ==============================================================================*/
+. clear all
+
+. 
+. // See where is my working directory
+. // Different command in Windows/Mac 
+. // If you are not sure, you can type help pwd
+. pwd 
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Redirect my working directory
+. cd "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data"
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. 
+. // Import the data, either click or direct type the command
+. // If you use click function, please remember to cope and paste the command back to do-file
+> .
+. // Import data 2002
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Da
+> ta/sphc2002.xls", sheet("Sheet1") firstrow clear 
+(31 vars, 31,182 obs)
+
+. 
+. // Save data (at the working directory)
+. save sphc2002, replace
+file sphc2002.dta saved
+
+. 
+. // Import data 2006
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Da
+> ta/sphc2006.xls", sheet("Sheet1") firstrow clear
+(31 vars, 34,707 obs)
+
+. 
+. // Save data
+. save sphc2006, replace
+file sphc2006.dta saved
+
+. 
+. // Import data 2010
+. import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Da
+> ta/sphc2010.xls", sheet("Sheet1") firstrow clear
+(31 vars, 29,797 obs)
+
+. 
+. // Save data
+. save sphc2010, replace
+file sphc2010.dta saved
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. clear 
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. use sphc2002, clear 
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. append using sphc2006
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. append using sphc2010
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. tab argang
+
+     argang |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       2002 |     31,182       32.59       32.59
+       2006 |     34,707       36.27       68.86
+       2010 |     29,797       31.14      100.00
+------------+-----------------------------------
+      Total |     95,686      100.00
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. save sphc_all, replace
+file sphc_all.dta saved
+
+. 
+end of do-file
+
+. help exit
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD45661.000000"
+
+. clear all
+
+. 
+end of do-file
+
+. pwd
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. exit

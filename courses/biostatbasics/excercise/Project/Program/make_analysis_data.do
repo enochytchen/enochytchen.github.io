@@ -22,23 +22,18 @@ STATA VERSION: 16.1
 ==============================================================================*/
 clear all
 
-/*
-Bonus: you can global route to save your work
-global route "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/excercise1/Data"
-*/
-
 // See where is my working directory
 // Different command in Windows/Mac 
 // If you are not sure, you can type help pwd
 pwd 
 
 // Redirect my working directory
-cd "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data"
+cd "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/"
 
 // Import the data, either click or direct type the command
 // If you use click function, please remember to cope and paste the command back to do-file.
 // Import data 2002
-import excel "$route/sphc2002.xls", sheet("Sheet1") firstrow clear
+import excel "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/Data/sphc2002.xls", sheet("Sheet1") firstrow clear
 
 // Save data (at the working directory)
 save sphc2002, replace
