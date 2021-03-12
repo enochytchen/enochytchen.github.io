@@ -5,12 +5,20 @@
     <link>https://enochytchen.com/author/enoch-chen/</link>
       <atom:link href="https://enochytchen.com/author/enoch-chen/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 03 Oct 2020 12:46:05 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 02 Feb 2021 14:00:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Chen</title>
       <link>https://enochytchen.com/author/enoch-chen/</link>
     </image>
+    
+    <item>
+      <title>Cancer Survival Statistics - an Overview</title>
+      <link>https://enochytchen.com/talk/sa_overview/</link>
+      <pubDate>Tue, 02 Feb 2021 14:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/talk/sa_overview/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Excess hazard is an analogue of relative survival. How come!?</title>

@@ -5,7 +5,7 @@
     <link>https://enochytchen.com/</link>
       <atom:link href="https://enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 26 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 02 Feb 2021 14:00:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
@@ -48,14 +48,11 @@
 &lt;a href=&#34;data_man_video2020.pdf&#34;&gt;data_man_video2020&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;excercise&#34;&gt;Excercise&lt;/h2&gt;
-&lt;p&gt;Instructions&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;exercise1_20210128.pdf&#34;&gt;exercise1_20210128&lt;/a&gt; \&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Demonstration&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[make_analysis_data]&lt;/li&gt;
+&lt;li&gt;Instructions: 
+&lt;a href=&#34;exercise1_20210128.pdf&#34;&gt;exercise1_20210128&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solutions: 
+&lt;a href=&#34;make_analysis_data_upload.do&#34;&gt;make_analysis_data_upload.do&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;templates-for-files&#34;&gt;Templates for files&lt;/h2&gt;
 &lt;p&gt;(from the Data Management Group, Department of Medical Epidemiology and Biostatistics)&lt;/p&gt;
@@ -106,46 +103,19 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;p&gt;Slides can be downloaded below:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;data_clearance_lec2021.pdf&#34;&gt;data_clearance_lec2021&lt;/a&gt;&lt;/li&gt;
+&lt;a href=&#34;data_clearance_lec2021.pdf&#34;&gt;data_clearance_lec2021.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;data_clearance_video2020.pdf&#34;&gt;data_clearance_video2020&lt;/a&gt;&lt;/li&gt;
+&lt;a href=&#34;data_clearance_video2020.pdf&#34;&gt;data_clearance_video2020.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
-&lt;p&gt;Stata codes be downloaded (do-file) 
-&lt;a href=&#34;data_clearance.do&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Graphs</title>
-      <link>https://enochytchen.com/courses/biostatbasics/graphs/</link>
-      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/courses/biostatbasics/graphs/</guid>
-      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
-&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;p&gt;Stata codes be downloaded 
+&lt;a href=&#34;data_clearance_lec2021.do&#34;&gt;data_clearance_lec2021.do&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;excercise&#34;&gt;Excercise&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;make graph based on basic principles&lt;/li&gt;
-&lt;li&gt;choose what graph to generate&lt;/li&gt;
-&lt;li&gt;use Stata to create histograms, bar charts, box plots, scatter plots, and line graphs&lt;/li&gt;
-&lt;li&gt;customise graphs&lt;/li&gt;
-&lt;li&gt;export graphs&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;video-lecture&#34;&gt;Video lecture&lt;/h2&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/kMss9A_VTVw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
-&lt;p&gt;Slides can be downloaded (in pdf format) 
-&lt;a href=&#34;graphs.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;!--## Study notes
-[Ch1 Descriptive statistics]()--&gt;
-&lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
-&lt;p&gt;Stata codes be downloaded (do-file) below&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;graphs.do&#34;&gt;Graphs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Instructions: 
+&lt;a href=&#34;exercise2_20210201.pdf&#34;&gt;exercise2_20210201&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solutions: 
+&lt;a href=&#34;exercise2_upload.do&#34;&gt;exercise2_upload.do&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -188,15 +158,88 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
 &lt;/div&gt;
 
 &lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
-&lt;p&gt;Slides can be downloaded (in pdf format) 
-&lt;a href=&#34;sumstat_tab_results.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Slides can be downloaded below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;sumstat_lec2021.pdf]&#34;&gt;sumstat_lec2021.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;tab_results_lec2021.pdf&#34;&gt;tab_results_lec2021.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;sumstat_tab_results_video2020.pdf&#34;&gt;sumstat_tab_results_video2020.pdf&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!--## Study notes
 [Ch1 Descriptive statistics]()--&gt;
 &lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href=&#34;sumstat.do&#34;&gt;sumstat.do&lt;/a&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;sumstat_lec2021.do&#34;&gt;sumstat_lec2021.do&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;tab_results_lec2021.do&#34;&gt;tab_results_lec2021.do&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;excercise&#34;&gt;Excercise&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Instructions: 
+&lt;a href=&#34;exercise3_20210204.pdf&#34;&gt;exercise3_20210204&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solutions: 
+&lt;a href=&#34;exercise3_upload.do&#34;&gt;exercise3_upload.do&lt;/a&gt;, 
+&lt;a href=&#34;exercise3_dumtab_20210204.docx&#34;&gt;exercise3_dumtab&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;suggested-readings&#34;&gt;Suggested readings&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Sterne JAC, White IR, Carlin JB, Spratt M, Royston P, Kenward MG, Wood AM, Carpenter JR. Multiple imputation for missing data in epidemiological and clinical research: potential and pitfalls. BMJ 2009;338:b2393–b2393.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Leopold s et al, Editorial: Words Hurt – Avoiding Dehumanizing Language in Orthopaedic Research and Practice. Clin Orthop Relat Res. 2014 Sep; 472(9): 2561–2563.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enoch Chen. Avoiding Dehumanizing Language Use. (A summary of the article above.) &lt;a href=&#34;https://enochytchen.com/post/avoid_dehumanizing/&#34;&gt;https://enochytchen.com/post/avoid_dehumanizing/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Graphs</title>
+      <link>https://enochytchen.com/courses/biostatbasics/graphs/</link>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/courses/biostatbasics/graphs/</guid>
+      <description>&lt;h2 id=&#34;learning-outcomes&#34;&gt;Learning outcomes&lt;/h2&gt;
+&lt;p&gt;In this section, you will learn how to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;make graph based on basic principles&lt;/li&gt;
+&lt;li&gt;choose what graph to generate&lt;/li&gt;
+&lt;li&gt;use Stata to create histograms, bar charts, box plots, scatter plots, and line graphs&lt;/li&gt;
+&lt;li&gt;customise graphs&lt;/li&gt;
+&lt;li&gt;export graphs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;video-lecture&#34;&gt;Video lecture&lt;/h2&gt;
 
-&lt;a href=&#34;tab_results.do&#34;&gt;tab_results.do&lt;/a&gt;.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/kMss9A_VTVw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;course-notes&#34;&gt;Course notes&lt;/h2&gt;
+&lt;p&gt;Slides can be downloaded&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;graphs_lec2021.pdf&#34;&gt;graphs_lec2021.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;graphs_video2020.pdf&#34;&gt;graphs_video2020.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;stata-syntax-in-the-slides&#34;&gt;Stata syntax in the slides&lt;/h2&gt;
+&lt;p&gt;Stata codes be downloaded below&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;graphs_lec2021.do&#34;&gt;graphs_lec2021.do&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;excercise&#34;&gt;Excercise&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Instructions: 
+&lt;a href=&#34;exercise4_20210208.pdf&#34;&gt;exercise4_20210208.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solutions: 
+&lt;a href=&#34;exercise4_upload.do&#34;&gt;exercise4_upload.do&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -245,6 +288,14 @@ The questions and solutions are corresponding to their &lt;code&gt;stmd&lt;/code
 &lt;/tbody&gt;
 &lt;/table&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Cancer Survival Statistics - an Overview</title>
+      <link>https://enochytchen.com/talk/sa_overview/</link>
+      <pubDate>Tue, 02 Feb 2021 14:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/talk/sa_overview/</guid>
+      <description></description>
     </item>
     
     <item>

@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem, xcolor, soul}
+\sethlcolor{lightgray}
+\usepackage{hyperref}
+
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+\pagestyle{empty}
+
+\newcounter{Part}[section]
+\newenvironment{Part}[1][]{\refstepcounter{Part}\par\medskip
+   \noindent \large \textbf{Part~\thePart #1: }}{\medskip}
+
+
+
+\begin{document}
+
+% HEADER
+\begin{flushleft}
+    \rule[1mm]{\linewidth}{1.5pt} \\
+    \large \textbf{Applied Epidemiology I: Spring 2021} \hfill \large Enoch Yi-Tung Chen \\
+    \large  \textbf{Lab session using Stata}
+    \hfill (enoch.yitung.chen@ki.se) \\
+       \rule[1mm]{\linewidth}{1.5pt} \\
+\end{flushleft}
+
+\noindent \large{\textbf{Exercise 3}} \hfill \normalsize \textbf{15:15-16:45 (Thu.) 04 Feb, 2021}
+\medskip
+
+\noindent  Hi all, \\
+This exercise 3 follows the lecture \textbf{Tables \& interpreting results}. With the Stockholm Public Health Cohort data, you will practice making your own tables and try to interpret the results. You might need to recall some basic epidemiology terms (which is extremely good! You are trained to become epidemiologists.) and components for illustrating risk. 
+\medskip
+
+\begin{Part}
+\textbf{Tables}
+\end{Part}
+
+\noindent Please open the codebook SPHC\textunderscore variable\textunderscore list.xls. 
+
+\begin{enumerate}
+	\item Create a new do file. (Hint: type \verb|doedit| in the command.)
+	\item Make a dummy table in word document entitled "Association between diabetes and sex" for further use. (ref. Tables: Basics of making tables)
+	\item Make a two-by-two table for sex and living alone? Among those who lived alone, what was the distribution of sex?  (ref. Tables: Two by two tables)
+	\item Make a chi-square test for the table above. What is the interpretation of the results? (ref. same as above)
+	\item Make two-by-two tables for employment and living alone, stratified by sex. What is the interpretation of the results? (ref. same as above)
+	\item Calculate risk ratio/difference for sex (exposure) and diabetes (outcome). How to interpret? (Calculate ratios using Stata: Risk ratio)
+	\item Do the same for odds ratio. How to interpret? (Calculate ratios using Stata: Odds ratio)
+	\item Please go back to the dummy table you made in \textbf{item 2}. And fill in the statistics.
+	\end{enumerate}
+
+
+\begin{Part}
+\textbf{Homework}
+\end{Part}
+
+\begin{enumerate}
+     \item Try to make some graphs according to your research question(s). Bring them to our next session.
+     \item Be aware of dehumanising language use. Check your text with the principles in Leopold et al.'s article\cite{Leopold2014}
+     \end{enumerate}
+
+    \begin{scriptsize}
+	\bibliographystyle{../bib/vancouv12}
+	\bibliography{../bib/enochref.bib}
+    \end{scriptsize}
+\end{document}

@@ -1,0 +1,478 @@
+-------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log/exercise2_2021020
+> 3.log
+  log type:  text
+ opened on:   3 Feb 2021, 21:27:13
+
+. 
+. /*==============================================================================
+> FILENAME: exercise2.do
+> 
+> PROJECT: Exercise 2, Stockholm Public Health Cohort     
+> 
+> PURPOSE: Demonstrate exercise2.do to the students
+>         
+> AUTHOR: Enoch Chen
+> 
+> CREATED: 20210201 Enoch Chen    
+> UPDATED: 20210201 Enoch Chen            
+> 
+> INPUT DATA: sphc_all.dta                                
+> OUTPUT: sphc_all_exercise2.dta
+> 
+> STATA VERSION: 16.1
+> ==============================================================================*/
+. clear all
+
+. 
+. // See where is my working directory
+. pwd 
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Redirect my working directory
+. cd "/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data"
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Use the data, either click or direct type the command
+. use sphc_all, clear
+
+. 
+. // Give them id
+. gen id = _n
+
+. 
+. /*===============
+> =====Part 1======
+> ===============*/
+. // 1.1 Label data
+. label data "Stockholm Public Health Cohort 2002, 2006, 2010" 
+
+. 
+. // Use describe to see whether it's successfully labeled or not
+. describe
+
+Contains data from sphc_all.dta
+  obs:        95,686                          Stockholm Public Health Cohort 2002, 2006, 2010
+ vars:            32                          28 Jan 2021 16:12
+-------------------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------------------------------------
+seikl           byte    %10.0g                seikl
+halk02          byte    %10.0g                halk02
+kon             byte    %10.0g                kon
+flandgr         byte    %10.0g                flandgr
+ghq12302        byte    %10.0g                ghq12302
+utb302          byte    %10.0g                utb302
+aldkl4          byte    %10.0g                aldkl4
+aldkl7          byte    %10.0g                aldkl7
+f302            byte    %10.0g                f302
+f3a02           byte    %10.0g                f3a02
+f3b02           byte    %10.0g                f3b02
+f402            byte    %10.0g                f402
+f502            byte    %10.0g                f502
+f6a02           byte    %10.0g                f6a02
+bmi2402         byte    %10.0g                bmi2402
+bmi2502         byte    %10.0g                bmi2502
+bmi3002         byte    %10.0g                bmi3002
+f2902           byte    %10.0g                f2902
+f52a02          byte    %10.0g                f52a02
+f52b02          byte    %10.0g                f52b02
+f52c02          byte    %10.0g                f52c02
+f52d02          byte    %10.0g                f52d02
+f5602           byte    %10.0g                f5602
+f5902           byte    %10.0g                f5902
+f7502           byte    %10.0g                f7502
+argang          int     %10.0g                argang
+omrade06        byte    %10.0g                omrade06
+dagrok          byte    %10.0g                dagrok
+trok02          byte    %10.0g                trok02
+dagsnus         byte    %10.0g                dagsnus
+tsnus02         byte    %10.0g                tsnus02
+id              float   %9.0g                 
+-------------------------------------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+. 
+. // 1.2 Rename variables 
+. rename kon sex
+
+. rename aldkl4 agegrp4
+
+. rename f302 srh
+
+. 
+. // 1.3 Open your codebook and add a new column for the renamed variables
+. 
+. // 1.4 Label variables
+. label variable sex sex
+
+. label variable agegrp4 agegrp4
+
+. label variable srh srh
+
+. 
+. // 1.5 Label value variables
+. label define sex_lab 1 "man" 2 "woman"
+
+. label values sex sex_lab
+
+. 
+. label define agegrp4_lab 1 "18-29" 2 "30-44" 3 "45-64" 4 "65-84"
+
+. label values agegrp4 agegrp4_lab
+
+. 
+. label define srh_lab 1 "Excellent" 2 "Good" 3 "Average" 4 "Poor" 5 "Very poor"
+
+. label values srh srh_lab
+
+. // Open up the data viewer and see what is the difference before and after labeling
+. 
+. // 1.6 Generate a new variable female
+. // Whenever you generate a new variable, check for missing
+. tab sex // Looks okay
+
+        sex |      Freq.     Percent        Cum.
+------------+-----------------------------------
+        man |     43,196       45.17       45.17
+      woman |     52,433       54.83      100.00
+------------+-----------------------------------
+      Total |     95,629      100.00
+
+. 
+. gen female = 1 if sex == 2
+(43,253 missing values generated)
+
+. replace female = 0 if sex == 1
+(43,196 real changes made)
+
+. tab female sex // Check you successfully gen or not
+
+           |          sex
+    female |       man      woman |     Total
+-----------+----------------------+----------
+         0 |    43,196          0 |    43,196 
+         1 |         0     52,433 |    52,433 
+-----------+----------------------+----------
+     Total |    43,196     52,433 |    95,629 
+
+. 
+. // 1.7 Generate dummy variables for agegrp4
+. // First take a look at agegrp4
+. codebook agegrp4
+
+-------------------------------------------------------------------------------------------------------------
+agegrp4                                                                                               agegrp4
+-------------------------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  agegrp4_lab
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  57/95,686
+
+            tabulation:  Freq.   Numeric  Label
+                        14,513         1  18-29
+                        27,078         2  30-44
+                        34,399         3  45-64
+                        19,639         4  65-84
+                            57         .  
+
+. 
+. tab agegrp4, gen(agegrp_dum)
+
+    agegrp4 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+      18-29 |     14,513       15.18       15.18
+      30-44 |     27,078       28.32       43.49
+      45-64 |     34,399       35.97       79.46
+      65-84 |     19,639       20.54      100.00
+------------+-----------------------------------
+      Total |     95,629      100.00
+
+. list agegrp4 agegrp_dum* if id < 30
+
+       +-----------------------------------------------------+
+       | agegrp4   agegrp~1   agegrp~2   agegrp~3   agegr~m4 |
+       |-----------------------------------------------------|
+    1. |   65-84          0          0          0          1 |
+    2. |   65-84          0          0          0          1 |
+    3. |   65-84          0          0          0          1 |
+    4. |   65-84          0          0          0          1 |
+    5. |   65-84          0          0          0          1 |
+       |-----------------------------------------------------|
+    6. |   65-84          0          0          0          1 |
+    7. |   65-84          0          0          0          1 |
+    8. |   65-84          0          0          0          1 |
+    9. |   65-84          0          0          0          1 |
+   10. |   65-84          0          0          0          1 |
+       |-----------------------------------------------------|
+   11. |   65-84          0          0          0          1 |
+   12. |   65-84          0          0          0          1 |
+   13. |   65-84          0          0          0          1 |
+   14. |   65-84          0          0          0          1 |
+   15. |   65-84          0          0          0          1 |
+       |-----------------------------------------------------|
+   16. |   65-84          0          0          0          1 |
+   17. |   65-84          0          0          0          1 |
+   18. |   65-84          0          0          0          1 |
+   19. |   65-84          0          0          0          1 |
+   20. |   65-84          0          0          0          1 |
+       |-----------------------------------------------------|
+   21. |   65-84          0          0          0          1 |
+   22. |   65-84          0          0          0          1 |
+   23. |   65-84          0          0          0          1 |
+   24. |   65-84          0          0          0          1 |
+   25. |   65-84          0          0          0          1 |
+       |-----------------------------------------------------|
+   26. |   65-84          0          0          0          1 |
+   27. |   65-84          0          0          0          1 |
+   28. |   65-84          0          0          0          1 |
+   29. |   65-84          0          0          0          1 |
+       +-----------------------------------------------------+
+
+. 
+. // 1.8 Generate a new variable nsrh with reverse order of srh
+. codebook srh
+
+-------------------------------------------------------------------------------------------------------------
+srh                                                                                                       srh
+-------------------------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  srh_lab
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  1,331/95,686
+
+            tabulation:  Freq.   Numeric  Label
+                        20,893         1  Excellent
+                        46,962         2  Good
+                        21,379         3  Average
+                         4,322         4  Poor
+                           799         5  Very poor
+                         1,331         .  
+
+. 
+. gen nsrh = 1 if srh == 5
+(94,887 missing values generated)
+
+. replace nsrh = 2 if srh == 4
+(4,322 real changes made)
+
+. replace nsrh = 3 if srh == 3
+(21,379 real changes made)
+
+. replace nsrh = 4 if srh == 2
+(46,962 real changes made)
+
+. replace nsrh = 5 if srh == 1
+(20,893 real changes made)
+
+. 
+. /*Bonus: Use forvalues */
+. capture drop nsrh
+
+. 
+. forvalues i = 1/5 {
+  2.         if `i' == 1{
+  3.                 gen nsrh = `i'  if srh == 6-`i'
+  4.         }
+  5.         
+.         else{
+  6.                 replace nsrh = `i' if srh == 6-`i'              
+  7.         }
+  8. }
+(94,887 missing values generated)
+(4,322 real changes made)
+(21,379 real changes made)
+(46,962 real changes made)
+(20,893 real changes made)
+
+. 
+. /*Bonus to me: Use recode (I learned from you guys!)*/
+. capture drop nsrh
+
+. recode srh (5=1) (4=2) (3=3) (2=4) (1=5), gen(nsrh)
+(72976 differences between srh and nsrh)
+
+. 
+. // Label again
+. label define nsrh_lab 1 "Very poor" 2 "Poor" 3 "Average" 4 "Good" 5 "Excellent"
+
+. label values nsrh nsrh_lab
+
+. 
+. // Add numeric values back to the variables
+. numlabel, add
+
+. 
+. // Check
+. tab srh nsrh
+
+             |                  RECODE of srh (srh)
+         srh | 1. Very p    2. Poor  3. Averag    4. Good  5. Excell |     Total
+-------------+-------------------------------------------------------+----------
+1. Excellent |         0          0          0          0     20,893 |    20,893 
+     2. Good |         0          0          0     46,962          0 |    46,962 
+  3. Average |         0          0     21,379          0          0 |    21,379 
+     4. Poor |         0      4,322          0          0          0 |     4,322 
+5. Very poor |       799          0          0          0          0 |       799 
+-------------+-------------------------------------------------------+----------
+       Total |       799      4,322     21,379     46,962     20,893 |    94,355 
+
+. 
+. save sphc_all_exercise2, replace 
+file sphc_all_exercise2.dta saved
+
+. 
+. /*===============
+> =====Part 2======
+> ===============*/
+. clear all
+
+. use sphc_all_exercise2, clear
+(Stockholm Public Health Cohort 2002, 2006, 2010)
+
+. 
+. // 2.1 Describe the data
+. des
+
+Contains data from sphc_all_exercise2.dta
+  obs:        95,686                          Stockholm Public Health Cohort 2002, 2006, 2010
+ vars:            38                          3 Feb 2021 21:27
+-------------------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------------------------------------
+seikl           byte    %10.0g                seikl
+halk02          byte    %10.0g                halk02
+sex             byte    %10.0g     sex_lab    sex
+flandgr         byte    %10.0g                flandgr
+ghq12302        byte    %10.0g                ghq12302
+utb302          byte    %10.0g                utb302
+agegrp4         byte    %10.0g     agegrp4_lab
+                                              agegrp4
+aldkl7          byte    %10.0g                aldkl7
+srh             byte    %12.0g     srh_lab    srh
+f3a02           byte    %10.0g                f3a02
+f3b02           byte    %10.0g                f3b02
+f402            byte    %10.0g                f402
+f502            byte    %10.0g                f502
+f6a02           byte    %10.0g                f6a02
+bmi2402         byte    %10.0g                bmi2402
+bmi2502         byte    %10.0g                bmi2502
+bmi3002         byte    %10.0g                bmi3002
+f2902           byte    %10.0g                f2902
+f52a02          byte    %10.0g                f52a02
+f52b02          byte    %10.0g                f52b02
+f52c02          byte    %10.0g                f52c02
+f52d02          byte    %10.0g                f52d02
+f5602           byte    %10.0g                f5602
+f5902           byte    %10.0g                f5902
+f7502           byte    %10.0g                f7502
+argang          int     %10.0g                argang
+omrade06        byte    %10.0g                omrade06
+dagrok          byte    %10.0g                dagrok
+trok02          byte    %10.0g                trok02
+dagsnus         byte    %10.0g                dagsnus
+tsnus02         byte    %10.0g                tsnus02
+id              float   %9.0g                 
+female          float   %9.0g                 
+agegrp_dum1     byte    %8.0g                 agegrp4==18-29
+agegrp_dum2     byte    %8.0g                 agegrp4==30-44
+agegrp_dum3     byte    %8.0g                 agegrp4==45-64
+agegrp_dum4     byte    %8.0g                 agegrp4==65-84
+nsrh            byte    %12.0g     nsrh_lab   RECODE of srh (srh)
+-------------------------------------------------------------------------------------------------------------
+Sorted by: 
+
+. 
+. // Summary statistics
+. tabstat srh, s(count mean sd var median min max range)
+
+    variable |         N      mean        sd  variance       p50       min       max     range
+-------------+--------------------------------------------------------------------------------
+         srh |     94355  2.122166  .8321827   .692528         2         1         5         4
+----------------------------------------------------------------------------------------------
+
+. 
+. // 2.2 Stratification
+. // f52a02: Living alone 
+. tab f52a02
+
+     f52a02 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |     51,864       72.94       72.94
+          1 |     19,239       27.06      100.00
+------------+-----------------------------------
+      Total |     71,103      100.00
+
+. 
+. // Label the variable 
+. lab var f52a02 alone
+
+. 
+. // Separate by agegroup
+. tab f52a02 agegrp4, col 
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+           |                   agegrp4
+     alone |  1. 18-29   2. 30-44   3. 45-64   4. 65-84 |     Total
+-----------+--------------------------------------------+----------
+         0 |     7,809     15,661     19,082      9,312 |    51,864 
+           |     73.98      81.59      75.51      57.91 |     72.94 
+-----------+--------------------------------------------+----------
+         1 |     2,747      3,534      6,189      6,769 |    19,239 
+           |     26.02      18.41      24.49      42.09 |     27.06 
+-----------+--------------------------------------------+----------
+     Total |    10,556     19,195     25,271     16,081 |    71,103 
+           |    100.00     100.00     100.00     100.00 |    100.00 
+
+. 
+. // Proportion of females by year?
+. tab female argang, col
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+           |              argang
+    female |      2002       2006       2010 |     Total
+-----------+---------------------------------+----------
+         0 |    14,116     15,623     13,457 |    43,196 
+           |     45.35      45.01      45.16 |     45.17 
+-----------+---------------------------------+----------
+         1 |    17,009     19,084     16,340 |    52,433 
+           |     54.65      54.99      54.84 |     54.83 
+-----------+---------------------------------+----------
+     Total |    31,125     34,707     29,797 |    95,629 
+           |    100.00     100.00     100.00 |    100.00 
+
+. 
+. save sphc_all_exercise2, replace 
+file sphc_all_exercise2.dta saved
+
+. 
+. *==============================================================================
+. log close
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log/exercise2_2021020
+> 3.log
+  log type:  text
+ closed on:   3 Feb 2021, 21:27:14
+-------------------------------------------------------------------------------------------------------------

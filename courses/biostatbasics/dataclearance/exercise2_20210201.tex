@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem, xcolor, soul}
+\sethlcolor{lightgray}
+\usepackage{hyperref}
+
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+\pagestyle{empty}
+
+\newcounter{Part}[section]
+\newenvironment{Part}[1][]{\refstepcounter{Part}\par\medskip
+   \noindent \large \textbf{Part~\thePart #1: }}{\medskip}
+
+
+
+\begin{document}
+
+% HEADER
+\begin{flushleft}
+    \rule[1mm]{\linewidth}{1.5pt} \\
+    \large \textbf{Applied Epidemiology I: Spring 2021} \hfill \large Enoch Yi-Tung Chen \\
+    \large  \textbf{Lab session using Stata}
+    \hfill (enoch.yitung.chen@ki.se) \\
+       \rule[1mm]{\linewidth}{1.5pt} \\
+\end{flushleft}
+
+\noindent \large{\textbf{Exercise 2}} \hfill \normalsize \textbf{15:15-16:45 (Mon.) 01 Feb, 2021}
+\medskip
+
+\noindent  Hi all, \\
+This exercise 2 follows the lecture \textbf{Data clearance (2) \& Summary statistics}. For this practice, you will get your hands dirty with the already appended Stockholm Public Health Cohort data. (Not yet done? Follow exercise 1 to append your data.) Through this exercise, you are expected to practice and review what you learned previously in your Biostat courses or in this lecture to manage variables and learn about the data. 
+\medskip
+
+\begin{Part}
+\textbf{Manage variables} (ref. Data clearance: Manage variables)
+\end{Part}
+
+\noindent Please open your sphc\textunderscore all.dta and look up the variables in the codebook SPHC\textunderscore variable\textunderscore list.xls. (Supposedly, you have already appended sphc\textunderscore 2002.dta, sphc\textunderscore 2006.dta, sphc\textunderscore 2010.dta.)
+\begin{enumerate}
+	\item Label the data sphc\textunderscore all.dta.
+	\item Rename variables: \verb|kon| $\rightarrow$ \verb|sex|, \verb|aldkl4| $\rightarrow$ \verb|agegrp4|, \verb|f302| $\rightarrow$ \verb|srh| . E.g., rename \verb|kon| into \verb|sex|.
+	\item Open your codebook (SPHC\textunderscore variable\textunderscore list.xls), and add one column entitled "Renamed variable". And add those three variables' new names. 
+	\item Label the 3 variables above. E.g., \verb|label sex sex|.
+	\item Label values the 3 variables above. E.g., label values \verb|sex| with \verb|1=man, 2=woman|. 
+	\item Generate a new variable \verb|female|, where \verb|female=1| is woman, and \verb|female=0| is man. And also label that variable. (Hint: think about what is the difference between \verb|=| and \verb|==|)
+	\item Generate dummy variables for \verb|agegrp4|. 
+	\item Generate a new variable \verb|nsrh|, of which self-rated health=5 implies excellent, ..., and =1 implies very poor. Caution: the original self-rated health variable (\verb|f302|; \verb|srh|) is in reverse order.
+	\item[*] Avoid using \verb|recode|. Otherwise, you have to make sure the codebook is correct. 
+\end{enumerate}
+
+
+\begin{Part}
+\textbf{Learn about the data}
+\end{Part} 
+
+\begin{enumerate}
+    \item Describe the data, sphc\textunderscore all.dta.
+    \begin{itemize}
+    \item No. of variables, observations. (ref. Data clearance: Get to know the data)
+    \item Choose a variable to describe the mean, standard deviation, variance, median, min, max, range. (ref. Summary statistics)
+
+    \end{itemize}
+
+    \item Stratification
+    \begin{itemize}
+    \item What is the overall proportion of living alone? What about if your separate by 4 age groups (\verb|aldkl4|; \verb|agegrp4|)?	(ref. Summary statistics)
+    \item What is the proportion of females by year? (ref. Summary statistics)
+    \end{itemize}
+
+\end{enumerate}
+
+\begin{Part}
+\textbf{Homework}
+\end{Part}
+
+\begin{enumerate}
+    \item Try to make some graphs or tables according to your research question(s). Bring them to our next session.
+    \item Rename and label the other variables.
+    \item[*] If you rename variables, you have to go back to your codebook to fill in the new name. Otherwise, you might forget what variable names you have changed.
+   
+\end{enumerate}
+
+
+
+
+\end{document}

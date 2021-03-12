@@ -1,0 +1,1073 @@
+-------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log
+> /exercise4_20210208.log
+  log type:  text
+ opened on:   8 Feb 2021, 15:06:55
+
+. 
+. /*==============================================================================
+> FILENAME: exercise4.do
+> 
+> PROJECT: Exercise 4, Stockholm Public Health Cohort     
+> 
+> PURPOSE: Demonstrate exercise4.do to the students
+>         
+> AUTHOR: Enoch Chen
+> 
+> CREATED: 20210208 Enoch Chen    
+> UPDATED: 20210208 Enoch Chen            
+> 
+> INPUT DATA: sphc_all.dta                                
+> OUTPUT: mean_srh.pdf
+> 
+> STATA VERSION: 16.1
+> ==============================================================================*/
+. clear all
+
+. 
+. // See where is my working directory
+. pwd 
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Redirect my working directory
+. cd "$route/Data"
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Use the data from exercise 2
+. // Or your make_analysis data (if you've already intergrated.)
+. clear all
+
+. use sphc_all_exercise2, clear
+(Stockholm Public Health Cohort 2002, 2006, 2010)
+
+. 
+. /*===============
+> =====Part 1======
+> ===============*/
+. // 1.1 Bar chart showing no. of participants by year
+. graph bar (count), over (argang) ///
+>       title("Number of participants in 2002, 2006, 2010")
+
+. 
+. // 1.2 Box plot for self-rated health by year
+. graph box srh, over(argang)
+
+. 
+. // 1.3 Statistics behind box plots
+. tabstat srh, s(p25 p50 p75) by(argang) 
+
+Summary for variables: srh
+     by categories of: argang (argang)
+
+  argang |       p25       p50       p75
+---------+------------------------------
+    2002 |         2         2         3
+    2006 |         2         2         3
+    2010 |         2         2         3
+---------+------------------------------
+   Total |         2         2         3
+----------------------------------------
+
+. 
+. // 1.4 Mean of self-rate health
+. ci mean nsrh if argang == 2002
+
+    Variable |        Obs        Mean    Std. Err.       [95% Conf. Interval]
+-------------+---------------------------------------------------------------
+        nsrh |     30,678     3.84999    .0048272        3.840529    3.859452
+
+. ci mean nsrh if argang == 2006
+
+    Variable |        Obs        Mean    Std. Err.       [95% Conf. Interval]
+-------------+---------------------------------------------------------------
+        nsrh |     34,279    3.872021    .0045322        3.863138    3.880904
+
+. ci mean nsrh if argang == 2010
+
+    Variable |        Obs        Mean    Std. Err.       [95% Conf. Interval]
+-------------+---------------------------------------------------------------
+        nsrh |     29,398    3.913668    .0047153        3.904425     3.92291
+
+. 
+. // I would choose demonstrate mean with sd./95% CI rather than median/box plot
+. 
+. // Also use ANOVA to test the difference over year
+. anova srh argang
+
+                         Number of obs =     94,355    R-squared     =  0.0010
+                         Root MSE      =    .831792    Adj R-squared =  0.0009
+
+                  Source | Partial SS         df         MS        F    Prob>F
+              -----------+----------------------------------------------------
+                   Model |  62.690733          2   31.345366     45.30  0.0000
+                         |
+                  argang |  62.690733          2   31.345366     45.30  0.0000
+                         |
+                Residual |  65280.098     94,352   .69187827  
+              -----------+----------------------------------------------------
+                   Total |  65342.789     94,354   .69252802  
+
+. 
+. /*===============
+> =====Part 2======
+> ===============*/
+. gen nsrh_mean = .
+(95,686 missing values generated)
+
+. 
+. // Generate mean of self-rated health by agegroup and year
+. // 2002
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+. replace nsrh_mean = r(Stat1)[1,1]  if agegrp4 == 1 & argang == 2002
+(4,976 real changes made)
+
+. replace nsrh_mean = r(Stat2)[1,1]  if agegrp4 == 2 & argang == 2002
+(9,193 real changes made)
+
+. replace nsrh_mean = r(Stat3)[1,1]  if agegrp4 == 3 & argang == 2002
+(11,188 real changes made)
+
+. replace nsrh_mean = r(Stat4)[1,1]  if agegrp4 == 4 & argang == 2002
+(5,768 real changes made)
+
+. 
+. // 2006
+. tabstat nsrh if argang == 2006, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.040922
+2. 30-44 |  4.017767
+3. 45-64 |  3.826307
+4. 65-84 |  3.601157
+---------+----------
+   Total |  3.872021
+--------------------
+
+. 
+. replace nsrh_mean = r(Stat1)[1,1]  if agegrp4 == 1 & argang == 2006
+(5,246 real changes made)
+
+. replace nsrh_mean = r(Stat2)[1,1]  if agegrp4 == 2 & argang == 2006
+(10,160 real changes made)
+
+. replace nsrh_mean = r(Stat3)[1,1]  if agegrp4 == 3 & argang == 2006
+(12,588 real changes made)
+
+. replace nsrh_mean = r(Stat4)[1,1]  if agegrp4 == 4 & argang == 2006
+(6,713 real changes made)
+
+. 
+. // 2010
+. tabstat nsrh if argang == 2010, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.095372
+2. 30-44 |  4.059384
+3. 45-64 |  3.888424
+4. 65-84 |  3.680448
+---------+----------
+   Total |  3.913668
+--------------------
+
+. replace nsrh_mean = r(Stat1)[1,1]  if agegrp4 == 1 & argang == 2010
+(4,291 real changes made)
+
+. replace nsrh_mean = r(Stat2)[1,1]  if agegrp4 == 2 & argang == 2010
+(7,725 real changes made)
+
+. replace nsrh_mean = r(Stat3)[1,1]  if agegrp4 == 3 & argang == 2010
+(10,623 real changes made)
+
+. replace nsrh_mean = r(Stat4)[1,1]  if agegrp4 == 4 & argang == 2010
+(7,158 real changes made)
+
+. 
+. /* Bonus: use foreach/forvalues to save your work*/
+. capture drop nsrh_mean 
+
+. capture gen nsrh_mean = .
+
+. 
+. foreach i in 2002 2006 2010 {
+  2.         forvalues j = 1/4{
+  3.         tabstat nsrh if argang == `i', by(agegrp4) s(mean) save
+  4.         replace nsrh_mean = r(Stat`j')[1,1]  if agegrp4 == `j' & argang == `i'
+  5.         }
+  6. }
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+(4,976 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+(9,193 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+(11,188 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+(5,768 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.040922
+2. 30-44 |  4.017767
+3. 45-64 |  3.826307
+4. 65-84 |  3.601157
+---------+----------
+   Total |  3.872021
+--------------------
+(5,246 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.040922
+2. 30-44 |  4.017767
+3. 45-64 |  3.826307
+4. 65-84 |  3.601157
+---------+----------
+   Total |  3.872021
+--------------------
+(10,160 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.040922
+2. 30-44 |  4.017767
+3. 45-64 |  3.826307
+4. 65-84 |  3.601157
+---------+----------
+   Total |  3.872021
+--------------------
+(12,588 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.040922
+2. 30-44 |  4.017767
+3. 45-64 |  3.826307
+4. 65-84 |  3.601157
+---------+----------
+   Total |  3.872021
+--------------------
+(6,713 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.095372
+2. 30-44 |  4.059384
+3. 45-64 |  3.888424
+4. 65-84 |  3.680448
+---------+----------
+   Total |  3.913668
+--------------------
+(4,291 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.095372
+2. 30-44 |  4.059384
+3. 45-64 |  3.888424
+4. 65-84 |  3.680448
+---------+----------
+   Total |  3.913668
+--------------------
+(7,725 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.095372
+2. 30-44 |  4.059384
+3. 45-64 |  3.888424
+4. 65-84 |  3.680448
+---------+----------
+   Total |  3.913668
+--------------------
+(10,623 real changes made)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.095372
+2. 30-44 |  4.059384
+3. 45-64 |  3.888424
+4. 65-84 |  3.680448
+---------+----------
+   Total |  3.913668
+--------------------
+(7,158 real changes made)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. clear all
+
+. use sphc_all_exercise2, clear
+(Stockholm Public Health Cohort 2002, 2006, 2010)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) 
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+end of do-file
+
+. help tabstat
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+end of do-file
+
+. return list 
+
+macros:
+              r(name4) : "4. 65-84"
+              r(name3) : "3. 45-64"
+              r(name2) : "2. 30-44"
+              r(name1) : "1. 18-29"
+
+matrices:
+              r(Stat4) :  1 x 1
+              r(Stat3) :  1 x 1
+              r(Stat2) :  1 x 1
+              r(Stat1) :  1 x 1
+          r(StatTotal) :  1 x 1
+
+. di  r(name4)
+4. 65-84
+
+. di  r(Stat4)
+type mismatch
+r(109);
+
+. di  r(Stat4)[1,1]
+3.5784435
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. clear all
+
+. use sphc_all_exercise2, clear
+(Stockholm Public Health Cohort 2002, 2006, 2010)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean)
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+end of do-file
+
+. help tabstat
+
+. return list
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+end of do-file
+
+. return list
+
+macros:
+              r(name4) : "4. 65-84"
+              r(name3) : "3. 45-64"
+              r(name2) : "2. 30-44"
+              r(name1) : "1. 18-29"
+
+matrices:
+              r(Stat4) :  1 x 1
+              r(Stat3) :  1 x 1
+              r(Stat2) :  1 x 1
+              r(Stat1) :  1 x 1
+          r(StatTotal) :  1 x 1
+
+. di r(name4)
+4. 65-84
+
+. di r(Stat4)
+type mismatch
+r(109);
+
+. di r(Stat4)[1,1]
+3.5784435
+
+. di r(Stat3)[1,1]
+3.8146907
+
+. clear all
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. clear all
+
+. 
+. // See where is my working directory
+. pwd 
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Redirect my working directory
+. cd "$route/Data"
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Use the data from exercise 2
+. // Or your make_analysis data (if you've already intergrated.)
+. clear all
+
+. use sphc_all_exercise2, clear
+(Stockholm Public Health Cohort 2002, 2006, 2010)
+
+. 
+end of do-file
+
+. help graph bar
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. graph bar (count), over (argang) ///
+>       title("Number of participants in 2002, 2006, 2010")
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. graph bar (count), over (argang) ///
+>       title ("Number of participants in 2002, 2006, 2010")
+unmatched quote
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. graph box srh, over(argang)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat srh, s(p25 p50 p75) by(argang) 
+
+Summary for variables: srh
+     by categories of: argang (argang)
+
+  argang |       p25       p50       p75
+---------+------------------------------
+    2002 |         2         2         3
+    2006 |         2         2         3
+    2010 |         2         2         3
+---------+------------------------------
+   Total |         2         2         3
+----------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. // 1.4 Mean of self-rate health
+. ci mean nsrh if argang == 2002
+
+    Variable |        Obs        Mean    Std. Err.       [95% Conf. Interval]
+-------------+---------------------------------------------------------------
+        nsrh |     30,678     3.84999    .0048272        3.840529    3.859452
+
+. ci mean nsrh if argang == 2006
+
+    Variable |        Obs        Mean    Std. Err.       [95% Conf. Interval]
+-------------+---------------------------------------------------------------
+        nsrh |     34,279    3.872021    .0045322        3.863138    3.880904
+
+. ci mean nsrh if argang == 2010
+
+    Variable |        Obs        Mean    Std. Err.       [95% Conf. Interval]
+-------------+---------------------------------------------------------------
+        nsrh |     29,398    3.913668    .0047153        3.904425     3.92291
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. anova srh argang
+
+                         Number of obs =     94,355    R-squared     =  0.0010
+                         Root MSE      =    .831792    Adj R-squared =  0.0009
+
+                  Source | Partial SS         df         MS        F    Prob>F
+              -----------+----------------------------------------------------
+                   Model |  62.690733          2   31.345366     45.30  0.0000
+                         |
+                  argang |  62.690733          2   31.345366     45.30  0.0000
+                         |
+                Residual |  65280.098     94,352   .69187827  
+              -----------+----------------------------------------------------
+                   Total |  65342.789     94,354   .69252802  
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. gen nsrh_mean = .
+(95,686 missing values generated)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) 
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+end of do-file
+
+. help tabstat
+
+. return list
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+end of do-file
+
+. return list
+
+macros:
+              r(name4) : "4. 65-84"
+              r(name3) : "3. 45-64"
+              r(name2) : "2. 30-44"
+              r(name1) : "1. 18-29"
+
+matrices:
+              r(Stat4) :  1 x 1
+              r(Stat3) :  1 x 1
+              r(Stat2) :  1 x 1
+              r(Stat1) :  1 x 1
+          r(StatTotal) :  1 x 1
+
+. di  r(name4)
+4. 65-84
+
+. di r(Stat4)
+type mismatch
+r(109);
+
+. di r(Stat4)[1,1]
+3.5784435
+
+. di r(Stat3)[1,1]
+3.8146907
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. replace nsrh_mean = r(Stat1)[1,1]  if agegrp4 == 1 & argang == 2002
+(4,976 real changes made)
+
+. replace nsrh_mean = r(Stat2)[1,1]  if agegrp4 == 2 & argang == 2002
+(9,193 real changes made)
+
+. replace nsrh_mean = r(Stat3)[1,1]  if agegrp4 == 3 & argang == 2002
+(11,188 real changes made)
+
+. replace nsrh_mean = r(Stat4)[1,1]  if agegrp4 == 4 & argang == 2002
+(5,768 real changes made)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. // Generate mean of self-rated health by agegroup and year
+. // 2002
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+. replace nsrh_mean = r(Stat1)[1,1]  if agegrp4 == 1 & argang == 2002
+(0 real changes made)
+
+. replace nsrh_mean = r(Stat2)[1,1]  if agegrp4 == 2 & argang == 2002
+(0 real changes made)
+
+. replace nsrh_mean = r(Stat3)[1,1]  if agegrp4 == 3 & argang == 2002
+(0 real changes made)
+
+. replace nsrh_mean = r(Stat4)[1,1]  if agegrp4 == 4 & argang == 2002
+(0 real changes made)
+
+. 
+. // 2006
+. tabstat nsrh if argang == 2006, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.040922
+2. 30-44 |  4.017767
+3. 45-64 |  3.826307
+4. 65-84 |  3.601157
+---------+----------
+   Total |  3.872021
+--------------------
+
+. 
+. replace nsrh_mean = r(Stat1)[1,1]  if agegrp4 == 1 & argang == 2006
+(5,246 real changes made)
+
+. replace nsrh_mean = r(Stat2)[1,1]  if agegrp4 == 2 & argang == 2006
+(10,160 real changes made)
+
+. replace nsrh_mean = r(Stat3)[1,1]  if agegrp4 == 3 & argang == 2006
+(12,588 real changes made)
+
+. replace nsrh_mean = r(Stat4)[1,1]  if agegrp4 == 4 & argang == 2006
+(6,713 real changes made)
+
+. 
+. // 2010
+. tabstat nsrh if argang == 2010, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.095372
+2. 30-44 |  4.059384
+3. 45-64 |  3.888424
+4. 65-84 |  3.680448
+---------+----------
+   Total |  3.913668
+--------------------
+
+. replace nsrh_mean = r(Stat1)[1,1]  if agegrp4 == 1 & argang == 2010
+(4,291 real changes made)
+
+. replace nsrh_mean = r(Stat2)[1,1]  if agegrp4 == 2 & argang == 2010
+(7,725 real changes made)
+
+. replace nsrh_mean = r(Stat3)[1,1]  if agegrp4 == 3 & argang == 2010
+(10,623 real changes made)
+
+. replace nsrh_mean = r(Stat4)[1,1]  if agegrp4 == 4 & argang == 2010
+(7,158 real changes made)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. twoway(scatter nsrh_mean argang if agegrp4 == 1, color(blue)) ///
+>           (scatter nsrh_mean argang if agegrp4 == 2, color(green)) ///
+>           (scatter nsrh_mean argang if agegrp4 == 3, color(red)) ///
+>           (scatter nsrh_mean argang if agegrp4 == 4, color(gray)), ///
+>           ///
+>           legend(order(1 "18-29" 2 "30-44" 3 "45-64" 4 "65-84")) ///
+>           ///
+>           xscale(range(2000 2012)) ///
+>           xlabel(2002 2006 2010) ///
+>           xtitle("Survey year") ///
+>           ///
+>           yscale(range(3 5)) ///
+>           ylabel(3(0.5)5) ///
+>           ytitle("Mean self-rated health") ///
+>           ///
+>           name("mean_srh", replace) ///
+>           title("Mean self-rated health by age group and by year") ///
+>           saving(, replace) 
+(file mean_srh.gph saved)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. // Plot mean self-rated health by age group and by year
+. twoway(line nsrh_mean argang if agegrp4 == 1, color(blue)) ///
+>           (line nsrh_mean argang if agegrp4 == 2, color(green)) ///
+>           (line nsrh_mean argang if agegrp4 == 3, color(red)) ///
+>           (line nsrh_mean argang if agegrp4 == 4, color(gray)), ///
+>           ///
+>           legend(order(1 "18-29" 2 "30-44" 3 "45-64" 4 "65-84")) ///
+>           ///
+>           xscale(range(2000 2012)) ///
+>           xlabel(2002 2006 2010) ///
+>           xtitle("Survey year") ///
+>           ///
+>           yscale(range(3 5)) ///
+>           ylabel(3(0.5)5) ///
+>           ytitle("Mean self-rated health") ///
+>           ///
+>           name("mean_srh", replace) ///
+>           title("Mean self-rated health by age group and by year") ///
+>           saving(, replace) 
+(file mean_srh.gph saved)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. twoway(scatter nsrh_mean argang if agegrp4 == 1, color(blue)) ///
+>           (scatter nsrh_mean argang if agegrp4 == 2, color(green)) ///
+>           (scatter nsrh_mean argang if agegrp4 == 3, color(red)) ///
+>           (scatter nsrh_mean argang if agegrp4 == 4, color(gray)), ///
+>           ///
+>           legend(order(1 "18-29" 2 "30-44" 3 "45-64" 4 "65-84")) ///
+>           ///
+>           xscale(range(2000 2012)) ///
+>           xlabel(2002 2006 2010) ///
+>           xtitle("Survey year") ///
+>           ///
+>           yscale(range(3 5)) ///
+>           ylabel(3(0.5)5) ///
+>           ytitle("Mean self-rated health") ///
+>           ///
+>           name("mean_srh", replace) ///
+>           title("Mean self-rated health by age group and by year") ///
+>           saving(, replace) 
+(file mean_srh.gph saved)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh, by(agegrp4 argang) s(mean) save
+by():  too many variables specified
+r(103);
+
+end of do-file
+
+r(103);
+
+. tab nsrh argang
+
+   RECODE of |              argang
+   srh (srh) |      2002       2006       2010 |     Total
+-------------+---------------------------------+----------
+1. Very poor |       279        299        221 |       799 
+     2. Poor |     1,564      1,670      1,088 |     4,322 
+  3. Average |     7,245      7,738      6,396 |    21,379 
+     4. Good |    14,982     16,984     14,996 |    46,962 
+5. Excellent |     6,608      7,588      6,697 |    20,893 
+-------------+---------------------------------+----------
+       Total |    30,678     34,279     29,398 |    94,355 
+
+. tab nsrh argang, col
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+   RECODE of |              argang
+   srh (srh) |      2002       2006       2010 |     Total
+-------------+---------------------------------+----------
+1. Very poor |       279        299        221 |       799 
+             |      0.91       0.87       0.75 |      0.85 
+-------------+---------------------------------+----------
+     2. Poor |     1,564      1,670      1,088 |     4,322 
+             |      5.10       4.87       3.70 |      4.58 
+-------------+---------------------------------+----------
+  3. Average |     7,245      7,738      6,396 |    21,379 
+             |     23.62      22.57      21.76 |     22.66 
+-------------+---------------------------------+----------
+     4. Good |    14,982     16,984     14,996 |    46,962 
+             |     48.84      49.55      51.01 |     49.77 
+-------------+---------------------------------+----------
+5. Excellent |     6,608      7,588      6,697 |    20,893 
+             |     21.54      22.14      22.78 |     22.14 
+-------------+---------------------------------+----------
+       Total |    30,678     34,279     29,398 |    94,355 
+             |    100.00     100.00     100.00 |    100.00 
+
+. return list
+
+scalars:
+                  r(N) =  94355
+                  r(r) =  5
+                  r(c) =  3
+
+. tab nsrh argang, detail save
+option detail not allowed
+r(198);
+
+. tab nsrh argang, save
+option save not allowed
+r(198);
+
+. help tab
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04994.000000"
+
+. tabstat nsrh if argang == 2002, by(agegrp4) s(mean) save
+
+Summary for variables: nsrh
+     by categories of: agegrp4 (agegrp4)
+
+ agegrp4 |      mean
+---------+----------
+1. 18-29 |  4.016054
+2. 30-44 |   3.97168
+3. 45-64 |  3.814691
+4. 65-84 |  3.578444
+---------+----------
+   Total |   3.84999
+--------------------
+
+. 
+end of do-file
+
+. return list
+
+macros:
+              r(name4) : "4. 65-84"
+              r(name3) : "3. 45-64"
+              r(name2) : "2. 30-44"
+              r(name1) : "1. 18-29"
+
+matrices:
+              r(Stat4) :  1 x 1
+              r(Stat3) :  1 x 1
+              r(Stat2) :  1 x 1
+              r(Stat1) :  1 x 1
+          r(StatTotal) :  1 x 1
+
+. local something  r(Stat4)[1,1]
+
+. di something
+something not found
+r(111);
+
+. di `something'
+3.5784435
+
+. exit, clear

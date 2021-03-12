@@ -1,0 +1,75 @@
+-----------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log/exercise3_20210
+> 204.log
+  log type:  text
+ opened on:   4 Feb 2021, 20:14:51
+
+. 
+. /*==============================================================================
+> FILENAME: exercise3.do
+> 
+> PROJECT: Exercise 3, Stockholm Public Health Cohort     
+> 
+> PURPOSE: Demonstrate exercise3.do to the students
+>         
+> AUTHOR: Enoch Chen
+> 
+> CREATED: 20210203 Enoch Chen    
+> UPDATED: 20210204 Enoch Chen            
+> 
+> INPUT DATA: sphc_all.dta                                
+> OUTPUT: N/A
+> 
+> STATA VERSION: 16.1
+> ==============================================================================*/
+. clear all
+
+. 
+. // See where is my working directory
+. pwd 
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Redirect my working directory
+. cd "$route/Data"
+/Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Data
+
+. 
+. // Use the data from exercise 2
+. // Or your make_analysis data (if you've already intergrated.)
+. clear all
+
+. use sphc_all_exercise2, clear
+(Stockholm Public Health Cohort 2002, 2006, 2010)
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD27743.000000"
+
+. cs f6a02 female
+
+                 |         female         |
+                 |   Exposed   Unexposed  |      Total
+-----------------+------------------------+-----------
+           Cases |      1978        2572  |       4550
+        Noncases |     49611       39827  |      89438
+-----------------+------------------------+-----------
+           Total |     51589       42399  |      93988
+                 |                        |
+            Risk |  .0383415    .0606618  |   .0484104
+                 |                        |
+                 |      Point estimate    |    [95% Conf. Interval]
+                 |------------------------+------------------------
+ Risk difference |        -.0223203       |   -.0251325   -.0195081 
+      Risk ratio |         .6320535       |    .5969211    .6692536 
+ Prev. frac. ex. |         .3679465       |    .3307464    .4030789 
+ Prev. frac. pop |         .2019619       |
+                 +-------------------------------------------------
+                               chi2(1) =   251.68  Pr>chi2 = 0.0000
+
+. 
+end of do-file
+
+. exit

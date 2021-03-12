@@ -313,8 +313,8 @@ destring age, replace
 \begin{itemize}
 \item 	\verb|rename| changes the name of a variable. 
 \item[] \verb|. rename died death|
-\item   \verb|recode| changes variable values.
-\item[] \verb|. recode drug (3=4)|
+\item   \verb|recode| changes variable values and generate the new variable using option  \verb|generate|
+\item[] \verb|. recode drug (3=4), gen(ndrug)|
 \item   \verb|generate| creates a new variable.
 \item[] \verb|. generate placebo = 1 if drug == 1|
 \item   \verb|replace| replaces existing variables (or variable values).

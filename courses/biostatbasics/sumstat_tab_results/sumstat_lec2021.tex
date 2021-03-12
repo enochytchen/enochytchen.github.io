@@ -1,0 +1,101 @@
+\input{../settings.tex}
+%%%%%%%%%%%%%%%Title page%%%%%%%%%%%%%%%
+
+\title[Applied Epi I: Summary statistics]{Applied Epidemiology I: Summary statistics}
+\date{February 1, 2021}
+\author[Enoch Yi-Tung Chen]{Enoch Yi-Tung Chen}
+\institute[MEB]{Department of Medical Epidemiology and Biostatistics, Karolinska Insitutet}
+
+%%%%%%%%%%%%%%\begin{document}%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}
+\maketitle 
+\end{frame}
+
+%%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
+\input{../ack2}
+
+%%%%%%%%%%%%%%Outline%%%%%%%%%%%%%%%%
+\section*{Outline}
+\begin{frame}{\secname}
+ \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={1-4}]
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={5-7}]
+        \end{column}
+\end{columns}
+\end{frame}
+%%%
+\section{Summary statistics}
+
+\subsection{Measures of Central Tendency: mean, median, mode}
+\begin{frame}[fragile]{{\secname: \\ \subsecname}}	
+\begin{itemize}
+	\item<1|handout:1-> Mean: the sum of the values of a variable and dividingby number of the observations
+	\item<2|handout:2->  Median: the middle (the 50th centile) observation
+	\item<3|handout:3->  Mode: the value that occurs most frequently
+	\item<4|handout:4>  []
+\scriptsize
+\begin{verbatim}
+
+. tabstat age // will only give you mean
+
+    variable |      mean
+-------------+----------
+         age |  56.41176
+------------------------
+
+. tabstat age, s(count mean median) // s stands for statistics
+    variable |         N      mean       p50
+-------------+------------------------------
+         age |        34  56.41176        56
+--------------------------------------------
+	
+\end{verbatim}
+
+\end{itemize}
+\end{frame}
+
+%%%%
+\subsection{Measures of Dispersion: range, IQR, variance, standard deviation}
+\begin{frame}[fragile]{{\secname: \subsecname}}	
+\begin{itemize}
+	\item<1|handout:1-> Range: the difference between the maximum and the minimum 
+	\item<2|handout:2-> Interquartile range: the absolute difference between the 25th percentile of the observations and the 75th.
+	\item<3|handout:3-> Variance, standard deviation (sd): a measure of spread of the data
+	\item[]<4|handout:4>
+\footnotesize
+	\begin{displaymath}
+s^{2} = \widehat{Var}(x)=\frac{1}{n-1} \sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}
+\end{displaymath}
+
+\scriptsize
+\begin{verbatim}
+
+
+. tabstat age, s(count range min max iqr var sd)
+
+    variable |         N     range       min       max
+-------------+----------------------------------------
+         age |        34        20        47        67
+------------------------------------------------------
+
+    variable |       iqr  variance        sd
+-------------+------------------------------
+         age |        10  36.12834  6.010686
+--------------------------------------------
+\end{verbatim}
+
+\end{itemize}
+\end{frame}
+
+%%%
+\input{../bib/ref.tex}
+
+
+
+\end{document}

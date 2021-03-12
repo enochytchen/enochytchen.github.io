@@ -84,7 +84,7 @@ label values drug drug_label
 
 // Rename, recode, generate, replace
 rename died death
-recode drug (3=4) // Make variable drug 3 into 4
+recode drug (3=4), gen(ndrug) // Make variable drug 3 into 4
 generate placebo = 1 if drug == 1 
 replace placebo = 0 if drug != 1
 

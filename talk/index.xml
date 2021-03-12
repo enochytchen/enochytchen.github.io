@@ -5,12 +5,20 @@
     <link>https://enochytchen.com/talk/</link>
       <atom:link href="https://enochytchen.com/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2020 11:30:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 02 Feb 2021 14:00:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Talks</title>
       <link>https://enochytchen.com/talk/</link>
     </image>
+    
+    <item>
+      <title>Cancer Survival Statistics - an Overview</title>
+      <link>https://enochytchen.com/talk/sa_overview/</link>
+      <pubDate>Tue, 02 Feb 2021 14:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/talk/sa_overview/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Thesis Journey at MPH, Epidemiology</title>

@@ -1,0 +1,227 @@
+-------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log
+> /merge_20210201.log
+  log type:  text
+ opened on:   1 Feb 2021, 13:42:17
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. 
+. /*==============================================================================
+> FILENAME: merge.do
+> 
+> 
+> PURPOSE: Demonstrate merge.do to the students
+>         
+> AUTHOR: Enoch Chen
+> 
+> CREATED: 20210201 Enoch Chen    
+> UPDATED: 20210201 Enoch Chen            
+> 
+> INPUT DATA:             
+> OUTPUT:
+> 
+> STATA VERSION: 16.1
+> ==============================================================================*/
+. 
+. clear all
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. 
+. // Dataset A
+. input id  a
+
+            id          a
+  1.            1 50
+  2.            1 49
+  3.            2 38
+  4.            4 78
+  5.            5 55
+  6. end
+
+. 
+. sort id
+
+. save A, replace
+file A.dta saved
+
+. 
+. // Dataset B
+. clear all
+
+. input id   b
+
+            id          b
+  1.            1 0.5
+  2.        2 0.2
+  3.            3 0.4
+  4. end
+
+. 
+. sort id
+
+. save B, replace
+file B.dta saved
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. clear all
+
+. use A, clear
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. merge 1:1 id using B
+variable id does not uniquely identify observations in the master data
+r(459);
+
+end of do-file
+
+r(459);
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. merge m:1 id using B
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             3
+        from master                         2  (_merge==1)
+        from using                          1  (_merge==2)
+
+    matched                                 3  (_merge==3)
+    -----------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. list
+
+     +--------------------------------+
+     | id    a    b            _merge |
+     |--------------------------------|
+  1. |  1   50   .5       matched (3) |
+  2. |  1   49   .5       matched (3) |
+  3. |  2   38   .2       matched (3) |
+  4. |  4   78    .   master only (1) |
+  5. |  5   55    .   master only (1) |
+     |--------------------------------|
+  6. |  3    .   .4    using only (2) |
+     +--------------------------------+
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. // What if you wrongly consider 1 to multiple?
+. // That's alright. Stata will tell you it's an error.
+. clear all
+
+. use A, clear
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. merge 1:m id using B
+variable id does not uniquely identify observations in the master data
+r(459);
+
+end of do-file
+
+r(459);
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. clear all
+
+. use A, clear
+
+. 
+. merge m:m id using B
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             3
+        from master                         2  (_merge==1)
+        from using                          1  (_merge==2)
+
+    matched                                 3  (_merge==3)
+    -----------------------------------------
+
+. 
+end of do-file
+
+. list
+
+     +--------------------------------+
+     | id    a    b            _merge |
+     |--------------------------------|
+  1. |  1   50   .5       matched (3) |
+  2. |  1   49   .5       matched (3) |
+  3. |  2   38   .2       matched (3) |
+  4. |  4   78    .   master only (1) |
+  5. |  5   55    .   master only (1) |
+     |--------------------------------|
+  6. |  3    .   .4    using only (2) |
+     +--------------------------------+
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. merge m:m id using B
+variable _merge already defined
+r(110);
+
+end of do-file
+
+r(110);
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. clear all
+
+. use A, clear
+
+. 
+. merge m:m id using B
+
+    Result                           # of obs.
+    -----------------------------------------
+    not matched                             3
+        from master                         2  (_merge==1)
+        from using                          1  (_merge==2)
+
+    matched                                 3  (_merge==3)
+    -----------------------------------------
+
+. 
+end of do-file
+
+. do "/var/folders/_9/lhjg660s4psdlb1xk2tj7c0x96f25w/T//SD04789.000000"
+
+. // End of Stata Code
+. log close
+      name:  <unnamed>
+       log:  /Users/yitche/My_Website/content/courses/biostatbasics/excercise/exercise1/Log
+> /merge_20210201.log
+  log type:  text
+ closed on:   1 Feb 2021, 13:49:36
+-------------------------------------------------------------------------------------------
