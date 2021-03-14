@@ -5,7 +5,7 @@
     <link>https://enochytchen.com/</link>
       <atom:link href="https://enochytchen.com/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Yi-Tung Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 02 Feb 2021 14:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Yi-Tung Chen</title>
@@ -244,50 +244,13 @@ The exercise of this lecture can be downloaded [here](data_man_ex).
     </item>
     
     <item>
-      <title>Exercises</title>
-      <link>https://enochytchen.com/cansurv/exercises/</link>
-      <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://enochytchen.com/cansurv/exercises/</guid>
-      <description>&lt;p&gt;This is a testing page for using Stata Markdown.
-The questions and solutions are corresponding to their &lt;code&gt;stmd&lt;/code&gt; files.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th&gt;Markstat&lt;/th&gt;
-&lt;th&gt;Questions&lt;/th&gt;
-&lt;th&gt;Markstat&lt;/th&gt;
-&lt;th&gt;Solutions&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Stata&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Cox regression with observed (all-cause) mortality as the outcome&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;q122.stmd&#34; target=&#34;_blank&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;
-&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q122.pdf&#34;&gt;Q122&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;s122.stmd&#34; target=&#34;_blank&#34;&gt;S122&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;
-&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s122.pdf&#34;&gt;S122&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;
-&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s122.do&#34;&gt;s122.do&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Calculating excess and ‘avoidable’ deaths from life tables&lt;/td&gt;
-&lt;td&gt;
-&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q282.stmd&#34;&gt;Q282&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;
-&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/q282.pdf&#34;&gt;Q282&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;s282.stmd&#34; target=&#34;_blank&#34;&gt;S282&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;
-&lt;a href=&#34;https://enochytchen.com/cansurv/exercises/s282.pdf&#34;&gt;S282&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;
-&lt;a href=&#34;s282.do&#34;&gt;s282.do&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</description>
+      <title>Study Abroad in Sweden</title>
+      <link>https://enochytchen.com/talk/tmu_20210318/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://enochytchen.com/talk/tmu_20210318/</guid>
+      <description>&lt;object data=&#34;TMU_20210318.pdf&#34; type=&#34;application/pdf&#34; width=&#34;800px&#34; height=&#34;1000px&#34;&gt;
+  &lt;p&gt; Syllabus &lt;a href=&#34;TMU_20210318.pdf&#34;&gt;to the PDF!&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;</description>
     </item>
     
     <item>
