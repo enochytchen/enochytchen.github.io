@@ -5,12 +5,24 @@
     <link>https://enochytchen.com/author/enoch-chen/</link>
       <atom:link href="https://enochytchen.com/author/enoch-chen/index.xml" rel="self" type="application/rss+xml" />
     <description>Enoch Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 18 Mar 2021 18:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Apr 2021 09:30:00 +0000</lastBuildDate>
     <image>
       <url>https://enochytchen.com/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Enoch Chen</title>
       <link>https://enochytchen.com/author/enoch-chen/</link>
     </image>
+    
+    <item>
+      <title>Introduction to Recursively Imputed Survival Trees</title>
+      <link>https://enochytchen.com/talk/rist/</link>
+      <pubDate>Thu, 01 Apr 2021 09:30:00 +0000</pubDate>
+      <guid>https://enochytchen.com/talk/rist/</guid>
+      <description>&lt;p&gt;Abstract: Extrapolating relative survival (e.g., extrapolating log cumulative excess hazard using flexible parametric models) with more than 10 years of survival data has already been proved to give reasonable all-cause survival until lifetime. However, with data less than 10 years, it remains  unsolved to obtain robust prediction. Recursively imputed survival trees adopted and modified the characteristics of random forest method, which aims to deal with censoring survival data and predict as much information as in non-censored data. Will this approach tackle the challenge of extrapolating survival with limited data?&lt;/p&gt;
+&lt;object data=&#34;rist_biostat_seminar_20210401.pdf&#34; type=&#34;application/pdf&#34; width=&#34;800px&#34; height=&#34;1000px&#34;&gt;
+  &lt;p&gt; Syllabus &lt;a href=&#34;rist_biostat_seminar_20210401.pdf&#34;&gt;to the PDF!&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+</description>
+    </item>
     
     <item>
       <title>Study Abroad in Sweden</title>
